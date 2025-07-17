@@ -19,8 +19,8 @@ Resources/
 # The plugin descriptor file (often generated or modified by the editor)
 *.uplugin
 
-# C++ Source files
-Source/**/*.cpp
+# C++ Source files - Ignore all .cpp files in the entire repository
+**/*.cpp
 
 # Visual Studio files
 .vs/
