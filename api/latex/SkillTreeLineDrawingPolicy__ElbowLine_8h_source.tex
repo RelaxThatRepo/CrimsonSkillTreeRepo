@@ -1,0 +1,36 @@
+\doxysection{Skill\+Tree\+Line\+Drawing\+Policy\+\_\+\+Elbow\+Line.\+h}
+\hypertarget{SkillTreeLineDrawingPolicy__ElbowLine_8h_source}{}\label{SkillTreeLineDrawingPolicy__ElbowLine_8h_source}\index{Source/CrimsonSkillTree/UserInterface/LineDrawingPolicy/SkillTreeLineDrawingPolicy\_ElbowLine.h@{Source/CrimsonSkillTree/UserInterface/LineDrawingPolicy/SkillTreeLineDrawingPolicy\_ElbowLine.h}}
+\mbox{\hyperlink{SkillTreeLineDrawingPolicy__ElbowLine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ Crimson\ Sword\ Studio,\ 2024.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTreeWidget__LineDrawingPolicyBase_8h}{CrimsonSkillTreeWidget\_LineDrawingPolicyBase.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}SkillTreeLineDrawingPolicy\_ElbowLine.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ UCLASS(Blueprintable,\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}Elbow\ Line\ Drawer"{}}))}
+\DoxyCodeLine{00014\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUSkillTreeLineDrawingPolicy__ElbowLine}{USkillTreeLineDrawingPolicy\_ElbowLine}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__LineDrawingPolicyBase}{UCrimsonSkillTreeWidget\_LineDrawingPolicyBase}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classUSkillTreeLineDrawingPolicy__ElbowLine_abf713df432ce9e4201adb8487f0defbf}{USkillTreeLineDrawingPolicy\_ElbowLine}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\string~\ UCrimsonSkillTreeWidget\_LineDrawingPolicyBase\ Interface}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUSkillTreeLineDrawingPolicy__ElbowLine_aa11badf956fe753a9fadd734131467e1}{CreateVisualConnection\_Implementation}}(UCanvasPanel*\ CanvasPanel,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ StartNodeWidget,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ EndNodeWidget,\ TArray<UImage*>\&\ InOutDrawnLineWidgets)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UCrimsonSkillTreeWidget\_LineDrawingPolicyBase\ Interface}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\string~\ Style\ Properties}}
+\DoxyCodeLine{00034\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Elbow\ Line\ Style"{}},\ meta\ =\ (ClampMin\ =\ \textcolor{stringliteral}{"{}0"{}}))}
+\DoxyCodeLine{00035\ \ \ \ \ float\ VerticalStepSize;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Elbow\ Line\ Style"{})}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ bCenterHorizontalSegment;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Style\ Properties}}
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}

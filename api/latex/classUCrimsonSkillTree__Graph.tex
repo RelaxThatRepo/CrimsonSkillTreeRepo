@@ -1,0 +1,223 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Graph Class Reference}
+\hypertarget{classUCrimsonSkillTree__Graph}{}\label{classUCrimsonSkillTree__Graph}\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+
+
+Represents the editor graph for a Crimson Skill Tree asset (\doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}). This UEd\+Graph derivative manages the collection of graph nodes (\doxylink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}) and graph edges (\doxylink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}) that visually define the skill tree structure in the editor. It is responsible for rebuilding the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} from this editor representation.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Graph.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classUCrimsonSkillTree__Graph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classUCrimsonSkillTree__Graph__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__Graph_ab56e82bbcb7ac9bf835bee1e0d6c82c8}{UCrimson\+Skill\+Tree\+\_\+\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a5bb68ec3b4297573d4acecc462a9a7f8}{\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree\+\_\+\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classUCrimsonSkillTree__Graph_ac43ae15b83732c163eafb7f21697c47b}{Modify}} (bool b\+Always\+Mark\+Dirty=true) override
+\begin{DoxyCompactList}\small\item\em Marks the object as modified, optionally forcing the dirty flag. This version also marks the associated \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset and all its graph nodes as modified. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a1d1b47c1620125513a12a71b706b7178}{Post\+Edit\+Undo}} () override
+\begin{DoxyCompactList}\small\item\em Called after an undo or redo operation has been performed on this graph. Typically used to refresh the graph\textquotesingle{}s visual state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a1d61afe8b7b2c2bbd4924c4f6431657b}{Rebuild\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Rebuilds the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset based on the current state of this editor graph. This involves iterating over graph nodes and edges to create or update their runtime counterparts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a079b9138494b6710b07c58407a70bd5e}{Get\+Crimson\+Skill\+Tree}} () const
+\begin{DoxyCompactList}\small\item\em Gets the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset that this editor graph represents. This is typically the UObject outer of this UEd\+Graph instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TSubclass\+Of$<$ class \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a49d01ec8efddfd1a8af41a2f53da5be1}{Root\+Node\+Class}}
+\begin{DoxyCompactList}\small\item\em The class to use for the root node when creating a new graph or when a root node is needed. \end{DoxyCompactList}\item 
+TMap$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$, TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} $>$ $>$ \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a573965b7df21a5d9fdc865a0436712a2}{Node\+Map}}
+\begin{DoxyCompactList}\small\item\em Transient map from runtime \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} instances to their corresponding editor \doxylink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node} instances. Used during graph rebuilding and synchronization. \end{DoxyCompactList}\item 
+TMap$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge}} $>$, TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}} $>$ $>$ \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a1c372c94104e1b5f7a88a83e5ac13f9b}{Edge\+Map}}
+\begin{DoxyCompactList}\small\item\em Transient map from runtime \doxylink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge} instances to their corresponding editor \doxylink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge} instances. Used if edges have their own editor graph representation. \end{DoxyCompactList}\item 
+TMap$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimson\+Skill\+Tree\+\_\+\+Visual\+Node}} $>$, TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Visual}} $>$ $>$ \mbox{\hyperlink{classUCrimsonSkillTree__Graph_aa23c326233e9113f07ed84c98ae4b07e}{Visual\+Node\+Map}}
+\begin{DoxyCompactList}\small\item\em Transient map from runtime Visual\+Node to editor Graph\+Node\+\_\+\+Visual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__Graph_ad341a969d9cb357a8ea6752fae788263}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} of its nodes and edges, and resets internal editor maps. This is usually a precursor to rebuilding the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__Graph_a6f722ac4d237b1f0b6fb49681fbba9c8}{Sort\+Nodes}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Root\+Node)
+\begin{DoxyCompactList}\small\item\em Sorts the child and parent connections of nodes within the graph, typically based on their visual layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the editor graph for a Crimson Skill Tree asset (\doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}). This UEd\+Graph derivative manages the collection of graph nodes (\doxylink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}) and graph edges (\doxylink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}) that visually define the skill tree structure in the editor. It is responsible for rebuilding the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} from this editor representation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree__Graph_ab56e82bbcb7ac9bf835bee1e0d6c82c8}\label{classUCrimsonSkillTree__Graph_ab56e82bbcb7ac9bf835bee1e0d6c82c8} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree\_Graph()}{UCrimsonSkillTree\_Graph()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+UCrimson\+Skill\+Tree\+\_\+\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{classUCrimsonSkillTree__Graph_a5bb68ec3b4297573d4acecc462a9a7f8}\label{classUCrimsonSkillTree__Graph_a5bb68ec3b4297573d4acecc462a9a7f8} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!````~UCrimsonSkillTree\_Graph@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_Graph}}
+\index{````~UCrimsonSkillTree\_Graph@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_Graph}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_Graph()}{\string~UCrimsonSkillTree\_Graph()}}
+{\footnotesize\ttfamily virtual UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree\+\_\+\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__Graph_ad341a969d9cb357a8ea6752fae788263}\label{classUCrimsonSkillTree__Graph_ad341a969d9cb357a8ea6752fae788263} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!Clear@{Clear}}
+\index{Clear@{Clear}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clears the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} of its nodes and edges, and resets internal editor maps. This is usually a precursor to rebuilding the graph. 
+
+\Hypertarget{classUCrimsonSkillTree__Graph_a079b9138494b6710b07c58407a70bd5e}\label{classUCrimsonSkillTree__Graph_a079b9138494b6710b07c58407a70bd5e} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!GetCrimsonSkillTree@{GetCrimsonSkillTree}}
+\index{GetCrimsonSkillTree@{GetCrimsonSkillTree}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{GetCrimsonSkillTree()}{GetCrimsonSkillTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*} UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Get\+Crimson\+Skill\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset that this editor graph represents. This is typically the UObject outer of this UEd\+Graph instance. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__Graph_ac43ae15b83732c163eafb7f21697c47b}\label{classUCrimsonSkillTree__Graph_ac43ae15b83732c163eafb7f21697c47b} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!Modify@{Modify}}
+\index{Modify@{Modify}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{Modify()}{Modify()}}
+{\footnotesize\ttfamily virtual bool UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Modify (\begin{DoxyParamCaption}\item[{bool}]{b\+Always\+Mark\+Dirty = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Marks the object as modified, optionally forcing the dirty flag. This version also marks the associated \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset and all its graph nodes as modified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Always\+Mark\+Dirty} & If true, the object will always be marked dirty. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the object was modified, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__Graph_a1d1b47c1620125513a12a71b706b7178}\label{classUCrimsonSkillTree__Graph_a1d1b47c1620125513a12a71b706b7178} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!PostEditUndo@{PostEditUndo}}
+\index{PostEditUndo@{PostEditUndo}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{PostEditUndo()}{PostEditUndo()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Post\+Edit\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called after an undo or redo operation has been performed on this graph. Typically used to refresh the graph\textquotesingle{}s visual state. 
+
+\Hypertarget{classUCrimsonSkillTree__Graph_a1d61afe8b7b2c2bbd4924c4f6431657b}\label{classUCrimsonSkillTree__Graph_a1d61afe8b7b2c2bbd4924c4f6431657b} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!RebuildGraph@{RebuildGraph}}
+\index{RebuildGraph@{RebuildGraph}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{RebuildGraph()}{RebuildGraph()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Rebuild\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rebuilds the runtime \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} asset based on the current state of this editor graph. This involves iterating over graph nodes and edges to create or update their runtime counterparts. 
+
+\Hypertarget{classUCrimsonSkillTree__Graph_a6f722ac4d237b1f0b6fb49681fbba9c8}\label{classUCrimsonSkillTree__Graph_a6f722ac4d237b1f0b6fb49681fbba9c8} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!SortNodes@{SortNodes}}
+\index{SortNodes@{SortNodes}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{SortNodes()}{SortNodes()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Sort\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sorts the child and parent connections of nodes within the graph, typically based on their visual layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Root\+Node} & The starting node for sorting, though the implementation may sort all nodes. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree__Graph_a1c372c94104e1b5f7a88a83e5ac13f9b}\label{classUCrimsonSkillTree__Graph_a1c372c94104e1b5f7a88a83e5ac13f9b} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!EdgeMap@{EdgeMap}}
+\index{EdgeMap@{EdgeMap}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{EdgeMap}{EdgeMap}}
+{\footnotesize\ttfamily TMap$<$TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge}}$>$, TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}}$>$ $>$ UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Edge\+Map}
+
+
+
+Transient map from runtime \doxylink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge} instances to their corresponding editor \doxylink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge} instances. Used if edges have their own editor graph representation. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{classUCrimsonSkillTree__Graph_a573965b7df21a5d9fdc865a0436712a2}\label{classUCrimsonSkillTree__Graph_a573965b7df21a5d9fdc865a0436712a2} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!NodeMap@{NodeMap}}
+\index{NodeMap@{NodeMap}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{NodeMap}{NodeMap}}
+{\footnotesize\ttfamily TMap$<$TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}}$>$, TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}$>$ $>$ UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Node\+Map}
+
+
+
+Transient map from runtime \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} instances to their corresponding editor \doxylink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node} instances. Used during graph rebuilding and synchronization. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{classUCrimsonSkillTree__Graph_a49d01ec8efddfd1a8af41a2f53da5be1}\label{classUCrimsonSkillTree__Graph_a49d01ec8efddfd1a8af41a2f53da5be1} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!RootNodeClass@{RootNodeClass}}
+\index{RootNodeClass@{RootNodeClass}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{RootNodeClass}{RootNodeClass}}
+{\footnotesize\ttfamily TSubclass\+Of$<$class \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root}}$>$ UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Root\+Node\+Class}
+
+
+
+The class to use for the root node when creating a new graph or when a root node is needed. 
+
+\Hypertarget{classUCrimsonSkillTree__Graph_aa23c326233e9113f07ed84c98ae4b07e}\label{classUCrimsonSkillTree__Graph_aa23c326233e9113f07ed84c98ae4b07e} 
+\index{UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}!VisualNodeMap@{VisualNodeMap}}
+\index{VisualNodeMap@{VisualNodeMap}!UCrimsonSkillTree\_Graph@{UCrimsonSkillTree\_Graph}}
+\doxysubsubsection{\texorpdfstring{VisualNodeMap}{VisualNodeMap}}
+{\footnotesize\ttfamily TMap$<$TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimson\+Skill\+Tree\+\_\+\+Visual\+Node}}$>$, TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Visual}}$>$ $>$ UCrimson\+Skill\+Tree\+\_\+\+Graph\+::\+Visual\+Node\+Map}
+
+
+
+Transient map from runtime Visual\+Node to editor Graph\+Node\+\_\+\+Visual. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Graph/\mbox{\hyperlink{CrimsonSkillTree__Graph_8h}{Crimson\+Skill\+Tree\+\_\+\+Graph.\+h}}\end{DoxyCompactItemize}

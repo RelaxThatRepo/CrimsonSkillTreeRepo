@@ -1,0 +1,5 @@
+<map id="FAssetSchemaAction_CrimsonSkillTree_NewNode" name="FAssetSchemaAction_CrimsonSkillTree_NewNode">
+<area shape="rect" id="Node000001" title="Represents an action in the graph editor context menu for creating a new skill tree node...." alt="" coords="5,79,213,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,5,199,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,44,112,79,107,79,107,44"/>
+</map>

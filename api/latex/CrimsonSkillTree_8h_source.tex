@@ -1,0 +1,111 @@
+\doxysection{Crimson\+Skill\+Tree.\+h}
+\hypertarget{CrimsonSkillTree_8h_source}{}\label{CrimsonSkillTree_8h_source}\index{Source/CrimsonSkillTree/CrimsonSkillTree.h@{Source/CrimsonSkillTree/CrimsonSkillTree.h}}
+\mbox{\hyperlink{CrimsonSkillTree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GameplayTagContainer.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimsonSkillTree\_Edge}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ UCLASS(Blueprintable)}
+\DoxyCodeLine{00019\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}\ :\ public\ UObject}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree_a77222924f590e3c4b4fcf5a1d4f3a518}{UCrimsonSkillTree}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUCrimsonSkillTree_a5f043f7069137dbd64bd9b6312e05eee}{\string~UCrimsonSkillTree}}();}
+\DoxyCodeLine{00026\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\string~\ UObject\ Overrides}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree_aa53c2ba4c811f4b6c811c4d54cff260d}{PostLoad}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UObject\ Overrides}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}CrimsonSkillTree"{}})}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ CreateRuntimeInstance(UObject*\ Outer);}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ "{}CrimsonSkillTree"{})}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ PrintTreeStructure(\textcolor{keywordtype}{bool}\ bToConsole\ =\ true,\ \textcolor{keywordtype}{bool}\ bToScreen\ =\ true)\ const;}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ "{}CrimsonSkillTree"{})}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetTreeToDefaults();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ const\ TArray<TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>>\&\ GetAllNodes()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ AllNodes;\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ TArray<TObjectPtr<UCrimsonSkillTree\_Node>>\&\ \mbox{\hyperlink{classUCrimsonSkillTree_a081fba50ceb79ab324808e0df32a336b}{GetAllNodes}}()\ \{\ \textcolor{keywordflow}{return}\ AllNodes;\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}CrimsonSkillTree"{}})}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ FindNodeByGUID(const\ FGuid\&\ InNodeGUID)\ const;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR}}
+\DoxyCodeLine{00073\ \ \ \ \ UFUNCTION(CallInEditor,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Diagnostics"{}})}
+\DoxyCodeLine{00074\ \ \ \ \ void\ CheckBakedNodeCount();}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ A\ unique\ identifier\ for\ this\ skill\ tree\ asset.\ Essential\ for\ saving\ and\ loading.}}
+\DoxyCodeLine{00080\ \ \ \ \ UPROPERTY(VisibleDefaultsOnly,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree"{}})}
+\DoxyCodeLine{00081\ \ \ \ \ FGuid\ SkillTreeGUID;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ The\ version\ of\ this\ skill\ tree.\ Increment\ this\ when\ making\ changes\ that\ should\ invalidate\ old\ save\ data.}}
+\DoxyCodeLine{00084\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}Skill\ Tree|Versioning"{})}
+\DoxyCodeLine{00085\ \ \ \ \ int32\ Version\ =\ 1;}
+\DoxyCodeLine{00086\ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ The\ display\ name\ of\ the\ skill\ tree.}}
+\DoxyCodeLine{00088\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00089\ \ \ \ \ FString\ Name;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ If\ true,\ the\ root\ node\ will\ be\ explicitly\ displayed\ in\ widget\ representations.}}
+\DoxyCodeLine{00092\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadOnly,\ Category\ =\ "{}Runtime\ Display"{})}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ bDisplayRootNodeInWidget;}
+\DoxyCodeLine{00094\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ The\ default\ class\ type\ for\ nodes\ created\ within\ this\ skill\ tree\ in\ the\ editor.}}
+\DoxyCodeLine{00096\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00097\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>\ NodeType;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ The\ default\ class\ type\ for\ edges\ created\ between\ nodes\ in\ this\ skill\ tree\ in\ the\ editor.}}
+\DoxyCodeLine{00100\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00101\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimsonSkillTree\_Edge}}>\ EdgeType;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ Gameplay\ tags\ associated\ with\ this\ skill\ tree\ for\ categorization\ and\ filtering.}}
+\DoxyCodeLine{00104\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00105\ \ \ \ \ FGameplayTagContainer\ SkillTreeTags;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ The\ designated\ root\ node\ of\ the\ skill\ tree.\ All\ traversal\ typically\ starts\ from\ here.}}
+\DoxyCodeLine{00108\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00109\ \ \ \ \ TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>\ RootNode;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ A\ flat\ list\ of\ all\ nodes\ contained\ within\ this\ skill\ tree.}}
+\DoxyCodeLine{00112\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00113\ \ \ \ \ TArray<TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>>\ AllNodes;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ Instanced,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00117\ \ \ \ \ TArray<TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}}>>\ VisualNodes;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ If\ true,\ edges\ are\ meaningful\ and\ processed\ in\ this\ tree.}}
+\DoxyCodeLine{00120\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}Crimson|SkillTree"{})}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ bEdgeEnabled;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#if\ WITH\_EDITORONLY\_DATA}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ The\ graph\ representation\ of\ this\ skill\ tree\ used\ in\ the\ editor.}}
+\DoxyCodeLine{00125\ \ \ \ \ UPROPERTY()}
+\DoxyCodeLine{00126\ \ \ \ \ TObjectPtr<class\ UEdGraph>\ EdGraph;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ If\ true,\ nodes\ in\ this\ skill\ tree\ can\ be\ renamed\ in\ the\ editor.}}
+\DoxyCodeLine{00129\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}GenericGraph\_Editor"{})}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ bCanRenameNode;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//\ If\ true,\ this\ skill\ tree\ can\ have\ cyclical\ relationships\ between\ nodes.}}
+\DoxyCodeLine{00133\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ Category\ =\ "{}GenericGraph\_Editor"{})}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ bCanBeCyclical;}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00136\ \};}
+
+\end{DoxyCode}

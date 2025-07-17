@@ -1,0 +1,257 @@
+\doxysection{UCSTMessage\+Subsystem Class Reference}
+\hypertarget{classUCSTMessageSubsystem}{}\label{classUCSTMessageSubsystem}\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+
+
+{\ttfamily \#include $<$CSTMessage\+Subsystem.\+h$>$}
+
+
+
+Inheritance diagram for UCSTMessage\+Subsystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classUCSTMessageSubsystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCSTMessage\+Subsystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classUCSTMessageSubsystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structUCSTMessageSubsystem_1_1FChannelListenerList}{FChannel\+Listener\+List}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{virtual}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_a544cb0151803892ed9f015634ffab72b}{Deinitialize}} () \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{override}}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{typename}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FMessage\+Struct\+Type}} $>$ }\\\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_a3824758f31627b774aa81d4c6ef82bac}{Broadcast\+Message}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}} Channel, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FMessage\+Struct\+Type}} \&Message)
+\item 
+{\footnotesize template$<$typename FMessage\+Struct\+Type $>$ }\\\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Register\+Listener}} (FGameplay\+Tag Channel, TFunction$<$ void(FGameplay\+Tag, const FMessage\+Struct\+Type \&)$>$ \&\&Callback, \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}} Match\+Type=\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}})
+\item 
+{\footnotesize template$<$typename FMessage\+Struct\+Type , typename TOwner  = UObject$>$ }\\\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUCSTMessageSubsystem_a5ec5abb2579f5742d1bd6ed03c86f774}{Register\+Listener}} (FGameplay\+Tag Channel, TOwner \texorpdfstring{$\ast$}{*}Object, void(TOwner\+::\texorpdfstring{$\ast$}{*}Function)(FGameplay\+Tag, const FMessage\+Struct\+Type \&))
+\item 
+{\footnotesize template$<$typename FMessage\+Struct\+Type $>$ }\\\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUCSTMessageSubsystem_a81285c60ea53ceebbe24873a6cb08cc7}{Register\+Listener}} (FGameplay\+Tag Channel, \mbox{\hyperlink{structFCSTMessageListenerParams}{FCSTMessage\+Listener\+Params}}$<$ FMessage\+Struct\+Type $>$ \&Params)
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_ab7b9261adc8f1ca089f689c419452345}{Unregister\+Listener}} (\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Handle}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{static}} \mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessage\+Subsystem}} \& \mbox{\hyperlink{classUCSTMessageSubsystem_a27b9073b70f9501bddff5e3c2cc976af}{Get}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} UObject \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{World\+Context\+Object}})
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{static}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{bool}} \mbox{\hyperlink{classUCSTMessageSubsystem_a224f2c951f2832a30b15d3324a46a6b1}{Has\+Instance}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} UObject \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{World\+Context\+Object}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_ac8398def55da93345b5c65efc459daea}{K2\+\_\+\+Broadcast\+Message}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}} Channel, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{int32}} \&Message)
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a118d08ed72f92176ac22e8e7f662b15e}{DECLARE\+\_\+\+FUNCTION}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{exec\+K2\+\_\+\+Broadcast\+Message}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_acab46ce51f42c42363e747b207f7d169}{Broadcast\+Message\+Internal}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}} Channel, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Struct\+Type}}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Message\+Bytes}})
+\item 
+\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUCSTMessageSubsystem_a6cec3357396500809eb20a40f076a5a5}{Register\+Listener\+Internal}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}} Channel, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{TFunction}}$<$ \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}}(\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \texorpdfstring{$\ast$}{*})$>$ \&\&\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Callback}}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{Struct\+Type}}, \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}} Match\+Type)
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \mbox{\hyperlink{classUCSTMessageSubsystem_a1b2bb59dd244f9805d5e380aa335c3e5}{Unregister\+Listener\+Internal}} (\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}} Channel, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{int32}} Handle\+ID)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{friend}} \mbox{\hyperlink{classUCSTMessageSubsystem_a0314817bc4e6cf4dfc8ab838bb874419}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}}
+\item 
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{TMap}}$<$ \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}, \mbox{\hyperlink{structUCSTMessageSubsystem_1_1FChannelListenerList}{FChannel\+Listener\+List}} $>$ \mbox{\hyperlink{classUCSTMessageSubsystem_aff4e589f1bf7f1a8a96dec5fa5fb59ba}{Listener\+Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This system allows event raisers and listeners to register for messages without having to know about each other directly, though they must agree on the format of the message (as a \doxylink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{USTRUCT()} type).
+
+You can get to the message router from the game instance\+: UGame\+Instance\+::\+Get\+Subsystem$<$\+UCSTMessage\+Subsystem$>$(\+Game\+Instance) or directly from anything that has a route to a world\+: UCSTMessage\+Subsystem\+::\+Get(\+World\+Context\+Object)
+
+Note that call order when there are multiple listeners for the same channel is not guaranteed and can change over time! 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCSTMessageSubsystem_a3824758f31627b774aa81d4c6ef82bac}\label{classUCSTMessageSubsystem_a3824758f31627b774aa81d4c6ef82bac} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!BroadcastMessage@{BroadcastMessage}}
+\index{BroadcastMessage@{BroadcastMessage}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{BroadcastMessage()}{BroadcastMessage()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{typename}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FMessage\+Struct\+Type}} $>$ \\
+\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+Broadcast\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}}]{Channel,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FMessage\+Struct\+Type}} \&}]{Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Broadcast a message on the specified channel
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to broadcast on \\
+\hline
+{\em Message} & The message to send (must be the same type of UScript\+Struct expected by the listeners for this channel, otherwise an error will be logged) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCSTMessageSubsystem_acab46ce51f42c42363e747b207f7d169}\label{classUCSTMessageSubsystem_acab46ce51f42c42363e747b207f7d169} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!BroadcastMessageInternal@{BroadcastMessageInternal}}
+\index{BroadcastMessageInternal@{BroadcastMessageInternal}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{BroadcastMessageInternal()}{BroadcastMessageInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+Broadcast\+Message\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}}]{Channel,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}}]{Struct\+Type,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \texorpdfstring{$\ast$}{*}}]{Message\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCSTMessageSubsystem_a118d08ed72f92176ac22e8e7f662b15e}\label{classUCSTMessageSubsystem_a118d08ed72f92176ac22e8e7f662b15e} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!DECLARE\_FUNCTION@{DECLARE\_FUNCTION}}
+\index{DECLARE\_FUNCTION@{DECLARE\_FUNCTION}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_FUNCTION()}{DECLARE\_FUNCTION()}}
+{\footnotesize\ttfamily UCSTMessage\+Subsystem\+::\+DECLARE\+\_\+\+FUNCTION (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{exec\+K2\+\_\+\+Broadcast\+Message}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCSTMessageSubsystem_a544cb0151803892ed9f015634ffab72b}\label{classUCSTMessageSubsystem_a544cb0151803892ed9f015634ffab72b} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!Deinitialize@{Deinitialize}}
+\index{Deinitialize@{Deinitialize}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{Deinitialize()}{Deinitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{virtual}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+Deinitialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCSTMessageSubsystem_a27b9073b70f9501bddff5e3c2cc976af}\label{classUCSTMessageSubsystem_a27b9073b70f9501bddff5e3c2cc976af} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!Get@{Get}}
+\index{Get@{Get}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{static}} \mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessage\+Subsystem}} \& UCSTMessage\+Subsystem\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} UObject \texorpdfstring{$\ast$}{*}}]{World\+Context\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the message router for the game instance associated with the world of the specified object 
+\end{DoxyReturn}
+\Hypertarget{classUCSTMessageSubsystem_a224f2c951f2832a30b15d3324a46a6b1}\label{classUCSTMessageSubsystem_a224f2c951f2832a30b15d3324a46a6b1} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!HasInstance@{HasInstance}}
+\index{HasInstance@{HasInstance}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{HasInstance()}{HasInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{static}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{bool}} UCSTMessage\+Subsystem\+::\+Has\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} UObject \texorpdfstring{$\ast$}{*}}]{World\+Context\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+true if a valid Gameplay\+Message\+Router subsystem if active in the provided world 
+\end{DoxyReturn}
+\Hypertarget{classUCSTMessageSubsystem_ac8398def55da93345b5c65efc459daea}\label{classUCSTMessageSubsystem_ac8398def55da93345b5c65efc459daea} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!K2\_BroadcastMessage@{K2\_BroadcastMessage}}
+\index{K2\_BroadcastMessage@{K2\_BroadcastMessage}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{K2\_BroadcastMessage()}{K2\_BroadcastMessage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+K2\+\_\+\+Broadcast\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}}]{Channel,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{int32}} \&}]{Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Broadcast a message on the specified channel
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to broadcast on \\
+\hline
+{\em Message} & The message to send (must be the same type of UScript\+Struct expected by the listeners for this channel, otherwise an error will be logged) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCSTMessageSubsystem_a81285c60ea53ceebbe24873a6cb08cc7}\label{classUCSTMessageSubsystem_a81285c60ea53ceebbe24873a6cb08cc7} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!RegisterListener@{RegisterListener}}
+\index{RegisterListener@{RegisterListener}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{RegisterListener()}{RegisterListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FMessage\+Struct\+Type $>$ \\
+\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} UCSTMessage\+Subsystem\+::\+Register\+Listener (\begin{DoxyParamCaption}\item[{FGameplay\+Tag}]{Channel,  }\item[{\mbox{\hyperlink{structFCSTMessageListenerParams}{FCSTMessage\+Listener\+Params}}$<$ FMessage\+Struct\+Type $>$ \&}]{Params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Register to receive messages on a specified channel with extra parameters to support advanced behavior The stateful part of this logic should probably be separated out to a separate system
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to listen to \\
+\hline
+{\em Params} & Structure containing details for advanced behavior\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a handle that can be used to unregister this listener (either by calling Unregister() on the handle or calling Unregister\+Listener on the router) 
+\end{DoxyReturn}
+\Hypertarget{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}\label{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!RegisterListener@{RegisterListener}}
+\index{RegisterListener@{RegisterListener}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{RegisterListener()}{RegisterListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FMessage\+Struct\+Type $>$ \\
+\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} UCSTMessage\+Subsystem\+::\+Register\+Listener (\begin{DoxyParamCaption}\item[{FGameplay\+Tag}]{Channel,  }\item[{TFunction$<$ void(FGameplay\+Tag, const FMessage\+Struct\+Type \&)$>$ \&\&}]{Callback,  }\item[{\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}}}]{Match\+Type = {\ttfamily \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Register to receive messages on a specified channel
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to listen to \\
+\hline
+{\em Callback} & Function to call with the message when someone broadcasts it (must be the same type of UScript\+Struct provided by broadcasters for this channel, otherwise an error will be logged)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a handle that can be used to unregister this listener (either by calling Unregister() on the handle or calling Unregister\+Listener on the router) 
+\end{DoxyReturn}
+\Hypertarget{classUCSTMessageSubsystem_a5ec5abb2579f5742d1bd6ed03c86f774}\label{classUCSTMessageSubsystem_a5ec5abb2579f5742d1bd6ed03c86f774} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!RegisterListener@{RegisterListener}}
+\index{RegisterListener@{RegisterListener}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{RegisterListener()}{RegisterListener()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FMessage\+Struct\+Type , typename TOwner  = UObject$>$ \\
+\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} UCSTMessage\+Subsystem\+::\+Register\+Listener (\begin{DoxyParamCaption}\item[{FGameplay\+Tag}]{Channel,  }\item[{TOwner \texorpdfstring{$\ast$}{*}}]{Object,  }\item[{void(TOwner\+::\texorpdfstring{$\ast$}{*})(FGameplay\+Tag, const FMessage\+Struct\+Type \&)}]{Function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Register to receive messages on a specified channel and handle it with a specified member function Executes a weak object validity check to ensure the object registering the function still exists before triggering the callback
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to listen to \\
+\hline
+{\em Object} & The object instance to call the function on \\
+\hline
+{\em Function} & Member function to call with the message when someone broadcasts it (must be the same type of UScript\+Struct provided by broadcasters for this channel, otherwise an error will be logged)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a handle that can be used to unregister this listener (either by calling Unregister() on the handle or calling Unregister\+Listener on the router) 
+\end{DoxyReturn}
+\Hypertarget{classUCSTMessageSubsystem_a6cec3357396500809eb20a40f076a5a5}\label{classUCSTMessageSubsystem_a6cec3357396500809eb20a40f076a5a5} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!RegisterListenerInternal@{RegisterListenerInternal}}
+\index{RegisterListenerInternal@{RegisterListenerInternal}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{RegisterListenerInternal()}{RegisterListenerInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} UCSTMessage\+Subsystem\+::\+Register\+Listener\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}}]{Channel,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{TFunction}}$<$ \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}}(\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} \texorpdfstring{$\ast$}{*})$>$ \&\&}]{Callback,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{const}} \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{UScript\+Struct}} \texorpdfstring{$\ast$}{*}}]{Struct\+Type,  }\item[{\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}}}]{Match\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCSTMessageSubsystem_ab7b9261adc8f1ca089f689c419452345}\label{classUCSTMessageSubsystem_ab7b9261adc8f1ca089f689c419452345} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!UnregisterListener@{UnregisterListener}}
+\index{UnregisterListener@{UnregisterListener}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{UnregisterListener()}{UnregisterListener()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+Unregister\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}}}]{Handle }\end{DoxyParamCaption})}
+
+Remove a message listener previously registered by Register\+Listener
+
+
+\begin{DoxyParams}{Parameters}
+{\em Handle} & The handle returned by Register\+Listener \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCSTMessageSubsystem_a1b2bb59dd244f9805d5e380aa335c3e5}\label{classUCSTMessageSubsystem_a1b2bb59dd244f9805d5e380aa335c3e5} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!UnregisterListenerInternal@{UnregisterListenerInternal}}
+\index{UnregisterListenerInternal@{UnregisterListenerInternal}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{UnregisterListenerInternal()}{UnregisterListenerInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{void}} UCSTMessage\+Subsystem\+::\+Unregister\+Listener\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}}]{Channel,  }\item[{\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{int32}}}]{Handle\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCSTMessageSubsystem_aff4e589f1bf7f1a8a96dec5fa5fb59ba}\label{classUCSTMessageSubsystem_aff4e589f1bf7f1a8a96dec5fa5fb59ba} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!ListenerMap@{ListenerMap}}
+\index{ListenerMap@{ListenerMap}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{ListenerMap}{ListenerMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{TMap}}$<$\mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{FGameplay\+Tag}}, \mbox{\hyperlink{structUCSTMessageSubsystem_1_1FChannelListenerList}{FChannel\+Listener\+List}}$>$ UCSTMessage\+Subsystem\+::\+Listener\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCSTMessageSubsystem_a0314817bc4e6cf4dfc8ab838bb874419}\label{classUCSTMessageSubsystem_a0314817bc4e6cf4dfc8ab838bb874419} 
+\index{UCSTMessageSubsystem@{UCSTMessageSubsystem}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!UCSTMessageSubsystem@{UCSTMessageSubsystem}}
+\doxysubsubsection{\texorpdfstring{UAsyncAction\_ListenForCSTMessage}{UAsyncAction\_ListenForCSTMessage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{friend}} UCSTMessage\+Subsystem\+::\+UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Message\+Subsystem/\mbox{\hyperlink{CSTMessageSubsystem_8h}{CSTMessage\+Subsystem.\+h}}\end{DoxyCompactItemize}

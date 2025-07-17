@@ -1,0 +1,79 @@
+\doxysection{FNode\+Cost\+Definition Struct Reference}
+\hypertarget{structFNodeCostDefinition}{}\label{structFNodeCostDefinition}\index{FNodeCostDefinition@{FNodeCostDefinition}}
+
+
+Defines a specific type of resource cost (e.\+g., Skill Points, Gold). This is a hashable struct, allowing it to be used as a key in TMaps.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structFNodeCostDefinition_a628ef71c04c9f5061863c8acf17c3818}{operator==}} (const \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} \&Other) const
+\item 
+FText \mbox{\hyperlink{structFNodeCostDefinition_a2a5d0e855def5dff72f01600d0289c30}{Get\+Resource\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd}{ENode\+Cost\+Source}} \mbox{\hyperlink{structFNodeCostDefinition_a77a6ae0928c01603c7110d90c5e68169}{Cost\+Source}} = \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda78bf044ae090f0eb9bcb6dd017f54a7a}{ENode\+Cost\+Source\+::\+No\+Cost}}
+\item 
+FText \mbox{\hyperlink{structFNodeCostDefinition_a64c8e0f9653103eee5e1776da1d155fc}{Resource\+User\+Facing\+Name}}
+\item 
+FName \mbox{\hyperlink{structFNodeCostDefinition_a94459d025cd799aa0b4d0c6df237b18f}{Actor\+Resource\+Property\+Name}}
+\item 
+FGameplay\+Attribute \mbox{\hyperlink{structFNodeCostDefinition_adb4d0e0dda5d1ba29d62b5f3b64edb0e}{Resource\+Gameplay\+Attribute}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a specific type of resource cost (e.\+g., Skill Points, Gold). This is a hashable struct, allowing it to be used as a key in TMaps. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structFNodeCostDefinition_a2a5d0e855def5dff72f01600d0289c30}\label{structFNodeCostDefinition_a2a5d0e855def5dff72f01600d0289c30} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!GetResourceName@{GetResourceName}}
+\index{GetResourceName@{GetResourceName}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{GetResourceName()}{GetResourceName()}}
+{\footnotesize\ttfamily FText FNode\+Cost\+Definition\+::\+Get\+Resource\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structFNodeCostDefinition_a628ef71c04c9f5061863c8acf17c3818}\label{structFNodeCostDefinition_a628ef71c04c9f5061863c8acf17c3818} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!operator==@{operator==}}
+\index{operator==@{operator==}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool FNode\+Cost\+Definition\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} \&}]{Other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFNodeCostDefinition_a94459d025cd799aa0b4d0c6df237b18f}\label{structFNodeCostDefinition_a94459d025cd799aa0b4d0c6df237b18f} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!ActorResourcePropertyName@{ActorResourcePropertyName}}
+\index{ActorResourcePropertyName@{ActorResourcePropertyName}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{ActorResourcePropertyName}{ActorResourcePropertyName}}
+{\footnotesize\ttfamily FName FNode\+Cost\+Definition\+::\+Actor\+Resource\+Property\+Name}
+
+\Hypertarget{structFNodeCostDefinition_a77a6ae0928c01603c7110d90c5e68169}\label{structFNodeCostDefinition_a77a6ae0928c01603c7110d90c5e68169} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!CostSource@{CostSource}}
+\index{CostSource@{CostSource}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{CostSource}{CostSource}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd}{ENode\+Cost\+Source}} FNode\+Cost\+Definition\+::\+Cost\+Source = \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda78bf044ae090f0eb9bcb6dd017f54a7a}{ENode\+Cost\+Source\+::\+No\+Cost}}}
+
+\Hypertarget{structFNodeCostDefinition_adb4d0e0dda5d1ba29d62b5f3b64edb0e}\label{structFNodeCostDefinition_adb4d0e0dda5d1ba29d62b5f3b64edb0e} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!ResourceGameplayAttribute@{ResourceGameplayAttribute}}
+\index{ResourceGameplayAttribute@{ResourceGameplayAttribute}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{ResourceGameplayAttribute}{ResourceGameplayAttribute}}
+{\footnotesize\ttfamily FGameplay\+Attribute FNode\+Cost\+Definition\+::\+Resource\+Gameplay\+Attribute}
+
+\Hypertarget{structFNodeCostDefinition_a64c8e0f9653103eee5e1776da1d155fc}\label{structFNodeCostDefinition_a64c8e0f9653103eee5e1776da1d155fc} 
+\index{FNodeCostDefinition@{FNodeCostDefinition}!ResourceUserFacingName@{ResourceUserFacingName}}
+\index{ResourceUserFacingName@{ResourceUserFacingName}!FNodeCostDefinition@{FNodeCostDefinition}}
+\doxysubsubsection{\texorpdfstring{ResourceUserFacingName}{ResourceUserFacingName}}
+{\footnotesize\ttfamily FText FNode\+Cost\+Definition\+::\+Resource\+User\+Facing\+Name}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Nodes/\+Cost/\mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h}}\end{DoxyCompactItemize}

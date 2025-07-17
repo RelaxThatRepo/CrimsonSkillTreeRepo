@@ -1,0 +1,110 @@
+\doxysection{Source/\+Crimson\+Skill\+Tree/\+Nodes/\+Cost/\+Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.h File Reference}
+\hypertarget{CrimsonSkillTree__NodeCost_8h}{}\label{CrimsonSkillTree__NodeCost_8h}\index{Source/CrimsonSkillTree/Nodes/Cost/CrimsonSkillTree\_NodeCost.h@{Source/CrimsonSkillTree/Nodes/Cost/CrimsonSkillTree\_NodeCost.h}}
+{\ttfamily \#include "{}Core\+Minimal.\+h"{}}\newline
+{\ttfamily \#include "{}Gameplay\+Effect\+Types.\+h"{}}\newline
+{\ttfamily \#include "{}Engine/\+Data\+Table.\+h"{}}\newline
+{\ttfamily \#include "{}Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+generated.\+h"{}}\newline
+Include dependency graph for Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CrimsonSkillTree__NodeCost_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CrimsonSkillTree__NodeCost_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}}
+\begin{DoxyCompactList}\small\item\em Defines a specific type of resource cost (e.\+g., Skill Points, Gold). This is a hashable struct, allowing it to be used as a key in TMaps. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structFNodeResourceCost}{FNode\+Resource\+Cost}}
+\begin{DoxyCompactList}\small\item\em Defines the amount of a resource required, potentially scaling with level. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structFResolvedNodeCost}{FResolved\+Node\+Cost}}
+\begin{DoxyCompactList}\small\item\em A simple struct to hold a calculated cost amount and its definition at runtime. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a0de3ae51f3a629a8e5d113f1b9390da7}{LOCTEXT\+\_\+\+NAMESPACE}}~"{}Crimson\+Skill\+Tree"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd}{ENode\+Cost\+Source}} \+: uint8 \{ \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda78bf044ae090f0eb9bcb6dd017f54a7a}{No\+Cost}}
+, \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda547076ea3776dc2515bdd95bad3af0ff}{Actor\+Integer\+Property}}
+, \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda3e4f2f77c8bd735878370209b774dcb4}{Gameplay\+Attribute\+Value}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the source of a resource used for skill node costs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32 \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_ad01f88b8896feb2d2e026dcccf665b12}{Get\+Type\+Hash}} (const \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} \&Def)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{CrimsonSkillTree__NodeCost_8h_a0de3ae51f3a629a8e5d113f1b9390da7}\label{CrimsonSkillTree__NodeCost_8h_a0de3ae51f3a629a8e5d113f1b9390da7} 
+\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!LOCTEXT\_NAMESPACE@{LOCTEXT\_NAMESPACE}}
+\index{LOCTEXT\_NAMESPACE@{LOCTEXT\_NAMESPACE}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}
+\doxysubsubsection{\texorpdfstring{LOCTEXT\_NAMESPACE}{LOCTEXT\_NAMESPACE}}
+{\footnotesize\ttfamily \#define LOCTEXT\+\_\+\+NAMESPACE~"{}Crimson\+Skill\+Tree"{}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd}\label{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd} 
+\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!ENodeCostSource@{ENodeCostSource}}
+\index{ENodeCostSource@{ENodeCostSource}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}
+\doxysubsubsection{\texorpdfstring{ENodeCostSource}{ENodeCostSource}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bd}{ENode\+Cost\+Source}} \+: uint8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the source of a resource used for skill node costs. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoCost@{NoCost}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!NoCost@{NoCost}}}\Hypertarget{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda78bf044ae090f0eb9bcb6dd017f54a7a}\label{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda78bf044ae090f0eb9bcb6dd017f54a7a} 
+No\+Cost&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ActorIntegerProperty@{ActorIntegerProperty}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!ActorIntegerProperty@{ActorIntegerProperty}}}\Hypertarget{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda547076ea3776dc2515bdd95bad3af0ff}\label{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda547076ea3776dc2515bdd95bad3af0ff} 
+Actor\+Integer\+Property&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameplayAttributeValue@{GameplayAttributeValue}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!GameplayAttributeValue@{GameplayAttributeValue}}}\Hypertarget{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda3e4f2f77c8bd735878370209b774dcb4}\label{CrimsonSkillTree__NodeCost_8h_a74955e8c8617f5c679e0cf47c43f54bda3e4f2f77c8bd735878370209b774dcb4} 
+Gameplay\+Attribute\+Value&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{CrimsonSkillTree__NodeCost_8h_ad01f88b8896feb2d2e026dcccf665b12}\label{CrimsonSkillTree__NodeCost_8h_ad01f88b8896feb2d2e026dcccf665b12} 
+\index{CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}!GetTypeHash@{GetTypeHash}}
+\index{GetTypeHash@{GetTypeHash}!CrimsonSkillTree\_NodeCost.h@{CrimsonSkillTree\_NodeCost.h}}
+\doxysubsubsection{\texorpdfstring{GetTypeHash()}{GetTypeHash()}}
+{\footnotesize\ttfamily uint32 Get\+Type\+Hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} \&}]{Def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{CrimsonSkillTree__NodeCost_8h_ad01f88b8896feb2d2e026dcccf665b12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{CrimsonSkillTree__NodeCost_8h_ad01f88b8896feb2d2e026dcccf665b12_icgraph}
+\end{center}
+\end{figure}

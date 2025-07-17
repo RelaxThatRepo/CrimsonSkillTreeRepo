@@ -1,0 +1,37 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Visual.\+h}
+\hypertarget{CrimsonSkillTree__GraphNode__Visual_8h_source}{}\label{CrimsonSkillTree__GraphNode__Visual_8h_source}\index{Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree\_GraphNode\_Visual.h@{Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree\_GraphNode\_Visual.h}}
+\mbox{\hyperlink{CrimsonSkillTree__GraphNode__Visual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}EdGraph/EdGraphNode.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_GraphNode\_Visual.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ UCLASS()}
+\DoxyCodeLine{00017\ class\ CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual}{UCrimsonSkillTree\_GraphNode\_Visual}}\ :\ public\ UEdGraphNode}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual_ac8a50d7b0f8ae1aaf7a1adcd68430dd4}{UCrimsonSkillTree\_GraphNode\_Visual}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ Instanced,\ Category\ =\ \textcolor{stringliteral}{"{}Visual\ Node"{}})}
+\DoxyCodeLine{00026\ \ \ \ \ TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}}>\ VisualNode;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\string~\ UEdGraphNode\ interface}}
+\DoxyCodeLine{00029\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ AllocateDefaultPins()\ override;}
+\DoxyCodeLine{00030\ \ \ \ \ virtual\ FText\ GetNodeTitle(ENodeTitleType::Type\ TitleType)\ const\ override;}
+\DoxyCodeLine{00031\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ PrepareForCopying()\ override;}
+\DoxyCodeLine{00032\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ CanUserDeleteNode()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual_aa22a98ced8dd58f04738569b86d74478}{CanDuplicateNode}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UEdGraphNode\ interface}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Visual_a40e7493ab1187a080921ed13d3d98f82}{SetSize}}(\textcolor{keyword}{const}\ FVector2D\&\ NewSize);}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

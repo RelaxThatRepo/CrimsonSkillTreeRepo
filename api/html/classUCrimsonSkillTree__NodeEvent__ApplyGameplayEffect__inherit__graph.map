@@ -1,0 +1,7 @@
+<map id="UCrimsonSkillTree_NodeEvent_ApplyGameplayEffect" name="UCrimsonSkillTree_NodeEvent_ApplyGameplayEffect">
+<area shape="rect" id="Node000001" title="A skill node event that applies a specified GameplayEffect to the owner. This event handles the appli..." alt="" coords="21,152,240,192"/>
+<area shape="rect" id="Node000002" href="$classUCrimsonSkillTree__NodeEventBase.html" title="Base class for events that are triggered by changes in a skill node&#39;s state (e.g.,..." alt="" coords="5,79,256,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,118,133,152,128,152,128,118"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,5,168,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,44,133,79,128,79,128,44"/>
+</map>

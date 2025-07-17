@@ -1,0 +1,28 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property Class Reference}
+\hypertarget{classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty}{}\label{classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty}\index{UCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty@{UCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty}}
+
+
+A base skill node event designed to modify a specified float UPROPERTY on the owning ACharacter or its UCharacter\+Movement\+Component.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+A base skill node event designed to modify a specified float UPROPERTY on the owning ACharacter or its UCharacter\+Movement\+Component. 
+
+This event applies an additive change per skill level. When a skill node\textquotesingle{}s level increases, the configured value per level is added to the target property. When it decreases or the node is reset, the corresponding value is subtracted.
+
+The target property is identified by its FName. This class uses reflection to find and modify the property, so ensure the property name is correct and the property is a float.
+
+\begin{DoxyNote}{Note}
+This event should typically be executed on the server if the modified property affects gameplay mechanics and needs to be authoritative. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Events/\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,361 @@
+\doxysection{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display Class Reference}
+\hypertarget{classUCrimsonSkillTreeWidget__Display}{}\label{classUCrimsonSkillTreeWidget__Display}\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+
+
+The main container widget for the skill tree UI. This widget manages input, holds the graph display, and orchestrates the overall user experience. It is designed as a Common\+Activatable\+Widget for easy integration into game UI flows.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+Widget\+\_\+\+Display.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classUCrimsonSkillTreeWidget__Display__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classUCrimsonSkillTreeWidget__Display__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a29ecd0fae5d7398ec0357f59835475fc}{Display\+Skill\+Tree\+By\+Type}} (FGameplay\+Tag Skill\+Tree\+Type\+Tag)
+\begin{DoxyCompactList}\small\item\em Initializes the display with a skill tree instance identified by its type tag. This is the correct way to show a skill tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_afd589470d0f0f4c4278fd6094de9f4a8}{Set\+Skill\+Tree}} (\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*}In\+Skill\+Tree)
+\begin{DoxyCompactList}\small\item\em Sets the skill tree asset to be displayed and refreshes the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a9860007815b447168ca3e9fe939281c6}{Refresh\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Refreshes the graph display using the current skill tree asset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a98b3b4f5f2358a8f4a40a0fb33795442}{Set\+Hovered\+Node\+Widget}} (\mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Node\+Widget)
+\begin{DoxyCompactList}\small\item\em Sets the currently hovered node widget. Called by the node widget itself on mouse enter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a86d617fbc8d5cbd3443a70aeea045754}{Clear\+Hovered\+Node\+Widget}} (const \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Node\+Widget)
+\begin{DoxyCompactList}\small\item\em Clears the hovered node widget. Called by the node widget on mouse leave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_af6860dc2fb1be6487edef2a4df516778}{Native\+On\+Initialized}} () override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_af73c7d19c65c87005c7f2b39d1437408}{Native\+On\+Activated}} () override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_ad30772dd8346b6c19e0c00de73176a56}{Native\+On\+Deactivated}} () override
+\item 
+virtual TOptional$<$ FUIInput\+Config $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a73e6f33b323610d2ddc1ff434f87f236}{Get\+Desired\+Input\+Config}} () const override
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a66693d6edf3fbd7cb4b6b7a4a4c5ea4c}{Bind\+Input\+Actions}} ()
+\begin{DoxyCompactList}\small\item\em Binds the Enhanced Input actions to their handler functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a4f48d0c93b7f543d0f6c1dbb923fe5a1}{Unbind\+Input\+Actions}} ()
+\begin{DoxyCompactList}\small\item\em Unbinds all input actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a7fd5e45877ab9fa1ac92f7fb35272302}{Handle\+Pan\+Toggle\+Started}} (const struct FInput\+Action\+Value \&Value)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a840c8e903f5e0f632de5f5d01302f729}{Handle\+Pan\+Toggle\+Completed}} (const struct FInput\+Action\+Value \&Value)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_af2eba7327d3ca758d23ed8fb60337977}{Handle\+Zoom\+Action}} (const struct FInput\+Action\+Value \&Value)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_ab241f5ba69762cc00e48d40fa156061a}{Handle\+Node\+Primary\+Action}} (const FInput\+Action\+Value \&Value)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a3aceacde8cced87068e36138dfb4261d}{Handle\+Node\+Secondary\+Action}} (const FInput\+Action\+Value \&Value)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_ad9e4fd3e97ccda916f2c3436af2199de}{Update\+Pan\+On\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em The function called by a timer to smoothly update the graph\textquotesingle{}s pan position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUCrimsonSkillTreeManager}{UCrimson\+Skill\+Tree\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a1e2a9587f945b89447faefadcbc4f085}{Get\+Skill\+Tree\+Manager}} () const
+\begin{DoxyCompactList}\small\item\em A robust way to get the player\textquotesingle{}s skill tree manager component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Graph}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Graph}} $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a165ad216dacafc822b7c8862858812e2}{Skill\+Tree\+Graph}}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a6b9496ac98bef1c32a189f90ec25cf9d}{Current\+Skill\+Tree}}
+\item 
+TObject\+Ptr$<$ UInput\+Mapping\+Context $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a76e155fc9ebe074ed95384610179bd48}{Skill\+Tree\+Input\+Mapping\+Context}}
+\item 
+TObject\+Ptr$<$ UInput\+Action $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_afa8bf18eeb15e7c1c0904c81b97989a0}{Pan\+Toggle\+Action}}
+\item 
+TObject\+Ptr$<$ UInput\+Action $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_ac554fe254a1f2a0d2e212ae1fc2fd53f}{Zoom\+Action}}
+\item 
+TObject\+Ptr$<$ UInput\+Action $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a832b8ea3aee85296a115f2c9aa9af681}{Node\+Primary\+Action}}
+\item 
+TObject\+Ptr$<$ UInput\+Action $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a00b172a803366422dd60ab8ba8ca8db6}{Node\+Secondary\+Action}}
+\item 
+float \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a7e548bda5fe337b8a90ec15fca26476d}{Pan\+Update\+Interval}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TWeak\+Object\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a3a3187b9acb302f9558f58db34f71ead}{Hovered\+Node\+Widget}}
+\item 
+FTimer\+Handle \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a136bada5ec8f9441b0e18af7abb0151c}{Pan\+Update\+Timer\+Handle}}
+\item 
+bool \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a401a87506cc8944fecd311130cec6e32}{b\+Is\+Panning\+Active}} = false
+\item 
+FVector2D \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a2080956664e7c3bffb05d9d72f75574d}{Pan\+Start\+Mouse\+\_\+\+Viewport\+Space}}
+\item 
+FVector2D \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Display_a80165738f9b26a657285615d580e3420}{Initial\+Canvas\+Translation\+For\+Pan}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main container widget for the skill tree UI. This widget manages input, holds the graph display, and orchestrates the overall user experience. It is designed as a Common\+Activatable\+Widget for easy integration into game UI flows. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a66693d6edf3fbd7cb4b6b7a4a4c5ea4c}\label{classUCrimsonSkillTreeWidget__Display_a66693d6edf3fbd7cb4b6b7a4a4c5ea4c} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!BindInputActions@{BindInputActions}}
+\index{BindInputActions@{BindInputActions}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{BindInputActions()}{BindInputActions()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Bind\+Input\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Binds the Enhanced Input actions to their handler functions. 
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a86d617fbc8d5cbd3443a70aeea045754}\label{classUCrimsonSkillTreeWidget__Display_a86d617fbc8d5cbd3443a70aeea045754} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!ClearHoveredNodeWidget@{ClearHoveredNodeWidget}}
+\index{ClearHoveredNodeWidget@{ClearHoveredNodeWidget}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{ClearHoveredNodeWidget()}{ClearHoveredNodeWidget()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Clear\+Hovered\+Node\+Widget (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Node\+Widget }\end{DoxyParamCaption})}
+
+
+
+Clears the hovered node widget. Called by the node widget on mouse leave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Node\+Widget} & The node widget that is no longer being hovered. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a29ecd0fae5d7398ec0357f59835475fc}\label{classUCrimsonSkillTreeWidget__Display_a29ecd0fae5d7398ec0357f59835475fc} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!DisplaySkillTreeByType@{DisplaySkillTreeByType}}
+\index{DisplaySkillTreeByType@{DisplaySkillTreeByType}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{DisplaySkillTreeByType()}{DisplaySkillTreeByType()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Display\+Skill\+Tree\+By\+Type (\begin{DoxyParamCaption}\item[{FGameplay\+Tag}]{Skill\+Tree\+Type\+Tag }\end{DoxyParamCaption})}
+
+
+
+Initializes the display with a skill tree instance identified by its type tag. This is the correct way to show a skill tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Skill\+Tree\+Type\+Tag} & The tag identifying the skill tree to display. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a73e6f33b323610d2ddc1ff434f87f236}\label{classUCrimsonSkillTreeWidget__Display_a73e6f33b323610d2ddc1ff434f87f236} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!GetDesiredInputConfig@{GetDesiredInputConfig}}
+\index{GetDesiredInputConfig@{GetDesiredInputConfig}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{GetDesiredInputConfig()}{GetDesiredInputConfig()}}
+{\footnotesize\ttfamily virtual TOptional$<$ FUIInput\+Config $>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Get\+Desired\+Input\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a1e2a9587f945b89447faefadcbc4f085}\label{classUCrimsonSkillTreeWidget__Display_a1e2a9587f945b89447faefadcbc4f085} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!GetSkillTreeManager@{GetSkillTreeManager}}
+\index{GetSkillTreeManager@{GetSkillTreeManager}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{GetSkillTreeManager()}{GetSkillTreeManager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTreeManager}{UCrimson\+Skill\+Tree\+Manager}} \texorpdfstring{$\ast$}{*} UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Get\+Skill\+Tree\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A robust way to get the player\textquotesingle{}s skill tree manager component. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classUCrimsonSkillTreeManager}{UCrimson\+Skill\+Tree\+Manager}, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_ab241f5ba69762cc00e48d40fa156061a}\label{classUCrimsonSkillTreeWidget__Display_ab241f5ba69762cc00e48d40fa156061a} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HandleNodePrimaryAction@{HandleNodePrimaryAction}}
+\index{HandleNodePrimaryAction@{HandleNodePrimaryAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HandleNodePrimaryAction()}{HandleNodePrimaryAction()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Handle\+Node\+Primary\+Action (\begin{DoxyParamCaption}\item[{const FInput\+Action\+Value \&}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a3aceacde8cced87068e36138dfb4261d}\label{classUCrimsonSkillTreeWidget__Display_a3aceacde8cced87068e36138dfb4261d} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HandleNodeSecondaryAction@{HandleNodeSecondaryAction}}
+\index{HandleNodeSecondaryAction@{HandleNodeSecondaryAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HandleNodeSecondaryAction()}{HandleNodeSecondaryAction()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Handle\+Node\+Secondary\+Action (\begin{DoxyParamCaption}\item[{const FInput\+Action\+Value \&}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a840c8e903f5e0f632de5f5d01302f729}\label{classUCrimsonSkillTreeWidget__Display_a840c8e903f5e0f632de5f5d01302f729} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HandlePanToggleCompleted@{HandlePanToggleCompleted}}
+\index{HandlePanToggleCompleted@{HandlePanToggleCompleted}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HandlePanToggleCompleted()}{HandlePanToggleCompleted()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Handle\+Pan\+Toggle\+Completed (\begin{DoxyParamCaption}\item[{const struct FInput\+Action\+Value \&}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a7fd5e45877ab9fa1ac92f7fb35272302}\label{classUCrimsonSkillTreeWidget__Display_a7fd5e45877ab9fa1ac92f7fb35272302} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HandlePanToggleStarted@{HandlePanToggleStarted}}
+\index{HandlePanToggleStarted@{HandlePanToggleStarted}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HandlePanToggleStarted()}{HandlePanToggleStarted()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Handle\+Pan\+Toggle\+Started (\begin{DoxyParamCaption}\item[{const struct FInput\+Action\+Value \&}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Input Action Handlers \Hypertarget{classUCrimsonSkillTreeWidget__Display_af2eba7327d3ca758d23ed8fb60337977}\label{classUCrimsonSkillTreeWidget__Display_af2eba7327d3ca758d23ed8fb60337977} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HandleZoomAction@{HandleZoomAction}}
+\index{HandleZoomAction@{HandleZoomAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HandleZoomAction()}{HandleZoomAction()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Handle\+Zoom\+Action (\begin{DoxyParamCaption}\item[{const struct FInput\+Action\+Value \&}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_af73c7d19c65c87005c7f2b39d1437408}\label{classUCrimsonSkillTreeWidget__Display_af73c7d19c65c87005c7f2b39d1437408} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!NativeOnActivated@{NativeOnActivated}}
+\index{NativeOnActivated@{NativeOnActivated}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{NativeOnActivated()}{NativeOnActivated()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Native\+On\+Activated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_ad30772dd8346b6c19e0c00de73176a56}\label{classUCrimsonSkillTreeWidget__Display_ad30772dd8346b6c19e0c00de73176a56} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!NativeOnDeactivated@{NativeOnDeactivated}}
+\index{NativeOnDeactivated@{NativeOnDeactivated}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{NativeOnDeactivated()}{NativeOnDeactivated()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Native\+On\+Deactivated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_af6860dc2fb1be6487edef2a4df516778}\label{classUCrimsonSkillTreeWidget__Display_af6860dc2fb1be6487edef2a4df516778} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!NativeOnInitialized@{NativeOnInitialized}}
+\index{NativeOnInitialized@{NativeOnInitialized}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{NativeOnInitialized()}{NativeOnInitialized()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Native\+On\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a9860007815b447168ca3e9fe939281c6}\label{classUCrimsonSkillTreeWidget__Display_a9860007815b447168ca3e9fe939281c6} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!RefreshDisplay@{RefreshDisplay}}
+\index{RefreshDisplay@{RefreshDisplay}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{RefreshDisplay()}{RefreshDisplay()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Refresh\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refreshes the graph display using the current skill tree asset. 
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a98b3b4f5f2358a8f4a40a0fb33795442}\label{classUCrimsonSkillTreeWidget__Display_a98b3b4f5f2358a8f4a40a0fb33795442} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!SetHoveredNodeWidget@{SetHoveredNodeWidget}}
+\index{SetHoveredNodeWidget@{SetHoveredNodeWidget}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{SetHoveredNodeWidget()}{SetHoveredNodeWidget()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Set\+Hovered\+Node\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Node\+Widget }\end{DoxyParamCaption})}
+
+
+
+Sets the currently hovered node widget. Called by the node widget itself on mouse enter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Node\+Widget} & The node widget that is being hovered. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_afd589470d0f0f4c4278fd6094de9f4a8}\label{classUCrimsonSkillTreeWidget__Display_afd589470d0f0f4c4278fd6094de9f4a8} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!SetSkillTree@{SetSkillTree}}
+\index{SetSkillTree@{SetSkillTree}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{SetSkillTree()}{SetSkillTree()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Set\+Skill\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*}}]{In\+Skill\+Tree }\end{DoxyParamCaption})}
+
+
+
+Sets the skill tree asset to be displayed and refreshes the graph. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]This function is unsafe as it can be accidentally used with a template asset. Use Display\+Skill\+Tree\+By\+Type instead. \end{DoxyRefDesc}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a4f48d0c93b7f543d0f6c1dbb923fe5a1}\label{classUCrimsonSkillTreeWidget__Display_a4f48d0c93b7f543d0f6c1dbb923fe5a1} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!UnbindInputActions@{UnbindInputActions}}
+\index{UnbindInputActions@{UnbindInputActions}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{UnbindInputActions()}{UnbindInputActions()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Unbind\+Input\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unbinds all input actions. 
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_ad9e4fd3e97ccda916f2c3436af2199de}\label{classUCrimsonSkillTreeWidget__Display_ad9e4fd3e97ccda916f2c3436af2199de} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!UpdatePanOnTimer@{UpdatePanOnTimer}}
+\index{UpdatePanOnTimer@{UpdatePanOnTimer}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{UpdatePanOnTimer()}{UpdatePanOnTimer()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Update\+Pan\+On\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The function called by a timer to smoothly update the graph\textquotesingle{}s pan position. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a401a87506cc8944fecd311130cec6e32}\label{classUCrimsonSkillTreeWidget__Display_a401a87506cc8944fecd311130cec6e32} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!bIsPanningActive@{bIsPanningActive}}
+\index{bIsPanningActive@{bIsPanningActive}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{bIsPanningActive}{bIsPanningActive}}
+{\footnotesize\ttfamily bool UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::b\+Is\+Panning\+Active = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a6b9496ac98bef1c32a189f90ec25cf9d}\label{classUCrimsonSkillTreeWidget__Display_a6b9496ac98bef1c32a189f90ec25cf9d} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!CurrentSkillTree@{CurrentSkillTree}}
+\index{CurrentSkillTree@{CurrentSkillTree}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{CurrentSkillTree}{CurrentSkillTree}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}}$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Current\+Skill\+Tree\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a3a3187b9acb302f9558f58db34f71ead}\label{classUCrimsonSkillTreeWidget__Display_a3a3187b9acb302f9558f58db34f71ead} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!HoveredNodeWidget@{HoveredNodeWidget}}
+\index{HoveredNodeWidget@{HoveredNodeWidget}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{HoveredNodeWidget}{HoveredNodeWidget}}
+{\footnotesize\ttfamily TWeak\+Object\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Node}}$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Hovered\+Node\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a80165738f9b26a657285615d580e3420}\label{classUCrimsonSkillTreeWidget__Display_a80165738f9b26a657285615d580e3420} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!InitialCanvasTranslationForPan@{InitialCanvasTranslationForPan}}
+\index{InitialCanvasTranslationForPan@{InitialCanvasTranslationForPan}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{InitialCanvasTranslationForPan}{InitialCanvasTranslationForPan}}
+{\footnotesize\ttfamily FVector2D UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Initial\+Canvas\+Translation\+For\+Pan\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a832b8ea3aee85296a115f2c9aa9af681}\label{classUCrimsonSkillTreeWidget__Display_a832b8ea3aee85296a115f2c9aa9af681} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!NodePrimaryAction@{NodePrimaryAction}}
+\index{NodePrimaryAction@{NodePrimaryAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{NodePrimaryAction}{NodePrimaryAction}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UInput\+Action$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Node\+Primary\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a00b172a803366422dd60ab8ba8ca8db6}\label{classUCrimsonSkillTreeWidget__Display_a00b172a803366422dd60ab8ba8ca8db6} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!NodeSecondaryAction@{NodeSecondaryAction}}
+\index{NodeSecondaryAction@{NodeSecondaryAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{NodeSecondaryAction}{NodeSecondaryAction}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UInput\+Action$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Node\+Secondary\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a2080956664e7c3bffb05d9d72f75574d}\label{classUCrimsonSkillTreeWidget__Display_a2080956664e7c3bffb05d9d72f75574d} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!PanStartMouse\_ViewportSpace@{PanStartMouse\_ViewportSpace}}
+\index{PanStartMouse\_ViewportSpace@{PanStartMouse\_ViewportSpace}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{PanStartMouse\_ViewportSpace}{PanStartMouse\_ViewportSpace}}
+{\footnotesize\ttfamily FVector2D UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Pan\+Start\+Mouse\+\_\+\+Viewport\+Space\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_afa8bf18eeb15e7c1c0904c81b97989a0}\label{classUCrimsonSkillTreeWidget__Display_afa8bf18eeb15e7c1c0904c81b97989a0} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!PanToggleAction@{PanToggleAction}}
+\index{PanToggleAction@{PanToggleAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{PanToggleAction}{PanToggleAction}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UInput\+Action$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Pan\+Toggle\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a7e548bda5fe337b8a90ec15fca26476d}\label{classUCrimsonSkillTreeWidget__Display_a7e548bda5fe337b8a90ec15fca26476d} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!PanUpdateInterval@{PanUpdateInterval}}
+\index{PanUpdateInterval@{PanUpdateInterval}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{PanUpdateInterval}{PanUpdateInterval}}
+{\footnotesize\ttfamily float UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Pan\+Update\+Interval\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a136bada5ec8f9441b0e18af7abb0151c}\label{classUCrimsonSkillTreeWidget__Display_a136bada5ec8f9441b0e18af7abb0151c} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!PanUpdateTimerHandle@{PanUpdateTimerHandle}}
+\index{PanUpdateTimerHandle@{PanUpdateTimerHandle}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{PanUpdateTimerHandle}{PanUpdateTimerHandle}}
+{\footnotesize\ttfamily FTimer\+Handle UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Pan\+Update\+Timer\+Handle\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a165ad216dacafc822b7c8862858812e2}\label{classUCrimsonSkillTreeWidget__Display_a165ad216dacafc822b7c8862858812e2} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!SkillTreeGraph@{SkillTreeGraph}}
+\index{SkillTreeGraph@{SkillTreeGraph}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{SkillTreeGraph}{SkillTreeGraph}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTreeWidget__Graph}{UCrimson\+Skill\+Tree\+Widget\+\_\+\+Graph}}$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Skill\+Tree\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_a76e155fc9ebe074ed95384610179bd48}\label{classUCrimsonSkillTreeWidget__Display_a76e155fc9ebe074ed95384610179bd48} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!SkillTreeInputMappingContext@{SkillTreeInputMappingContext}}
+\index{SkillTreeInputMappingContext@{SkillTreeInputMappingContext}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{SkillTreeInputMappingContext}{SkillTreeInputMappingContext}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UInput\+Mapping\+Context$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Skill\+Tree\+Input\+Mapping\+Context\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTreeWidget__Display_ac554fe254a1f2a0d2e212ae1fc2fd53f}\label{classUCrimsonSkillTreeWidget__Display_ac554fe254a1f2a0d2e212ae1fc2fd53f} 
+\index{UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}!ZoomAction@{ZoomAction}}
+\index{ZoomAction@{ZoomAction}!UCrimsonSkillTreeWidget\_Display@{UCrimsonSkillTreeWidget\_Display}}
+\doxysubsubsection{\texorpdfstring{ZoomAction}{ZoomAction}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UInput\+Action$>$ UCrimson\+Skill\+Tree\+Widget\+\_\+\+Display\+::\+Zoom\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+User\+Interface/\mbox{\hyperlink{CrimsonSkillTreeWidget__Display_8h}{Crimson\+Skill\+Tree\+Widget\+\_\+\+Display.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Slate\+Factory.\+h}
+\hypertarget{CrimsonSkillTree__SlateFactory_8h_source}{}\label{CrimsonSkillTree__SlateFactory_8h_source}\index{Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree\_SlateFactory.h@{Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree\_SlateFactory.h}}
+\mbox{\hyperlink{CrimsonSkillTree__SlateFactory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UObject/Object.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_SlateFactory.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ UCLASS(Abstract,\ MinimalAPI)}
+\DoxyCodeLine{00013\ class\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateNodeFactory}{UCrimsonSkillTree\_SlateNodeFactory}}\ :\ public\ UObject}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Implement\ this\ in\ derived\ classes\ to\ create\ the\ specific\ SGraphNode\ widget}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ TSharedPtr<SGraphNode>\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateNodeFactory_ac4a834bd14d0e234f3ceda2ceb6a7fce}{CreateWidget}}(UEdGraphNode*\ InNode)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Base\ implementation\ should\ not\ be\ called\ directly\ or\ return\ a\ default/null}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ checkf(\textcolor{keyword}{false},\ TEXT(\textcolor{stringliteral}{"{}CreateWidget\ must\ be\ implemented\ in\ derived\ class."{}}));}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ UCLASS(Abstract,\ MinimalAPI)}
+\DoxyCodeLine{00028\ class\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateEdgeFactory}{UCrimsonSkillTree\_SlateEdgeFactory}}\ :\ public\ UObject}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Implement\ this\ in\ derived\ classes\ to\ create\ the\ specific\ SGraphNode\ (SGraphEdge)\ widget}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ TSharedPtr<SGraphNode>\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateEdgeFactory_a963410b930936807769de999eabc9a2c}{CreateWidget}}(UEdGraphNode*\ InNode)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ checkf(\textcolor{keyword}{false},\ TEXT(\textcolor{stringliteral}{"{}CreateWidget\ must\ be\ implemented\ in\ derived\ class."{}}));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ UCLASS(MinimalAPI)}
+\DoxyCodeLine{00042\ class\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateNodeFactory__Default}{UCrimsonSkillTree\_SlateNodeFactory\_Default}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateNodeFactory}{UCrimsonSkillTree\_SlateNodeFactory}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ TSharedPtr<SGraphNode>\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateNodeFactory__Default_a968329ece503ab24dafcc6f55c468d2e}{CreateWidget}}(UEdGraphNode*\ InNode)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ UCLASS(MinimalAPI)\ \textcolor{comment}{//\ Not\ abstract}}
+\DoxyCodeLine{00050\ class\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateEdgeFactory__Default}{UCrimsonSkillTree\_SlateEdgeFactory\_Default}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateEdgeFactory}{UCrimsonSkillTree\_SlateEdgeFactory}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ TSharedPtr<SGraphNode>\ \mbox{\hyperlink{classUCrimsonSkillTree__SlateEdgeFactory__Default_a6689ca8f5af8e9fed0967efc0c8a8834}{CreateWidget}}(UEdGraphNode*\ InNode)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00055\ \};}
+
+\end{DoxyCode}

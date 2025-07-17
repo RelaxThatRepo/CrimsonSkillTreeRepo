@@ -1,0 +1,35 @@
+\doxysection{Asset\+Type\+Actions\+\_\+\+Crimson\+Skill\+Tree.\+h}
+\hypertarget{AssetTypeActions__CrimsonSkillTree_8h_source}{}\label{AssetTypeActions__CrimsonSkillTree_8h_source}\index{Source/CrimsonSkillTreeEditor/Actions/AssetTypeActions\_CrimsonSkillTree.h@{Source/CrimsonSkillTreeEditor/Actions/AssetTypeActions\_CrimsonSkillTree.h}}
+\mbox{\hyperlink{AssetTypeActions__CrimsonSkillTree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}AssetTypeActions\_Base.h"{}}\ \textcolor{comment}{//\ Original\ include}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }IToolkitHost;\ \textcolor{comment}{//\ Forward\ declaration\ for\ IToolkitHost\ used\ in\ OpenAssetEditor}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree}{FAssetTypeActions\_CrimsonSkillTree}}:\ \textcolor{keyword}{public}\ FAssetTypeActions\_Base}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_a2571709109fa9176d2b3988319daf76e}{FAssetTypeActions\_CrimsonSkillTree}}(EAssetTypeCategories::Type\ InAssetCategory);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\string~\ FAssetTypeActions\_Base\ Interface}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_af296b0fda43254d3050a8070c6cad8e9}{GetName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ FColor\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_a18dbe3d52c9e195f5cbdcb304a0a9355}{GetTypeColor}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ UClass*\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_a56c6818108adc93d168030165c4a2918}{GetSupportedClass}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_a48bec99273a87be23891923fb709e21c}{OpenAssetEditor}}(\textcolor{keyword}{const}\ TArray<UObject*>\&\ InObjects,\ TSharedPtr<class\ IToolkitHost>\ EditWithinLevelEditor\ =\ TSharedPtr<IToolkitHost>())\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ uint32\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_a3225e8fd78091410219fd5bc4288b596}{GetCategories}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\string~\ End\ FAssetTypeActions\_Base\ Interface}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ EAssetTypeCategories::Type\ \mbox{\hyperlink{classFAssetTypeActions__CrimsonSkillTree_ac8c4be93206091301fd2642c9d241821}{MyAssetCategory}};}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

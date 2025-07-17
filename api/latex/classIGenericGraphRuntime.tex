@@ -1,0 +1,66 @@
+\doxysection{IGeneric\+Graph\+Runtime Class Reference}
+\hypertarget{classIGenericGraphRuntime}{}\label{classIGenericGraphRuntime}\index{IGenericGraphRuntime@{IGenericGraphRuntime}}
+
+
+{\ttfamily \#include $<$ICrimson\+Skill\+Tree\+Module.\+h$>$}
+
+
+
+Inheritance diagram for IGeneric\+Graph\+Runtime\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classIGenericGraphRuntime__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IGeneric\+Graph\+Runtime\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classIGenericGraphRuntime__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classIGenericGraphRuntime}{IGeneric\+Graph\+Runtime}} \& \mbox{\hyperlink{classIGenericGraphRuntime_ab16b56ade640481ca1411296688af684}{Get}} ()
+\item 
+static bool \mbox{\hyperlink{classIGenericGraphRuntime_a440b3a90b3f6ee7a9b92d79329573d79}{Is\+Available}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The public interface to this module 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIGenericGraphRuntime_ab16b56ade640481ca1411296688af684}\label{classIGenericGraphRuntime_ab16b56ade640481ca1411296688af684} 
+\index{IGenericGraphRuntime@{IGenericGraphRuntime}!Get@{Get}}
+\index{Get@{Get}!IGenericGraphRuntime@{IGenericGraphRuntime}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classIGenericGraphRuntime}{IGeneric\+Graph\+Runtime}} \& IGeneric\+Graph\+Runtime\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Singleton-\/like access to this module\textquotesingle{}s interface. This is just for convenience! Beware of calling this during the shutdown phase, though. Your module might have been unloaded already.
+
+\begin{DoxyReturn}{Returns}
+Returns singleton instance, loading the module on demand if needed 
+\end{DoxyReturn}
+\Hypertarget{classIGenericGraphRuntime_a440b3a90b3f6ee7a9b92d79329573d79}\label{classIGenericGraphRuntime_a440b3a90b3f6ee7a9b92d79329573d79} 
+\index{IGenericGraphRuntime@{IGenericGraphRuntime}!IsAvailable@{IsAvailable}}
+\index{IsAvailable@{IsAvailable}!IGenericGraphRuntime@{IGenericGraphRuntime}}
+\doxysubsubsection{\texorpdfstring{IsAvailable()}{IsAvailable()}}
+{\footnotesize\ttfamily static bool IGeneric\+Graph\+Runtime\+::\+Is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Checks to see if this module is loaded and ready. It is only valid to call \doxylink{classIGenericGraphRuntime_ab16b56ade640481ca1411296688af684}{Get()} if \doxylink{classIGenericGraphRuntime_a440b3a90b3f6ee7a9b92d79329573d79}{Is\+Available()} returns true.
+
+\begin{DoxyReturn}{Returns}
+True if the module is loaded and ready to use 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\mbox{\hyperlink{ICrimsonSkillTreeModule_8h}{ICrimson\+Skill\+Tree\+Module.\+h}}\end{DoxyCompactItemize}

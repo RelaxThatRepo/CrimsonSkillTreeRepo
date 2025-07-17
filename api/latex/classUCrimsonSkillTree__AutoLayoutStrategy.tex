@@ -1,0 +1,160 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy Class Reference}
+\hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy}{}\label{classUCrimsonSkillTree__AutoLayoutStrategy}\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUCrimsonSkillTree__AutoLayoutStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classUCrimsonSkillTree__AutoLayoutStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_add80c5acde7a4fe914e2c4c545605102}{UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy}} ()
+\item 
+virtual \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a1b9ae36e920c5fa0cb196d66225d5cc2}{\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy}} ()
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a0b7f5d3494b9883505c8edb169736054}{Layout}} (UEd\+Graph \texorpdfstring{$\ast$}{*}G)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TObject\+Ptr$<$ class \mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a29b69d0fa52725195d56415e9fd92eca}{Settings}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a64af88f43b65c98d2748b08351e3ceb3}{Get\+Node\+Width}} (\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} \texorpdfstring{$\ast$}{*}Ed\+Node)
+\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a0d72ee572a5deb9353d0f1e21f07a4e3}{Get\+Node\+Height}} (\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} \texorpdfstring{$\ast$}{*}Ed\+Node)
+\item 
+FBox2D \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a6ac0b0e5e2ddf47587373ec8a6ec1ed9}{Get\+Node\+Bound}} (UEd\+Graph\+Node \texorpdfstring{$\ast$}{*}Ed\+Node)
+\item 
+FBox2D \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_abe87977540b6cdc95eea3a1b79d28494}{Get\+Actual\+Bounds}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Root\+Node)
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_ac61a8e8d7400fcfe050845af041f1961}{Random\+Layout\+One\+Tree}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Root\+Node, const FBox2D \&Bound)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_af818894ec0de6ef7e665b14616c71301}{Graph}}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Graph}{UCrimson\+Skill\+Tree\+\_\+\+Graph}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a01285ec2c7c24c24c8a22716487d41d9}{Ed\+Graph}}
+\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_af7581b495dc42dbb081664188568bc3b}{Max\+Iteration}}
+\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a72120a0a2d8e7872509a290d5e3fd887}{Optimal\+Distance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_add80c5acde7a4fe914e2c4c545605102}\label{classUCrimsonSkillTree__AutoLayoutStrategy_add80c5acde7a4fe914e2c4c545605102} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree\_AutoLayoutStrategy()}{UCrimsonSkillTree\_AutoLayoutStrategy()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a1b9ae36e920c5fa0cb196d66225d5cc2}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a1b9ae36e920c5fa0cb196d66225d5cc2} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!````~UCrimsonSkillTree\_AutoLayoutStrategy@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_AutoLayoutStrategy}}
+\index{````~UCrimsonSkillTree\_AutoLayoutStrategy@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_AutoLayoutStrategy}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree\_AutoLayoutStrategy()}{\string~UCrimsonSkillTree\_AutoLayoutStrategy()}}
+{\footnotesize\ttfamily virtual UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_abe87977540b6cdc95eea3a1b79d28494}\label{classUCrimsonSkillTree__AutoLayoutStrategy_abe87977540b6cdc95eea3a1b79d28494} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!GetActualBounds@{GetActualBounds}}
+\index{GetActualBounds@{GetActualBounds}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{GetActualBounds()}{GetActualBounds()}}
+{\footnotesize\ttfamily FBox2D UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Get\+Actual\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Root\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a6ac0b0e5e2ddf47587373ec8a6ec1ed9}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a6ac0b0e5e2ddf47587373ec8a6ec1ed9} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!GetNodeBound@{GetNodeBound}}
+\index{GetNodeBound@{GetNodeBound}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{GetNodeBound()}{GetNodeBound()}}
+{\footnotesize\ttfamily FBox2D UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Get\+Node\+Bound (\begin{DoxyParamCaption}\item[{UEd\+Graph\+Node \texorpdfstring{$\ast$}{*}}]{Ed\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a0d72ee572a5deb9353d0f1e21f07a4e3}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a0d72ee572a5deb9353d0f1e21f07a4e3} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!GetNodeHeight@{GetNodeHeight}}
+\index{GetNodeHeight@{GetNodeHeight}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{GetNodeHeight()}{GetNodeHeight()}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Get\+Node\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} \texorpdfstring{$\ast$}{*}}]{Ed\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a64af88f43b65c98d2748b08351e3ceb3}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a64af88f43b65c98d2748b08351e3ceb3} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!GetNodeWidth@{GetNodeWidth}}
+\index{GetNodeWidth@{GetNodeWidth}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{GetNodeWidth()}{GetNodeWidth()}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Get\+Node\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} \texorpdfstring{$\ast$}{*}}]{Ed\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a0b7f5d3494b9883505c8edb169736054}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a0b7f5d3494b9883505c8edb169736054} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!Layout@{Layout}}
+\index{Layout@{Layout}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{Layout()}{Layout()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Layout (\begin{DoxyParamCaption}\item[{UEd\+Graph \texorpdfstring{$\ast$}{*}}]{G }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classUCrimsonSkillTree__ForceDirectedLayoutStrategy_a913f427e79d15e03a1b98c759d08bcd6}{UCrimson\+Skill\+Tree\+\_\+\+Force\+Directed\+Layout\+Strategy}}, and \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_ad350e6ecd4a0b97a8a995ec9d14eb091}{UCrimson\+Skill\+Tree\+\_\+\+Tree\+Layout\+Strategy}}.
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_ac61a8e8d7400fcfe050845af041f1961}\label{classUCrimsonSkillTree__AutoLayoutStrategy_ac61a8e8d7400fcfe050845af041f1961} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!RandomLayoutOneTree@{RandomLayoutOneTree}}
+\index{RandomLayoutOneTree@{RandomLayoutOneTree}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{RandomLayoutOneTree()}{RandomLayoutOneTree()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Random\+Layout\+One\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Root\+Node,  }\item[{const FBox2D \&}]{Bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a01285ec2c7c24c24c8a22716487d41d9}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a01285ec2c7c24c24c8a22716487d41d9} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!EdGraph@{EdGraph}}
+\index{EdGraph@{EdGraph}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{EdGraph}{EdGraph}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Graph}{UCrimson\+Skill\+Tree\+\_\+\+Graph}}$>$ UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Ed\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_af818894ec0de6ef7e665b14616c71301}\label{classUCrimsonSkillTree__AutoLayoutStrategy_af818894ec0de6ef7e665b14616c71301} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!Graph@{Graph}}
+\index{Graph@{Graph}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{Graph}{Graph}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}}$>$ UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_af7581b495dc42dbb081664188568bc3b}\label{classUCrimsonSkillTree__AutoLayoutStrategy_af7581b495dc42dbb081664188568bc3b} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!MaxIteration@{MaxIteration}}
+\index{MaxIteration@{MaxIteration}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{MaxIteration}{MaxIteration}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Max\+Iteration\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a72120a0a2d8e7872509a290d5e3fd887}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a72120a0a2d8e7872509a290d5e3fd887} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!OptimalDistance@{OptimalDistance}}
+\index{OptimalDistance@{OptimalDistance}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{OptimalDistance}{OptimalDistance}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Optimal\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classUCrimsonSkillTree__AutoLayoutStrategy_a29b69d0fa52725195d56415e9fd92eca}\label{classUCrimsonSkillTree__AutoLayoutStrategy_a29b69d0fa52725195d56415e9fd92eca} 
+\index{UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}!Settings@{Settings}}
+\index{Settings@{Settings}!UCrimsonSkillTree\_AutoLayoutStrategy@{UCrimsonSkillTree\_AutoLayoutStrategy}}
+\doxysubsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily TObject\+Ptr$<$class \mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}}$>$ UCrimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy\+::\+Settings}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Layout/\mbox{\hyperlink{CrimsonSkillTree__AutoLayoutStrategy_8h}{Crimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy.\+h}}\end{DoxyCompactItemize}

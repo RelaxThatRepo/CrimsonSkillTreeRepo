@@ -1,0 +1,260 @@
+\doxysection{UCrimson\+Skill\+Tree Class Reference}
+\hypertarget{classUCrimsonSkillTree}{}\label{classUCrimsonSkillTree}\index{UCrimsonSkillTree@{UCrimsonSkillTree}}
+
+
+A data asset representing the structure of a skill tree, containing nodes and their relationships. This object is used as a template and should be instanced at runtime by a \doxylink{classUCrimsonSkillTreeManager}{UCrimson\+Skill\+Tree\+Manager}.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classUCrimsonSkillTree__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classUCrimsonSkillTree__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree_a77222924f590e3c4b4fcf5a1d4f3a518}{UCrimson\+Skill\+Tree}} ()
+\item 
+virtual \mbox{\hyperlink{classUCrimsonSkillTree_a5f043f7069137dbd64bd9b6312e05eee}{\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree}} ()
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree_aa53c2ba4c811f4b6c811c4d54cff260d}{Post\+Load}} () override
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree_ab6863c755821cd4a6ff1e2e26fed0b92}{Create\+Runtime\+Instance}} (UObject \texorpdfstring{$\ast$}{*}Outer)
+\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree_ad8f6cacdb58cd700c37bebff16e96b3c}{Print\+Tree\+Structure}} (bool b\+To\+Console=true, bool b\+To\+Screen=true) const
+\begin{DoxyCompactList}\small\item\em Prints a visual representation of the skill tree structure to the log and screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree_aa94c71f3c53febacc4b695917d21116c}{Reset\+Tree\+To\+Defaults}} ()
+\begin{DoxyCompactList}\small\item\em Resets all nodes in this tree to their default initial state. This is crucial before loading a saved game to ensure a clean slate. \end{DoxyCompactList}\item 
+const TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ $>$ \& \mbox{\hyperlink{classUCrimsonSkillTree_a9b189b6161a3e3a6356a4b2f642a7523}{Get\+All\+Nodes}} () const
+\begin{DoxyCompactList}\small\item\em Gets a flat list of all nodes contained within this skill tree. \end{DoxyCompactList}\item 
+TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ $>$ \& \mbox{\hyperlink{classUCrimsonSkillTree_a081fba50ceb79ab324808e0df32a336b}{Get\+All\+Nodes}} ()
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree_a1d3110d86a5b4ffe1294d9601d8de4a2}{Find\+Node\+By\+GUID}} (const FGuid \&In\+Node\+GUID) const
+\begin{DoxyCompactList}\small\item\em Finds a node within this tree by its unique GUID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FGuid \mbox{\hyperlink{classUCrimsonSkillTree_aaa9895471b5b86513ea406bf50a9008c}{Skill\+Tree\+GUID}}
+\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree_aa182fb2c8c354c8e37ff3f1362e01835}{Version}} = 1
+\item 
+FString \mbox{\hyperlink{classUCrimsonSkillTree_afbf7f5bb83901226f7883d242a819771}{Name}}
+\item 
+bool \mbox{\hyperlink{classUCrimsonSkillTree_af3e832360690963bdfb5aa60ce78192e}{b\+Display\+Root\+Node\+In\+Widget}}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree_ae77329917225e1badb8176cf226ef512}{Node\+Type}}
+\item 
+TSubclass\+Of$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree_aadff0f7d145eadfc1049d446cdc624f3}{Edge\+Type}}
+\item 
+FGameplay\+Tag\+Container \mbox{\hyperlink{classUCrimsonSkillTree_a2912d17f96f82b017e1013ab1cb93d19}{Skill\+Tree\+Tags}}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree_a7e310992bdec0cb4312149371506343c}{Root\+Node}}
+\item 
+TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ $>$ \mbox{\hyperlink{classUCrimsonSkillTree_a409cb4d9b6fa07d38dd9912d604f7d36}{All\+Nodes}}
+\item 
+TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimson\+Skill\+Tree\+\_\+\+Visual\+Node}} $>$ $>$ \mbox{\hyperlink{classUCrimsonSkillTree_a4f75c18efc310de3497716e518da47ed}{Visual\+Nodes}}
+\begin{DoxyCompactList}\small\item\em Array of all visual nodes used for annotation in this skill tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUCrimsonSkillTree_aeffe1d4ab4e672f5d0cb4e8f0e1425e5}{b\+Edge\+Enabled}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A data asset representing the structure of a skill tree, containing nodes and their relationships. This object is used as a template and should be instanced at runtime by a \doxylink{classUCrimsonSkillTreeManager}{UCrimson\+Skill\+Tree\+Manager}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree_a77222924f590e3c4b4fcf5a1d4f3a518}\label{classUCrimsonSkillTree_a77222924f590e3c4b4fcf5a1d4f3a518} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree()}{UCrimsonSkillTree()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+::\+UCrimson\+Skill\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classUCrimsonSkillTree_a5f043f7069137dbd64bd9b6312e05eee}\label{classUCrimsonSkillTree_a5f043f7069137dbd64bd9b6312e05eee} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!````~UCrimsonSkillTree@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree}}
+\index{````~UCrimsonSkillTree@{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UCrimsonSkillTree()}{\string~UCrimsonSkillTree()}}
+{\footnotesize\ttfamily virtual UCrimson\+Skill\+Tree\+::\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree_ab6863c755821cd4a6ff1e2e26fed0b92}\label{classUCrimsonSkillTree_ab6863c755821cd4a6ff1e2e26fed0b92} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!CreateRuntimeInstance@{CreateRuntimeInstance}}
+\index{CreateRuntimeInstance@{CreateRuntimeInstance}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{CreateRuntimeInstance()}{CreateRuntimeInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*} UCrimson\+Skill\+Tree\+::\+Create\+Runtime\+Instance (\begin{DoxyParamCaption}\item[{UObject \texorpdfstring{$\ast$}{*}}]{Outer }\end{DoxyParamCaption})}
+
+Creates a deep-\/copied, runtime-\/safe instance of this skill tree asset. This correctly instances all nodes and rebuilds their connections. 
+\begin{DoxyParams}{Parameters}
+{\em Outer} & The object that should own the new runtime instance (typically the Skill Tree Manager component). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A fully instanced, ready-\/to-\/use \doxylink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree} object. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree_a1d3110d86a5b4ffe1294d9601d8de4a2}\label{classUCrimsonSkillTree_a1d3110d86a5b4ffe1294d9601d8de4a2} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!FindNodeByGUID@{FindNodeByGUID}}
+\index{FindNodeByGUID@{FindNodeByGUID}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{FindNodeByGUID()}{FindNodeByGUID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*} UCrimson\+Skill\+Tree\+::\+Find\+Node\+By\+GUID (\begin{DoxyParamCaption}\item[{const FGuid \&}]{In\+Node\+GUID }\end{DoxyParamCaption}) const}
+
+
+
+Finds a node within this tree by its unique GUID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+Node\+GUID} & The GUID of the node to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The found \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree_a081fba50ceb79ab324808e0df32a336b}\label{classUCrimsonSkillTree_a081fba50ceb79ab324808e0df32a336b} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!GetAllNodes@{GetAllNodes}}
+\index{GetAllNodes@{GetAllNodes}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{GetAllNodes()}{GetAllNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ $>$ \& UCrimson\+Skill\+Tree\+::\+Get\+All\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classUCrimsonSkillTree_a9b189b6161a3e3a6356a4b2f642a7523}\label{classUCrimsonSkillTree_a9b189b6161a3e3a6356a4b2f642a7523} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!GetAllNodes@{GetAllNodes}}
+\index{GetAllNodes@{GetAllNodes}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{GetAllNodes()}{GetAllNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const TArray$<$ TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ $>$ \& UCrimson\+Skill\+Tree\+::\+Get\+All\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a flat list of all nodes contained within this skill tree. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the TArray of all nodes. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree_aa53c2ba4c811f4b6c811c4d54cff260d}\label{classUCrimsonSkillTree_aa53c2ba4c811f4b6c811c4d54cff260d} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!PostLoad@{PostLoad}}
+\index{PostLoad@{PostLoad}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{PostLoad()}{PostLoad()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+::\+Post\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree_ad8f6cacdb58cd700c37bebff16e96b3c}\label{classUCrimsonSkillTree_ad8f6cacdb58cd700c37bebff16e96b3c} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!PrintTreeStructure@{PrintTreeStructure}}
+\index{PrintTreeStructure@{PrintTreeStructure}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{PrintTreeStructure()}{PrintTreeStructure()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+::\+Print\+Tree\+Structure (\begin{DoxyParamCaption}\item[{bool}]{b\+To\+Console = {\ttfamily true},  }\item[{bool}]{b\+To\+Screen = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Prints a visual representation of the skill tree structure to the log and screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+To\+Console} & If true, output to the Unreal Engine console log. \\
+\hline
+{\em b\+To\+Screen} & If true, output as on-\/screen debug messages. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree_aa94c71f3c53febacc4b695917d21116c}\label{classUCrimsonSkillTree_aa94c71f3c53febacc4b695917d21116c} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!ResetTreeToDefaults@{ResetTreeToDefaults}}
+\index{ResetTreeToDefaults@{ResetTreeToDefaults}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{ResetTreeToDefaults()}{ResetTreeToDefaults()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+::\+Reset\+Tree\+To\+Defaults (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets all nodes in this tree to their default initial state. This is crucial before loading a saved game to ensure a clean slate. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree_a409cb4d9b6fa07d38dd9912d604f7d36}\label{classUCrimsonSkillTree_a409cb4d9b6fa07d38dd9912d604f7d36} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!AllNodes@{AllNodes}}
+\index{AllNodes@{AllNodes}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{AllNodes}{AllNodes}}
+{\footnotesize\ttfamily TArray$<$TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}}$>$ $>$ UCrimson\+Skill\+Tree\+::\+All\+Nodes}
+
+\Hypertarget{classUCrimsonSkillTree_af3e832360690963bdfb5aa60ce78192e}\label{classUCrimsonSkillTree_af3e832360690963bdfb5aa60ce78192e} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!bDisplayRootNodeInWidget@{bDisplayRootNodeInWidget}}
+\index{bDisplayRootNodeInWidget@{bDisplayRootNodeInWidget}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{bDisplayRootNodeInWidget}{bDisplayRootNodeInWidget}}
+{\footnotesize\ttfamily bool UCrimson\+Skill\+Tree\+::b\+Display\+Root\+Node\+In\+Widget}
+
+\Hypertarget{classUCrimsonSkillTree_aeffe1d4ab4e672f5d0cb4e8f0e1425e5}\label{classUCrimsonSkillTree_aeffe1d4ab4e672f5d0cb4e8f0e1425e5} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!bEdgeEnabled@{bEdgeEnabled}}
+\index{bEdgeEnabled@{bEdgeEnabled}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{bEdgeEnabled}{bEdgeEnabled}}
+{\footnotesize\ttfamily bool UCrimson\+Skill\+Tree\+::b\+Edge\+Enabled}
+
+\Hypertarget{classUCrimsonSkillTree_aadff0f7d145eadfc1049d446cdc624f3}\label{classUCrimsonSkillTree_aadff0f7d145eadfc1049d446cdc624f3} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!EdgeType@{EdgeType}}
+\index{EdgeType@{EdgeType}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{EdgeType}{EdgeType}}
+{\footnotesize\ttfamily TSubclass\+Of$<$\mbox{\hyperlink{classUCrimsonSkillTree__Edge}{UCrimson\+Skill\+Tree\+\_\+\+Edge}}$>$ UCrimson\+Skill\+Tree\+::\+Edge\+Type}
+
+\Hypertarget{classUCrimsonSkillTree_afbf7f5bb83901226f7883d242a819771}\label{classUCrimsonSkillTree_afbf7f5bb83901226f7883d242a819771} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!Name@{Name}}
+\index{Name@{Name}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily FString UCrimson\+Skill\+Tree\+::\+Name}
+
+\Hypertarget{classUCrimsonSkillTree_ae77329917225e1badb8176cf226ef512}\label{classUCrimsonSkillTree_ae77329917225e1badb8176cf226ef512} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
+{\footnotesize\ttfamily TSubclass\+Of$<$\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}}$>$ UCrimson\+Skill\+Tree\+::\+Node\+Type}
+
+\Hypertarget{classUCrimsonSkillTree_a7e310992bdec0cb4312149371506343c}\label{classUCrimsonSkillTree_a7e310992bdec0cb4312149371506343c} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!RootNode@{RootNode}}
+\index{RootNode@{RootNode}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{RootNode}{RootNode}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}}$>$ UCrimson\+Skill\+Tree\+::\+Root\+Node}
+
+\Hypertarget{classUCrimsonSkillTree_aaa9895471b5b86513ea406bf50a9008c}\label{classUCrimsonSkillTree_aaa9895471b5b86513ea406bf50a9008c} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!SkillTreeGUID@{SkillTreeGUID}}
+\index{SkillTreeGUID@{SkillTreeGUID}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{SkillTreeGUID}{SkillTreeGUID}}
+{\footnotesize\ttfamily FGuid UCrimson\+Skill\+Tree\+::\+Skill\+Tree\+GUID}
+
+\Hypertarget{classUCrimsonSkillTree_a2912d17f96f82b017e1013ab1cb93d19}\label{classUCrimsonSkillTree_a2912d17f96f82b017e1013ab1cb93d19} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!SkillTreeTags@{SkillTreeTags}}
+\index{SkillTreeTags@{SkillTreeTags}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{SkillTreeTags}{SkillTreeTags}}
+{\footnotesize\ttfamily FGameplay\+Tag\+Container UCrimson\+Skill\+Tree\+::\+Skill\+Tree\+Tags}
+
+\Hypertarget{classUCrimsonSkillTree_aa182fb2c8c354c8e37ff3f1362e01835}\label{classUCrimsonSkillTree_aa182fb2c8c354c8e37ff3f1362e01835} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!Version@{Version}}
+\index{Version@{Version}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{Version}{Version}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+::\+Version = 1}
+
+\Hypertarget{classUCrimsonSkillTree_a4f75c18efc310de3497716e518da47ed}\label{classUCrimsonSkillTree_a4f75c18efc310de3497716e518da47ed} 
+\index{UCrimsonSkillTree@{UCrimsonSkillTree}!VisualNodes@{VisualNodes}}
+\index{VisualNodes@{VisualNodes}!UCrimsonSkillTree@{UCrimsonSkillTree}}
+\doxysubsubsection{\texorpdfstring{VisualNodes}{VisualNodes}}
+{\footnotesize\ttfamily TArray$<$TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimson\+Skill\+Tree\+\_\+\+Visual\+Node}}$>$ $>$ UCrimson\+Skill\+Tree\+::\+Visual\+Nodes}
+
+
+
+Array of all visual nodes used for annotation in this skill tree. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\mbox{\hyperlink{CrimsonSkillTree_8h}{Crimson\+Skill\+Tree.\+h}}\end{DoxyCompactItemize}

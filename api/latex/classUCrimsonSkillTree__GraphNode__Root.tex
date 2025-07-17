@@ -1,0 +1,165 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root Class Reference}
+\hypertarget{classUCrimsonSkillTree__GraphNode__Root}{}\label{classUCrimsonSkillTree__GraphNode__Root}\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+
+
+Represents the root node in the editor graph for a Crimson Skill Tree. This specialized graph node has distinct visual properties and pin configurations appropriate for a root node (e.\+g., only an output pin).  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classUCrimsonSkillTree__GraphNode__Root__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUCrimsonSkillTree__GraphNode__Root__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a4834629d2510baba033ce577e479540e}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes root node specific properties. \end{DoxyCompactList}\item 
+virtual FText \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a5080e3033098c8f2e844bbbef186e67f}{Get\+Node\+Title}} (ENode\+Title\+Type\+::\+Type Title\+Type) const override
+\begin{DoxyCompactList}\small\item\em Gets the title of this root node for display in the graph editor. Root nodes typically have a fixed title. \end{DoxyCompactList}\item 
+virtual FText \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_afd0c021c99469ad48e1030f0a83067a6}{Get\+Tooltip\+Text}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the tooltip text for this root node. Delegates to the base UEd\+Graph\+Node implementation. \end{DoxyCompactList}\item 
+virtual FLinear\+Color \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a5c3fe4fbe6021b10f95f3d7d35bc3019}{Get\+Background\+Color}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the background color for this root node in the graph editor. Allows for visual distinction of the root node. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a02b773fa4a21689af5367e607c2b1ab1}{Allocate\+Default\+Pins}} () override
+\begin{DoxyCompactList}\small\item\em Allocates the default pins for the root node. Root nodes typically only have an output pin and no input pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_afbc7411b08f1a96ea79016b54d62764d}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a02a06488bfb005483ab8183540aef111}{\texorpdfstring{$\sim$}{\string~}\+UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_ad5851b9a736000c8bc111eb28e3fd98d}{Set\+Skill\+Tree\+Node}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}In\+Skill\+Tree\+Node)
+\begin{DoxyCompactList}\small\item\em Sets the runtime \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} data object that this graph node represents. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__Graph}{UCrimson\+Skill\+Tree\+\_\+\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a33a6c614363fdfbd331df3e53c1b7efb}{Get\+Skill\+Tree\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \doxylink{classUCrimsonSkillTree__Graph}{UCrimson\+Skill\+Tree\+\_\+\+Graph} that this node belongs to. \end{DoxyCompactList}\item 
+virtual UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a8110b85428bb3c58fa0cd407b1e08937}{Get\+Input\+Pin}} () const
+\begin{DoxyCompactList}\small\item\em Gets the primary input pin of this node. \end{DoxyCompactList}\item 
+virtual UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a779f567554c9bec966496de81bfa8e07}{Get\+Output\+Pin}} () const
+\begin{DoxyCompactList}\small\item\em Gets the primary output pin of this node. \end{DoxyCompactList}\item 
+FVector2D \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_afe1bb13e53ea32f43327162271f4581b}{Get\+Node\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current visual position of the node in the graph editor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a3bb066a5b486f04d84f23a220462a5a2}{Prepare\+For\+Copying}} () override
+\begin{DoxyCompactList}\small\item\em Prepares this graph node for copying. This often involves duplicating or appropriately referencing its associated runtime data (Skill\+Tree\+Node). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a21d4a0bd776554d9f490a811550caf2d}{Autowire\+New\+Node}} (UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}From\+Pin) override
+\begin{DoxyCompactList}\small\item\em Called when a new node is created and an attempt is made to automatically wire it from a source pin. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_acba5c41a44a37ba864cf13defebbd304}{Can\+Create\+Under\+Specified\+Schema}} (const UEd\+Graph\+Schema \texorpdfstring{$\ast$}{*}Schema) const override
+\begin{DoxyCompactList}\small\item\em Checks if this node type can be created under the specified graph schema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a8362aec781183b8ade6e9caeccc9aabe}{Skill\+Tree\+Node}}
+\begin{DoxyCompactList}\small\item\em Pointer to the runtime \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} object that this graph node represents and configures. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSCrimsonSkillTree__GraphNode}{SCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a0d483659296ae154df57e8840aad10ea}{SGraph\+Node}}
+\begin{DoxyCompactList}\small\item\em Pointer to the Slate graph node widget (SGraph\+Node) that visually represents this node in the editor. This is a runtime editor-\/only link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the root node in the editor graph for a Crimson Skill Tree. This specialized graph node has distinct visual properties and pin configurations appropriate for a root node (e.\+g., only an output pin). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree__GraphNode__Root_a4834629d2510baba033ce577e479540e}\label{classUCrimsonSkillTree__GraphNode__Root_a4834629d2510baba033ce577e479540e} 
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree\_GraphNode\_Root()}{UCrimsonSkillTree\_GraphNode\_Root()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+::\+UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initializes root node specific properties. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__GraphNode__Root_a02b773fa4a21689af5367e607c2b1ab1}\label{classUCrimsonSkillTree__GraphNode__Root_a02b773fa4a21689af5367e607c2b1ab1} 
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!AllocateDefaultPins@{AllocateDefaultPins}}
+\index{AllocateDefaultPins@{AllocateDefaultPins}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\doxysubsubsection{\texorpdfstring{AllocateDefaultPins()}{AllocateDefaultPins()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+::\+Allocate\+Default\+Pins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Allocates the default pins for the root node. Root nodes typically only have an output pin and no input pins. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a3307f606a63b7b356464b6888da7e4d9}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}.
+
+\Hypertarget{classUCrimsonSkillTree__GraphNode__Root_a5c3fe4fbe6021b10f95f3d7d35bc3019}\label{classUCrimsonSkillTree__GraphNode__Root_a5c3fe4fbe6021b10f95f3d7d35bc3019} 
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!GetBackgroundColor@{GetBackgroundColor}}
+\index{GetBackgroundColor@{GetBackgroundColor}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\doxysubsubsection{\texorpdfstring{GetBackgroundColor()}{GetBackgroundColor()}}
+{\footnotesize\ttfamily virtual FLinear\+Color UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+::\+Get\+Background\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the background color for this root node in the graph editor. Allows for visual distinction of the root node. 
+
+\begin{DoxyReturn}{Returns}
+The FLinear\+Color for the root node\textquotesingle{}s background. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a483b42d5a9ba2af974a58936c86747e2}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}.
+
+\Hypertarget{classUCrimsonSkillTree__GraphNode__Root_a5080e3033098c8f2e844bbbef186e67f}\label{classUCrimsonSkillTree__GraphNode__Root_a5080e3033098c8f2e844bbbef186e67f} 
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!GetNodeTitle@{GetNodeTitle}}
+\index{GetNodeTitle@{GetNodeTitle}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\doxysubsubsection{\texorpdfstring{GetNodeTitle()}{GetNodeTitle()}}
+{\footnotesize\ttfamily virtual FText UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+::\+Get\+Node\+Title (\begin{DoxyParamCaption}\item[{ENode\+Title\+Type\+::\+Type}]{Title\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the title of this root node for display in the graph editor. Root nodes typically have a fixed title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Title\+Type} & The type of title requested (e.\+g., full, editable). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The static title text "{}\+ROOT"{}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode_a7c7aa1597dbc899928c7537849a3f938}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node}}.
+
+\Hypertarget{classUCrimsonSkillTree__GraphNode__Root_afd0c021c99469ad48e1030f0a83067a6}\label{classUCrimsonSkillTree__GraphNode__Root_afd0c021c99469ad48e1030f0a83067a6} 
+\index{UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}!GetTooltipText@{GetTooltipText}}
+\index{GetTooltipText@{GetTooltipText}!UCrimsonSkillTree\_GraphNode\_Root@{UCrimsonSkillTree\_GraphNode\_Root}}
+\doxysubsubsection{\texorpdfstring{GetTooltipText()}{GetTooltipText()}}
+{\footnotesize\ttfamily virtual FText UCrimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root\+::\+Get\+Tooltip\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the tooltip text for this root node. Delegates to the base UEd\+Graph\+Node implementation. 
+
+\begin{DoxyReturn}{Returns}
+The tooltip text. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Nodes/\mbox{\hyperlink{CrimsonSkillTree__GraphNode__Root_8h}{Crimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root.\+h}}\end{DoxyCompactItemize}

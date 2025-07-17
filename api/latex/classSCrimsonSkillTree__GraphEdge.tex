@@ -1,0 +1,142 @@
+\doxysection{SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge Class Reference}
+\hypertarget{classSCrimsonSkillTree__GraphEdge}{}\label{classSCrimsonSkillTree__GraphEdge}\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+
+
+{\ttfamily \#include $<$SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge.\+h$>$}
+
+
+
+Inheritance diagram for SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classSCrimsonSkillTree__GraphEdge__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classSCrimsonSkillTree__GraphEdge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a013524ba2bbbe8a6f16e1cb97b9fecb5}{SLATE\+\_\+\+BEGIN\+\_\+\+ARGS}} (\mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge}{SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}})
+\item 
+void \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a584476e9261ab0a9083634693de43bba}{Construct}} (const FArguments \&In\+Args, \mbox{\hyperlink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}} \texorpdfstring{$\ast$}{*}In\+Node)
+\item 
+virtual bool \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_ad505d93fa80ca8a428c573c1c96479e8}{Requires\+Second\+Pass\+Layout}} () const override
+\item 
+virtual void \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_adfc251cf846ba681422b67f92b1dee71}{Perform\+Second\+Pass\+Layout}} (const TMap$<$ UObject \texorpdfstring{$\ast$}{*}, TShared\+Ref$<$ SNode $>$ $>$ \&Node\+To\+Widget\+Lookup) const override
+\item 
+virtual void \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_af74087069b07b03031607d03773e757f}{Update\+Graph\+Node}} () override
+\item 
+void \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_ae882d64d2611156c4a9d439355fa6018}{Position\+Between\+Two\+Nodes\+With\+Offset}} (const FGeometry \&Start\+Geom, const FGeometry \&End\+Geom, int32 Node\+Index, int32 Max\+Nodes) const
+\item 
+void \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a12eceb9784ad803c5fb77f6539dd2cd0}{On\+Name\+Text\+Commited}} (const FText \&In\+Text, EText\+Commit\+::\+Type Commit\+Info)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FSlate\+Color \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_ab49985923b7b4c96ada2cdd9ddfef540}{Get\+Edge\+Color}} () const
+\item 
+const FSlate\+Brush \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a6870b3a0b42ef3177e2d61fa05ab71c2}{Get\+Edge\+Image}} () const
+\item 
+EVisibility \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a45c7ae028aa448c48ccd18c208abfdf8}{Get\+Edge\+Image\+Visibility}} () const
+\item 
+EVisibility \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a3d2ae08ac4273f9011a766f7928f01e3}{Get\+Edge\+Title\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TShared\+Ptr$<$ SText\+Entry\+Popup $>$ \mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge_a12a38ef95cc23c94a7fa3b265a22d994}{Text\+Entry\+Widget}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a584476e9261ab0a9083634693de43bba}\label{classSCrimsonSkillTree__GraphEdge_a584476e9261ab0a9083634693de43bba} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!Construct@{Construct}}
+\index{Construct@{Construct}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Construct (\begin{DoxyParamCaption}\item[{const FArguments \&}]{In\+Args,  }\item[{\mbox{\hyperlink{classUCrimsonSkillTree__GraphEdge}{UCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}} \texorpdfstring{$\ast$}{*}}]{In\+Node }\end{DoxyParamCaption})}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_ab49985923b7b4c96ada2cdd9ddfef540}\label{classSCrimsonSkillTree__GraphEdge_ab49985923b7b4c96ada2cdd9ddfef540} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!GetEdgeColor@{GetEdgeColor}}
+\index{GetEdgeColor@{GetEdgeColor}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{GetEdgeColor()}{GetEdgeColor()}}
+{\footnotesize\ttfamily FSlate\+Color SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Get\+Edge\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a6870b3a0b42ef3177e2d61fa05ab71c2}\label{classSCrimsonSkillTree__GraphEdge_a6870b3a0b42ef3177e2d61fa05ab71c2} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!GetEdgeImage@{GetEdgeImage}}
+\index{GetEdgeImage@{GetEdgeImage}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{GetEdgeImage()}{GetEdgeImage()}}
+{\footnotesize\ttfamily const FSlate\+Brush \texorpdfstring{$\ast$}{*} SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Get\+Edge\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a45c7ae028aa448c48ccd18c208abfdf8}\label{classSCrimsonSkillTree__GraphEdge_a45c7ae028aa448c48ccd18c208abfdf8} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!GetEdgeImageVisibility@{GetEdgeImageVisibility}}
+\index{GetEdgeImageVisibility@{GetEdgeImageVisibility}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{GetEdgeImageVisibility()}{GetEdgeImageVisibility()}}
+{\footnotesize\ttfamily EVisibility SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Get\+Edge\+Image\+Visibility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a3d2ae08ac4273f9011a766f7928f01e3}\label{classSCrimsonSkillTree__GraphEdge_a3d2ae08ac4273f9011a766f7928f01e3} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!GetEdgeTitleVisibility@{GetEdgeTitleVisibility}}
+\index{GetEdgeTitleVisibility@{GetEdgeTitleVisibility}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{GetEdgeTitleVisibility()}{GetEdgeTitleVisibility()}}
+{\footnotesize\ttfamily EVisibility SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Get\+Edge\+Title\+Visibility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a12eceb9784ad803c5fb77f6539dd2cd0}\label{classSCrimsonSkillTree__GraphEdge_a12eceb9784ad803c5fb77f6539dd2cd0} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!OnNameTextCommited@{OnNameTextCommited}}
+\index{OnNameTextCommited@{OnNameTextCommited}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{OnNameTextCommited()}{OnNameTextCommited()}}
+{\footnotesize\ttfamily void SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+On\+Name\+Text\+Commited (\begin{DoxyParamCaption}\item[{const FText \&}]{In\+Text,  }\item[{EText\+Commit\+::\+Type}]{Commit\+Info }\end{DoxyParamCaption})}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_adfc251cf846ba681422b67f92b1dee71}\label{classSCrimsonSkillTree__GraphEdge_adfc251cf846ba681422b67f92b1dee71} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!PerformSecondPassLayout@{PerformSecondPassLayout}}
+\index{PerformSecondPassLayout@{PerformSecondPassLayout}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{PerformSecondPassLayout()}{PerformSecondPassLayout()}}
+{\footnotesize\ttfamily virtual void SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Perform\+Second\+Pass\+Layout (\begin{DoxyParamCaption}\item[{const TMap$<$ UObject \texorpdfstring{$\ast$}{*}, TShared\+Ref$<$ SNode $>$ $>$ \&}]{Node\+To\+Widget\+Lookup }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_ae882d64d2611156c4a9d439355fa6018}\label{classSCrimsonSkillTree__GraphEdge_ae882d64d2611156c4a9d439355fa6018} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!PositionBetweenTwoNodesWithOffset@{PositionBetweenTwoNodesWithOffset}}
+\index{PositionBetweenTwoNodesWithOffset@{PositionBetweenTwoNodesWithOffset}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{PositionBetweenTwoNodesWithOffset()}{PositionBetweenTwoNodesWithOffset()}}
+{\footnotesize\ttfamily void SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Position\+Between\+Two\+Nodes\+With\+Offset (\begin{DoxyParamCaption}\item[{const FGeometry \&}]{Start\+Geom,  }\item[{const FGeometry \&}]{End\+Geom,  }\item[{int32}]{Node\+Index,  }\item[{int32}]{Max\+Nodes }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_ad505d93fa80ca8a428c573c1c96479e8}\label{classSCrimsonSkillTree__GraphEdge_ad505d93fa80ca8a428c573c1c96479e8} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!RequiresSecondPassLayout@{RequiresSecondPassLayout}}
+\index{RequiresSecondPassLayout@{RequiresSecondPassLayout}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{RequiresSecondPassLayout()}{RequiresSecondPassLayout()}}
+{\footnotesize\ttfamily virtual bool SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Requires\+Second\+Pass\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a013524ba2bbbe8a6f16e1cb97b9fecb5}\label{classSCrimsonSkillTree__GraphEdge_a013524ba2bbbe8a6f16e1cb97b9fecb5} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!SLATE\_BEGIN\_ARGS@{SLATE\_BEGIN\_ARGS}}
+\index{SLATE\_BEGIN\_ARGS@{SLATE\_BEGIN\_ARGS}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{SLATE\_BEGIN\_ARGS()}{SLATE\_BEGIN\_ARGS()}}
+{\footnotesize\ttfamily SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+SLATE\+\_\+\+BEGIN\+\_\+\+ARGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSCrimsonSkillTree__GraphEdge}{SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_af74087069b07b03031607d03773e757f}\label{classSCrimsonSkillTree__GraphEdge_af74087069b07b03031607d03773e757f} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!UpdateGraphNode@{UpdateGraphNode}}
+\index{UpdateGraphNode@{UpdateGraphNode}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{UpdateGraphNode()}{UpdateGraphNode()}}
+{\footnotesize\ttfamily virtual void SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Update\+Graph\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSCrimsonSkillTree__GraphEdge_a12a38ef95cc23c94a7fa3b265a22d994}\label{classSCrimsonSkillTree__GraphEdge_a12a38ef95cc23c94a7fa3b265a22d994} 
+\index{SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}!TextEntryWidget@{TextEntryWidget}}
+\index{TextEntryWidget@{TextEntryWidget}!SCrimsonSkillTree\_GraphEdge@{SCrimsonSkillTree\_GraphEdge}}
+\doxysubsubsection{\texorpdfstring{TextEntryWidget}{TextEntryWidget}}
+{\footnotesize\ttfamily TShared\+Ptr$<$SText\+Entry\+Popup$>$ SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge\+::\+Text\+Entry\+Widget\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Nodes/\+Slate/\mbox{\hyperlink{SCrimsonSkillTree__GraphEdge_8h}{SCrimson\+Skill\+Tree\+\_\+\+Graph\+Edge.\+h}}\end{DoxyCompactItemize}

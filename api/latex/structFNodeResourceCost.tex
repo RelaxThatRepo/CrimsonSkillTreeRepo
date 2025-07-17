@@ -1,0 +1,87 @@
+\doxysection{FNode\+Resource\+Cost Struct Reference}
+\hypertarget{structFNodeResourceCost}{}\label{structFNodeResourceCost}\index{FNodeResourceCost@{FNodeResourceCost}}
+
+
+Defines the amount of a resource required, potentially scaling with level.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h$>$}
+
+
+
+Collaboration diagram for FNode\+Resource\+Cost\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structFNodeResourceCost__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32 \mbox{\hyperlink{structFNodeResourceCost_ab8750a94ae599ca501369ae486454a0e}{Get\+Cost\+For\+Target\+Level}} (int32 Target\+Level, int32 Max\+Level) const
+\begin{DoxyCompactList}\small\item\em Calculates the cost for a specific target level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} \mbox{\hyperlink{structFNodeResourceCost_a95de2ed1358a0ba228a7126edecc5301}{Cost\+Definition}}
+\item 
+TObject\+Ptr$<$ UCurve\+Float $>$ \mbox{\hyperlink{structFNodeResourceCost_a2f57eb511f40795a2172433ce9299240}{Cost\+Curve}}
+\item 
+int32 \mbox{\hyperlink{structFNodeResourceCost_abf5c40776fe5c08de1059784ae882204}{Cost\+Amount}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the amount of a resource required, potentially scaling with level. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structFNodeResourceCost_ab8750a94ae599ca501369ae486454a0e}\label{structFNodeResourceCost_ab8750a94ae599ca501369ae486454a0e} 
+\index{FNodeResourceCost@{FNodeResourceCost}!GetCostForTargetLevel@{GetCostForTargetLevel}}
+\index{GetCostForTargetLevel@{GetCostForTargetLevel}!FNodeResourceCost@{FNodeResourceCost}}
+\doxysubsubsection{\texorpdfstring{GetCostForTargetLevel()}{GetCostForTargetLevel()}}
+{\footnotesize\ttfamily int32 FNode\+Resource\+Cost\+::\+Get\+Cost\+For\+Target\+Level (\begin{DoxyParamCaption}\item[{int32}]{Target\+Level,  }\item[{int32}]{Max\+Level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the cost for a specific target level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Target\+Level} & The level to calculate the cost for. \\
+\hline
+{\em Max\+Level} & The maximum level of the node (for curve evaluation). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated cost amount as an integer. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFNodeResourceCost_abf5c40776fe5c08de1059784ae882204}\label{structFNodeResourceCost_abf5c40776fe5c08de1059784ae882204} 
+\index{FNodeResourceCost@{FNodeResourceCost}!CostAmount@{CostAmount}}
+\index{CostAmount@{CostAmount}!FNodeResourceCost@{FNodeResourceCost}}
+\doxysubsubsection{\texorpdfstring{CostAmount}{CostAmount}}
+{\footnotesize\ttfamily int32 FNode\+Resource\+Cost\+::\+Cost\+Amount = 1}
+
+\Hypertarget{structFNodeResourceCost_a2f57eb511f40795a2172433ce9299240}\label{structFNodeResourceCost_a2f57eb511f40795a2172433ce9299240} 
+\index{FNodeResourceCost@{FNodeResourceCost}!CostCurve@{CostCurve}}
+\index{CostCurve@{CostCurve}!FNodeResourceCost@{FNodeResourceCost}}
+\doxysubsubsection{\texorpdfstring{CostCurve}{CostCurve}}
+{\footnotesize\ttfamily TObject\+Ptr$<$UCurve\+Float$>$ FNode\+Resource\+Cost\+::\+Cost\+Curve}
+
+\Hypertarget{structFNodeResourceCost_a95de2ed1358a0ba228a7126edecc5301}\label{structFNodeResourceCost_a95de2ed1358a0ba228a7126edecc5301} 
+\index{FNodeResourceCost@{FNodeResourceCost}!CostDefinition@{CostDefinition}}
+\index{CostDefinition@{CostDefinition}!FNodeResourceCost@{FNodeResourceCost}}
+\doxysubsubsection{\texorpdfstring{CostDefinition}{CostDefinition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFNodeCostDefinition}{FNode\+Cost\+Definition}} FNode\+Resource\+Cost\+::\+Cost\+Definition}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Nodes/\+Cost/\mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h}}\end{DoxyCompactItemize}

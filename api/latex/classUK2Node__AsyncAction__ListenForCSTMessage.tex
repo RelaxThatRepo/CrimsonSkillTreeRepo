@@ -1,0 +1,131 @@
+\doxysection{UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage Class Reference}
+\hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage}{}\label{classUK2Node__AsyncAction__ListenForCSTMessage}\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+
+
+{\ttfamily \#include $<$K2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+h$>$}
+
+
+
+Inheritance diagram for UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classUK2Node__AsyncAction__ListenForCSTMessage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classUK2Node__AsyncAction__ListenForCSTMessage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_a29d9e0a74b849d7c35ecc856ead953ab}{Handle\+Delegates}} (const TArray$<$ FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable $>$ \&Variable\+Outputs, UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}Proxy\+Object\+Pin, UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}\&In\+Out\+Last\+Then\+Pin, UEd\+Graph \texorpdfstring{$\ast$}{*}Source\+Graph, FKismet\+Compiler\+Context \&Compiler\+Context) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_a3bfb73b809db3fa1287739c65467b941}{Post\+Reconstruct\+Node}} () override
+\item 
+virtual void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_ab385a5559a4c3d0197d5a7effef8328f}{Pin\+Default\+Value\+Changed}} (UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}Changed\+Pin) override
+\item 
+virtual void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_af52fa0f67411675d45dc64c5e5a2bdc9}{Get\+Pin\+Hover\+Text}} (const UEd\+Graph\+Pin \&Pin, FString \&Hover\+Text\+Out) const override
+\item 
+virtual void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_a2741197a2f95fdeac1c487ec666d7d5a}{Get\+Menu\+Actions}} (FBlueprint\+Action\+Database\+Registrar \&Action\+Registrar) const override
+\item 
+virtual void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_a820937340bd9de41b10a8f3d90ca9c39}{Allocate\+Default\+Pins}} () override
+\item 
+bool \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_aa0620f4d35737eda41bd194a46670a6c}{Handle\+Payload\+Implementation}} (FMulticast\+Delegate\+Property \texorpdfstring{$\ast$}{*}Current\+Property, const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&Proxy\+Object\+Var, const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&Payload\+Var, const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&Actual\+Channel\+Var, UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}\&In\+Out\+Last\+Activated\+Then\+Pin, UEd\+Graph \texorpdfstring{$\ast$}{*}Source\+Graph, FKismet\+Compiler\+Context \&Compiler\+Context)
+\item 
+void \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_a0c3be358e3adef09748e630be3f3f495}{Refresh\+Output\+Payload\+Type}} ()
+\item 
+UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_ac14600281d047681b07501aa2066db4e}{Get\+Payload\+Pin}} () const
+\item 
+UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_ab30c71faa72b6198433720263145d262}{Get\+Payload\+Type\+Pin}} () const
+\item 
+UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUK2Node__AsyncAction__ListenForCSTMessage_aebc63ef4671e522687115f48dea1369d}{Get\+Output\+Channel\+Pin}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blueprint node which is spawned to handle the async logic for UAsync\+Action\+\_\+\+Register\+CSTMessage\+Receiver 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_a820937340bd9de41b10a8f3d90ca9c39}\label{classUK2Node__AsyncAction__ListenForCSTMessage_a820937340bd9de41b10a8f3d90ca9c39} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!AllocateDefaultPins@{AllocateDefaultPins}}
+\index{AllocateDefaultPins@{AllocateDefaultPins}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{AllocateDefaultPins()}{AllocateDefaultPins()}}
+{\footnotesize\ttfamily virtual void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Allocate\+Default\+Pins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_a2741197a2f95fdeac1c487ec666d7d5a}\label{classUK2Node__AsyncAction__ListenForCSTMessage_a2741197a2f95fdeac1c487ec666d7d5a} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!GetMenuActions@{GetMenuActions}}
+\index{GetMenuActions@{GetMenuActions}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetMenuActions()}{GetMenuActions()}}
+{\footnotesize\ttfamily virtual void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Menu\+Actions (\begin{DoxyParamCaption}\item[{FBlueprint\+Action\+Database\+Registrar \&}]{Action\+Registrar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_aebc63ef4671e522687115f48dea1369d}\label{classUK2Node__AsyncAction__ListenForCSTMessage_aebc63ef4671e522687115f48dea1369d} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!GetOutputChannelPin@{GetOutputChannelPin}}
+\index{GetOutputChannelPin@{GetOutputChannelPin}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetOutputChannelPin()}{GetOutputChannelPin()}}
+{\footnotesize\ttfamily UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Output\+Channel\+Pin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_ac14600281d047681b07501aa2066db4e}\label{classUK2Node__AsyncAction__ListenForCSTMessage_ac14600281d047681b07501aa2066db4e} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!GetPayloadPin@{GetPayloadPin}}
+\index{GetPayloadPin@{GetPayloadPin}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetPayloadPin()}{GetPayloadPin()}}
+{\footnotesize\ttfamily UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Payload\+Pin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_ab30c71faa72b6198433720263145d262}\label{classUK2Node__AsyncAction__ListenForCSTMessage_ab30c71faa72b6198433720263145d262} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!GetPayloadTypePin@{GetPayloadTypePin}}
+\index{GetPayloadTypePin@{GetPayloadTypePin}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetPayloadTypePin()}{GetPayloadTypePin()}}
+{\footnotesize\ttfamily UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Payload\+Type\+Pin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_af52fa0f67411675d45dc64c5e5a2bdc9}\label{classUK2Node__AsyncAction__ListenForCSTMessage_af52fa0f67411675d45dc64c5e5a2bdc9} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!GetPinHoverText@{GetPinHoverText}}
+\index{GetPinHoverText@{GetPinHoverText}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetPinHoverText()}{GetPinHoverText()}}
+{\footnotesize\ttfamily virtual void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Pin\+Hover\+Text (\begin{DoxyParamCaption}\item[{const UEd\+Graph\+Pin \&}]{Pin,  }\item[{FString \&}]{Hover\+Text\+Out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_a29d9e0a74b849d7c35ecc856ead953ab}\label{classUK2Node__AsyncAction__ListenForCSTMessage_a29d9e0a74b849d7c35ecc856ead953ab} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!HandleDelegates@{HandleDelegates}}
+\index{HandleDelegates@{HandleDelegates}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{HandleDelegates()}{HandleDelegates()}}
+{\footnotesize\ttfamily virtual bool UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Handle\+Delegates (\begin{DoxyParamCaption}\item[{const TArray$<$ FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable $>$ \&}]{Variable\+Outputs,  }\item[{UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}}]{Proxy\+Object\+Pin,  }\item[{UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}\&}]{In\+Out\+Last\+Then\+Pin,  }\item[{UEd\+Graph \texorpdfstring{$\ast$}{*}}]{Source\+Graph,  }\item[{FKismet\+Compiler\+Context \&}]{Compiler\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_aa0620f4d35737eda41bd194a46670a6c}\label{classUK2Node__AsyncAction__ListenForCSTMessage_aa0620f4d35737eda41bd194a46670a6c} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!HandlePayloadImplementation@{HandlePayloadImplementation}}
+\index{HandlePayloadImplementation@{HandlePayloadImplementation}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{HandlePayloadImplementation()}{HandlePayloadImplementation()}}
+{\footnotesize\ttfamily bool UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Handle\+Payload\+Implementation (\begin{DoxyParamCaption}\item[{FMulticast\+Delegate\+Property \texorpdfstring{$\ast$}{*}}]{Current\+Property,  }\item[{const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&}]{Proxy\+Object\+Var,  }\item[{const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&}]{Payload\+Var,  }\item[{const FBase\+Async\+Task\+Helper\+::\+FOutput\+Pin\+And\+Local\+Variable \&}]{Actual\+Channel\+Var,  }\item[{UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}\&}]{In\+Out\+Last\+Activated\+Then\+Pin,  }\item[{UEd\+Graph \texorpdfstring{$\ast$}{*}}]{Source\+Graph,  }\item[{FKismet\+Compiler\+Context \&}]{Compiler\+Context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_ab385a5559a4c3d0197d5a7effef8328f}\label{classUK2Node__AsyncAction__ListenForCSTMessage_ab385a5559a4c3d0197d5a7effef8328f} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!PinDefaultValueChanged@{PinDefaultValueChanged}}
+\index{PinDefaultValueChanged@{PinDefaultValueChanged}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{PinDefaultValueChanged()}{PinDefaultValueChanged()}}
+{\footnotesize\ttfamily virtual void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Pin\+Default\+Value\+Changed (\begin{DoxyParamCaption}\item[{UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*}}]{Changed\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_a3bfb73b809db3fa1287739c65467b941}\label{classUK2Node__AsyncAction__ListenForCSTMessage_a3bfb73b809db3fa1287739c65467b941} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!PostReconstructNode@{PostReconstructNode}}
+\index{PostReconstructNode@{PostReconstructNode}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{PostReconstructNode()}{PostReconstructNode()}}
+{\footnotesize\ttfamily virtual void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Post\+Reconstruct\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUK2Node__AsyncAction__ListenForCSTMessage_a0c3be358e3adef09748e630be3f3f495}\label{classUK2Node__AsyncAction__ListenForCSTMessage_a0c3be358e3adef09748e630be3f3f495} 
+\index{UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}!RefreshOutputPayloadType@{RefreshOutputPayloadType}}
+\index{RefreshOutputPayloadType@{RefreshOutputPayloadType}!UK2Node\_AsyncAction\_ListenForCSTMessage@{UK2Node\_AsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{RefreshOutputPayloadType()}{RefreshOutputPayloadType()}}
+{\footnotesize\ttfamily void UK2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Refresh\+Output\+Payload\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Message\+Subsystem/\+Nodes/\mbox{\hyperlink{K2Node__AsyncAction__ListenForCSTMessage_8h}{K2\+Node\+\_\+\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+h}}\end{DoxyCompactItemize}

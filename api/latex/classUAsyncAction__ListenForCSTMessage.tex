@@ -1,0 +1,177 @@
+\doxysection{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage Class Reference}
+\hypertarget{classUAsyncAction__ListenForCSTMessage}{}\label{classUAsyncAction__ListenForCSTMessage}\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+
+
+{\ttfamily \#include $<$Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+h$>$}
+
+
+
+Inheritance diagram for UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classUAsyncAction__ListenForCSTMessage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUAsyncAction__ListenForCSTMessage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a855894dfc025233c4ad6fd919bfe4d81}{Get\+Payload}} (UPARAM(ref) int32 \&Out\+Payload)
+\item 
+\mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a0b9744cb70a7146b7b2b25fb027b032b}{DECLARE\+\_\+\+FUNCTION}} (exec\+Get\+Payload)
+\item 
+virtual void \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a97eb40be4f656dca1eb8acf2f25ba58b}{Activate}} () override
+\item 
+virtual void \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_aa90207ec2ab1cf409df6e25874bc92d9}{Set\+Ready\+To\+Destroy}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a831bf1f4fd6bb3e41327e91c80b202a8}{Listen\+For\+CSTMessages}} (UObject \texorpdfstring{$\ast$}{*}World\+Context\+Object, FGameplay\+Tag Channel, UScript\+Struct \texorpdfstring{$\ast$}{*}Payload\+Type, \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}} Match\+Type=\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FAsync\+CSTMessage\+Delegate \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_aed698a9a2771848ecce99161e3d2ac6e}{On\+Message\+Received}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_aeb655910e718ecb4ef0f0a4b4fe6683d}{Handle\+Message\+Received}} (FGameplay\+Tag Channel, const UScript\+Struct \texorpdfstring{$\ast$}{*}Struct\+Type, const void \texorpdfstring{$\ast$}{*}Payload)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a9eb701d5e911e65252025bce9df4a445}{Received\+Message\+Payload\+Ptr}} = nullptr
+\item 
+TWeak\+Object\+Ptr$<$ UWorld $>$ \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a7bb04c1fc9bb34305ea48a97c9d74489}{World\+Ptr}}
+\item 
+FGameplay\+Tag \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a42caa7231a97c6581c8e99a44ab0842d}{Channel\+To\+Register}}
+\item 
+TWeak\+Object\+Ptr$<$ UScript\+Struct $>$ \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a363e5f18fd85e8893d4b8f33f47e8735}{Message\+Struct\+Type}} = nullptr
+\item 
+\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}} \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_a0534688bc1ba325d0ca5e5a62fb8aa59}{Message\+Match\+Type}} = \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}}
+\item 
+\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage_aaffc41c6bfb441165e1446be1ed31833}{Listener\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a97eb40be4f656dca1eb8acf2f25ba58b}\label{classUAsyncAction__ListenForCSTMessage_a97eb40be4f656dca1eb8acf2f25ba58b} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!Activate@{Activate}}
+\index{Activate@{Activate}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily virtual void UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Activate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a0b9744cb70a7146b7b2b25fb027b032b}\label{classUAsyncAction__ListenForCSTMessage_a0b9744cb70a7146b7b2b25fb027b032b} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!DECLARE\_FUNCTION@{DECLARE\_FUNCTION}}
+\index{DECLARE\_FUNCTION@{DECLARE\_FUNCTION}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_FUNCTION()}{DECLARE\_FUNCTION()}}
+{\footnotesize\ttfamily UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+DECLARE\+\_\+\+FUNCTION (\begin{DoxyParamCaption}\item[{exec\+Get\+Payload}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a855894dfc025233c4ad6fd919bfe4d81}\label{classUAsyncAction__ListenForCSTMessage_a855894dfc025233c4ad6fd919bfe4d81} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!GetPayload@{GetPayload}}
+\index{GetPayload@{GetPayload}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{GetPayload()}{GetPayload()}}
+{\footnotesize\ttfamily bool UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Get\+Payload (\begin{DoxyParamCaption}\item[{UPARAM(ref) int32 \&}]{Out\+Payload }\end{DoxyParamCaption})}
+
+Attempt to copy the payload received from the broadcasted gameplay message into the specified wildcard. The wildcard\textquotesingle{}s type must match the type from the received message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Out\+Payload} & The wildcard reference the payload should be copied into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the copy was a success 
+\end{DoxyReturn}
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_aeb655910e718ecb4ef0f0a4b4fe6683d}\label{classUAsyncAction__ListenForCSTMessage_aeb655910e718ecb4ef0f0a4b4fe6683d} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!HandleMessageReceived@{HandleMessageReceived}}
+\index{HandleMessageReceived@{HandleMessageReceived}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{HandleMessageReceived()}{HandleMessageReceived()}}
+{\footnotesize\ttfamily void UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Handle\+Message\+Received (\begin{DoxyParamCaption}\item[{FGameplay\+Tag}]{Channel,  }\item[{const UScript\+Struct \texorpdfstring{$\ast$}{*}}]{Struct\+Type,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{Payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a831bf1f4fd6bb3e41327e91c80b202a8}\label{classUAsyncAction__ListenForCSTMessage_a831bf1f4fd6bb3e41327e91c80b202a8} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!ListenForCSTMessages@{ListenForCSTMessages}}
+\index{ListenForCSTMessages@{ListenForCSTMessages}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{ListenForCSTMessages()}{ListenForCSTMessages()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}} \texorpdfstring{$\ast$}{*} UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Listen\+For\+CSTMessages (\begin{DoxyParamCaption}\item[{UObject \texorpdfstring{$\ast$}{*}}]{World\+Context\+Object,  }\item[{FGameplay\+Tag}]{Channel,  }\item[{UScript\+Struct \texorpdfstring{$\ast$}{*}}]{Payload\+Type,  }\item[{\mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}}}]{Match\+Type = {\ttfamily \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Asynchronously waits for a gameplay message to be broadcast on the specified channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Channel} & The message channel to listen for \\
+\hline
+{\em Payload\+Type} & The kind of message structure to use (this must match the same type that the sender is broadcasting) \\
+\hline
+{\em Match\+Type} & The rule used for matching the channel with broadcasted messages \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_aa90207ec2ab1cf409df6e25874bc92d9}\label{classUAsyncAction__ListenForCSTMessage_aa90207ec2ab1cf409df6e25874bc92d9} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!SetReadyToDestroy@{SetReadyToDestroy}}
+\index{SetReadyToDestroy@{SetReadyToDestroy}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{SetReadyToDestroy()}{SetReadyToDestroy()}}
+{\footnotesize\ttfamily virtual void UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Set\+Ready\+To\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a42caa7231a97c6581c8e99a44ab0842d}\label{classUAsyncAction__ListenForCSTMessage_a42caa7231a97c6581c8e99a44ab0842d} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!ChannelToRegister@{ChannelToRegister}}
+\index{ChannelToRegister@{ChannelToRegister}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{ChannelToRegister}{ChannelToRegister}}
+{\footnotesize\ttfamily FGameplay\+Tag UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Channel\+To\+Register\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_aaffc41c6bfb441165e1446be1ed31833}\label{classUAsyncAction__ListenForCSTMessage_aaffc41c6bfb441165e1446be1ed31833} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!ListenerHandle@{ListenerHandle}}
+\index{ListenerHandle@{ListenerHandle}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{ListenerHandle}{ListenerHandle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessage\+Listener\+Handle}} UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Listener\+Handle\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a0534688bc1ba325d0ca5e5a62fb8aa59}\label{classUAsyncAction__ListenForCSTMessage_a0534688bc1ba325d0ca5e5a62fb8aa59} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!MessageMatchType@{MessageMatchType}}
+\index{MessageMatchType@{MessageMatchType}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{MessageMatchType}{MessageMatchType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessage\+Match}} UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Message\+Match\+Type = \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessage\+Match\+::\+Exact\+Match}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a363e5f18fd85e8893d4b8f33f47e8735}\label{classUAsyncAction__ListenForCSTMessage_a363e5f18fd85e8893d4b8f33f47e8735} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!MessageStructType@{MessageStructType}}
+\index{MessageStructType@{MessageStructType}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{MessageStructType}{MessageStructType}}
+{\footnotesize\ttfamily TWeak\+Object\+Ptr$<$UScript\+Struct$>$ UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Message\+Struct\+Type = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_aed698a9a2771848ecce99161e3d2ac6e}\label{classUAsyncAction__ListenForCSTMessage_aed698a9a2771848ecce99161e3d2ac6e} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!OnMessageReceived@{OnMessageReceived}}
+\index{OnMessageReceived@{OnMessageReceived}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{OnMessageReceived}{OnMessageReceived}}
+{\footnotesize\ttfamily FAsync\+CSTMessage\+Delegate UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+On\+Message\+Received}
+
+Called when a message is broadcast on the specified channel. Use \doxylink{classUAsyncAction__ListenForCSTMessage_a855894dfc025233c4ad6fd919bfe4d81}{Get\+Payload()} to request the message payload. \Hypertarget{classUAsyncAction__ListenForCSTMessage_a9eb701d5e911e65252025bce9df4a445}\label{classUAsyncAction__ListenForCSTMessage_a9eb701d5e911e65252025bce9df4a445} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!ReceivedMessagePayloadPtr@{ReceivedMessagePayloadPtr}}
+\index{ReceivedMessagePayloadPtr@{ReceivedMessagePayloadPtr}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{ReceivedMessagePayloadPtr}{ReceivedMessagePayloadPtr}}
+{\footnotesize\ttfamily const void\texorpdfstring{$\ast$}{*} UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+Received\+Message\+Payload\+Ptr = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUAsyncAction__ListenForCSTMessage_a7bb04c1fc9bb34305ea48a97c9d74489}\label{classUAsyncAction__ListenForCSTMessage_a7bb04c1fc9bb34305ea48a97c9d74489} 
+\index{UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}!WorldPtr@{WorldPtr}}
+\index{WorldPtr@{WorldPtr}!UAsyncAction\_ListenForCSTMessage@{UAsyncAction\_ListenForCSTMessage}}
+\doxysubsubsection{\texorpdfstring{WorldPtr}{WorldPtr}}
+{\footnotesize\ttfamily TWeak\+Object\+Ptr$<$UWorld$>$ UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage\+::\+World\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Message\+Subsystem/\mbox{\hyperlink{AsyncAction__ListenForCSTMessage_8h}{Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+h}}\end{DoxyCompactItemize}

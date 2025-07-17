@@ -1,0 +1,80 @@
+\doxysection{Crimson\+Skill\+Tree\+Widget\+\_\+\+Line\+Drawing\+Policy\+Base.\+h}
+\hypertarget{CrimsonSkillTreeWidget__LineDrawingPolicyBase_8h_source}{}\label{CrimsonSkillTreeWidget__LineDrawingPolicyBase_8h_source}\index{Source/CrimsonSkillTree/UserInterface/LineDrawingPolicy/CrimsonSkillTreeWidget\_LineDrawingPolicyBase.h@{Source/CrimsonSkillTree/UserInterface/LineDrawingPolicy/CrimsonSkillTreeWidget\_LineDrawingPolicyBase.h}}
+\mbox{\hyperlink{CrimsonSkillTreeWidget__LineDrawingPolicyBase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ Crimson\ Sword\ Studio,\ 2024.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UObject/Object.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTreeWidget\_LineDrawingPolicyBase.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }UCanvasPanel;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }UImage;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ UCLASS(Abstract,\ Blueprintable,\ EditInlineNew,\ DefaultToInstanced)}
+\DoxyCodeLine{00021\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__LineDrawingPolicyBase}{UCrimsonSkillTreeWidget\_LineDrawingPolicyBase}}\ :\ public\ UObject}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__LineDrawingPolicyBase_a2c38dbe163454c12430a0820e6267e0e}{UCrimsonSkillTreeWidget\_LineDrawingPolicyBase}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\string~\ Public\ Interface}}
+\DoxyCodeLine{00036\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree\ Line\ Drawing"{}})}
+\DoxyCodeLine{00037\ \ \ \ \ void\ DrawAllConnections(UCanvasPanel*\ CanvasPanel,\ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ SkillTree,\ const\ TMap<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*>\&\ NodeWidgetMap,\ TArray<UImage*>\&\ OutDrawnLineWidgets);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Public\ Interface}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\string~\ UObject\ Interface}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PostEditChangeProperty(\textcolor{keyword}{struct}\ FPropertyChangedEvent\&\ PropertyChangedEvent)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UObject\ Interface}}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\string~\ Protected\ Drawing\ Logic}}
+\DoxyCodeLine{00056\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree\ Line\ Drawing"{}})}
+\DoxyCodeLine{00057\ \ \ \ \ void\ CreateVisualConnection(UCanvasPanel*\ CanvasPanel,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ StartNodeWidget,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ EndNodeWidget,\ TArray<UImage*>\&\ InOutDrawnLineWidgets);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ "{}Skill\ Tree\ Line\ Drawing"{})}
+\DoxyCodeLine{00069\ \ \ \ \ virtual\ UImage*\ CreateLineSegmentWidget(UCanvasPanel*\ CanvasPanel,\ const\ FVector2D\&\ SegmentStartPoint,\ const\ FVector2D\&\ SegmentEndPoint,\ const\ FLinearColor\&\ ActualLineColor,\ \textcolor{keywordtype}{float}\ ActualLineThickness);}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ "{}Skill\ Tree\ Line\ Drawing"{})}
+\DoxyCodeLine{00077\ \ \ \ \ FVector2D\ GetOutputConnectionPoint(const\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ NodeWidget)\ const;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ "{}Skill\ Tree\ Line\ Drawing"{})}
+\DoxyCodeLine{00085\ \ \ \ \ FVector2D\ GetInputConnectionPoint(const\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ NodeWidget)\ const;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Protected\ Drawing\ Logic}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ public:\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\string~\ Native\ Implementations\ (for\ BlueprintNativeEvents)}}
+\DoxyCodeLine{00090\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ DrawAllConnections\_Implementation(UCanvasPanel*\ CanvasPanel,\ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ SkillTree,\ const\ TMap<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*>\&\ NodeWidgetMap,\ TArray<UImage*>\&\ OutDrawnLineWidgets);}
+\DoxyCodeLine{00091\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ CreateVisualConnection\_Implementation(UCanvasPanel*\ CanvasPanel,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ StartNodeWidget,\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ EndNodeWidget,\ TArray<UImage*>\&\ InOutDrawnLineWidgets);}
+\DoxyCodeLine{00092\ \ \ \ \ virtual\ FVector2D\ GetOutputConnectionPoint\_Implementation(const\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ NodeWidget)\ const;}
+\DoxyCodeLine{00093\ \ \ \ \ virtual\ FVector2D\ GetInputConnectionPoint\_Implementation(const\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__Node}{UCrimsonSkillTreeWidget\_Node}}*\ NodeWidget)\ const;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Native\ Implementations}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ public:}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\string~\ Style\ Properties}}
+\DoxyCodeLine{00098\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Line\ Style"{})}
+\DoxyCodeLine{00099\ \ \ \ \ FLinearColor\ ActiveLineColor;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Line\ Style"{})}
+\DoxyCodeLine{00102\ \ \ \ \ FLinearColor\ InactiveLineColor;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Line\ Style"{})}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{float}\ LineThickness;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Line\ Style"{})}
+\DoxyCodeLine{00108\ \ \ \ \ FSlateBrush\ LineBrush;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ "{}Line\ Style"{},\ meta=(ClampMin="{}-\/100"{},\ ClampMax="{}100"{}))}
+\DoxyCodeLine{00111\ \ \ \ \ int32\ LineZOrder;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Style\ Properties}}
+\DoxyCodeLine{00113\ \};}
+
+\end{DoxyCode}

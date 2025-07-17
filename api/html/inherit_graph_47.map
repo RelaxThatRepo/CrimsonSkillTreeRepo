@@ -1,0 +1,47 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,383,80,409"/>
+<area shape="rect" id="Node000001" href="$classUCrimsonSkillTree.html" title="A data asset representing the structure of a skill tree, containing nodes and their relationships...." alt="" coords="183,19,324,45"/>
+<area shape="poly" id="edge42_Node000000_Node000001" title=" " alt="" coords="44,370,54,297,71,203,95,114,109,79,126,55,152,39,182,30,183,35,154,43,130,59,114,82,100,115,76,204,59,298,50,370"/>
+<area shape="rect" id="Node000002" href="$classUCrimsonSkillTreeWidget__LineDrawingPolicyBase.html" title="Abstract base class defining a policy for drawing connection lines between skill tree node widgets...." alt="" coords="160,69,347,109"/>
+<area shape="poly" id="edge43_Node000000_Node000002" title=" " alt="" coords="44,369,52,324,66,267,90,206,106,178,126,152,156,126,190,107,193,112,159,130,130,155,111,181,95,209,71,268,57,325,49,370"/>
+<area shape="rect" id="Node000005" href="$classUCrimsonSkillTree__ActivationConditionBase.html" title="Abstract base class for all conditions that must be met for a skill node to be activated or remain ac..." alt="" coords="146,165,361,205"/>
+<area shape="poly" id="edge46_Node000000_Node000005" title=" " alt="" coords="46,369,56,334,71,293,94,251,126,215,144,203,147,208,130,219,99,254,76,295,61,336,52,370"/>
+<area shape="rect" id="Node000008" href="$classUCrimsonSkillTree__AutoLayoutStrategy.html" title=" " alt="" coords="142,229,365,269"/>
+<area shape="poly" id="edge49_Node000000_Node000008" title=" " alt="" coords="54,369,82,323,103,299,126,279,149,267,151,272,130,284,106,303,87,326,58,372"/>
+<area shape="rect" id="Node000011" href="$classUCrimsonSkillTree__Edge.html" title=" " alt="" coords="163,294,343,319"/>
+<area shape="poly" id="edge52_Node000000_Node000011" title=" " alt="" coords="65,372,93,349,127,330,164,317,165,322,129,334,96,354,69,376"/>
+<area shape="rect" id="Node000012" href="$classUCrimsonSkillTree__EditorSettings.html" title=" " alt="" coords="160,344,347,384"/>
+<area shape="poly" id="edge53_Node000000_Node000012" title=" " alt="" coords="94,386,159,376,160,381,94,391"/>
+<area shape="rect" id="Node000013" href="$classUCrimsonSkillTree__EditorTypes.html" title=" " alt="" coords="160,408,347,448"/>
+<area shape="poly" id="edge54_Node000000_Node000013" title=" " alt="" coords="94,401,160,411,159,416,94,406"/>
+<area shape="rect" id="Node000014" href="$classUCrimsonSkillTree__Node.html" title="Represents a single, stateful node within a skill tree." alt="" coords="162,473,345,498"/>
+<area shape="poly" id="edge55_Node000000_Node000014" title=" " alt="" coords="69,416,96,438,129,458,165,470,164,475,127,462,93,443,65,420"/>
+<area shape="rect" id="Node000015" href="$classUCrimsonSkillTree__NodeEventBase.html" title="Base class for events that are triggered by changes in a skill node&#39;s state (e.g.,..." alt="" coords="128,522,379,547"/>
+<area shape="poly" id="edge56_Node000000_Node000015" title=" " alt="" coords="58,420,86,466,106,488,129,507,155,519,153,524,127,512,103,492,82,469,53,423"/>
+<area shape="rect" id="Node000018" href="$classUCrimsonSkillTree__SlateEdgeFactory.html" title=" " alt="" coords="147,572,360,612"/>
+<area shape="poly" id="edge59_Node000000_Node000018" title=" " alt="" coords="53,421,63,453,79,489,101,526,130,557,151,570,148,574,126,561,97,529,74,492,58,454,48,423"/>
+<area shape="rect" id="Node000020" href="$classUCrimsonSkillTree__SlateNodeFactory.html" title=" " alt="" coords="146,636,361,676"/>
+<area shape="poly" id="edge61_Node000000_Node000020" title=" " alt="" coords="49,422,55,466,69,520,93,575,110,600,130,622,147,634,144,639,126,626,105,603,88,578,64,522,50,467,43,423"/>
+<area shape="rect" id="Node000022" href="$classUCrimsonSkillTree__VisualNode.html" title=" " alt="" coords="142,701,365,726"/>
+<area shape="poly" id="edge63_Node000000_Node000022" title=" " alt="" coords="46,422,48,478,59,549,70,587,85,623,104,657,130,686,148,698,145,703,126,690,100,660,80,626,65,589,54,550,43,478,41,422"/>
+<area shape="rect" id="Node000003" href="$classUSkillTreeLineDrawingPolicy__ElbowLine.html" title="A line drawing policy that draws connections as elbow lines (three segments: vertical,..." alt="" coords="443,5,649,45"/>
+<area shape="poly" id="edge44_Node000002_Node000003" title=" " alt="" coords="358,64,453,43,455,48,359,69"/>
+<area shape="rect" id="Node000004" href="$classUSkillTreeLineDrawingPolicy__StraightLine.html" title="A simple line drawing policy that draws a direct straight line between node connection points...." alt="" coords="443,69,649,109"/>
+<area shape="poly" id="edge45_Node000002_Node000004" title=" " alt="" coords="360,87,442,87,442,92,360,92"/>
+<area shape="rect" id="Node000006" href="$classUCrimsonSkillTree__ActivationCondition__AttributeRequirement.html" title="An activation condition that requires a specific Gameplay Attribute to meet a defined threshold." alt="" coords="430,133,662,173"/>
+<area shape="poly" id="edge47_Node000005_Node000006" title=" " alt="" coords="374,169,429,163,430,169,375,175"/>
+<area shape="rect" id="Node000007" href="$classUCrimsonSkillTree__ActivationCondition__ParentLevel.html" title="An activation condition that requires a specific parent node to be at or above a certain level." alt="" coords="439,197,653,237"/>
+<area shape="poly" id="edge48_Node000005_Node000007" title=" " alt="" coords="375,196,439,203,438,208,374,201"/>
+<area shape="rect" id="Node000009" href="$classUCrimsonSkillTree__ForceDirectedLayoutStrategy.html" title=" " alt="" coords="427,261,665,301"/>
+<area shape="poly" id="edge50_Node000008_Node000009" title=" " alt="" coords="378,260,427,266,426,271,378,266"/>
+<area shape="rect" id="Node000010" href="$classUCrimsonSkillTree__TreeLayoutStrategy.html" title=" " alt="" coords="437,325,655,365"/>
+<area shape="poly" id="edge51_Node000008_Node000010" title=" " alt="" coords="360,271,380,279,404,295,428,311,459,323,457,328,425,316,401,299,377,284,358,276"/>
+<area shape="rect" id="Node000016" href="$classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect.html" title="A skill node event that applies a specified GameplayEffect to the owner. This event handles the appli..." alt="" coords="437,447,655,487"/>
+<area shape="poly" id="edge57_Node000015_Node000016" title=" " alt="" coords="332,517,378,507,469,484,471,489,379,512,334,522"/>
+<area shape="rect" id="Node000017" href="$classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility.html" title="A skill node event that grants a specified GameplayAbility to the owner. This event handles the grant..." alt="" coords="437,511,655,551"/>
+<area shape="poly" id="edge58_Node000015_Node000017" title=" " alt="" coords="392,530,437,529,437,535,393,535"/>
+<area shape="rect" id="Node000019" href="$classUCrimsonSkillTree__SlateEdgeFactory__Default.html" title=" " alt="" coords="439,575,653,615"/>
+<area shape="poly" id="edge60_Node000018_Node000019" title=" " alt="" coords="374,590,439,591,439,596,374,596"/>
+<area shape="rect" id="Node000021" href="$classUCrimsonSkillTree__SlateNodeFactory__Default.html" title=" " alt="" coords="439,639,653,679"/>
+<area shape="poly" id="edge62_Node000020_Node000021" title=" " alt="" coords="375,654,438,655,438,660,375,660"/>
+</map>

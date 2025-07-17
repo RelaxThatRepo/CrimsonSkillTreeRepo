@@ -1,0 +1,66 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Parent\+Level\+\_\+\+Details\+Customization.\+h}
+\hypertarget{CrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_8h_source}{}\label{CrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_8h_source}\index{Source/CrimsonSkillTreeEditor/Editor/CrimsonSkillTree\_ActivationCondition\_ParentLevel\_DetailsCustomization.h@{Source/CrimsonSkillTreeEditor/Editor/CrimsonSkillTree\_ActivationCondition\_ParentLevel\_DetailsCustomization.h}}
+\mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IDetailCustomization.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}UObject/Object.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }IDetailLayoutBuilder;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }UCrimsonSkillActivationCondition\_ParentLevel;\ \textcolor{comment}{//\ Your\ condition\ class}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Simple\ struct\ to\ hold\ display\ name\ and\ GUID\ for\ the\ SComboBox}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFParentNodeOption}{FParentNodeOption}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ FText\ \mbox{\hyperlink{structFParentNodeOption_aa87d922b918221b911382564536ae013}{DisplayName}};}
+\DoxyCodeLine{00018\ \ \ \ \ FGuid\ \mbox{\hyperlink{structFParentNodeOption_aa8b1982789777a8bcd899eaaad9fcf00}{NodeGuid}};}
+\DoxyCodeLine{00019\ \ \ \ \ int32\ \mbox{\hyperlink{structFParentNodeOption_a3e8a3f249f6c9d6bde55a8b8854bf23b}{ParentMaxLevel}};\ \textcolor{comment}{//\ Store\ this\ for\ updating\ the\ RequiredLevel\ slider}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{structFParentNodeOption_a23aa2f1febd90496faa027d084360c8d}{FParentNodeOption}}(\textcolor{keyword}{const}\ FText\&\ InName,\ \textcolor{keyword}{const}\ FGuid\&\ InGuid,\ int32\ InMaxLevel)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structFParentNodeOption_aa87d922b918221b911382564536ae013}{DisplayName}}(InName),\ \mbox{\hyperlink{structFParentNodeOption_aa8b1982789777a8bcd899eaaad9fcf00}{NodeGuid}}(InGuid),\ \mbox{\hyperlink{structFParentNodeOption_a3e8a3f249f6c9d6bde55a8b8854bf23b}{ParentMaxLevel}}(InMaxLevel)\ \{\}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ For\ SComboBox\ comparison}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFParentNodeOption_ac0191943b19f89d5a3841807637cabbe}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFParentNodeOption}{FParentNodeOption}}\&\ Other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structFParentNodeOption_aa8b1982789777a8bcd899eaaad9fcf00}{NodeGuid}}\ ==\ Other.\mbox{\hyperlink{structFParentNodeOption_aa8b1982789777a8bcd899eaaad9fcf00}{NodeGuid}};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization}{FCrimsonSkillTree\_ActivationCondition\_ParentLevel\_DetailsCustomization}}\ :\ \textcolor{keyword}{public}\ IDetailCustomization}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ TSharedRef<IDetailCustomization>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_ab759e36abb503cd87c1464a9d7071d61}{MakeInstance}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a3bf9c8fabeadf4914b4f759e4c6672ce}{CustomizeDetails}}(IDetailLayoutBuilder\&\ DetailBuilder)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ SComboBox\ Callbacks}}
+\DoxyCodeLine{00040\ \ \ \ \ TSharedRef<SWidget>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_abc0fade2ee2e00475d37bb303e4cb1a9}{OnGenerateParentNodeWidget}}(TSharedPtr<FParentNodeOption>\ InOption)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_ab7b809ba40bff6ee9c6ecfc2303a62a9}{OnParentNodeSelectionChanged}}(TSharedPtr<FParentNodeOption>\ NewSelection,\ ESelectInfo::Type\ SelectInfo);}
+\DoxyCodeLine{00042\ \ \ \ \ FText\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a435d8c62053106feb81a674b37f43e4c}{GetCurrentParentNodeDisplayName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ Helper\ to\ populate\ parent\ options}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a2e40813e4db507334f607a232e7ec8b0}{PopulateParentNodeOptions}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Update\ RequiredLevel\ property\ constraints}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a2a29b101950ec477ea06e5fd06331646}{UpdateRequiredLevelConstraints}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ TArray<TWeakObjectPtr<UObject>>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a17cf8ff03fe0d7ae4218ac474b2b378c}{CustomizedObjects}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a94d4a959dde48759bddb7cf4d08033f8}{OwningSkillNode}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ The\ node\ that\ owns\ this\ condition\ instance}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ TArray<TSharedPtr<FParentNodeOption>>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a0fc4b43baae5805557c6c86b79a89b30}{ParentNodeOptionsList}};}
+\DoxyCodeLine{00054\ \ \ \ \ TSharedPtr<FParentNodeOption>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a4f8d9c64b7d731c0c2268246bb656588}{CurrentSelectedParentOption}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ TSharedPtr<IPropertyHandle>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_a51cdab67364bfac285703b627120a3fb}{TargetParentNodeGuidHandle}};}
+\DoxyCodeLine{00057\ \ \ \ \ TSharedPtr<IPropertyHandle>\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_ab6876614167bd0d4ae40c4d18fa2011d}{RequiredLevelHandle}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ IDetailLayoutBuilder*\ \mbox{\hyperlink{classFCrimsonSkillTree__ActivationCondition__ParentLevel__DetailsCustomization_ab7e03130ee1cf7513cb7f8480a3923de}{CachedDetailBuilder}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ To\ force\ refresh}}
+\DoxyCodeLine{00060\ \};}
+
+\end{DoxyCode}

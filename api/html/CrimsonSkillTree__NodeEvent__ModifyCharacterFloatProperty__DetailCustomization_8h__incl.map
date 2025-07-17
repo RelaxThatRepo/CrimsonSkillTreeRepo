@@ -1,0 +1,32 @@
+<map id="Source/CrimsonSkillTreeEditor/DetailCustomization/CrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty_DetailCustomization.h" name="Source/CrimsonSkillTreeEditor/DetailCustomization/CrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty_DetailCustomization.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="22,5,351,75"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,401,123,427"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,77,110,98,92,124,77,158,67,195,57,269,58,337,63,388,57,388,53,337,52,269,62,194,72,156,87,121,106,95,130,73"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,137,272,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,75,189,123,184,123,184,75"/>
+<area shape="rect" id="Node000004" href="$CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty_8h.html" title=" " alt="" coords="296,123,531,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="258,72,347,114,345,119,256,77"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="370,180,296,228,178,319,89,394,86,390,175,314,293,223,367,175"/>
+<area shape="rect" id="Node000005" href="$CrimsonSkillTree__NodeEventBase_8h.html" title=" " alt="" coords="307,225,517,265"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="416,178,415,212,410,212,410,178"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="541,225,845,265"/>
+<area shape="poly" id="edge16_Node000004_Node000014" title=" " alt="" coords="493,175,625,218,623,224,491,180"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="374,268,101,398,99,393,372,263"/>
+<area shape="rect" id="Node000006" href="$SimulationDataCollector_8h.html" title=" " alt="" coords="309,313,515,353"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="415,266,415,299,409,299,409,266"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="539,321,671,346"/>
+<area shape="poly" id="edge14_Node000005_Node000012" title=" " alt="" coords="456,263,568,313,566,318,453,268"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="695,313,905,353"/>
+<area shape="poly" id="edge15_Node000005_Node000013" title=" " alt="" coords="498,263,702,308,701,313,497,268"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="329,356,129,401,127,396,328,351"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="147,401,325,427"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="371,356,276,398,273,393,369,351"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="349,401,475,427"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="415,354,415,387,409,387,409,354"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="499,401,658,427"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="453,351,543,393,541,398,451,356"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="682,401,867,427"/>
+<area shape="poly" id="edge12_Node000006_Node000010" title=" " alt="" coords="499,351,709,396,708,401,498,356"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="891,401,1154,427"/>
+<area shape="poly" id="edge13_Node000006_Node000011" title=" " alt="" coords="515,349,528,351,904,397,904,402,528,356,515,354"/>
+</map>

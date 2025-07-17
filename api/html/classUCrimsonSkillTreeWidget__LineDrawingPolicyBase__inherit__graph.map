@@ -1,0 +1,9 @@
+<map id="UCrimsonSkillTreeWidget_LineDrawingPolicyBase" name="UCrimsonSkillTreeWidget_LineDrawingPolicyBase">
+<area shape="rect" id="Node000001" title="Abstract base class defining a policy for drawing connection lines between skill tree node widgets...." alt="" coords="130,79,317,119"/>
+<area shape="rect" id="Node000003" href="$classUSkillTreeLineDrawingPolicy__ElbowLine.html" title="A line drawing policy that draws connections as elbow lines (three segments: vertical,..." alt="" coords="5,167,212,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,129,136,169,132,164,185,125"/>
+<area shape="rect" id="Node000004" href="$classUSkillTreeLineDrawingPolicy__StraightLine.html" title="A simple line drawing policy that draws a direct straight line between node connection points...." alt="" coords="236,167,443,207"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="262,125,315,164,312,169,258,129"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="186,5,261,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,44,226,79,221,79,221,44"/>
+</map>

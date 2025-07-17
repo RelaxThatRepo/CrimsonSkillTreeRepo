@@ -1,0 +1,53 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Auto\+Layout\+Strategy.\+h}
+\hypertarget{CrimsonSkillTree__AutoLayoutStrategy_8h_source}{}\label{CrimsonSkillTree__AutoLayoutStrategy_8h_source}\index{Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree\_AutoLayoutStrategy.h@{Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree\_AutoLayoutStrategy.h}}
+\mbox{\hyperlink{CrimsonSkillTree__AutoLayoutStrategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_AutoLayoutStrategy.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Graph}{UCrimsonSkillTree\_Graph}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimsonSkillTree\_GraphNode}};}
+\DoxyCodeLine{00016\ UCLASS(Abstract)}
+\DoxyCodeLine{00017\ class\ CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy}{UCrimsonSkillTree\_AutoLayoutStrategy}}:\ public\ UObject}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_add80c5acde7a4fe914e2c4c545605102}{UCrimsonSkillTree\_AutoLayoutStrategy}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a1b9ae36e920c5fa0cb196d66225d5cc2}{\string~UCrimsonSkillTree\_AutoLayoutStrategy}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a0b7f5d3494b9883505c8edb169736054}{Layout}}(UEdGraph*\ G)\ \{\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ int32\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a64af88f43b65c98d2748b08351e3ceb3}{GetNodeWidth}}(\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimsonSkillTree\_GraphNode}}*\ EdNode);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ int32\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a0d72ee572a5deb9353d0f1e21f07a4e3}{GetNodeHeight}}(\mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimsonSkillTree\_GraphNode}}*\ EdNode);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ FBox2D\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_a6ac0b0e5e2ddf47587373ec8a6ec1ed9}{GetNodeBound}}(UEdGraphNode*\ EdNode);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ FBox2D\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_abe87977540b6cdc95eea3a1b79d28494}{GetActualBounds}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy_ac61a8e8d7400fcfe050845af041f1961}{RandomLayoutOneTree}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode,\ \textcolor{keyword}{const}\ FBox2D\&\ Bound);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ UPROPERTY()}
+\DoxyCodeLine{00039\ \ \ \ \ TObjectPtr<class\ \mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimsonSkillTree\_EditorSettings}}>\ Settings;}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ protected:}
+\DoxyCodeLine{00042\ \ \ \ \ UPROPERTY()}
+\DoxyCodeLine{00043\ \ \ \ \ TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}>\ Graph;}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ UPROPERTY()}
+\DoxyCodeLine{00046\ \ \ \ \ TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__Graph}{UCrimsonSkillTree\_Graph}}>\ EdGraph;}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ int32\ MaxIteration;}
+\DoxyCodeLine{00049\ \ \ \ \ int32\ OptimalDistance;}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

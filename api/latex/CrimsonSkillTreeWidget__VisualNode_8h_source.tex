@@ -1,0 +1,41 @@
+\doxysection{Crimson\+Skill\+Tree\+Widget\+\_\+\+Visual\+Node.\+h}
+\hypertarget{CrimsonSkillTreeWidget__VisualNode_8h_source}{}\label{CrimsonSkillTreeWidget__VisualNode_8h_source}\index{Source/CrimsonSkillTree/UserInterface/CrimsonSkillTreeWidget\_VisualNode.h@{Source/CrimsonSkillTree/UserInterface/CrimsonSkillTreeWidget\_VisualNode.h}}
+\mbox{\hyperlink{CrimsonSkillTreeWidget__VisualNode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}CommonUserWidget.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTreeWidget\_VisualNode.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }USizeBox;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }UTextBlock;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }UBorder;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ UCLASS(Abstract)}
+\DoxyCodeLine{00021\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTreeWidget__VisualNode}{UCrimsonSkillTreeWidget\_VisualNode}}\ :\ public\ UCommonUserWidget}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree\ Visual\ Node"{}})}
+\DoxyCodeLine{00032\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ InitializeFromNodeData(const\ \mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}}*\ InNodeData);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ protected:}
+\DoxyCodeLine{00039\ \ \ \ \ UPROPERTY(VisibleAnywhere,\ BlueprintReadOnly,\ Category\ =\ "{}Skill\ Tree\ Visual\ Node"{})}
+\DoxyCodeLine{00040\ \ \ \ \ TObjectPtr<const\ \mbox{\hyperlink{classUCrimsonSkillTree__VisualNode}{UCrimsonSkillTree\_VisualNode}}>\ VisualNodeData;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ meta\ =\ (BindWidget))}
+\DoxyCodeLine{00046\ \ \ \ \ TObjectPtr<USizeBox>\ SizeBox;}
+\DoxyCodeLine{00050\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ meta\ =\ (BindWidget))}
+\DoxyCodeLine{00051\ \ \ \ \ TObjectPtr<UTextBlock>\ TitleText;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ UPROPERTY(BlueprintReadOnly,\ meta\ =\ (BindWidget))}
+\DoxyCodeLine{00057\ \ \ \ \ TObjectPtr<UBorder>\ BackgroundBorder;}
+\DoxyCodeLine{00058\ \};}
+
+\end{DoxyCode}

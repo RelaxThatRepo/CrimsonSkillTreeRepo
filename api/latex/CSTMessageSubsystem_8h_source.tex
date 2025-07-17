@@ -1,0 +1,169 @@
+\doxysection{CSTMessage\+Subsystem.\+h}
+\hypertarget{CSTMessageSubsystem_8h_source}{}\label{CSTMessageSubsystem_8h_source}\index{Source/CrimsonSkillTree/MessageSubsystem/CSTMessageSubsystem.h@{Source/CrimsonSkillTree/MessageSubsystem/CSTMessageSubsystem.h}}
+\mbox{\hyperlink{CSTMessageSubsystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CSTMessageTypes_8h}{CSTMessageTypes.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameplayTagContainer.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Subsystems/GameInstanceSubsystem.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}CSTMessageSubsystem.generated.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsyncAction\_ListenForCSTMessage}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }FFrame;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00021\ struct\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}()\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFCSTMessageListenerHandle_a63ddfe24023cd45e6288800cfdc2ca19}{Unregister}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFCSTMessageListenerHandle_a6182ad72afbd335fae67df40f6005fc5}{IsValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ ID\ !=\ 0;\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00034\ \ \ \ \ TWeakObjectPtr<\mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}}>\ Subsystem;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00037\ \ \ \ \ FGameplayTag\ Channel;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00040\ \ \ \ \ int32\ ID\ =\ 0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ FDelegateHandle\ StateClearedHandle;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ friend\ \mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}(\mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}}*\ InSubsystem,\ FGameplayTag\ InChannel,\ int32\ InID)\ :\ Subsystem(InSubsystem),\ Channel(InChannel),\ ID(InID)\ \{\}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ USTRUCT()}
+\DoxyCodeLine{00053\ struct\ \mbox{\hyperlink{structFCSTMessageListenerData}{FCSTMessageListenerData}}}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Callback\ for\ when\ a\ message\ has\ been\ received}}
+\DoxyCodeLine{00058\ \ \ \ \ TFunction<\textcolor{keywordtype}{void}(FGameplayTag,\ const\ UScriptStruct*,\ const\ \textcolor{keywordtype}{void}*)>\ ReceivedCallback;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ int32\ HandleID;}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessageMatch}}\ MatchType;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Adding\ some\ logging\ and\ extra\ variables\ around\ some\ potential\ problems\ with\ this}}
+\DoxyCodeLine{00064\ \ \ \ \ TWeakObjectPtr<const\ UScriptStruct>\ ListenerStructType\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ bHadValidType\ =\ false;}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00083\ UCLASS()}
+\DoxyCodeLine{00084\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}}\ :\ public\ UGameInstanceSubsystem}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ friend\ \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsyncAction\_ListenForCSTMessage}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ public:}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ static\ \mbox{\hyperlink{classUCSTMessageSubsystem}{UCSTMessageSubsystem}}\&\ Get(const\ UObject*\ WorldContextObject);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \ \ static\ \textcolor{keywordtype}{bool}\ HasInstance(const\ UObject*\ WorldContextObject);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\string~USubsystem\ interface}}
+\DoxyCodeLine{00103\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ Deinitialize()\ override;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\string~End\ of\ USubsystem\ interface}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00112\ \ \ \ \ template\ <typename\ FMessageStructType>}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ BroadcastMessage(FGameplayTag\ Channel,\ const\ FMessageStructType\&\ Message)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ TBaseStructure<FMessageStructType>::Get();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ BroadcastMessageInternal(Channel,\ StructType,\ \&Message);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FMessageStructType>}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ \mbox{\hyperlink{classUCSTMessageSubsystem_a77454092952bd17115c0f28d832dd9f5}{RegisterListener}}(FGameplayTag\ Channel,\ TFunction<\textcolor{keywordtype}{void}(FGameplayTag,\ \textcolor{keyword}{const}\ FMessageStructType\&)>\&\&\ Callback,\ \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessageMatch}}\ MatchType\ =\ \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77a9ba95bbc0af89aca6c6c6ac908cd4c27}{ECSTMessageMatch::ExactMatch}})}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ThunkCallback\ =\ [InnerCallback\ =\ MoveTemp(Callback)](FGameplayTag\ ActualTag,\ \textcolor{keyword}{const}\ UScriptStruct*\ SenderStructType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ SenderPayload)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ InnerCallback(ActualTag,\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }FMessageStructType*\textcolor{keyword}{>}(SenderPayload));}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ TBaseStructure<FMessageStructType>::Get();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RegisterListenerInternal(Channel,\ ThunkCallback,\ StructType,\ MatchType);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FMessageStructType,\ \textcolor{keyword}{typename}\ TOwner\ =\ UObject>}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ \mbox{\hyperlink{classUCSTMessageSubsystem_a5ec5abb2579f5742d1bd6ed03c86f774}{RegisterListener}}(FGameplayTag\ Channel,\ TOwner*\ Object,\ \textcolor{keywordtype}{void}(TOwner::*\ Function)(FGameplayTag,\ const\ FMessageStructType\&))}
+\DoxyCodeLine{00151\ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ TWeakObjectPtr<TOwner>\ WeakObject(Object);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ RegisterListener<FMessageStructType>(Channel,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ [WeakObject,\ Function](FGameplayTag\ Channel,\ \textcolor{keyword}{const}\ FMessageStructType\&\ Payload)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TOwner*\ StrongObject\ =\ WeakObject.Get())}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (StrongObject-\/>*Function)(Channel,\ Payload);}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FMessageStructType>}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ \mbox{\hyperlink{classUCSTMessageSubsystem_a81285c60ea53ceebbe24873a6cb08cc7}{RegisterListener}}(FGameplayTag\ Channel,\ \mbox{\hyperlink{structFCSTMessageListenerParams}{FCSTMessageListenerParams<FMessageStructType>}}\&\ Params)}
+\DoxyCodeLine{00174\ \ \ \ \ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ Handle;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Register\ to\ receive\ any\ future\ messages\ broadcast\ on\ this\ channel}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Params.\mbox{\hyperlink{structFCSTMessageListenerParams_a9aa1da59b2395dcc8e2377e7734a9f23}{OnMessageReceivedCallback}})}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ThunkCallback\ =\ [InnerCallback\ =\ Params.\mbox{\hyperlink{structFCSTMessageListenerParams_a9aa1da59b2395dcc8e2377e7734a9f23}{OnMessageReceivedCallback}}](FGameplayTag\ ActualTag,\ \textcolor{keyword}{const}\ UScriptStruct*\ SenderStructType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ SenderPayload)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InnerCallback(ActualTag,\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }FMessageStructType*\textcolor{keyword}{>}(SenderPayload));}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ TBaseStructure<FMessageStructType>::Get();}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ Handle\ =\ RegisterListenerInternal(Channel,\ ThunkCallback,\ StructType,\ Params.\mbox{\hyperlink{structFCSTMessageListenerParams_a81a6c4116e4ff532c9c81e453fd0e01c}{MatchType}});}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Handle;}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCSTMessageSubsystem_ab7b9261adc8f1ca089f689c419452345}{UnregisterListener}}(\mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ Handle);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00206\ \ \ \ \ UFUNCTION(BlueprintCallable,\ CustomThunk,\ Category=Messaging,\ meta=(CustomStructureParam=\textcolor{stringliteral}{"{}Message"{}},\ AllowAbstract=\textcolor{stringliteral}{"{}false"{}},\ DisplayName=\textcolor{stringliteral}{"{}Broadcast\ Message"{}}))}
+\DoxyCodeLine{00207\ \ \ \ \ void\ K2\_BroadcastMessage(FGameplayTag\ Channel,\ const\ int32\&\ Message);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ DECLARE\_FUNCTION(execK2\_BroadcastMessage);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ private:}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\ Internal\ helper\ for\ broadcasting\ a\ message}}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ BroadcastMessageInternal(FGameplayTag\ Channel,\ const\ UScriptStruct*\ StructType,\ const\ \textcolor{keywordtype}{void}*\ MessageBytes);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ Internal\ helper\ for\ registering\ a\ message\ listener}}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{structFCSTMessageListenerHandle}{FCSTMessageListenerHandle}}\ RegisterListenerInternal(}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ FGameplayTag\ Channel,\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ TFunction<\textcolor{keywordtype}{void}(FGameplayTag,\ const\ UScriptStruct*,\ const\ \textcolor{keywordtype}{void}*)>\&\&\ Callback,}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ const\ UScriptStruct*\ StructType,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{CSTMessageTypes_8h_ac0cf9e3fed894aacb3588986c976be77}{ECSTMessageMatch}}\ MatchType);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{void}\ UnregisterListenerInternal(FGameplayTag\ Channel,\ int32\ HandleID);}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ private:}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//\ List\ of\ all\ entries\ for\ a\ given\ channel}}
+\DoxyCodeLine{00226\ \ \ \ \ struct\ \mbox{\hyperlink{structUCSTMessageSubsystem_1_1FChannelListenerList}{FChannelListenerList}}}
+\DoxyCodeLine{00227\ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ TArray<FCSTMessageListenerData>\ \mbox{\hyperlink{structUCSTMessageSubsystem_1_1FChannelListenerList_a18d51641df1060fc7a1c382d449b4fa2}{Listeners}};}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ int32\ HandleID\ =\ 0;}
+\DoxyCodeLine{00230\ \ \ \ \ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00233\ \ \ \ \ TMap<FGameplayTag,\ FChannelListenerList>\ \mbox{\hyperlink{classUCSTMessageSubsystem_aff4e589f1bf7f1a8a96dec5fa5fb59ba}{ListenerMap}};}
+\DoxyCodeLine{00234\ \};}
+
+\end{DoxyCode}

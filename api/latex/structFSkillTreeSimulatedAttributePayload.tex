@@ -1,0 +1,52 @@
+\doxysection{FSkill\+Tree\+Simulated\+Attribute\+Payload Struct Reference}
+\hypertarget{structFSkillTreeSimulatedAttributePayload}{}\label{structFSkillTreeSimulatedAttributePayload}\index{FSkillTreeSimulatedAttributePayload@{FSkillTreeSimulatedAttributePayload}}
+
+
+Represents a simulated change to a gameplay attribute, typically used by node events for predictive calculations. This payload helps in determining the net effect of an event on an attribute without actually applying it.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FGameplay\+Attribute \mbox{\hyperlink{structFSkillTreeSimulatedAttributePayload_aa6cb7b3a71d9ef43eb66e6f071a46ceb}{Attribute}}
+\begin{DoxyCompactList}\small\item\em The gameplay attribute that is affected by the simulation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structFSkillTreeSimulatedAttributePayload_ae2ab16d2308a1b8ad5b2d2c94f728a9a}{Net\+Additive\+Change}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em The net additive change to the attribute. For example, if an event grants +10 to an attribute and is being simulated for reversal, this value would be -\/10. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a simulated change to a gameplay attribute, typically used by node events for predictive calculations. This payload helps in determining the net effect of an event on an attribute without actually applying it. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFSkillTreeSimulatedAttributePayload_aa6cb7b3a71d9ef43eb66e6f071a46ceb}\label{structFSkillTreeSimulatedAttributePayload_aa6cb7b3a71d9ef43eb66e6f071a46ceb} 
+\index{FSkillTreeSimulatedAttributePayload@{FSkillTreeSimulatedAttributePayload}!Attribute@{Attribute}}
+\index{Attribute@{Attribute}!FSkillTreeSimulatedAttributePayload@{FSkillTreeSimulatedAttributePayload}}
+\doxysubsubsection{\texorpdfstring{Attribute}{Attribute}}
+{\footnotesize\ttfamily FGameplay\+Attribute FSkill\+Tree\+Simulated\+Attribute\+Payload\+::\+Attribute}
+
+
+
+The gameplay attribute that is affected by the simulation. 
+
+\Hypertarget{structFSkillTreeSimulatedAttributePayload_ae2ab16d2308a1b8ad5b2d2c94f728a9a}\label{structFSkillTreeSimulatedAttributePayload_ae2ab16d2308a1b8ad5b2d2c94f728a9a} 
+\index{FSkillTreeSimulatedAttributePayload@{FSkillTreeSimulatedAttributePayload}!NetAdditiveChange@{NetAdditiveChange}}
+\index{NetAdditiveChange@{NetAdditiveChange}!FSkillTreeSimulatedAttributePayload@{FSkillTreeSimulatedAttributePayload}}
+\doxysubsubsection{\texorpdfstring{NetAdditiveChange}{NetAdditiveChange}}
+{\footnotesize\ttfamily float FSkill\+Tree\+Simulated\+Attribute\+Payload\+::\+Net\+Additive\+Change = 0.\+0f}
+
+
+
+The net additive change to the attribute. For example, if an event grants +10 to an attribute and is being simulated for reversal, this value would be -\/10. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Events/\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ApplyGameplayEffect_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect.\+h}}\end{DoxyCompactItemize}

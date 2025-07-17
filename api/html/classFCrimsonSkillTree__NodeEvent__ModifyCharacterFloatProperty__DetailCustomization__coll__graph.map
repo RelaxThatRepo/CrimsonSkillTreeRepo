@@ -1,0 +1,7 @@
+<map id="FCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty_DetailCustomization" name="FCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty_DetailCustomization">
+<area shape="rect" id="Node000001" title=" " alt="" coords="81,108,305,163"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,13,164,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,46,168,106,165,110,104,50"/>
+<area shape="rect" id="Node000003" href="$classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty.html" title="A base skill node event designed to modify a specified float UPROPERTY on the owning ACharacter or it..." alt="" coords="189,5,413,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,57,221,110,217,106,270,53"/>
+</map>

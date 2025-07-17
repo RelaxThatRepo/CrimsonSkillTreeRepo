@@ -1,0 +1,231 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base Class Reference}
+\hypertarget{classUCrimsonSkillTree__NodeEventBase}{}\label{classUCrimsonSkillTree__NodeEventBase}\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+
+
+Base class for events that are triggered by changes in a skill node\textquotesingle{}s state (e.\+g., level up, level down, reset). These events can implement various gameplay logic such as applying gameplay effects, granting abilities, modifying attributes, or triggering other game systems. This class is intended to be subclassed in C++ or Blueprint to create specific node events. Instances are typically created as subobjects of \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUCrimsonSkillTree__NodeEventBase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classUCrimsonSkillTree__NodeEventBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_acd9259bfa4e41449d60faba2a4c586e3}{Initialize\+Event\+Context}} (AActor \texorpdfstring{$\ast$}{*}In\+Owner\+Actor, \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}In\+Emitter\+Node)
+\begin{DoxyCompactList}\small\item\em Initializes the event with essential context from its owning node and the actor possessing the skill tree. This is typically called by the \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} before this event is executed (e.\+g., before On\+Level\+Up/\+On\+Level\+Down). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aec6f504271f52144a59d06e3f0ed5d1f}{On\+Level\+Up}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level increases or when it is initially activated. Subclasses should implement specific gameplay logic here. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a80f74a3a13f2a74aa98d853e2f687f30}{On\+Level\+Down}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level decreases or when it is deactivated. Subclasses should implement specific gameplay logic here, often reversing effects applied in On\+Level\+Up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ae9d5d7c4c6cd682412980a7182818b8a}{On\+Node\+Reset}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 Previous\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node is forcefully reset to its unassigned/initial state (e.\+g., during a full skill tree respec). Subclasses should implement logic to completely reverse any persistent effects and clean up. \end{DoxyCompactList}\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ad49d43e598258087ec449fb1d157b636}{Get\+Tooltip\+Description}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Potential\+Emitter\+Node) const
+\begin{DoxyCompactList}\small\item\em Gets a descriptive text for this event, suitable for tooltips or UI displays. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aa0c30ac4180496b21357fcc96eb2fb19}{Populate\+Simulation\+Data}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Event\+Context\+Node, int32 Original\+Effective\+Level, bool b\+Simulating\+Reversal, \mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&Out\+Data\+Collector) const
+\begin{DoxyCompactList}\small\item\em Allows this event to contribute to a simulation by populating a data collector with USTRUCTs representing the simulated effects if this event were to be applied or reversed. This is crucial for predicting the outcome of skill tree modifications without actually applying them. \end{DoxyCompactList}\item 
+virtual UWorld \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World}} () const override
+\begin{DoxyCompactList}\small\item\em Overrides \doxylink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World()} from UObject to provide a valid world context, typically derived from the Owner\+Actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aafb3f84add0ded1737b446c3971d4af3}{Editor\+Provided\+Description}}
+\begin{DoxyCompactList}\small\item\em A description of the event\textquotesingle{}s effect, primarily for display in editor tooltips or UI. Can be set directly in the editor. If this has a description, it will take priority over the description gotten from Get\+Tooltip\+Description Leave empty to use the data from Get\+Tooltip\+Description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TWeak\+Object\+Ptr$<$ AActor $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6c34c7aa955e4aa4051d096d607209c1}{Owner\+Actor}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the actor that owns the Skill\+Tree\+Manager\+Component, serving as the context for this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\item 
+TWeak\+Object\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6efbe9f729a198956277120cde46a0c8}{Emitter\+Skill\+Node}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the skill node that emitted (or would emit) this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for events that are triggered by changes in a skill node\textquotesingle{}s state (e.\+g., level up, level down, reset). These events can implement various gameplay logic such as applying gameplay effects, granting abilities, modifying attributes, or triggering other game systems. This class is intended to be subclassed in C++ or Blueprint to create specific node events. Instances are typically created as subobjects of \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_ad49d43e598258087ec449fb1d157b636}\label{classUCrimsonSkillTree__NodeEventBase_ad49d43e598258087ec449fb1d157b636} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!GetTooltipDescription@{GetTooltipDescription}}
+\index{GetTooltipDescription@{GetTooltipDescription}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{GetTooltipDescription()}{GetTooltipDescription()}}
+{\footnotesize\ttfamily FText UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Get\+Tooltip\+Description (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Potential\+Emitter\+Node }\end{DoxyParamCaption}) const}
+
+
+
+Gets a descriptive text for this event, suitable for tooltips or UI displays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Potential\+Emitter\+Node} & The node that would potentially emit this event. Can be used to provide context-\/specific descriptions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A FText description of the event\textquotesingle{}s effect. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}\label{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!GetWorld@{GetWorld}}
+\index{GetWorld@{GetWorld}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{GetWorld()}{GetWorld()}}
+{\footnotesize\ttfamily virtual UWorld \texorpdfstring{$\ast$}{*} UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Get\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overrides \doxylink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World()} from UObject to provide a valid world context, typically derived from the Owner\+Actor. 
+
+\begin{DoxyReturn}{Returns}
+The UWorld this event object is associated with, or nullptr if unavailable. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_acd9259bfa4e41449d60faba2a4c586e3}\label{classUCrimsonSkillTree__NodeEventBase_acd9259bfa4e41449d60faba2a4c586e3} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!InitializeEventContext@{InitializeEventContext}}
+\index{InitializeEventContext@{InitializeEventContext}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{InitializeEventContext()}{InitializeEventContext()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Initialize\+Event\+Context (\begin{DoxyParamCaption}\item[{AActor \texorpdfstring{$\ast$}{*}}]{In\+Owner\+Actor,  }\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{In\+Emitter\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the event with essential context from its owning node and the actor possessing the skill tree. This is typically called by the \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} before this event is executed (e.\+g., before On\+Level\+Up/\+On\+Level\+Down). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em In\+Owner\+Actor} & The actor who owns the Skill\+Tree\+Manager\+Component that manages the Emitter\+Node. \\
+\hline
+{\em In\+Emitter\+Node} & The skill node instance that is triggering this event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_a80f74a3a13f2a74aa98d853e2f687f30}\label{classUCrimsonSkillTree__NodeEventBase_a80f74a3a13f2a74aa98d853e2f687f30} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!OnLevelDown@{OnLevelDown}}
+\index{OnLevelDown@{OnLevelDown}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{OnLevelDown()}{OnLevelDown()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+On\+Level\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})}
+
+
+
+Called when the Emitter\+Node\textquotesingle{}s level decreases or when it is deactivated. Subclasses should implement specific gameplay logic here, often reversing effects applied in On\+Level\+Up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Emitter\+Node} & The skill node whose level changed. \\
+\hline
+{\em New\+Level} & The new current level of the Emitter\+Node (or 0 if deactivated). \\
+\hline
+{\em Old\+Level} & The previous level of the Emitter\+Node. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_aec6f504271f52144a59d06e3f0ed5d1f}\label{classUCrimsonSkillTree__NodeEventBase_aec6f504271f52144a59d06e3f0ed5d1f} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!OnLevelUp@{OnLevelUp}}
+\index{OnLevelUp@{OnLevelUp}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{OnLevelUp()}{OnLevelUp()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+On\+Level\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})}
+
+
+
+Called when the Emitter\+Node\textquotesingle{}s level increases or when it is initially activated. Subclasses should implement specific gameplay logic here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Emitter\+Node} & The skill node whose level changed. \\
+\hline
+{\em New\+Level} & The new current level of the Emitter\+Node. \\
+\hline
+{\em Old\+Level} & The previous level of the Emitter\+Node (or 0 if newly activated). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_ae9d5d7c4c6cd682412980a7182818b8a}\label{classUCrimsonSkillTree__NodeEventBase_ae9d5d7c4c6cd682412980a7182818b8a} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!OnNodeReset@{OnNodeReset}}
+\index{OnNodeReset@{OnNodeReset}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{OnNodeReset()}{OnNodeReset()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+On\+Node\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{Previous\+Level }\end{DoxyParamCaption})}
+
+
+
+Called when the Emitter\+Node is forcefully reset to its unassigned/initial state (e.\+g., during a full skill tree respec). Subclasses should implement logic to completely reverse any persistent effects and clean up. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Emitter\+Node} & The skill node that is being reset. \\
+\hline
+{\em Previous\+Level} & The previous level of the node before resetting. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_aa0c30ac4180496b21357fcc96eb2fb19}\label{classUCrimsonSkillTree__NodeEventBase_aa0c30ac4180496b21357fcc96eb2fb19} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!PopulateSimulationData@{PopulateSimulationData}}
+\index{PopulateSimulationData@{PopulateSimulationData}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{PopulateSimulationData()}{PopulateSimulationData()}}
+{\footnotesize\ttfamily void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Populate\+Simulation\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Event\+Context\+Node,  }\item[{int32}]{Original\+Effective\+Level,  }\item[{bool}]{b\+Simulating\+Reversal,  }\item[{\mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&}]{Out\+Data\+Collector }\end{DoxyParamCaption}) const}
+
+
+
+Allows this event to contribute to a simulation by populating a data collector with USTRUCTs representing the simulated effects if this event were to be applied or reversed. This is crucial for predicting the outcome of skill tree modifications without actually applying them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Event\+Context\+Node} & The node instance this event is associated with. \\
+\hline
+{\em Original\+Effective\+Level} & The level of the Event\+Context\+Node at which the event\textquotesingle{}s effects were (or would be) active. \\
+\hline
+{\em b\+Simulating\+Reversal} & True if simulating the removal/reversal of this event\textquotesingle{}s effects (e.\+g., due to unassigning a node or leveling down). False if simulating the application/gain of effects (e.\+g., assigning a node or leveling up). \\
+\hline
+{\em Out\+Data\+Collector} & The collector to which this event should add its simulated data payloads (e.\+g., attribute changes, tag changes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+\doxylink{structFSimulationDataCollector}{FSimulation\+Data\+Collector} is a non-\/\+UObject class passed by reference for collecting various simulation data types. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_aafb3f84add0ded1737b446c3971d4af3}\label{classUCrimsonSkillTree__NodeEventBase_aafb3f84add0ded1737b446c3971d4af3} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!EditorProvidedDescription@{EditorProvidedDescription}}
+\index{EditorProvidedDescription@{EditorProvidedDescription}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{EditorProvidedDescription}{EditorProvidedDescription}}
+{\footnotesize\ttfamily FText UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Editor\+Provided\+Description}
+
+
+
+A description of the event\textquotesingle{}s effect, primarily for display in editor tooltips or UI. Can be set directly in the editor. If this has a description, it will take priority over the description gotten from Get\+Tooltip\+Description Leave empty to use the data from Get\+Tooltip\+Description. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_a6efbe9f729a198956277120cde46a0c8}\label{classUCrimsonSkillTree__NodeEventBase_a6efbe9f729a198956277120cde46a0c8} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!EmitterSkillNode@{EmitterSkillNode}}
+\index{EmitterSkillNode@{EmitterSkillNode}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{EmitterSkillNode}{EmitterSkillNode}}
+{\footnotesize\ttfamily TWeak\+Object\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}}$>$ UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Emitter\+Skill\+Node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Weak pointer to the skill node that emitted (or would emit) this event. Set via Initialize\+Event\+Context. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEventBase_a6c34c7aa955e4aa4051d096d607209c1}\label{classUCrimsonSkillTree__NodeEventBase_a6c34c7aa955e4aa4051d096d607209c1} 
+\index{UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}!OwnerActor@{OwnerActor}}
+\index{OwnerActor@{OwnerActor}!UCrimsonSkillTree\_NodeEventBase@{UCrimsonSkillTree\_NodeEventBase}}
+\doxysubsubsection{\texorpdfstring{OwnerActor}{OwnerActor}}
+{\footnotesize\ttfamily TWeak\+Object\+Ptr$<$AActor$>$ UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base\+::\+Owner\+Actor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Weak pointer to the actor that owns the Skill\+Tree\+Manager\+Component, serving as the context for this event. Set via Initialize\+Event\+Context. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Events/\mbox{\hyperlink{CrimsonSkillTree__NodeEventBase_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base.\+h}}\end{DoxyCompactItemize}

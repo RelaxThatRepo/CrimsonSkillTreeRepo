@@ -1,0 +1,208 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability Class Reference}
+\hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility}{}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility}\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+
+
+A skill node event that grants a specified Gameplay\+Ability to the owner. This event handles the granting and removal of a gameplay ability, associating it with an optional input ID. The level of the granted ability can also be tied to the skill node\textquotesingle{}s level.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_aee44d234351a8689771758a2c28f2078}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_acd9259bfa4e41449d60faba2a4c586e3}{Initialize\+Event\+Context}} (AActor \texorpdfstring{$\ast$}{*}In\+Owner\+Actor, \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}In\+Emitter\+Node)
+\begin{DoxyCompactList}\small\item\em Initializes the event with essential context from its owning node and the actor possessing the skill tree. This is typically called by the \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} before this event is executed (e.\+g., before On\+Level\+Up/\+On\+Level\+Down). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aec6f504271f52144a59d06e3f0ed5d1f}{On\+Level\+Up}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level increases or when it is initially activated. Subclasses should implement specific gameplay logic here. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a80f74a3a13f2a74aa98d853e2f687f30}{On\+Level\+Down}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level decreases or when it is deactivated. Subclasses should implement specific gameplay logic here, often reversing effects applied in On\+Level\+Up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ae9d5d7c4c6cd682412980a7182818b8a}{On\+Node\+Reset}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 Previous\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node is forcefully reset to its unassigned/initial state (e.\+g., during a full skill tree respec). Subclasses should implement logic to completely reverse any persistent effects and clean up. \end{DoxyCompactList}\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ad49d43e598258087ec449fb1d157b636}{Get\+Tooltip\+Description}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Potential\+Emitter\+Node) const
+\begin{DoxyCompactList}\small\item\em Gets a descriptive text for this event, suitable for tooltips or UI displays. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aa0c30ac4180496b21357fcc96eb2fb19}{Populate\+Simulation\+Data}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Event\+Context\+Node, int32 Original\+Effective\+Level, bool b\+Simulating\+Reversal, \mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&Out\+Data\+Collector) const
+\begin{DoxyCompactList}\small\item\em Allows this event to contribute to a simulation by populating a data collector with USTRUCTs representing the simulated effects if this event were to be applied or reversed. This is crucial for predicting the outcome of skill tree modifications without actually applying them. \end{DoxyCompactList}\item 
+virtual UWorld \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World}} () const override
+\begin{DoxyCompactList}\small\item\em Overrides \doxylink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World()} from UObject to provide a valid world context, typically derived from the Owner\+Actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TSubclass\+Of$<$ UGameplay\+Ability $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a96eeaf832ff452fc0fafe62477eae138}{Ability\+To\+Grant}}
+\begin{DoxyCompactList}\small\item\em The Gameplay\+Ability class to be granted when this event is triggered. \end{DoxyCompactList}\item 
+int32 \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a2098d1944453067cacea433d292ec8ba}{Input\+ID}}
+\begin{DoxyCompactList}\small\item\em The Input ID to assign to the granted ability. Use -\/1 for no specific input binding (e.\+g., for passive abilities or abilities triggered by other gameplay events). Otherwise, this should correspond to an input ID defined in your project\textquotesingle{}s input settings (often an enum value). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aafb3f84add0ded1737b446c3971d4af3}{Editor\+Provided\+Description}}
+\begin{DoxyCompactList}\small\item\em A description of the event\textquotesingle{}s effect, primarily for display in editor tooltips or UI. Can be set directly in the editor. If this has a description, it will take priority over the description gotten from Get\+Tooltip\+Description Leave empty to use the data from Get\+Tooltip\+Description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a33387ad048304165dad773d03425e03e}{On\+Level\+Up\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level) override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_adadd7d23116fc44a32651e0ae41f6822}{On\+Level\+Down\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level) override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a62b8cac7de2d06fed90cf68423c91386}{On\+Node\+Reset\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 Previous\+Level) override
+\item 
+virtual FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ae759128a841ffc99c94a0bd405ef93ff}{Get\+Tooltip\+Description\+\_\+\+Implementation}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Potential\+Emitter\+Node) const override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a392c52d567816f2dc0b2642f0685d147}{Grant\+Or\+Update\+Ability}} (UAbility\+System\+Component \texorpdfstring{$\ast$}{*}ASC, int32 Ability\+Level\+To\+Grant)
+\begin{DoxyCompactList}\small\item\em Grants the configured Gameplay\+Ability to the owner\textquotesingle{}s Ability\+System\+Component or updates its level if already granted by this event. Manages the Granted\+Ability\+Handle. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ad081e8390aef8f68ed1e49ea470ba142}{Remove\+Ability}} (UAbility\+System\+Component \texorpdfstring{$\ast$}{*}ASC)
+\begin{DoxyCompactList}\small\item\em Removes the Gameplay\+Ability previously granted by this event from the owner\textquotesingle{}s Ability\+System\+Component. Uses and invalidates the Granted\+Ability\+Handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FGameplay\+Ability\+Spec\+Handle \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a4685a48c5722db139b5706336028efa4}{Granted\+Ability\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle to the currently granted gameplay ability spec. Used to update or remove the ability. Marked Transient as it\textquotesingle{}s runtime state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+TWeak\+Object\+Ptr$<$ AActor $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6c34c7aa955e4aa4051d096d607209c1}{Owner\+Actor}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the actor that owns the Skill\+Tree\+Manager\+Component, serving as the context for this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\item 
+TWeak\+Object\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6efbe9f729a198956277120cde46a0c8}{Emitter\+Skill\+Node}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the skill node that emitted (or would emit) this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A skill node event that grants a specified Gameplay\+Ability to the owner. This event handles the granting and removal of a gameplay ability, associating it with an optional input ID. The level of the granted ability can also be tied to the skill node\textquotesingle{}s level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_aee44d234351a8689771758a2c28f2078}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_aee44d234351a8689771758a2c28f2078} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility()}{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ae759128a841ffc99c94a0bd405ef93ff}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ae759128a841ffc99c94a0bd405ef93ff} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!GetTooltipDescription\_Implementation@{GetTooltipDescription\_Implementation}}
+\index{GetTooltipDescription\_Implementation@{GetTooltipDescription\_Implementation}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{GetTooltipDescription\_Implementation()}{GetTooltipDescription\_Implementation()}}
+{\footnotesize\ttfamily virtual FText UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Get\+Tooltip\+Description\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Potential\+Emitter\+Node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a392c52d567816f2dc0b2642f0685d147}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a392c52d567816f2dc0b2642f0685d147} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!GrantOrUpdateAbility@{GrantOrUpdateAbility}}
+\index{GrantOrUpdateAbility@{GrantOrUpdateAbility}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{GrantOrUpdateAbility()}{GrantOrUpdateAbility()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Grant\+Or\+Update\+Ability (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component \texorpdfstring{$\ast$}{*}}]{ASC,  }\item[{int32}]{Ability\+Level\+To\+Grant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Grants the configured Gameplay\+Ability to the owner\textquotesingle{}s Ability\+System\+Component or updates its level if already granted by this event. Manages the Granted\+Ability\+Handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ASC} & The Ability\+System\+Component to grant the ability to. \\
+\hline
+{\em Ability\+Level\+To\+Grant} & The level at which to grant the ability (typically the skill node\textquotesingle{}s current level). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_adadd7d23116fc44a32651e0ae41f6822}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_adadd7d23116fc44a32651e0ae41f6822} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!OnLevelDown\_Implementation@{OnLevelDown\_Implementation}}
+\index{OnLevelDown\_Implementation@{OnLevelDown\_Implementation}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{OnLevelDown\_Implementation()}{OnLevelDown\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+On\+Level\+Down\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a33387ad048304165dad773d03425e03e}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a33387ad048304165dad773d03425e03e} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!OnLevelUp\_Implementation@{OnLevelUp\_Implementation}}
+\index{OnLevelUp\_Implementation@{OnLevelUp\_Implementation}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{OnLevelUp\_Implementation()}{OnLevelUp\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+On\+Level\+Up\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a62b8cac7de2d06fed90cf68423c91386}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a62b8cac7de2d06fed90cf68423c91386} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!OnNodeReset\_Implementation@{OnNodeReset\_Implementation}}
+\index{OnNodeReset\_Implementation@{OnNodeReset\_Implementation}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{OnNodeReset\_Implementation()}{OnNodeReset\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+On\+Node\+Reset\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{Previous\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ad081e8390aef8f68ed1e49ea470ba142}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_ad081e8390aef8f68ed1e49ea470ba142} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!RemoveAbility@{RemoveAbility}}
+\index{RemoveAbility@{RemoveAbility}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{RemoveAbility()}{RemoveAbility()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Remove\+Ability (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component \texorpdfstring{$\ast$}{*}}]{ASC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Removes the Gameplay\+Ability previously granted by this event from the owner\textquotesingle{}s Ability\+System\+Component. Uses and invalidates the Granted\+Ability\+Handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ASC} & The Ability\+System\+Component from which to remove the ability. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a96eeaf832ff452fc0fafe62477eae138}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a96eeaf832ff452fc0fafe62477eae138} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!AbilityToGrant@{AbilityToGrant}}
+\index{AbilityToGrant@{AbilityToGrant}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{AbilityToGrant}{AbilityToGrant}}
+{\footnotesize\ttfamily TSubclass\+Of$<$UGameplay\+Ability$>$ UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Ability\+To\+Grant}
+
+
+
+The Gameplay\+Ability class to be granted when this event is triggered. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a4685a48c5722db139b5706336028efa4}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a4685a48c5722db139b5706336028efa4} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!GrantedAbilityHandle@{GrantedAbilityHandle}}
+\index{GrantedAbilityHandle@{GrantedAbilityHandle}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{GrantedAbilityHandle}{GrantedAbilityHandle}}
+{\footnotesize\ttfamily FGameplay\+Ability\+Spec\+Handle UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Granted\+Ability\+Handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handle to the currently granted gameplay ability spec. Used to update or remove the ability. Marked Transient as it\textquotesingle{}s runtime state. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a2098d1944453067cacea433d292ec8ba}\label{classUCrimsonSkillTree__NodeEvent__GrantGameplayAbility_a2098d1944453067cacea433d292ec8ba} 
+\index{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}!InputID@{InputID}}
+\index{InputID@{InputID}!UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility@{UCrimsonSkillTree\_NodeEvent\_GrantGameplayAbility}}
+\doxysubsubsection{\texorpdfstring{InputID}{InputID}}
+{\footnotesize\ttfamily int32 UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability\+::\+Input\+ID}
+
+
+
+The Input ID to assign to the granted ability. Use -\/1 for no specific input binding (e.\+g., for passive abilities or abilities triggered by other gameplay events). Otherwise, this should correspond to an input ID defined in your project\textquotesingle{}s input settings (often an enum value). 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Events/\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__GrantGameplayAbility_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Grant\+Gameplay\+Ability.\+h}}\end{DoxyCompactItemize}

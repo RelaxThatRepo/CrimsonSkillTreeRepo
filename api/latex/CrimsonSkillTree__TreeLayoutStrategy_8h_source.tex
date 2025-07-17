@@ -1,0 +1,37 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Tree\+Layout\+Strategy.\+h}
+\hypertarget{CrimsonSkillTree__TreeLayoutStrategy_8h_source}{}\label{CrimsonSkillTree__TreeLayoutStrategy_8h_source}\index{Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree\_TreeLayoutStrategy.h@{Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree\_TreeLayoutStrategy.h}}
+\mbox{\hyperlink{CrimsonSkillTree__TreeLayoutStrategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__AutoLayoutStrategy_8h}{CrimsonSkillTree\_AutoLayoutStrategy.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_TreeLayoutStrategy.generated.h"{}}}
+\DoxyCodeLine{00011\ UCLASS()}
+\DoxyCodeLine{00012\ class\ CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy}{UCrimsonSkillTree\_TreeLayoutStrategy}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTree__AutoLayoutStrategy}{UCrimsonSkillTree\_AutoLayoutStrategy}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a1b1907bc6d2d48988e3c3adeb670d4b1}{UCrimsonSkillTree\_TreeLayoutStrategy}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a6c0410ecd895b387e2c1aabb754fc5d7}{\string~UCrimsonSkillTree\_TreeLayoutStrategy}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_ad350e6ecd4a0b97a8a995ec9d14eb091}{Layout}}(UEdGraph*\ EdGraph)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a88ed88cd2f9b4e969ef7972ee956c211}{InitPass}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode,\ \textcolor{keyword}{const}\ FVector2D\&\ Anchor);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_ac9caaa4f225d0c180310deb0405790f9}{ResolveConflictPass}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ Node);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a9634dedff337bac05ccfb080aed05ae7}{ResolveConflict}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ LRoot,\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RRoot);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a7a7e4f1db96d2902a1f2d788a934199d}{GetLeftContour}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode,\ int32\ Level,\ TArray<UCrimsonSkillTree\_GraphNode*>\&\ Contour);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_ab898fb37756d6abc7fddb942ec2cecdb}{GetRightContour}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode,\ int32\ Level,\ TArray<UCrimsonSkillTree\_GraphNode*>\&\ Contour);}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_ad4c61250567c9351c2ded2d29f20089e}{ShiftSubTree}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode,\ \textcolor{keyword}{const}\ FVector2D\&\ Offset);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__TreeLayoutStrategy_a910f3c151db91dd0713cbe0d7f836935}{UpdateParentNodePosition}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ RootNode);}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

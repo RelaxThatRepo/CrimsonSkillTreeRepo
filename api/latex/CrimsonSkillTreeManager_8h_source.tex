@@ -1,0 +1,194 @@
+\doxysection{Crimson\+Skill\+Tree\+Manager.\+h}
+\hypertarget{CrimsonSkillTreeManager_8h_source}{}\label{CrimsonSkillTreeManager_8h_source}\index{Source/CrimsonSkillTree/CrimsonSkillTreeManager.h@{Source/CrimsonSkillTree/CrimsonSkillTreeManager.h}}
+\mbox{\hyperlink{CrimsonSkillTreeManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree_8h}{CrimsonSkillTree.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}GameplayTagContainer.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Components/ActorComponent.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__NodeCost_8h}{Nodes/Cost/CrimsonSkillTree\_NodeCost.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ICrimsonSkillTree__NodeAction_8h}{Nodes/ICrimsonSkillTree\_NodeAction.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTreeManager.generated.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFCrimsonSkillTree__SaveGameData}{FCrimsonSkillTree\_SaveGameData}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__SaveGame}{UCrimsonSkillTree\_SaveGame}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ UENUM(BlueprintType)}
+\DoxyCodeLine{00025\ enum\ class\ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b}{ECrimsonSkillNodeActionType}}\ :\ uint8}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baa13367a8e2a3f3bf4f3409079e3fdf87}{Activate}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9ba109fec06829bd79d222cfc8af52aaaf1}{Deactivate}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baec0de644c0a04db79d4e7affc05293e0}{IncrementLevel}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baafce6ca5bc6cdda99abff05f3ec4f3c3}{DecrementLevel}}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00038\ struct\ \mbox{\hyperlink{structFCrimsonSkillTreeEntry}{FCrimsonSkillTreeEntry}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structFCrimsonSkillTreeEntry}{FCrimsonSkillTreeEntry}}()\ :\ SkillTreeAsset(\textcolor{keywordtype}{nullptr})\ \{\}}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree"{}})}
+\DoxyCodeLine{00045\ \ \ \ \ FGameplayTag\ SkillTreeTypeTag;\ \textcolor{comment}{//\ e.g.,\ "{}SkillTree.Type.Combat"{},\ "{}SkillTree.Type.Crafting"{}}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadOnly,\ Category\ =\ "{}Skill\ Tree"{})}
+\DoxyCodeLine{00048\ \ \ \ \ TObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}>\ SkillTreeAsset;\ \textcolor{comment}{//\ The\ actual\ skill\ tree\ data\ asset}}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ UCLASS(ClassGroup=(Custom),\ meta=(BlueprintSpawnableComponent))}
+\DoxyCodeLine{00056\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTreeManager}{UCrimsonSkillTreeManager}}\ :\ public\ UActorComponent}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTreeManager}{UCrimsonSkillTreeManager}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\string~\ UActorComponent\ Overrides}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ BeginPlay()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ EndPlay(\textcolor{keyword}{const}\ EEndPlayReason::Type\ EndPlayReason)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UActorComponent\ Overrides}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\string~\ Skill\ Tree\ Management}}
+\DoxyCodeLine{00074\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree"{}})}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ GetSkillTree(FGameplayTag\ SkillTreeTypeTag)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree"{}})}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ InitializeSkillTrees();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Skill\ Tree\ Management}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\string~\ Node\ Actions}}
+\DoxyCodeLine{00091\ \ \ \ \ UFUNCTION(Server,\ Reliable,\ WithValidation)}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ Server\_RequestSkillNodeAction(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ TargetNode,\ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b}{ECrimsonSkillNodeActionType}}\ ActionType);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ CanAssignNode(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeToAssign);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00109\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ AssignNode(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeToAssign);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00118\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ CanUnassignNode(\textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeToUnassign,\ TArray<UCrimsonSkillTree\_Node*>\&\ OutInvalidatedNodes);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00127\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ UnassignNode(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeToUnassign);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00136\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ CanSafelyDecrementNodeLevel(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeToDecrement,\ TArray<UCrimsonSkillTree\_Node*>\&\ OutInvalidatedNodes);}
+\DoxyCodeLine{00138\ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}},\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}Force\ Respec\ Skill\ Tree\ (Unassign\ All\ Nodes)"{}}))}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ ForceUnassignAllNodesInTree(FGameplayTag\ SkillTreeTypeTag);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Server,\ Reliable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Actions"{}})}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ Server\_ForceUnlockNodeAndDescendants(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ TargetNode,\ \textcolor{keywordtype}{bool}\ bUnlockToMaxLevel\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00162\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Utility"{}})}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ TraverseTrees(\textcolor{keyword}{const}\ TArray<UCrimsonSkillTree*>\&\ TreesToTraverse,\ TScriptInterface<ICrimsonSkillTree\_NodeAction>\ NodeAction);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Node\ Actions}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\string~\ Resource\ Management}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ GetTotalBudgetForResource(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ InCostDefinition,\ int32\&\ OutTotalBudget);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ GetOverallAllocatedAmountForResource(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ InCostDefinition,\ int32\&\ OutAllocatedAmount)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{bool}\ GetCurrentResourceValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ InCostDefinition,\ int32\&\ OutAvailableValue);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{bool}\ ModifyResourceValue(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ InCostDefinition,\ int32\ DeltaAmountToPlayerResourcePool);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00207\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|UI"{}})}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ GetResourceUIData(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ ForCostDefinition,\ int32\&\ OutUsedAmount,\ int32\&\ OutTotalAmount,\ FText\&\ OutResourceName);}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Resource\ Management}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{comment}{//\string~\ Save\ \&\ Load}}
+\DoxyCodeLine{00217\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|SaveGame"{}})}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ SaveSkillTreeState(\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ SkillTreeToSave);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00224\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|SaveGame"{}})}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ LoadSkillTreeState(\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ SkillTreeToLoad);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00231\ \ \ \ \ UFUNCTION(BlueprintCallable,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|SaveGame"{}})}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ LoadAllSkillTreeStates();}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Save\ \&\ Load}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{comment}{//\string~\ Owner\ \&\ Context}}
+\DoxyCodeLine{00241\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree"{}})}
+\DoxyCodeLine{00242\ \ \ \ \ AActor*\ GetSkillTreeOwner();}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{virtual}\ AActor*\ GetSkillTreeOwner\_Implementation();}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Owner\ \&\ Context}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{comment}{//\string~\ Delegates}}
+\DoxyCodeLine{00247\ \ \ \ \ DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE(FPostInitializeSkillTrees);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{comment}{//\ Broadcasts\ after\ all\ skill\ trees\ have\ been\ initialized\ and\ their\ states\ have\ been\ loaded.}}
+\DoxyCodeLine{00249\ \ \ \ \ UPROPERTY(BlueprintAssignable,\ Category=\textcolor{stringliteral}{"{}Skill\ Tree|Delegates"{}})}
+\DoxyCodeLine{00250\ \ \ \ \ FPostInitializeSkillTrees\ PostInitializeSkillTrees;}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Delegates}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00254\ \ \ \ \ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{comment}{//\string~\ Helper\ Functions}}
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ GetSkillTreeByGUID(FGuid\ InGuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{bool}\ ModifyOverallAllocationForResource(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFNodeCostDefinition}{FNodeCostDefinition}}\&\ InCostDefinition,\ int32\ DeltaAllocation);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ RebuildAllocatedResourceCache();}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ RefundPointsFromInvalidatedSave(\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}*\ SkillTree,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameData}{FCrimsonSkillTree\_SaveGameData}}\&\ InvalidatedSaveData);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__SaveGame}{UCrimsonSkillTree\_SaveGame}}*\ GetOrCreateSaveGameObject()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameData}{FCrimsonSkillTree\_SaveGameData}}*\ FindTreeSaveData(\textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__SaveGame}{UCrimsonSkillTree\_SaveGame}}*\ SaveGameInstance,\ FGuid\ TreeGuid)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Helper\ Functions}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//\ Array\ to\ configure\ skill\ tree\ templates\ in\ the\ editor.\ These\ will\ be\ instanced\ at\ runtime.}}
+\DoxyCodeLine{00302\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Trees|Configuration"{}})}
+\DoxyCodeLine{00303\ \ \ \ \ TArray<FCrimsonSkillTreeEntry>\ ConfiguredSkillTrees;}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{comment}{//\ A\ flat\ list\ of\ all\ currently\ assigned\ (active)\ nodes\ across\ all\ skill\ trees.}}
+\DoxyCodeLine{00306\ \ \ \ \ UPROPERTY(VisibleInstanceOnly,\ BlueprintReadOnly,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Tree|Runtime"{}})}
+\DoxyCodeLine{00307\ \ \ \ \ TArray<TObjectPtr<UCrimsonSkillTree\_Node>>\ AssignedNodes;}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ Flag\ to\ indicate\ if\ a\ node\ action\ was\ initiated\ by\ a\ direct\ user\ request,\ used\ to\ control\ message\ broadcasting.}}
+\DoxyCodeLine{00310\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{bool}\ bUserRequestedAction\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ If\ true,\ automatically\ call\ LoadAllSkillTreeStates()\ after\ skill\ trees\ are\ initialized\ in\ BeginPlay.}}
+\DoxyCodeLine{00314\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Trees|Save\ Game"{}})}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{bool}\ bLoadAllSkillTreesPostInitialize\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//\ The\ name\ of\ the\ save\ game\ slot\ to\ use\ for\ skill\ tree\ data.}}
+\DoxyCodeLine{00318\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Trees|Save\ Game"{}})}
+\DoxyCodeLine{00319\ \ \ \ \ FString\ SaveSlotName\ =\ \textcolor{stringliteral}{"{}SkillTreeSaveSlot"{}};}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{comment}{//\ The\ user\ index\ for\ the\ save\ game\ slot.}}
+\DoxyCodeLine{00322\ \ \ \ \ UPROPERTY(EditDefaultsOnly,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Trees|Save\ Game"{}})}
+\DoxyCodeLine{00323\ \ \ \ \ int32\ SaveSlotUserIndex\ =\ 0;}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{comment}{//\ Runtime\ map\ for\ quick\ access\ to\ instanced\ skill\ trees,\ populated\ from\ ConfiguredSkillTrees.}}
+\DoxyCodeLine{00327\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00328\ \ \ \ \ TMap<FGameplayTag,\ TObjectPtr<UCrimsonSkillTree>>\ ActiveSkillTreeInstances;}
+\DoxyCodeLine{00329\ \ \ \ \ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//\ Caches\ the\ total\ points\ spent\ from\ actor\ integer\ properties\ during\ this\ session.}}
+\DoxyCodeLine{00331\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00332\ \ \ \ \ TMap<FName,\ int32>\ SessionAllocatedActorPropertyPoints;}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//\ Caches\ the\ total\ points\ spent\ from\ gameplay\ attributes\ during\ this\ session.}}
+\DoxyCodeLine{00335\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00336\ \ \ \ \ TMap<FGameplayAttribute,\ int32>\ SessionAllocatedGameplayAttributePoints;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,328 @@
+\doxysection{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect Class Reference}
+\hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect}{}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect}\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+
+
+A skill node event that applies a specified Gameplay\+Effect to the owner. This event handles the application, updating (based on level changes), and removal of a Gameplay\+Effect. It also supports simulation of its impact on attributes for predictive skill tree operations.  
+
+
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect.\+h$>$}
+
+
+
+Inheritance diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7b9f223d482583c1f66a47dbf05dfc4}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_acd9259bfa4e41449d60faba2a4c586e3}{Initialize\+Event\+Context}} (AActor \texorpdfstring{$\ast$}{*}In\+Owner\+Actor, \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}In\+Emitter\+Node)
+\begin{DoxyCompactList}\small\item\em Initializes the event with essential context from its owning node and the actor possessing the skill tree. This is typically called by the \doxylink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node} before this event is executed (e.\+g., before On\+Level\+Up/\+On\+Level\+Down). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aec6f504271f52144a59d06e3f0ed5d1f}{On\+Level\+Up}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level increases or when it is initially activated. Subclasses should implement specific gameplay logic here. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a80f74a3a13f2a74aa98d853e2f687f30}{On\+Level\+Down}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node\textquotesingle{}s level decreases or when it is deactivated. Subclasses should implement specific gameplay logic here, often reversing effects applied in On\+Level\+Up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ae9d5d7c4c6cd682412980a7182818b8a}{On\+Node\+Reset}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 Previous\+Level)
+\begin{DoxyCompactList}\small\item\em Called when the Emitter\+Node is forcefully reset to its unassigned/initial state (e.\+g., during a full skill tree respec). Subclasses should implement logic to completely reverse any persistent effects and clean up. \end{DoxyCompactList}\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_ad49d43e598258087ec449fb1d157b636}{Get\+Tooltip\+Description}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Potential\+Emitter\+Node) const
+\begin{DoxyCompactList}\small\item\em Gets a descriptive text for this event, suitable for tooltips or UI displays. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aa0c30ac4180496b21357fcc96eb2fb19}{Populate\+Simulation\+Data}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Event\+Context\+Node, int32 Original\+Effective\+Level, bool b\+Simulating\+Reversal, \mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&Out\+Data\+Collector) const
+\begin{DoxyCompactList}\small\item\em Allows this event to contribute to a simulation by populating a data collector with USTRUCTs representing the simulated effects if this event were to be applied or reversed. This is crucial for predicting the outcome of skill tree modifications without actually applying them. \end{DoxyCompactList}\item 
+virtual UWorld \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World}} () const override
+\begin{DoxyCompactList}\small\item\em Overrides \doxylink{classUCrimsonSkillTree__NodeEventBase_a335a747c942544d8fd34e7cf9ab67006}{Get\+World()} from UObject to provide a valid world context, typically derived from the Owner\+Actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_afba8bf6e3508e722c0a9c1bc620b196c}{Evaluate\+Modifier\+Magnitude\+At\+Level}} (const FGameplay\+Modifier\+Info \&Modifier, float Level, const FGameplay\+Effect\+Spec \texorpdfstring{$\ast$}{*}Spec=nullptr, const FGameplay\+Tag \&SBCMagnitude\+Tag=FGameplay\+Tag())
+\begin{DoxyCompactList}\small\item\em Evaluates the magnitude of a gameplay effect modifier at a given level. Handles Scalable\+Float and Set\+By\+Caller magnitude calculation types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TSubclass\+Of$<$ UGameplay\+Effect $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a70f41927466dd316fbda0d693c729d84}{Gameplay\+Effect\+To\+Apply}}
+\begin{DoxyCompactList}\small\item\em The Gameplay\+Effect class to apply when this event is triggered. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4b76b59910ad201cb7a2e94a41ce901c}{b\+Set\+Gameplay\+Effect\+Level}}
+\begin{DoxyCompactList}\small\item\em If true, the skill node\textquotesingle{}s current level will be passed as the level of the Gameplay\+Effect. The Gameplay\+Effect itself must be configured to scale with its level for this to have a meaningful impact. \end{DoxyCompactList}\item 
+FGameplay\+Tag \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a0fbc2f9965c17fc7953d8b28a3dc0f4a}{Set\+By\+Caller\+Magnitude\+Tag}}
+\begin{DoxyCompactList}\small\item\em If not setting GE level directly, this tag can be used with Set\+By\+Caller on the Gameplay\+Effect. The skill node\textquotesingle{}s current level will be set as the magnitude for this tag. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4c92e360536dca59df40b069a250f535}{Set\+By\+Caller\+Magnitude}}
+\begin{DoxyCompactList}\small\item\em If b\+Set\+Gameplay\+Effect\+Level is false AND Set\+By\+Caller\+Magnitude\+Tag is valid, this value is used for the Set\+By\+Caller magnitude. This is typically used if the Set\+By\+Caller magnitude is fixed rather than scaling with the node\textquotesingle{}s level directly through the tag. If Set\+By\+Caller\+Magnitude\+Tag is meant to use the node\textquotesingle{}s current level, this float value might be redundant or used as a multiplier. The primary mechanism when !b\+Set\+Gameplay\+Effect\+Level is to use Set\+By\+Caller\+Magnitude\+Tag with the node\textquotesingle{}s current level as the value. This float provides an alternative fixed value if the SBC tag is present but a dynamic level value isn\textquotesingle{}t desired for it. \end{DoxyCompactList}\item 
+FGameplay\+Attribute \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ab4ac7930736edce6292ec5fcb84cc338}{Target\+Attribute\+For\+Description}}
+\begin{DoxyCompactList}\small\item\em The primary gameplay attribute this effect modifies. This is used for generating a dynamic tooltip description of the event\textquotesingle{}s effect. For accurate dynamic descriptions, this attribute should be set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_aafb3f84add0ded1737b446c3971d4af3}{Editor\+Provided\+Description}}
+\begin{DoxyCompactList}\small\item\em A description of the event\textquotesingle{}s effect, primarily for display in editor tooltips or UI. Can be set directly in the editor. If this has a description, it will take priority over the description gotten from Get\+Tooltip\+Description Leave empty to use the data from Get\+Tooltip\+Description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ad960f71b83837656b27292829eae8fe1}{On\+Level\+Up\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level) override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a9b76c5914fbbd98964bc0433ab4afa98}{On\+Level\+Down\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 New\+Level, int32 Old\+Level) override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a6a15726e585149542e1b57191efd6e5d}{On\+Node\+Reset\+\_\+\+Implementation}} (\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Emitter\+Node, int32 Previous\+Level) override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7979984c9c9596556a815840298931b}{Populate\+Simulation\+Data\+\_\+\+Implementation}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Event\+Context\+Node, int32 Original\+Effective\+Level, bool b\+Simulating\+Reversal, \mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&Out\+Data\+Collector) const override
+\item 
+virtual FText \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a72f28beb887bca626e111f972eacda65}{Get\+Tooltip\+Description\+\_\+\+Implementation}} (const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}Potential\+Emitter\+Node) const override
+\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ae9873fa27d9838d387eea68940773c51}{Apply\+Or\+Update\+Effect}} (UAbility\+System\+Component \texorpdfstring{$\ast$}{*}ASC, int32 Effect\+Level, const FGameplay\+Tag\+Container \texorpdfstring{$\ast$}{*}Source\+Tags=nullptr)
+\begin{DoxyCompactList}\small\item\em Applies the configured Gameplay\+Effect to the owner\textquotesingle{}s Ability\+System\+Component or updates it if already active. Manages the Active\+Effect\+Handle. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a92e06ca757b885b2034d22d6de9dcd17}{Remove\+Effect}} (UAbility\+System\+Component \texorpdfstring{$\ast$}{*}ASC)
+\begin{DoxyCompactList}\small\item\em Removes the currently active Gameplay\+Effect instance from the owner\textquotesingle{}s Ability\+System\+Component. Uses and invalidates the Active\+Effect\+Handle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_abee024c45a2af4236bcc36ffd130b25b}{Calculate\+Total\+Additive\+Magnitude\+For\+Attribute}} (TSubclass\+Of$<$ UGameplay\+Effect $>$ Effect\+Class, FGameplay\+Attribute Target\+Attribute, float Evaluation\+Level, bool b\+Event\+Sets\+GELvel, const FGameplay\+Tag \&Event\+Set\+By\+Caller\+Tag, float Event\+Set\+By\+Caller\+Value\+For\+Node\+Level, float Event\+Configured\+SBCMagnitude, UAbility\+System\+Component \texorpdfstring{$\ast$}{*}ASCFor\+Spec, const UObject \texorpdfstring{$\ast$}{*}Source\+Object) const
+\begin{DoxyCompactList}\small\item\em Calculates the total additive magnitude for a specific attribute from a given Gameplay\+Effect class, considering the effect\textquotesingle{}s level and Set\+By\+Caller configurations of this event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FActive\+Gameplay\+Effect\+Handle \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_af3ed769ad590f009aae3459b00aa76ee}{Active\+Effect\+Handle}}
+\begin{DoxyCompactList}\small\item\em Handle to the currently active gameplay effect instance. Used to update or remove the effect. Marked Transient as it\textquotesingle{}s runtime state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+TWeak\+Object\+Ptr$<$ AActor $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6c34c7aa955e4aa4051d096d607209c1}{Owner\+Actor}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the actor that owns the Skill\+Tree\+Manager\+Component, serving as the context for this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\item 
+TWeak\+Object\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} $>$ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEventBase_a6efbe9f729a198956277120cde46a0c8}{Emitter\+Skill\+Node}}
+\begin{DoxyCompactList}\small\item\em Weak pointer to the skill node that emitted (or would emit) this event. Set via Initialize\+Event\+Context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A skill node event that applies a specified Gameplay\+Effect to the owner. This event handles the application, updating (based on level changes), and removal of a Gameplay\+Effect. It also supports simulation of its impact on attributes for predictive skill tree operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7b9f223d482583c1f66a47dbf05dfc4}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7b9f223d482583c1f66a47dbf05dfc4} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect()}{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect()}}
+{\footnotesize\ttfamily UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ae9873fa27d9838d387eea68940773c51}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ae9873fa27d9838d387eea68940773c51} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!ApplyOrUpdateEffect@{ApplyOrUpdateEffect}}
+\index{ApplyOrUpdateEffect@{ApplyOrUpdateEffect}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{ApplyOrUpdateEffect()}{ApplyOrUpdateEffect()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Apply\+Or\+Update\+Effect (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component \texorpdfstring{$\ast$}{*}}]{ASC,  }\item[{int32}]{Effect\+Level,  }\item[{const FGameplay\+Tag\+Container \texorpdfstring{$\ast$}{*}}]{Source\+Tags = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Applies the configured Gameplay\+Effect to the owner\textquotesingle{}s Ability\+System\+Component or updates it if already active. Manages the Active\+Effect\+Handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ASC} & The Ability\+System\+Component to apply the effect to. \\
+\hline
+{\em Effect\+Level} & The level at which to apply/update the effect (e.\+g., skill node\textquotesingle{}s current level). \\
+\hline
+{\em Source\+Tags} & Optional tags to add to the effect context, typically from the emitter node. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_abee024c45a2af4236bcc36ffd130b25b}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_abee024c45a2af4236bcc36ffd130b25b} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!CalculateTotalAdditiveMagnitudeForAttribute@{CalculateTotalAdditiveMagnitudeForAttribute}}
+\index{CalculateTotalAdditiveMagnitudeForAttribute@{CalculateTotalAdditiveMagnitudeForAttribute}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{CalculateTotalAdditiveMagnitudeForAttribute()}{CalculateTotalAdditiveMagnitudeForAttribute()}}
+{\footnotesize\ttfamily float UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Calculate\+Total\+Additive\+Magnitude\+For\+Attribute (\begin{DoxyParamCaption}\item[{TSubclass\+Of$<$ UGameplay\+Effect $>$}]{Effect\+Class,  }\item[{FGameplay\+Attribute}]{Target\+Attribute,  }\item[{float}]{Evaluation\+Level,  }\item[{bool}]{b\+Event\+Sets\+GELvel,  }\item[{const FGameplay\+Tag \&}]{Event\+Set\+By\+Caller\+Tag,  }\item[{float}]{Event\+Set\+By\+Caller\+Value\+For\+Node\+Level,  }\item[{float}]{Event\+Configured\+SBCMagnitude,  }\item[{UAbility\+System\+Component \texorpdfstring{$\ast$}{*}}]{ASCFor\+Spec,  }\item[{const UObject \texorpdfstring{$\ast$}{*}}]{Source\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculates the total additive magnitude for a specific attribute from a given Gameplay\+Effect class, considering the effect\textquotesingle{}s level and Set\+By\+Caller configurations of this event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Effect\+Class} & The Gameplay\+Effect class to evaluate. \\
+\hline
+{\em Target\+Attribute} & The specific attribute whose total additive modification is being calculated. \\
+\hline
+{\em Evaluation\+Level} & The level at which to evaluate scalable floats within the Gameplay\+Effect (e.\+g., node level). \\
+\hline
+{\em b\+Event\+Sets\+GELvel} & True if this event sets the Gameplay\+Effect\textquotesingle{}s level using Evaluation\+Level. \\
+\hline
+{\em Event\+Set\+By\+Caller\+Tag} & The Set\+By\+Caller tag configured on this event. \\
+\hline
+{\em Event\+Set\+By\+Caller\+Value\+For\+Node\+Level} & The value to use for Set\+By\+Caller if derived from the node\textquotesingle{}s level (used when !b\+Event\+Sets\+GELvel). \\
+\hline
+{\em Event\+Configured\+SBCMagnitude} & The fixed Set\+By\+Caller magnitude configured on this event (used when b\+Event\+Sets\+GELvel is true but SBC tag is also used). \\
+\hline
+{\em ASCFor\+Spec} & The Ability\+System\+Component used to create a temporary Gameplay\+Effect\+Spec for evaluation. \\
+\hline
+{\em Source\+Object} & The UObject to set as the source on the temporary Gameplay\+Effect\+Spec\textquotesingle{}s context. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total calculated additive magnitude for the Target\+Attribute. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_afba8bf6e3508e722c0a9c1bc620b196c}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_afba8bf6e3508e722c0a9c1bc620b196c} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!EvaluateModifierMagnitudeAtLevel@{EvaluateModifierMagnitudeAtLevel}}
+\index{EvaluateModifierMagnitudeAtLevel@{EvaluateModifierMagnitudeAtLevel}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{EvaluateModifierMagnitudeAtLevel()}{EvaluateModifierMagnitudeAtLevel()}}
+{\footnotesize\ttfamily static float UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Evaluate\+Modifier\+Magnitude\+At\+Level (\begin{DoxyParamCaption}\item[{const FGameplay\+Modifier\+Info \&}]{Modifier,  }\item[{float}]{Level,  }\item[{const FGameplay\+Effect\+Spec \texorpdfstring{$\ast$}{*}}]{Spec = {\ttfamily nullptr},  }\item[{const FGameplay\+Tag \&}]{SBCMagnitude\+Tag = {\ttfamily FGameplayTag()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Evaluates the magnitude of a gameplay effect modifier at a given level. Handles Scalable\+Float and Set\+By\+Caller magnitude calculation types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Modifier} & The modifier info whose magnitude is to be evaluated. \\
+\hline
+{\em Level} & The level at which to evaluate the magnitude (e.\+g., skill node level or effect level). \\
+\hline
+{\em Spec} & Optional Gameplay\+Effect\+Spec, required for Set\+By\+Caller magnitudes if the tag is not directly on the modifier. \\
+\hline
+{\em SBCMagnitude\+Tag} & The tag for Set\+By\+Caller magnitudes, used if Modifier.\+Modifier\+Magnitude is Set\+By\+Caller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The evaluated magnitude as a float. 
+\end{DoxyReturn}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a72f28beb887bca626e111f972eacda65}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a72f28beb887bca626e111f972eacda65} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!GetTooltipDescription\_Implementation@{GetTooltipDescription\_Implementation}}
+\index{GetTooltipDescription\_Implementation@{GetTooltipDescription\_Implementation}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{GetTooltipDescription\_Implementation()}{GetTooltipDescription\_Implementation()}}
+{\footnotesize\ttfamily virtual FText UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Get\+Tooltip\+Description\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Potential\+Emitter\+Node }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a9b76c5914fbbd98964bc0433ab4afa98}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a9b76c5914fbbd98964bc0433ab4afa98} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!OnLevelDown\_Implementation@{OnLevelDown\_Implementation}}
+\index{OnLevelDown\_Implementation@{OnLevelDown\_Implementation}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{OnLevelDown\_Implementation()}{OnLevelDown\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+On\+Level\+Down\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ad960f71b83837656b27292829eae8fe1}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ad960f71b83837656b27292829eae8fe1} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!OnLevelUp\_Implementation@{OnLevelUp\_Implementation}}
+\index{OnLevelUp\_Implementation@{OnLevelUp\_Implementation}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{OnLevelUp\_Implementation()}{OnLevelUp\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+On\+Level\+Up\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{New\+Level,  }\item[{int32}]{Old\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a6a15726e585149542e1b57191efd6e5d}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a6a15726e585149542e1b57191efd6e5d} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!OnNodeReset\_Implementation@{OnNodeReset\_Implementation}}
+\index{OnNodeReset\_Implementation@{OnNodeReset\_Implementation}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{OnNodeReset\_Implementation()}{OnNodeReset\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+On\+Node\+Reset\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Emitter\+Node,  }\item[{int32}]{Previous\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7979984c9c9596556a815840298931b}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ac7979984c9c9596556a815840298931b} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!PopulateSimulationData\_Implementation@{PopulateSimulationData\_Implementation}}
+\index{PopulateSimulationData\_Implementation@{PopulateSimulationData\_Implementation}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{PopulateSimulationData\_Implementation()}{PopulateSimulationData\_Implementation()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Populate\+Simulation\+Data\+\_\+\+Implementation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimson\+Skill\+Tree\+\_\+\+Node}} \texorpdfstring{$\ast$}{*}}]{Event\+Context\+Node,  }\item[{int32}]{Original\+Effective\+Level,  }\item[{bool}]{b\+Simulating\+Reversal,  }\item[{\mbox{\hyperlink{structFSimulationDataCollector}{FSimulation\+Data\+Collector}} \&}]{Out\+Data\+Collector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a92e06ca757b885b2034d22d6de9dcd17}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a92e06ca757b885b2034d22d6de9dcd17} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!RemoveEffect@{RemoveEffect}}
+\index{RemoveEffect@{RemoveEffect}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{RemoveEffect()}{RemoveEffect()}}
+{\footnotesize\ttfamily virtual void UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Remove\+Effect (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component \texorpdfstring{$\ast$}{*}}]{ASC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Removes the currently active Gameplay\+Effect instance from the owner\textquotesingle{}s Ability\+System\+Component. Uses and invalidates the Active\+Effect\+Handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ASC} & The Ability\+System\+Component from which to remove the effect. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_af3ed769ad590f009aae3459b00aa76ee}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_af3ed769ad590f009aae3459b00aa76ee} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!ActiveEffectHandle@{ActiveEffectHandle}}
+\index{ActiveEffectHandle@{ActiveEffectHandle}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{ActiveEffectHandle}{ActiveEffectHandle}}
+{\footnotesize\ttfamily FActive\+Gameplay\+Effect\+Handle UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Active\+Effect\+Handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handle to the currently active gameplay effect instance. Used to update or remove the effect. Marked Transient as it\textquotesingle{}s runtime state. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4b76b59910ad201cb7a2e94a41ce901c}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4b76b59910ad201cb7a2e94a41ce901c} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!bSetGameplayEffectLevel@{bSetGameplayEffectLevel}}
+\index{bSetGameplayEffectLevel@{bSetGameplayEffectLevel}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{bSetGameplayEffectLevel}{bSetGameplayEffectLevel}}
+{\footnotesize\ttfamily bool UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::b\+Set\+Gameplay\+Effect\+Level}
+
+
+
+If true, the skill node\textquotesingle{}s current level will be passed as the level of the Gameplay\+Effect. The Gameplay\+Effect itself must be configured to scale with its level for this to have a meaningful impact. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a70f41927466dd316fbda0d693c729d84}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a70f41927466dd316fbda0d693c729d84} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!GameplayEffectToApply@{GameplayEffectToApply}}
+\index{GameplayEffectToApply@{GameplayEffectToApply}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{GameplayEffectToApply}{GameplayEffectToApply}}
+{\footnotesize\ttfamily TSubclass\+Of$<$UGameplay\+Effect$>$ UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Gameplay\+Effect\+To\+Apply}
+
+
+
+The Gameplay\+Effect class to apply when this event is triggered. 
+
+\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4c92e360536dca59df40b069a250f535}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a4c92e360536dca59df40b069a250f535} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!SetByCallerMagnitude@{SetByCallerMagnitude}}
+\index{SetByCallerMagnitude@{SetByCallerMagnitude}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{SetByCallerMagnitude}{SetByCallerMagnitude}}
+{\footnotesize\ttfamily float UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Set\+By\+Caller\+Magnitude}
+
+
+
+If b\+Set\+Gameplay\+Effect\+Level is false AND Set\+By\+Caller\+Magnitude\+Tag is valid, this value is used for the Set\+By\+Caller magnitude. This is typically used if the Set\+By\+Caller magnitude is fixed rather than scaling with the node\textquotesingle{}s level directly through the tag. If Set\+By\+Caller\+Magnitude\+Tag is meant to use the node\textquotesingle{}s current level, this float value might be redundant or used as a multiplier. The primary mechanism when !b\+Set\+Gameplay\+Effect\+Level is to use Set\+By\+Caller\+Magnitude\+Tag with the node\textquotesingle{}s current level as the value. This float provides an alternative fixed value if the SBC tag is present but a dynamic level value isn\textquotesingle{}t desired for it. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a0fbc2f9965c17fc7953d8b28a3dc0f4a}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_a0fbc2f9965c17fc7953d8b28a3dc0f4a} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!SetByCallerMagnitudeTag@{SetByCallerMagnitudeTag}}
+\index{SetByCallerMagnitudeTag@{SetByCallerMagnitudeTag}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{SetByCallerMagnitudeTag}{SetByCallerMagnitudeTag}}
+{\footnotesize\ttfamily FGameplay\+Tag UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Set\+By\+Caller\+Magnitude\+Tag}
+
+
+
+If not setting GE level directly, this tag can be used with Set\+By\+Caller on the Gameplay\+Effect. The skill node\textquotesingle{}s current level will be set as the magnitude for this tag. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ab4ac7930736edce6292ec5fcb84cc338}\label{classUCrimsonSkillTree__NodeEvent__ApplyGameplayEffect_ab4ac7930736edce6292ec5fcb84cc338} 
+\index{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}!TargetAttributeForDescription@{TargetAttributeForDescription}}
+\index{TargetAttributeForDescription@{TargetAttributeForDescription}!UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect@{UCrimsonSkillTree\_NodeEvent\_ApplyGameplayEffect}}
+\doxysubsubsection{\texorpdfstring{TargetAttributeForDescription}{TargetAttributeForDescription}}
+{\footnotesize\ttfamily FGameplay\+Attribute UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect\+::\+Target\+Attribute\+For\+Description}
+
+
+
+The primary gameplay attribute this effect modifies. This is used for generating a dynamic tooltip description of the event\textquotesingle{}s effect. For accurate dynamic descriptions, this attribute should be set. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree/\+Events/\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ApplyGameplayEffect_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Apply\+Gameplay\+Effect.\+h}}\end{DoxyCompactItemize}

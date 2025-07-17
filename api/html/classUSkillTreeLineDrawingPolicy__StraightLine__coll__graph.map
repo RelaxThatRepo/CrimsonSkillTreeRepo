@@ -1,0 +1,7 @@
+<map id="USkillTreeLineDrawingPolicy_StraightLine" name="USkillTreeLineDrawingPolicy_StraightLine">
+<area shape="rect" id="Node000001" title="A simple line drawing policy that draws a direct straight line between node connection points...." alt="" coords="5,167,212,207"/>
+<area shape="rect" id="Node000002" href="$classUCrimsonSkillTreeWidget__LineDrawingPolicyBase.html" title="Abstract base class defining a policy for drawing connection lines between skill tree node widgets...." alt="" coords="15,79,202,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,133,111,166,106,166,106,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="71,5,146,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,44,111,79,106,79,106,44"/>
+</map>

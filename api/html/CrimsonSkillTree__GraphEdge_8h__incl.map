@@ -1,0 +1,12 @@
+<map id="Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree_GraphEdge.h" name="Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree_GraphEdge.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,5,327,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,196,123,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,48,119,68,93,95,81,116,74,139,67,182,62,182,69,138,77,114,89,92,116,64,147,43"/>
+<area shape="rect" id="Node000003" href="$CrimsonSkillTree__GraphNode_8h.html" title=" " alt="" coords="102,93,282,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,45,195,80,189,80,189,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="307,108,597,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="246,43,408,101,406,106,244,48"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="154,150,94,191,91,186,151,146"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="147,196,440,221"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="225,146,271,185,268,189,221,150"/>
+</map>

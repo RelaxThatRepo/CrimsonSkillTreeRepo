@@ -1,0 +1,42 @@
+\doxysection{Source/\+Crimson\+Skill\+Tree/\+Message\+Subsystem/\+Async\+Action\+\_\+\+Listen\+For\+CSTMessage.h File Reference}
+\hypertarget{AsyncAction__ListenForCSTMessage_8h}{}\label{AsyncAction__ListenForCSTMessage_8h}\index{Source/CrimsonSkillTree/MessageSubsystem/AsyncAction\_ListenForCSTMessage.h@{Source/CrimsonSkillTree/MessageSubsystem/AsyncAction\_ListenForCSTMessage.h}}
+{\ttfamily \#include "{}Core\+Minimal.\+h"{}}\newline
+{\ttfamily \#include "{}CSTMessage\+Subsystem.\+h"{}}\newline
+{\ttfamily \#include "{}CSTMessage\+Types.\+h"{}}\newline
+{\ttfamily \#include "{}Gameplay\+Tag\+Container.\+h"{}}\newline
+{\ttfamily \#include "{}Engine/\+Cancellable\+Async\+Action.\+h"{}}\newline
+{\ttfamily \#include "{}Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+generated.\+h"{}}\newline
+Include dependency graph for Async\+Action\+\_\+\+Listen\+For\+CSTMessage.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AsyncAction__ListenForCSTMessage_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AsyncAction__ListenForCSTMessage_8h_aace0c780d23369ad4de67507d75ff75a}{DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE\+\_\+\+Two\+Params}} (FAsync\+CSTMessage\+Delegate, \mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}} \texorpdfstring{$\ast$}{*}, Proxy\+Object, FGameplay\+Tag, Actual\+Channel)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AsyncAction__ListenForCSTMessage_8h_aace0c780d23369ad4de67507d75ff75a}\label{AsyncAction__ListenForCSTMessage_8h_aace0c780d23369ad4de67507d75ff75a} 
+\index{AsyncAction\_ListenForCSTMessage.h@{AsyncAction\_ListenForCSTMessage.h}!DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams}}
+\index{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams@{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams}!AsyncAction\_ListenForCSTMessage.h@{AsyncAction\_ListenForCSTMessage.h}}
+\doxysubsubsection{\texorpdfstring{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams()}{DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_TwoParams()}}
+{\footnotesize\ttfamily DECLARE\+\_\+\+DYNAMIC\+\_\+\+MULTICAST\+\_\+\+DELEGATE\+\_\+\+Two\+Params (\begin{DoxyParamCaption}\item[{FAsync\+CSTMessage\+Delegate}]{,  }\item[{\mbox{\hyperlink{classUAsyncAction__ListenForCSTMessage}{UAsync\+Action\+\_\+\+Listen\+For\+CSTMessage}} \texorpdfstring{$\ast$}{*}}]{,  }\item[{Proxy\+Object}]{,  }\item[{FGameplay\+Tag}]{,  }\item[{Actual\+Channel}]{ }\end{DoxyParamCaption})}
+
+Proxy object pin will be hidden in K2\+Node\+\_\+\+Gameplay\+Message\+Async\+Action. Is used to get a reference to the object triggering the delegate for the follow up call of \textquotesingle{}Get\+Payload\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Actual\+Channel} & The actual message channel that we received Payload from (will always start with Channel, but may be more specific if partial matches were enabled) \\
+\hline
+\end{DoxyParams}

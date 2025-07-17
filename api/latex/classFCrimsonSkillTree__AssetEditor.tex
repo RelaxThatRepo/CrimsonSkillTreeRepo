@@ -1,0 +1,537 @@
+\doxysection{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor Class Reference}
+\hypertarget{classFCrimsonSkillTree__AssetEditor}{}\label{classFCrimsonSkillTree__AssetEditor}\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Asset\+Editor.\+h$>$}
+
+
+
+Inheritance diagram for FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFCrimsonSkillTree__AssetEditor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFCrimsonSkillTree__AssetEditor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a63564b62dad2b6388827a7e90ff90152}{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor}} ()
+\item 
+virtual \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a43c943c93d1575261ca52925382abe0e}{\texorpdfstring{$\sim$}{\string~}\+FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a2a4371f6da9a72ceed53b6b725e1b4f8}{Init\+Crimson\+Skill\+Tree\+Asset\+Editor}} (const EToolkit\+Mode\+::\+Type Mode, const TShared\+Ptr$<$ IToolkit\+Host $>$ \&Init\+Toolkit\+Host, \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*}Graph)
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_af19c792b09944af2d8b5864c5381d2c9}{Register\+Tab\+Spawners}} (const TShared\+Ref$<$ FTab\+Manager $>$ \&Tab\+Manager) override
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_adea0a2c6bfcb7a12d5c99f9d2d147bd9}{Unregister\+Tab\+Spawners}} (const TShared\+Ref$<$ FTab\+Manager $>$ \&Tab\+Manager) override
+\item 
+virtual FName \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a1b4d25f521068d0593f84fa49eeb8602}{Get\+Toolkit\+FName}} () const override
+\item 
+virtual FText \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a235f36f20961ac969763445dc8cd932d}{Get\+Base\+Toolkit\+Name}} () const override
+\item 
+virtual FText \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ade0bf579a5c642dc72d3c4a24381d580}{Get\+Toolkit\+Name}} () const override
+\item 
+virtual FText \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a9dbc9eaecf153f7919e82a1e05610327}{Get\+Toolkit\+Tool\+Tip\+Text}} () const override
+\item 
+virtual FLinear\+Color \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a33bf961f621a531fea905d08283615dc}{Get\+World\+Centric\+Tab\+Color\+Scale}} () const override
+\item 
+virtual FString \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a651969908872fdd1ed2060c3ac966f69}{Get\+World\+Centric\+Tab\+Prefix}} () const override
+\item 
+virtual FString \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a6dd0b4a61c5b3869ebd6b697c3e4c101}{Get\+Documentation\+Link}} () const override
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a11024955cbd8c4c6f674973a6c0a7c08}{Save\+Asset\+\_\+\+Execute}} () override
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a709cd4ecd571cfa148d561d2feab5c3c}{Update\+Toolbar}} ()
+\item 
+TShared\+Ptr$<$ class \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditorToolbar}{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+Toolbar}} $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a7cc122fef8d58b25fdeda204430d77f0}{Get\+Toolbar\+Builder}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ae28455884e58ad06d5d7b8bc123d62ca}{Register\+Toolbar\+Tab}} (const TShared\+Ref$<$ class FTab\+Manager $>$ \&Tab\+Manager)
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a9958af0f9d6eee568fcc0d4b7f396bfc}{Add\+Referenced\+Objects}} (FReference\+Collector \&Collector) override
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ac868fa454a549519c9fe4ced92f9d174}{Get\+Settings}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+TShared\+Ref$<$ SDock\+Tab $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ac1a03258f6a7dd511145b7208a3e0d85}{Spawn\+Tab\+\_\+\+Viewport}} (const FSpawn\+Tab\+Args \&Args)
+\item 
+TShared\+Ref$<$ SDock\+Tab $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a8be5b15e1679ff92b8bdfd0a152e5fb7}{Spawn\+Tab\+\_\+\+Details}} (const FSpawn\+Tab\+Args \&Args)
+\item 
+TShared\+Ref$<$ SDock\+Tab $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a4507440191cece7c51a976fa9e6b72de}{Spawn\+Tab\+\_\+\+Editor\+Settings}} (const FSpawn\+Tab\+Args \&Args)
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ab29389a40ebf8f25ba966e074c4f3bb0}{Create\+Internal\+Widgets}} ()
+\item 
+TShared\+Ref$<$ SGraph\+Editor $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a7e126a8ef991781158c9e4faf8d56de5}{Create\+Viewport\+Widget}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a0a7592abf01c956094cf145eb5acfc26}{Bind\+Commands}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a6f600e263719814b028bcfea95dce01b}{Create\+Ed\+Graph}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ad161b5abba6d34053c4673d1fdc2d405}{Create\+Command\+List}} ()
+\item 
+TShared\+Ptr$<$ SGraph\+Editor $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a80e504e7c441a3f693f26bfa56c4c471}{Get\+Current\+Graph\+Editor}} () const
+\item 
+FGraph\+Panel\+Selection\+Set \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a179705355a7b64d7093469eb5791b9e5}{Get\+Selected\+Nodes}} () const
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a34de5f511c5801c17021dffd074c866c}{Rebuild\+Crimson\+Skill\+Tree}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a5b7f00e780f01dad46697ab66a7726f2}{Select\+All\+Nodes}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a7ef8caee96be1e73f2aeeb8c788d1aa6}{Can\+Select\+All\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a1d758f3ef5dde3fbe99c063f75a3ff9a}{Delete\+Selected\+Nodes}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a178e0841ce81a8108264824e69a228a9}{Can\+Delete\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a0ee38efeb318230236345b2cda71463a}{Delete\+Selected\+Duplicatable\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_afa0bd25416275a30969723e232d3fdbc}{Cut\+Selected\+Nodes}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a3e8d0184cfe3579f51bdbd9a9c3d89af}{Can\+Cut\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ad477f72213c23072056b0b254d6e6093}{Copy\+Selected\+Nodes}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_af04c12283c343fa33740e07136c6d789}{Can\+Copy\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_aabd8eeb6acb19464fcd987f6eaf52eef}{Paste\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a4339d3bad6e31f486182d861a263efe5}{Paste\+Nodes\+Here}} (const FVector2D \&Location)
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a4341173caee0ca553b3386ddb38ed612}{Can\+Paste\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a92fb2191ab14ee79eddeaa93ce2a753b}{Duplicate\+Nodes}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_aa2f0a91b08c250b5a164875e198dabf6}{Can\+Duplicate\+Nodes}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a543a116fa43f61047163851702955403}{Graph\+Settings}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a9d636a83745401123cc54f2f8a7e81ff}{Can\+Graph\+Settings}} () const
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a1da44ae35f1edb631d9149bc0434cc93}{Auto\+Arrange}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ab1edcd9bee15735f716d358fa764ddf6}{Can\+Auto\+Arrange}} () const
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_acd8f0bb802d8068c1fb018200f005c81}{On\+Rename\+Node}} ()
+\item 
+bool \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_af0f247dbfd05be4adad99229f93c084c}{Can\+Rename\+Nodes}} () const
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a86b479d0ddf9f94556c404d6327bd535}{On\+Selected\+Nodes\+Changed}} (const TSet$<$ class UObject \texorpdfstring{$\ast$}{*} $>$ \&New\+Selection)
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a9ee8b010aae83ba2562c174c3ca89b53}{On\+Node\+Double\+Clicked}} (UEd\+Graph\+Node \texorpdfstring{$\ast$}{*}Node)
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ab8c10e1f1346217d5082e882dc3c143f}{On\+Finished\+Changing\+Properties}} (const FProperty\+Changed\+Event \&Property\+Changed\+Event)
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a7a8a709409f1de082bdc3be7b000c8d3}{On\+Package\+Saved}} (const FString \&Package\+File\+Name, UObject \texorpdfstring{$\ast$}{*}Outer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a3ddef0a02ff33d95af6ae04c31e0ecdc}{Crimson\+Skill\+Tree\+\_\+\+Editor\+Settings}}
+\item 
+TObject\+Ptr$<$ \mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_ade8ff61628f25bec6069d0c3b034f80c}{Editing\+Graph}}
+\item 
+TShared\+Ptr$<$ class \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditorToolbar}{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+Toolbar}} $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a70945ca0acac81321565de31bb3039b1}{Toolbar\+Builder}}
+\item 
+FDelegate\+Handle \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a7a673ca9147072aeb54cf005b4dbeec7}{On\+Package\+Saved\+Delegate\+Handle}}
+\item 
+TShared\+Ptr$<$ SGraph\+Editor $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a06812c72f498ea1b896d91e398cdbed0}{Viewport\+Widget}}
+\item 
+TShared\+Ptr$<$ class IDetails\+View $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_a77bc851d109e19b47469ed48237539ab}{Property\+Widget}}
+\item 
+TShared\+Ptr$<$ class IDetails\+View $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_aca05ba700a0e978966e4a5d99a6d8c40}{Editor\+Settings\+Widget}}
+\item 
+TShared\+Ptr$<$ FUICommand\+List $>$ \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditor_af10c81ed986643106f778d42b0f046a8}{Graph\+Editor\+Commands}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a63564b62dad2b6388827a7e90ff90152}\label{classFCrimsonSkillTree__AssetEditor_a63564b62dad2b6388827a7e90ff90152} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{FCrimsonSkillTree\_AssetEditor()}{FCrimsonSkillTree\_AssetEditor()}}
+{\footnotesize\ttfamily FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a43c943c93d1575261ca52925382abe0e}\label{classFCrimsonSkillTree__AssetEditor_a43c943c93d1575261ca52925382abe0e} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!````~FCrimsonSkillTree\_AssetEditor@{\texorpdfstring{$\sim$}{\string~}FCrimsonSkillTree\_AssetEditor}}
+\index{````~FCrimsonSkillTree\_AssetEditor@{\texorpdfstring{$\sim$}{\string~}FCrimsonSkillTree\_AssetEditor}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FCrimsonSkillTree\_AssetEditor()}{\string~FCrimsonSkillTree\_AssetEditor()}}
+{\footnotesize\ttfamily virtual FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\texorpdfstring{$\sim$}{\string~}\+FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a9958af0f9d6eee568fcc0d4b7f396bfc}\label{classFCrimsonSkillTree__AssetEditor_a9958af0f9d6eee568fcc0d4b7f396bfc} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!AddReferencedObjects@{AddReferencedObjects}}
+\index{AddReferencedObjects@{AddReferencedObjects}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{AddReferencedObjects()}{AddReferencedObjects()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Add\+Referenced\+Objects (\begin{DoxyParamCaption}\item[{FReference\+Collector \&}]{Collector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a1da44ae35f1edb631d9149bc0434cc93}\label{classFCrimsonSkillTree__AssetEditor_a1da44ae35f1edb631d9149bc0434cc93} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!AutoArrange@{AutoArrange}}
+\index{AutoArrange@{AutoArrange}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{AutoArrange()}{AutoArrange()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Auto\+Arrange (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a0a7592abf01c956094cf145eb5acfc26}\label{classFCrimsonSkillTree__AssetEditor_a0a7592abf01c956094cf145eb5acfc26} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!BindCommands@{BindCommands}}
+\index{BindCommands@{BindCommands}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{BindCommands()}{BindCommands()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Bind\+Commands (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ab1edcd9bee15735f716d358fa764ddf6}\label{classFCrimsonSkillTree__AssetEditor_ab1edcd9bee15735f716d358fa764ddf6} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanAutoArrange@{CanAutoArrange}}
+\index{CanAutoArrange@{CanAutoArrange}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanAutoArrange()}{CanAutoArrange()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Auto\+Arrange (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_af04c12283c343fa33740e07136c6d789}\label{classFCrimsonSkillTree__AssetEditor_af04c12283c343fa33740e07136c6d789} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanCopyNodes@{CanCopyNodes}}
+\index{CanCopyNodes@{CanCopyNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanCopyNodes()}{CanCopyNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Copy\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a3e8d0184cfe3579f51bdbd9a9c3d89af}\label{classFCrimsonSkillTree__AssetEditor_a3e8d0184cfe3579f51bdbd9a9c3d89af} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanCutNodes@{CanCutNodes}}
+\index{CanCutNodes@{CanCutNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanCutNodes()}{CanCutNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Cut\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a178e0841ce81a8108264824e69a228a9}\label{classFCrimsonSkillTree__AssetEditor_a178e0841ce81a8108264824e69a228a9} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanDeleteNodes@{CanDeleteNodes}}
+\index{CanDeleteNodes@{CanDeleteNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanDeleteNodes()}{CanDeleteNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Delete\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_aa2f0a91b08c250b5a164875e198dabf6}\label{classFCrimsonSkillTree__AssetEditor_aa2f0a91b08c250b5a164875e198dabf6} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanDuplicateNodes@{CanDuplicateNodes}}
+\index{CanDuplicateNodes@{CanDuplicateNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanDuplicateNodes()}{CanDuplicateNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Duplicate\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a9d636a83745401123cc54f2f8a7e81ff}\label{classFCrimsonSkillTree__AssetEditor_a9d636a83745401123cc54f2f8a7e81ff} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanGraphSettings@{CanGraphSettings}}
+\index{CanGraphSettings@{CanGraphSettings}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanGraphSettings()}{CanGraphSettings()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Graph\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a4341173caee0ca553b3386ddb38ed612}\label{classFCrimsonSkillTree__AssetEditor_a4341173caee0ca553b3386ddb38ed612} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanPasteNodes@{CanPasteNodes}}
+\index{CanPasteNodes@{CanPasteNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanPasteNodes()}{CanPasteNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Paste\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_af0f247dbfd05be4adad99229f93c084c}\label{classFCrimsonSkillTree__AssetEditor_af0f247dbfd05be4adad99229f93c084c} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanRenameNodes@{CanRenameNodes}}
+\index{CanRenameNodes@{CanRenameNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanRenameNodes()}{CanRenameNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Rename\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a7ef8caee96be1e73f2aeeb8c788d1aa6}\label{classFCrimsonSkillTree__AssetEditor_a7ef8caee96be1e73f2aeeb8c788d1aa6} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CanSelectAllNodes@{CanSelectAllNodes}}
+\index{CanSelectAllNodes@{CanSelectAllNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CanSelectAllNodes()}{CanSelectAllNodes()}}
+{\footnotesize\ttfamily bool FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Can\+Select\+All\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ad477f72213c23072056b0b254d6e6093}\label{classFCrimsonSkillTree__AssetEditor_ad477f72213c23072056b0b254d6e6093} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CopySelectedNodes@{CopySelectedNodes}}
+\index{CopySelectedNodes@{CopySelectedNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CopySelectedNodes()}{CopySelectedNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Copy\+Selected\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ad161b5abba6d34053c4673d1fdc2d405}\label{classFCrimsonSkillTree__AssetEditor_ad161b5abba6d34053c4673d1fdc2d405} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CreateCommandList@{CreateCommandList}}
+\index{CreateCommandList@{CreateCommandList}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CreateCommandList()}{CreateCommandList()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Create\+Command\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a6f600e263719814b028bcfea95dce01b}\label{classFCrimsonSkillTree__AssetEditor_a6f600e263719814b028bcfea95dce01b} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CreateEdGraph@{CreateEdGraph}}
+\index{CreateEdGraph@{CreateEdGraph}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CreateEdGraph()}{CreateEdGraph()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Create\+Ed\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ab29389a40ebf8f25ba966e074c4f3bb0}\label{classFCrimsonSkillTree__AssetEditor_ab29389a40ebf8f25ba966e074c4f3bb0} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CreateInternalWidgets@{CreateInternalWidgets}}
+\index{CreateInternalWidgets@{CreateInternalWidgets}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CreateInternalWidgets()}{CreateInternalWidgets()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Create\+Internal\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a7e126a8ef991781158c9e4faf8d56de5}\label{classFCrimsonSkillTree__AssetEditor_a7e126a8ef991781158c9e4faf8d56de5} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CreateViewportWidget@{CreateViewportWidget}}
+\index{CreateViewportWidget@{CreateViewportWidget}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CreateViewportWidget()}{CreateViewportWidget()}}
+{\footnotesize\ttfamily TShared\+Ref$<$ SGraph\+Editor $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Create\+Viewport\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_afa0bd25416275a30969723e232d3fdbc}\label{classFCrimsonSkillTree__AssetEditor_afa0bd25416275a30969723e232d3fdbc} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CutSelectedNodes@{CutSelectedNodes}}
+\index{CutSelectedNodes@{CutSelectedNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CutSelectedNodes()}{CutSelectedNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Cut\+Selected\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a0ee38efeb318230236345b2cda71463a}\label{classFCrimsonSkillTree__AssetEditor_a0ee38efeb318230236345b2cda71463a} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!DeleteSelectedDuplicatableNodes@{DeleteSelectedDuplicatableNodes}}
+\index{DeleteSelectedDuplicatableNodes@{DeleteSelectedDuplicatableNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{DeleteSelectedDuplicatableNodes()}{DeleteSelectedDuplicatableNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Delete\+Selected\+Duplicatable\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a1d758f3ef5dde3fbe99c063f75a3ff9a}\label{classFCrimsonSkillTree__AssetEditor_a1d758f3ef5dde3fbe99c063f75a3ff9a} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!DeleteSelectedNodes@{DeleteSelectedNodes}}
+\index{DeleteSelectedNodes@{DeleteSelectedNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{DeleteSelectedNodes()}{DeleteSelectedNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Delete\+Selected\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a92fb2191ab14ee79eddeaa93ce2a753b}\label{classFCrimsonSkillTree__AssetEditor_a92fb2191ab14ee79eddeaa93ce2a753b} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!DuplicateNodes@{DuplicateNodes}}
+\index{DuplicateNodes@{DuplicateNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{DuplicateNodes()}{DuplicateNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Duplicate\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a235f36f20961ac969763445dc8cd932d}\label{classFCrimsonSkillTree__AssetEditor_a235f36f20961ac969763445dc8cd932d} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetBaseToolkitName@{GetBaseToolkitName}}
+\index{GetBaseToolkitName@{GetBaseToolkitName}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetBaseToolkitName()}{GetBaseToolkitName()}}
+{\footnotesize\ttfamily virtual FText FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Base\+Toolkit\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a80e504e7c441a3f693f26bfa56c4c471}\label{classFCrimsonSkillTree__AssetEditor_a80e504e7c441a3f693f26bfa56c4c471} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetCurrentGraphEditor@{GetCurrentGraphEditor}}
+\index{GetCurrentGraphEditor@{GetCurrentGraphEditor}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetCurrentGraphEditor()}{GetCurrentGraphEditor()}}
+{\footnotesize\ttfamily TShared\+Ptr$<$ SGraph\+Editor $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Current\+Graph\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a6dd0b4a61c5b3869ebd6b697c3e4c101}\label{classFCrimsonSkillTree__AssetEditor_a6dd0b4a61c5b3869ebd6b697c3e4c101} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetDocumentationLink@{GetDocumentationLink}}
+\index{GetDocumentationLink@{GetDocumentationLink}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetDocumentationLink()}{GetDocumentationLink()}}
+{\footnotesize\ttfamily virtual FString FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Documentation\+Link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a179705355a7b64d7093469eb5791b9e5}\label{classFCrimsonSkillTree__AssetEditor_a179705355a7b64d7093469eb5791b9e5} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetSelectedNodes@{GetSelectedNodes}}
+\index{GetSelectedNodes@{GetSelectedNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetSelectedNodes()}{GetSelectedNodes()}}
+{\footnotesize\ttfamily FGraph\+Panel\+Selection\+Set FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Selected\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ac868fa454a549519c9fe4ced92f9d174}\label{classFCrimsonSkillTree__AssetEditor_ac868fa454a549519c9fe4ced92f9d174} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetSettings@{GetSettings}}
+\index{GetSettings@{GetSettings}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetSettings()}{GetSettings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}} \texorpdfstring{$\ast$}{*} FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a7cc122fef8d58b25fdeda204430d77f0}\label{classFCrimsonSkillTree__AssetEditor_a7cc122fef8d58b25fdeda204430d77f0} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetToolbarBuilder@{GetToolbarBuilder}}
+\index{GetToolbarBuilder@{GetToolbarBuilder}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetToolbarBuilder()}{GetToolbarBuilder()}}
+{\footnotesize\ttfamily TShared\+Ptr$<$ class \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditorToolbar}{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+Toolbar}} $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Toolbar\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a1b4d25f521068d0593f84fa49eeb8602}\label{classFCrimsonSkillTree__AssetEditor_a1b4d25f521068d0593f84fa49eeb8602} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetToolkitFName@{GetToolkitFName}}
+\index{GetToolkitFName@{GetToolkitFName}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetToolkitFName()}{GetToolkitFName()}}
+{\footnotesize\ttfamily virtual FName FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Toolkit\+FName (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ade0bf579a5c642dc72d3c4a24381d580}\label{classFCrimsonSkillTree__AssetEditor_ade0bf579a5c642dc72d3c4a24381d580} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetToolkitName@{GetToolkitName}}
+\index{GetToolkitName@{GetToolkitName}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetToolkitName()}{GetToolkitName()}}
+{\footnotesize\ttfamily virtual FText FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Toolkit\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a9dbc9eaecf153f7919e82a1e05610327}\label{classFCrimsonSkillTree__AssetEditor_a9dbc9eaecf153f7919e82a1e05610327} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetToolkitToolTipText@{GetToolkitToolTipText}}
+\index{GetToolkitToolTipText@{GetToolkitToolTipText}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetToolkitToolTipText()}{GetToolkitToolTipText()}}
+{\footnotesize\ttfamily virtual FText FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+Toolkit\+Tool\+Tip\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a33bf961f621a531fea905d08283615dc}\label{classFCrimsonSkillTree__AssetEditor_a33bf961f621a531fea905d08283615dc} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetWorldCentricTabColorScale@{GetWorldCentricTabColorScale}}
+\index{GetWorldCentricTabColorScale@{GetWorldCentricTabColorScale}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetWorldCentricTabColorScale()}{GetWorldCentricTabColorScale()}}
+{\footnotesize\ttfamily virtual FLinear\+Color FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+World\+Centric\+Tab\+Color\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a651969908872fdd1ed2060c3ac966f69}\label{classFCrimsonSkillTree__AssetEditor_a651969908872fdd1ed2060c3ac966f69} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GetWorldCentricTabPrefix@{GetWorldCentricTabPrefix}}
+\index{GetWorldCentricTabPrefix@{GetWorldCentricTabPrefix}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GetWorldCentricTabPrefix()}{GetWorldCentricTabPrefix()}}
+{\footnotesize\ttfamily virtual FString FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Get\+World\+Centric\+Tab\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a543a116fa43f61047163851702955403}\label{classFCrimsonSkillTree__AssetEditor_a543a116fa43f61047163851702955403} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GraphSettings@{GraphSettings}}
+\index{GraphSettings@{GraphSettings}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GraphSettings()}{GraphSettings()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Graph\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a2a4371f6da9a72ceed53b6b725e1b4f8}\label{classFCrimsonSkillTree__AssetEditor_a2a4371f6da9a72ceed53b6b725e1b4f8} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!InitCrimsonSkillTreeAssetEditor@{InitCrimsonSkillTreeAssetEditor}}
+\index{InitCrimsonSkillTreeAssetEditor@{InitCrimsonSkillTreeAssetEditor}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{InitCrimsonSkillTreeAssetEditor()}{InitCrimsonSkillTreeAssetEditor()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Init\+Crimson\+Skill\+Tree\+Asset\+Editor (\begin{DoxyParamCaption}\item[{const EToolkit\+Mode\+::\+Type}]{Mode,  }\item[{const TShared\+Ptr$<$ IToolkit\+Host $>$ \&}]{Init\+Toolkit\+Host,  }\item[{\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}} \texorpdfstring{$\ast$}{*}}]{Graph }\end{DoxyParamCaption})}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ab8c10e1f1346217d5082e882dc3c143f}\label{classFCrimsonSkillTree__AssetEditor_ab8c10e1f1346217d5082e882dc3c143f} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnFinishedChangingProperties@{OnFinishedChangingProperties}}
+\index{OnFinishedChangingProperties@{OnFinishedChangingProperties}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnFinishedChangingProperties()}{OnFinishedChangingProperties()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Finished\+Changing\+Properties (\begin{DoxyParamCaption}\item[{const FProperty\+Changed\+Event \&}]{Property\+Changed\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a9ee8b010aae83ba2562c174c3ca89b53}\label{classFCrimsonSkillTree__AssetEditor_a9ee8b010aae83ba2562c174c3ca89b53} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnNodeDoubleClicked@{OnNodeDoubleClicked}}
+\index{OnNodeDoubleClicked@{OnNodeDoubleClicked}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnNodeDoubleClicked()}{OnNodeDoubleClicked()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Node\+Double\+Clicked (\begin{DoxyParamCaption}\item[{UEd\+Graph\+Node \texorpdfstring{$\ast$}{*}}]{Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a7a8a709409f1de082bdc3be7b000c8d3}\label{classFCrimsonSkillTree__AssetEditor_a7a8a709409f1de082bdc3be7b000c8d3} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnPackageSaved@{OnPackageSaved}}
+\index{OnPackageSaved@{OnPackageSaved}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnPackageSaved()}{OnPackageSaved()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Package\+Saved (\begin{DoxyParamCaption}\item[{const FString \&}]{Package\+File\+Name,  }\item[{UObject \texorpdfstring{$\ast$}{*}}]{Outer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_acd8f0bb802d8068c1fb018200f005c81}\label{classFCrimsonSkillTree__AssetEditor_acd8f0bb802d8068c1fb018200f005c81} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnRenameNode@{OnRenameNode}}
+\index{OnRenameNode@{OnRenameNode}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnRenameNode()}{OnRenameNode()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Rename\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a86b479d0ddf9f94556c404d6327bd535}\label{classFCrimsonSkillTree__AssetEditor_a86b479d0ddf9f94556c404d6327bd535} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnSelectedNodesChanged@{OnSelectedNodesChanged}}
+\index{OnSelectedNodesChanged@{OnSelectedNodesChanged}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnSelectedNodesChanged()}{OnSelectedNodesChanged()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Selected\+Nodes\+Changed (\begin{DoxyParamCaption}\item[{const TSet$<$ class UObject \texorpdfstring{$\ast$}{*} $>$ \&}]{New\+Selection }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_aabd8eeb6acb19464fcd987f6eaf52eef}\label{classFCrimsonSkillTree__AssetEditor_aabd8eeb6acb19464fcd987f6eaf52eef} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!PasteNodes@{PasteNodes}}
+\index{PasteNodes@{PasteNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{PasteNodes()}{PasteNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Paste\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a4339d3bad6e31f486182d861a263efe5}\label{classFCrimsonSkillTree__AssetEditor_a4339d3bad6e31f486182d861a263efe5} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!PasteNodesHere@{PasteNodesHere}}
+\index{PasteNodesHere@{PasteNodesHere}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{PasteNodesHere()}{PasteNodesHere()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Paste\+Nodes\+Here (\begin{DoxyParamCaption}\item[{const FVector2D \&}]{Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a34de5f511c5801c17021dffd074c866c}\label{classFCrimsonSkillTree__AssetEditor_a34de5f511c5801c17021dffd074c866c} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!RebuildCrimsonSkillTree@{RebuildCrimsonSkillTree}}
+\index{RebuildCrimsonSkillTree@{RebuildCrimsonSkillTree}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{RebuildCrimsonSkillTree()}{RebuildCrimsonSkillTree()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Rebuild\+Crimson\+Skill\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_af19c792b09944af2d8b5864c5381d2c9}\label{classFCrimsonSkillTree__AssetEditor_af19c792b09944af2d8b5864c5381d2c9} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!RegisterTabSpawners@{RegisterTabSpawners}}
+\index{RegisterTabSpawners@{RegisterTabSpawners}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{RegisterTabSpawners()}{RegisterTabSpawners()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Register\+Tab\+Spawners (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ FTab\+Manager $>$ \&}]{Tab\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ae28455884e58ad06d5d7b8bc123d62ca}\label{classFCrimsonSkillTree__AssetEditor_ae28455884e58ad06d5d7b8bc123d62ca} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!RegisterToolbarTab@{RegisterToolbarTab}}
+\index{RegisterToolbarTab@{RegisterToolbarTab}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{RegisterToolbarTab()}{RegisterToolbarTab()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Register\+Toolbar\+Tab (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ class FTab\+Manager $>$ \&}]{Tab\+Manager }\end{DoxyParamCaption})}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a11024955cbd8c4c6f674973a6c0a7c08}\label{classFCrimsonSkillTree__AssetEditor_a11024955cbd8c4c6f674973a6c0a7c08} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!SaveAsset\_Execute@{SaveAsset\_Execute}}
+\index{SaveAsset\_Execute@{SaveAsset\_Execute}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{SaveAsset\_Execute()}{SaveAsset\_Execute()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Save\+Asset\+\_\+\+Execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a5b7f00e780f01dad46697ab66a7726f2}\label{classFCrimsonSkillTree__AssetEditor_a5b7f00e780f01dad46697ab66a7726f2} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!SelectAllNodes@{SelectAllNodes}}
+\index{SelectAllNodes@{SelectAllNodes}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{SelectAllNodes()}{SelectAllNodes()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Select\+All\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a8be5b15e1679ff92b8bdfd0a152e5fb7}\label{classFCrimsonSkillTree__AssetEditor_a8be5b15e1679ff92b8bdfd0a152e5fb7} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!SpawnTab\_Details@{SpawnTab\_Details}}
+\index{SpawnTab\_Details@{SpawnTab\_Details}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{SpawnTab\_Details()}{SpawnTab\_Details()}}
+{\footnotesize\ttfamily TShared\+Ref$<$ SDock\+Tab $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Spawn\+Tab\+\_\+\+Details (\begin{DoxyParamCaption}\item[{const FSpawn\+Tab\+Args \&}]{Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a4507440191cece7c51a976fa9e6b72de}\label{classFCrimsonSkillTree__AssetEditor_a4507440191cece7c51a976fa9e6b72de} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!SpawnTab\_EditorSettings@{SpawnTab\_EditorSettings}}
+\index{SpawnTab\_EditorSettings@{SpawnTab\_EditorSettings}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{SpawnTab\_EditorSettings()}{SpawnTab\_EditorSettings()}}
+{\footnotesize\ttfamily TShared\+Ref$<$ SDock\+Tab $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Spawn\+Tab\+\_\+\+Editor\+Settings (\begin{DoxyParamCaption}\item[{const FSpawn\+Tab\+Args \&}]{Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ac1a03258f6a7dd511145b7208a3e0d85}\label{classFCrimsonSkillTree__AssetEditor_ac1a03258f6a7dd511145b7208a3e0d85} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!SpawnTab\_Viewport@{SpawnTab\_Viewport}}
+\index{SpawnTab\_Viewport@{SpawnTab\_Viewport}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{SpawnTab\_Viewport()}{SpawnTab\_Viewport()}}
+{\footnotesize\ttfamily TShared\+Ref$<$ SDock\+Tab $>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Spawn\+Tab\+\_\+\+Viewport (\begin{DoxyParamCaption}\item[{const FSpawn\+Tab\+Args \&}]{Args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_adea0a2c6bfcb7a12d5c99f9d2d147bd9}\label{classFCrimsonSkillTree__AssetEditor_adea0a2c6bfcb7a12d5c99f9d2d147bd9} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!UnregisterTabSpawners@{UnregisterTabSpawners}}
+\index{UnregisterTabSpawners@{UnregisterTabSpawners}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{UnregisterTabSpawners()}{UnregisterTabSpawners()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Unregister\+Tab\+Spawners (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ FTab\+Manager $>$ \&}]{Tab\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a709cd4ecd571cfa148d561d2feab5c3c}\label{classFCrimsonSkillTree__AssetEditor_a709cd4ecd571cfa148d561d2feab5c3c} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!UpdateToolbar@{UpdateToolbar}}
+\index{UpdateToolbar@{UpdateToolbar}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{UpdateToolbar()}{UpdateToolbar()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Update\+Toolbar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a3ddef0a02ff33d95af6ae04c31e0ecdc}\label{classFCrimsonSkillTree__AssetEditor_a3ddef0a02ff33d95af6ae04c31e0ecdc} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!CrimsonSkillTree\_EditorSettings@{CrimsonSkillTree\_EditorSettings}}
+\index{CrimsonSkillTree\_EditorSettings@{CrimsonSkillTree\_EditorSettings}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{CrimsonSkillTree\_EditorSettings}{CrimsonSkillTree\_EditorSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree__EditorSettings}{UCrimson\+Skill\+Tree\+\_\+\+Editor\+Settings}}\texorpdfstring{$\ast$}{*} FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Crimson\+Skill\+Tree\+\_\+\+Editor\+Settings\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_ade8ff61628f25bec6069d0c3b034f80c}\label{classFCrimsonSkillTree__AssetEditor_ade8ff61628f25bec6069d0c3b034f80c} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!EditingGraph@{EditingGraph}}
+\index{EditingGraph@{EditingGraph}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{EditingGraph}{EditingGraph}}
+{\footnotesize\ttfamily TObject\+Ptr$<$\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimson\+Skill\+Tree}}$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Editing\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_aca05ba700a0e978966e4a5d99a6d8c40}\label{classFCrimsonSkillTree__AssetEditor_aca05ba700a0e978966e4a5d99a6d8c40} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!EditorSettingsWidget@{EditorSettingsWidget}}
+\index{EditorSettingsWidget@{EditorSettingsWidget}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{EditorSettingsWidget}{EditorSettingsWidget}}
+{\footnotesize\ttfamily TShared\+Ptr$<$class IDetails\+View$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Editor\+Settings\+Widget\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_af10c81ed986643106f778d42b0f046a8}\label{classFCrimsonSkillTree__AssetEditor_af10c81ed986643106f778d42b0f046a8} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!GraphEditorCommands@{GraphEditorCommands}}
+\index{GraphEditorCommands@{GraphEditorCommands}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{GraphEditorCommands}{GraphEditorCommands}}
+{\footnotesize\ttfamily TShared\+Ptr$<$FUICommand\+List$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Graph\+Editor\+Commands\hspace{0.3cm}{\ttfamily [protected]}}
+
+The command list for this editor \Hypertarget{classFCrimsonSkillTree__AssetEditor_a7a673ca9147072aeb54cf005b4dbeec7}\label{classFCrimsonSkillTree__AssetEditor_a7a673ca9147072aeb54cf005b4dbeec7} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!OnPackageSavedDelegateHandle@{OnPackageSavedDelegateHandle}}
+\index{OnPackageSavedDelegateHandle@{OnPackageSavedDelegateHandle}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{OnPackageSavedDelegateHandle}{OnPackageSavedDelegateHandle}}
+{\footnotesize\ttfamily FDelegate\+Handle FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+On\+Package\+Saved\+Delegate\+Handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+Handle to the registered On\+Package\+Save delegate \Hypertarget{classFCrimsonSkillTree__AssetEditor_a77bc851d109e19b47469ed48237539ab}\label{classFCrimsonSkillTree__AssetEditor_a77bc851d109e19b47469ed48237539ab} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!PropertyWidget@{PropertyWidget}}
+\index{PropertyWidget@{PropertyWidget}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{PropertyWidget}{PropertyWidget}}
+{\footnotesize\ttfamily TShared\+Ptr$<$class IDetails\+View$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Property\+Widget\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a70945ca0acac81321565de31bb3039b1}\label{classFCrimsonSkillTree__AssetEditor_a70945ca0acac81321565de31bb3039b1} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!ToolbarBuilder@{ToolbarBuilder}}
+\index{ToolbarBuilder@{ToolbarBuilder}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{ToolbarBuilder}{ToolbarBuilder}}
+{\footnotesize\ttfamily TShared\+Ptr$<$class \mbox{\hyperlink{classFCrimsonSkillTree__AssetEditorToolbar}{FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+Toolbar}}$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Toolbar\+Builder\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__AssetEditor_a06812c72f498ea1b896d91e398cdbed0}\label{classFCrimsonSkillTree__AssetEditor_a06812c72f498ea1b896d91e398cdbed0} 
+\index{FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}!ViewportWidget@{ViewportWidget}}
+\index{ViewportWidget@{ViewportWidget}!FCrimsonSkillTree\_AssetEditor@{FCrimsonSkillTree\_AssetEditor}}
+\doxysubsubsection{\texorpdfstring{ViewportWidget}{ViewportWidget}}
+{\footnotesize\ttfamily TShared\+Ptr$<$SGraph\+Editor$>$ FCrimson\+Skill\+Tree\+\_\+\+Asset\+Editor\+::\+Viewport\+Widget\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Editor/\mbox{\hyperlink{CrimsonSkillTree__AssetEditor_8h}{Crimson\+Skill\+Tree\+\_\+\+Asset\+Editor.\+h}}\end{DoxyCompactItemize}

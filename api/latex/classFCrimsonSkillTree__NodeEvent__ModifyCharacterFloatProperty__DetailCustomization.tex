@@ -1,0 +1,169 @@
+\doxysection{FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization Class Reference}
+\hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization}{}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization}\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization.\+h$>$}
+
+
+
+Inheritance diagram for FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ac8a49a3543847bad36cc0fc32aa6a97a}{Customize\+Details}} (IDetail\+Layout\+Builder \&Detail\+Builder) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static TShared\+Ref$<$ IDetail\+Customization $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a9e3040dd4ac8042a4997e468cfc2d38b}{Make\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a087761cea3e525b8f63d14e60678405e}{On\+Property\+Owner\+Scope\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a03f716eaaa6aaa532857e942eb03d4b0}{Populate\+Float\+Property\+Options}} ()
+\item 
+TShared\+Ref$<$ SWidget $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_af110b35163d7ba5af283282fe58cdb3c}{On\+Generate\+Property\+Option\+Widget}} (TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$ In\+Option)
+\item 
+void \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aededcd2af3f886c341045e4dc5ae57d5}{On\+Property\+Selection\+Changed}} (TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$ New\+Selection, ESelect\+Info\+::\+Type Select\+Info)
+\item 
+FText \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1d48c072f378ea9b8cef225481fd046d}{Get\+Current\+Property\+Name\+Text}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TArray$<$ TWeak\+Object\+Ptr$<$ UObject $>$ $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a580948881cc7b4cb03391c5820438f23}{Customized\+Objects}}
+\item 
+\mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1953b98ca8c918f6341be29b8612b8d4}{Target\+Event\+Instance}} = nullptr
+\item 
+TShared\+Ptr$<$ IProperty\+Handle $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_adb73aa4ba8193923171fed2af8440f92}{Property\+Owner\+Scope\+Handle}}
+\item 
+TShared\+Ptr$<$ IProperty\+Handle $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ae2f81512a2bd1a49ceb1586f408f99c6}{Target\+Property\+Name\+Handle}}
+\item 
+TArray$<$ TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$ $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a751eeb42b3bba4bbac0eeeaaf86c0cba}{Float\+Property\+Options\+List}}
+\item 
+TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a6f29762e5ba34d3025cda088eb435282}{Current\+Selected\+Property\+Option}}
+\item 
+TShared\+Ptr$<$ SCombo\+Box$<$ TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$ $>$ $>$ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aa64bb6dc4cb53e9e0c2b8401173d80e9}{Property\+Combo\+Box}}
+\item 
+IDetail\+Layout\+Builder \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ab5bf53084e75f5fbf646f6f45e579f7a}{Cached\+Detail\+Builder}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ac8a49a3543847bad36cc0fc32aa6a97a}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ac8a49a3543847bad36cc0fc32aa6a97a} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!CustomizeDetails@{CustomizeDetails}}
+\index{CustomizeDetails@{CustomizeDetails}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{CustomizeDetails()}{CustomizeDetails()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Customize\+Details (\begin{DoxyParamCaption}\item[{IDetail\+Layout\+Builder \&}]{Detail\+Builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1d48c072f378ea9b8cef225481fd046d}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1d48c072f378ea9b8cef225481fd046d} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!GetCurrentPropertyNameText@{GetCurrentPropertyNameText}}
+\index{GetCurrentPropertyNameText@{GetCurrentPropertyNameText}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPropertyNameText()}{GetCurrentPropertyNameText()}}
+{\footnotesize\ttfamily FText FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Get\+Current\+Property\+Name\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a9e3040dd4ac8042a4997e468cfc2d38b}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a9e3040dd4ac8042a4997e468cfc2d38b} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!MakeInstance@{MakeInstance}}
+\index{MakeInstance@{MakeInstance}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{MakeInstance()}{MakeInstance()}}
+{\footnotesize\ttfamily static TShared\+Ref$<$ IDetail\+Customization $>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Make\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_af110b35163d7ba5af283282fe58cdb3c}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_af110b35163d7ba5af283282fe58cdb3c} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!OnGeneratePropertyOptionWidget@{OnGeneratePropertyOptionWidget}}
+\index{OnGeneratePropertyOptionWidget@{OnGeneratePropertyOptionWidget}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{OnGeneratePropertyOptionWidget()}{OnGeneratePropertyOptionWidget()}}
+{\footnotesize\ttfamily TShared\+Ref$<$ SWidget $>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+On\+Generate\+Property\+Option\+Widget (\begin{DoxyParamCaption}\item[{TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$}]{In\+Option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a087761cea3e525b8f63d14e60678405e}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a087761cea3e525b8f63d14e60678405e} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!OnPropertyOwnerScopeChanged@{OnPropertyOwnerScopeChanged}}
+\index{OnPropertyOwnerScopeChanged@{OnPropertyOwnerScopeChanged}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{OnPropertyOwnerScopeChanged()}{OnPropertyOwnerScopeChanged()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+On\+Property\+Owner\+Scope\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aededcd2af3f886c341045e4dc5ae57d5}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aededcd2af3f886c341045e4dc5ae57d5} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!OnPropertySelectionChanged@{OnPropertySelectionChanged}}
+\index{OnPropertySelectionChanged@{OnPropertySelectionChanged}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{OnPropertySelectionChanged()}{OnPropertySelectionChanged()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+On\+Property\+Selection\+Changed (\begin{DoxyParamCaption}\item[{TShared\+Ptr$<$ \mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}} $>$}]{New\+Selection,  }\item[{ESelect\+Info\+::\+Type}]{Select\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a03f716eaaa6aaa532857e942eb03d4b0}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a03f716eaaa6aaa532857e942eb03d4b0} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!PopulateFloatPropertyOptions@{PopulateFloatPropertyOptions}}
+\index{PopulateFloatPropertyOptions@{PopulateFloatPropertyOptions}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{PopulateFloatPropertyOptions()}{PopulateFloatPropertyOptions()}}
+{\footnotesize\ttfamily void FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Populate\+Float\+Property\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ab5bf53084e75f5fbf646f6f45e579f7a}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ab5bf53084e75f5fbf646f6f45e579f7a} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!CachedDetailBuilder@{CachedDetailBuilder}}
+\index{CachedDetailBuilder@{CachedDetailBuilder}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{CachedDetailBuilder}{CachedDetailBuilder}}
+{\footnotesize\ttfamily IDetail\+Layout\+Builder\texorpdfstring{$\ast$}{*} FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Cached\+Detail\+Builder = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a6f29762e5ba34d3025cda088eb435282}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a6f29762e5ba34d3025cda088eb435282} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!CurrentSelectedPropertyOption@{CurrentSelectedPropertyOption}}
+\index{CurrentSelectedPropertyOption@{CurrentSelectedPropertyOption}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{CurrentSelectedPropertyOption}{CurrentSelectedPropertyOption}}
+{\footnotesize\ttfamily TShared\+Ptr$<$\mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}}$>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Current\+Selected\+Property\+Option\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a580948881cc7b4cb03391c5820438f23}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a580948881cc7b4cb03391c5820438f23} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!CustomizedObjects@{CustomizedObjects}}
+\index{CustomizedObjects@{CustomizedObjects}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{CustomizedObjects}{CustomizedObjects}}
+{\footnotesize\ttfamily TArray$<$TWeak\+Object\+Ptr$<$UObject$>$ $>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Customized\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a751eeb42b3bba4bbac0eeeaaf86c0cba}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a751eeb42b3bba4bbac0eeeaaf86c0cba} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!FloatPropertyOptionsList@{FloatPropertyOptionsList}}
+\index{FloatPropertyOptionsList@{FloatPropertyOptionsList}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{FloatPropertyOptionsList}{FloatPropertyOptionsList}}
+{\footnotesize\ttfamily TArray$<$TShared\+Ptr$<$\mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}}$>$ $>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Float\+Property\+Options\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aa64bb6dc4cb53e9e0c2b8401173d80e9}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aa64bb6dc4cb53e9e0c2b8401173d80e9} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!PropertyComboBox@{PropertyComboBox}}
+\index{PropertyComboBox@{PropertyComboBox}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{PropertyComboBox}{PropertyComboBox}}
+{\footnotesize\ttfamily TShared\+Ptr$<$SCombo\+Box$<$TShared\+Ptr$<$\mbox{\hyperlink{structFPropertyOption}{FProperty\+Option}}$>$ $>$ $>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Property\+Combo\+Box\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_adb73aa4ba8193923171fed2af8440f92}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_adb73aa4ba8193923171fed2af8440f92} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!PropertyOwnerScopeHandle@{PropertyOwnerScopeHandle}}
+\index{PropertyOwnerScopeHandle@{PropertyOwnerScopeHandle}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{PropertyOwnerScopeHandle}{PropertyOwnerScopeHandle}}
+{\footnotesize\ttfamily TShared\+Ptr$<$IProperty\+Handle$>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Property\+Owner\+Scope\+Handle\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1953b98ca8c918f6341be29b8612b8d4}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1953b98ca8c918f6341be29b8612b8d4} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!TargetEventInstance@{TargetEventInstance}}
+\index{TargetEventInstance@{TargetEventInstance}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{TargetEventInstance}{TargetEventInstance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty}{UCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property}}\texorpdfstring{$\ast$}{*} FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Target\+Event\+Instance = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ae2f81512a2bd1a49ceb1586f408f99c6}\label{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ae2f81512a2bd1a49ceb1586f408f99c6} 
+\index{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}!TargetPropertyNameHandle@{TargetPropertyNameHandle}}
+\index{TargetPropertyNameHandle@{TargetPropertyNameHandle}!FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization@{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}
+\doxysubsubsection{\texorpdfstring{TargetPropertyNameHandle}{TargetPropertyNameHandle}}
+{\footnotesize\ttfamily TShared\+Ptr$<$IProperty\+Handle$>$ FCrimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization\+::\+Target\+Property\+Name\+Handle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Detail\+Customization/\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_8h}{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="FResolvedNodeCost" name="FResolvedNodeCost">
+<area shape="rect" id="Node000001" title="A simple struct to hold a calculated cost amount and its definition at runtime." alt="" coords="7,93,160,119"/>
+<area shape="rect" id="Node000002" href="$structFNodeCostDefinition.html" title="Defines a specific type of resource cost (e.g., Skill Points, Gold). This is a hashable struct,..." alt="" coords="5,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,45,86,93,81,93,81,45"/>
+</map>

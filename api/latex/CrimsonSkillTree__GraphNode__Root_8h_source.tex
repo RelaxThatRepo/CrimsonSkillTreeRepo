@@ -1,0 +1,38 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Graph\+Node\+\_\+\+Root.\+h}
+\hypertarget{CrimsonSkillTree__GraphNode__Root_8h_source}{}\label{CrimsonSkillTree__GraphNode__Root_8h_source}\index{Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree\_GraphNode\_Root.h@{Source/CrimsonSkillTreeEditor/Nodes/CrimsonSkillTree\_GraphNode\_Root.h}}
+\mbox{\hyperlink{CrimsonSkillTree__GraphNode__Root_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__GraphNode_8h}{CrimsonSkillTree\_GraphNode.h}}"{}}\ \textcolor{comment}{//\ Original\ include}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_GraphNode\_Root.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ UCLASS()\ \textcolor{comment}{//\ Preserving\ original\ UCLASS()\ macro\ as\ provided}}
+\DoxyCodeLine{00016\ class\ CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root}{UCrimsonSkillTree\_GraphNode\_Root}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode}{UCrimsonSkillTree\_GraphNode}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a4834629d2510baba033ce577e479540e}{UCrimsonSkillTree\_GraphNode\_Root}}();}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\string~\ UCrimsonSkillTree\_GraphNode\ Interface\ (and\ UEdGraphNode\ Overrides)}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a5080e3033098c8f2e844bbbef186e67f}{GetNodeTitle}}(ENodeTitleType::Type\ TitleType)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_afd0c021c99469ad48e1030f0a83067a6}{GetTooltipText}}()\ \textcolor{keyword}{const\ override};\ \textcolor{comment}{//\ Override\ from\ UEdGraphNode}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ FLinearColor\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a5c3fe4fbe6021b10f95f3d7d35bc3019}{GetBackgroundColor}}()\ \textcolor{keyword}{const\ override};\ \textcolor{comment}{//\ Override\ from\ UCrimsonSkillTree\_GraphNode}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__GraphNode__Root_a02b773fa4a21689af5367e607c2b1ab1}{AllocateDefaultPins}}()\ \textcolor{keyword}{override};\ \textcolor{comment}{//\ Override\ from\ UEdGraphNode}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UCrimsonSkillTree\_GraphNode\ Interface}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\string~\ UObject\ Interface\ (via\ UEdGraphNode)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR\ }\textcolor{comment}{//\ This\ guard\ is\ often\ for\ UObject\ methods\ conditionally\ compiled}}
+\DoxyCodeLine{00062\ \ \ \ \ virtual\ void\ PostEditUndo()\ override;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UObject\ Interface}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WITH\_EDITOR}}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,9 @@
+<map id="Source/CrimsonSkillTree/Nodes/CrimsonSkillTree_Node.h" name="Source/CrimsonSkillTree/Nodes/CrimsonSkillTree_Node.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="225,5,405,60"/>
+<area shape="rect" id="Node000002" href="$CrimsonSkillTree__Edge_8h.html" title=" " alt="" coords="5,108,185,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,68,154,110,152,106,244,63"/>
+<area shape="rect" id="Node000003" href="$CrimsonSkillTree__SaveGame_8h.html" title=" " alt="" coords="210,108,421,163"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="318,74,318,108,313,108,313,74"/>
+<area shape="rect" id="Node000004" href="$CrimsonSkillTreeWidget__Node_8h.html" title=" " alt="" coords="445,108,671,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="392,63,496,105,494,110,390,68"/>
+</map>

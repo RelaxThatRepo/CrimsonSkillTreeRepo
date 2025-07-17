@@ -1,0 +1,181 @@
+\doxysection{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection Class Reference}
+\hypertarget{classFCrimsonSkillTree__GraphDragConnection}{}\label{classFCrimsonSkillTree__GraphDragConnection}\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection.\+h$>$}
+
+
+
+Inheritance diagram for FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classFCrimsonSkillTree__GraphDragConnection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classFCrimsonSkillTree__GraphDragConnection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef TArray$<$ FGraph\+Pin\+Handle $>$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a1bfb6a8ae5e182b7ff92da9126df705a}{On\+Drop}} (bool b\+Drop\+Was\+Handled, const FPointer\+Event \&Mouse\+Event) override
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ad3f29d7b0d59186c965185ccfab212e0}{Hover\+Target\+Changed}} () override
+\item 
+virtual FReply \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a901354e9c518c1a8086b026c55d426d6}{Dropped\+On\+Pin}} (FVector2D Screen\+Position, FVector2D Graph\+Position) override
+\item 
+virtual FReply \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_abd7246b5068c5357ae5d335adece48fe}{Dropped\+On\+Node}} (FVector2D Screen\+Position, FVector2D Graph\+Position) override
+\item 
+virtual FReply \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a241a1ff45f6b6f3fbccc7a68a13c111a}{Dropped\+On\+Panel}} (const TShared\+Ref$<$ SWidget $>$ \&Panel, FVector2D Screen\+Position, FVector2D Graph\+Position, UEd\+Graph \&Graph) override
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_adb417b7f1a85326973f3f86861cd3b8f}{On\+Dragged}} (const FDrag\+Drop\+Event \&Drag\+Drop\+Event) override
+\item 
+virtual void \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a22c68a4cab521282204b38613f9ddef6}{Validate\+Graph\+Pin\+List}} (TArray$<$ UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} $>$ \&Out\+Valid\+Pins)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static TShared\+Ref$<$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection}{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection}} $>$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a0f375021b4e5331d005473dbc2d9e7dd}{New}} (const TShared\+Ref$<$ SGraph\+Panel $>$ \&In\+Graph\+Panel, const \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} \&In\+Starting\+Pins)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef FGraph\+Editor\+Drag\+Drop\+Action \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_acf534291f4b96c614860e72e897e7a9e}{Super}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a16e7046ec0294cceaf359f689e51e682}{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection}} (const TShared\+Ref$<$ SGraph\+Panel $>$ \&\mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a4ad69f2b06c437caad30446c6f495a8e}{Graph\+Panel}}, const \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} \&Dragged\+Pins)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TShared\+Ptr$<$ SGraph\+Panel $>$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a4ad69f2b06c437caad30446c6f495a8e}{Graph\+Panel}}
+\item 
+\mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a7abff3df247a0e3c4fd1fc92e7206e8e}{Dragging\+Pins}}
+\item 
+FVector2D \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_a33f97fbf7b4a954c0532d8f0b0062e78}{Decorator\+Adjust}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}\label{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!FDraggedPinTable@{FDraggedPinTable}}
+\index{FDraggedPinTable@{FDraggedPinTable}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{FDraggedPinTable}{FDraggedPinTable}}
+{\footnotesize\ttfamily typedef TArray$<$FGraph\+Pin\+Handle$>$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+FDragged\+Pin\+Table}}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_acf534291f4b96c614860e72e897e7a9e}\label{classFCrimsonSkillTree__GraphDragConnection_acf534291f4b96c614860e72e897e7a9e} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!Super@{Super}}
+\index{Super@{Super}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{Super}{Super}}
+{\footnotesize\ttfamily typedef FGraph\+Editor\+Drag\+Drop\+Action \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_acf534291f4b96c614860e72e897e7a9e}{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Super}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a16e7046ec0294cceaf359f689e51e682}\label{classFCrimsonSkillTree__GraphDragConnection_a16e7046ec0294cceaf359f689e51e682} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{FCrimsonSkillTree\_GraphDragConnection()}{FCrimsonSkillTree\_GraphDragConnection()}}
+{\footnotesize\ttfamily FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ SGraph\+Panel $>$ \&}]{Graph\+Panel,  }\item[{const \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} \&}]{Dragged\+Pins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_abd7246b5068c5357ae5d335adece48fe}\label{classFCrimsonSkillTree__GraphDragConnection_abd7246b5068c5357ae5d335adece48fe} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!DroppedOnNode@{DroppedOnNode}}
+\index{DroppedOnNode@{DroppedOnNode}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{DroppedOnNode()}{DroppedOnNode()}}
+{\footnotesize\ttfamily virtual FReply FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Dropped\+On\+Node (\begin{DoxyParamCaption}\item[{FVector2D}]{Screen\+Position,  }\item[{FVector2D}]{Graph\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a241a1ff45f6b6f3fbccc7a68a13c111a}\label{classFCrimsonSkillTree__GraphDragConnection_a241a1ff45f6b6f3fbccc7a68a13c111a} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!DroppedOnPanel@{DroppedOnPanel}}
+\index{DroppedOnPanel@{DroppedOnPanel}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{DroppedOnPanel()}{DroppedOnPanel()}}
+{\footnotesize\ttfamily virtual FReply FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Dropped\+On\+Panel (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ SWidget $>$ \&}]{Panel,  }\item[{FVector2D}]{Screen\+Position,  }\item[{FVector2D}]{Graph\+Position,  }\item[{UEd\+Graph \&}]{Graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a901354e9c518c1a8086b026c55d426d6}\label{classFCrimsonSkillTree__GraphDragConnection_a901354e9c518c1a8086b026c55d426d6} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!DroppedOnPin@{DroppedOnPin}}
+\index{DroppedOnPin@{DroppedOnPin}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{DroppedOnPin()}{DroppedOnPin()}}
+{\footnotesize\ttfamily virtual FReply FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Dropped\+On\+Pin (\begin{DoxyParamCaption}\item[{FVector2D}]{Screen\+Position,  }\item[{FVector2D}]{Graph\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_ad3f29d7b0d59186c965185ccfab212e0}\label{classFCrimsonSkillTree__GraphDragConnection_ad3f29d7b0d59186c965185ccfab212e0} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!HoverTargetChanged@{HoverTargetChanged}}
+\index{HoverTargetChanged@{HoverTargetChanged}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{HoverTargetChanged()}{HoverTargetChanged()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Hover\+Target\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a0f375021b4e5331d005473dbc2d9e7dd}\label{classFCrimsonSkillTree__GraphDragConnection_a0f375021b4e5331d005473dbc2d9e7dd} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!New@{New}}
+\index{New@{New}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{New()}{New()}}
+{\footnotesize\ttfamily static TShared\+Ref$<$ \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection}{FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection}} $>$ FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+New (\begin{DoxyParamCaption}\item[{const TShared\+Ref$<$ SGraph\+Panel $>$ \&}]{In\+Graph\+Panel,  }\item[{const \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} \&}]{In\+Starting\+Pins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFCrimsonSkillTree__GraphDragConnection_a0f375021b4e5331d005473dbc2d9e7dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_adb417b7f1a85326973f3f86861cd3b8f}\label{classFCrimsonSkillTree__GraphDragConnection_adb417b7f1a85326973f3f86861cd3b8f} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!OnDragged@{OnDragged}}
+\index{OnDragged@{OnDragged}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{OnDragged()}{OnDragged()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+On\+Dragged (\begin{DoxyParamCaption}\item[{const FDrag\+Drop\+Event \&}]{Drag\+Drop\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a1bfb6a8ae5e182b7ff92da9126df705a}\label{classFCrimsonSkillTree__GraphDragConnection_a1bfb6a8ae5e182b7ff92da9126df705a} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!OnDrop@{OnDrop}}
+\index{OnDrop@{OnDrop}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{OnDrop()}{OnDrop()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+On\+Drop (\begin{DoxyParamCaption}\item[{bool}]{b\+Drop\+Was\+Handled,  }\item[{const FPointer\+Event \&}]{Mouse\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a22c68a4cab521282204b38613f9ddef6}\label{classFCrimsonSkillTree__GraphDragConnection_a22c68a4cab521282204b38613f9ddef6} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!ValidateGraphPinList@{ValidateGraphPinList}}
+\index{ValidateGraphPinList@{ValidateGraphPinList}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{ValidateGraphPinList()}{ValidateGraphPinList()}}
+{\footnotesize\ttfamily virtual void FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Validate\+Graph\+Pin\+List (\begin{DoxyParamCaption}\item[{TArray$<$ UEd\+Graph\+Pin \texorpdfstring{$\ast$}{*} $>$ \&}]{Out\+Valid\+Pins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a33f97fbf7b4a954c0532d8f0b0062e78}\label{classFCrimsonSkillTree__GraphDragConnection_a33f97fbf7b4a954c0532d8f0b0062e78} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!DecoratorAdjust@{DecoratorAdjust}}
+\index{DecoratorAdjust@{DecoratorAdjust}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{DecoratorAdjust}{DecoratorAdjust}}
+{\footnotesize\ttfamily FVector2D FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Decorator\+Adjust\hspace{0.3cm}{\ttfamily [protected]}}
+
+Offset information for the decorator widget \Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a7abff3df247a0e3c4fd1fc92e7206e8e}\label{classFCrimsonSkillTree__GraphDragConnection_a7abff3df247a0e3c4fd1fc92e7206e8e} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!DraggingPins@{DraggingPins}}
+\index{DraggingPins@{DraggingPins}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{DraggingPins}{DraggingPins}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFCrimsonSkillTree__GraphDragConnection_ab3253b5a00cb8f017d0c0eb6e0fc37fb}{FDragged\+Pin\+Table}} FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Dragging\+Pins\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classFCrimsonSkillTree__GraphDragConnection_a4ad69f2b06c437caad30446c6f495a8e}\label{classFCrimsonSkillTree__GraphDragConnection_a4ad69f2b06c437caad30446c6f495a8e} 
+\index{FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}!GraphPanel@{GraphPanel}}
+\index{GraphPanel@{GraphPanel}!FCrimsonSkillTree\_GraphDragConnection@{FCrimsonSkillTree\_GraphDragConnection}}
+\doxysubsubsection{\texorpdfstring{GraphPanel}{GraphPanel}}
+{\footnotesize\ttfamily TShared\+Ptr$<$SGraph\+Panel$>$ FCrimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection\+::\+Graph\+Panel\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Editor/\mbox{\hyperlink{CrimsonSkillTree__GraphDragConnection_8h}{Crimson\+Skill\+Tree\+\_\+\+Graph\+Drag\+Connection.\+h}}\end{DoxyCompactItemize}

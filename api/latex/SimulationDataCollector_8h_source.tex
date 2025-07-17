@@ -1,0 +1,84 @@
+\doxysection{Simulation\+Data\+Collector.\+h}
+\hypertarget{SimulationDataCollector_8h_source}{}\label{SimulationDataCollector_8h_source}\index{Source/CrimsonSkillTree/SimulationDataCollector.h@{Source/CrimsonSkillTree/SimulationDataCollector.h}}
+\mbox{\hyperlink{SimulationDataCollector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}UObject/ObjectMacros.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}UObject/Class.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Misc/ScopeRWLock.h"{}}\ \textcolor{comment}{//\ For\ thread\ safety\ if\ needed,\ though\ likely\ single-\/threaded\ context}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ Helper\ to\ manage\ lifetime\ of\ struct\ data\ if\ complex\ structs\ are\ used.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ For\ simple\ structs,\ direct\ storage\ might\ be\ fine.\ FStructOnScope\ is\ good\ for\ UStructs.}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}UObject/StructOnScope.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}SimulationDataCollector.generated.h"{}}}
+\DoxyCodeLine{00017\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00018\ struct\ \mbox{\hyperlink{structFSimulationDataCollector}{FSimulationDataCollector}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Stores\ UStruct\ type\ -\/>\ array\ of\ instances\ of\ that\ struct\ (as\ FStructOnScope\ for\ proper\ UStruct\ handling)}}
+\DoxyCodeLine{00024\ \ \ \ \ TMap<const\ UScriptStruct*,\ TArray<TSharedPtr<FStructOnScope>>>\ \mbox{\hyperlink{structFSimulationDataCollector_ae2fa84140fa0c437c1b565f193f36555}{CollectedData}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ If\ only\ one\ instance\ per\ type\ is\ expected,\ TMap<const\ UScriptStruct*,\ TSharedPtr<FStructOnScope>>\ is\ simpler.}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Using\ TArray\ allows\ an\ event\ to\ provide\ multiple\ pieces\ of\ data\ of\ the\ same\ type\ if\ needed.}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{structFSimulationDataCollector_a46693b8b2b3f3e94ffa5225596bdf985}{FSimulationDataCollector}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FStructType>}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFSimulationDataCollector_a4388db27b144c055b7434ef3b09bf84a}{AddData}}(\textcolor{keyword}{const}\ FStructType\&\ DataPayload)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ FStructType::StaticStruct();\ \textcolor{comment}{//\ Ensure\ this\ works\ for\ USTRUCTs}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!StructType)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ TSharedPtr<FStructOnScope>\ NewDataInstance\ =\ MakeShared<FStructOnScope>(StructType);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ StructType-\/>CopyScriptStruct(NewDataInstance-\/>GetStructMemory(),\ \&DataPayload);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ TArray<TSharedPtr<FStructOnScope>>\&\ DataList\ =\ CollectedData.FindOrAdd(StructType);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ DataList.Add(NewDataInstance);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FStructType>}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ FStructType*\ \mbox{\hyperlink{structFSimulationDataCollector_a55056960c024f9ed263f16d0d78a0b44}{GetData}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ FStructType::StaticStruct();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!StructType)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TArray<TSharedPtr<FStructOnScope>>*\ DataListPtr\ =\ CollectedData.Find(StructType);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (DataListPtr\ \&\&\ DataListPtr-\/>Num()\ >\ 0\ \&\&\ (*DataListPtr)[0].IsValid())}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }FStructType*\textcolor{keyword}{>}((*DataListPtr)[0]-\/>GetStructMemory());}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ FStructType>}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFSimulationDataCollector_a83de7e20810f72ed9e1bdb27d65b10e0}{GetAllDataOfType}}(TArray<const\ FStructType*>\&\ OutDataArray)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ OutDataArray.Empty();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ UScriptStruct*\ StructType\ =\ FStructType::StaticStruct();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!StructType)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TArray<TSharedPtr<FStructOnScope>>*\ DataListPtr\ =\ CollectedData.Find(StructType);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (DataListPtr)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ TSharedPtr<FStructOnScope>\&\ DataInstance\ :\ *DataListPtr)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (DataInstance.IsValid())}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutDataArray.Add(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }FStructType*\textcolor{keyword}{>}(DataInstance-\/>GetStructMemory()));}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structFSimulationDataCollector_a2e388504f9803d5744dd58851f63f78b}{Clear}}()}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ CollectedData.Empty();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \};}
+
+\end{DoxyCode}

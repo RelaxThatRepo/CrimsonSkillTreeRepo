@@ -1,0 +1,93 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+Base.\+h}
+\hypertarget{CrimsonSkillTree__ActivationConditionBase_8h_source}{}\label{CrimsonSkillTree__ActivationConditionBase_8h_source}\index{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationConditionBase.h@{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationConditionBase.h}}
+\mbox{\hyperlink{CrimsonSkillTree__ActivationConditionBase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ Crimson\ Sword\ Studio,\ 2024.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UObject/Object.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_ActivationConditionBase.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00017\ struct\ \mbox{\hyperlink{structFCrimsonSkillTree__NodeConditionFailureMessage}{FCrimsonSkillTree\_NodeConditionFailureMessage}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ A\ list\ of\ nodes\ that\ are\ the\ source\ of\ a\ condition\ failure.}}
+\DoxyCodeLine{00022\ \ \ \ \ UPROPERTY(BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Condition\ Failure"{}})}
+\DoxyCodeLine{00023\ \ \ \ \ TArray<TObjectPtr<const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>>\ FailedConditionNodes;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ UCLASS(Blueprintable,\ EditInlineNew,\ DefaultToInstanced,\ Abstract)}
+\DoxyCodeLine{00032\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase}{UCrimsonSkillTree\_ActivationConditionBase}}\ :\ public\ UObject}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase_ac208b89f3b084a88c6f13e431daa12af}{UCrimsonSkillTree\_ActivationConditionBase}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\string~\ UObject\ Overrides}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ UWorld*\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase_a86f140ae2a45218ffa3efede39e141ce}{GetWorld}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UObject\ Overrides}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\string~\ Public\ Interface}}
+\DoxyCodeLine{00049\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Activation\ Condition"{}})}
+\DoxyCodeLine{00050\ \ \ \ \ void\ BeginMonitoring(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ InOwningNode);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ "{}Skill\ Activation\ Condition"{})}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ EndMonitoring();}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ BlueprintPure,\ Category\ =\ "{}Skill\ Activation\ Condition"{})}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsConditionMet(const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningNode)\ const;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ "{}Skill\ Activation\ Condition|Simulation"{})}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsConditionStillMetIfBenefitsAltered(const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningConditionNode,\ AActor*\ OwnerActorContext,\ const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeWhoseBenefitsAreAltered,\ \textcolor{keywordtype}{bool}\ bBenefitsAreBeingLost)\ const;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ SetCachedOwningNode(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ InOwningNode);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Public\ Interface}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR}}
+\DoxyCodeLine{00091\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Activation\ Condition"{}})}
+\DoxyCodeLine{00092\ \ \ \ \ FText\ GetEditorDescription()\ const;}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ UFUNCTION(BlueprintNativeEvent,\ Category\ =\ \textcolor{stringliteral}{"{}Skill\ Activation\ Condition"{}})}
+\DoxyCodeLine{00096\ \ \ \ \ FText\ GetTooltipDescription()\ const;}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\string~\ Delegates}}
+\DoxyCodeLine{00100\ \ \ \ \ DECLARE\_MULTICAST\_DELEGATE\_OneParam(FOnConditionMetStateChanged,\ \textcolor{keywordtype}{bool}\ \textcolor{comment}{/*\ bIsNowMet\ */});}
+\DoxyCodeLine{00101\ \ \ \ \ FOnConditionMetStateChanged\ OnConditionMetStateChanged;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Delegates}}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ protected:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\string~\ Protected\ Properties}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ A\ weak\ pointer\ to\ the\ skill\ node\ that\ owns\ this\ condition\ instance.\ Set\ by\ BeginMonitoring.}}
+\DoxyCodeLine{00107\ \ \ \ \ UPROPERTY(Transient)}
+\DoxyCodeLine{00108\ \ \ \ \ TWeakObjectPtr<\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}>\ CachedOwningNode;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ Stores\ the\ last\ known\ state\ of\ IsConditionMet\ to\ detect\ changes.}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ bLastKnownMetState;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Protected\ Properties}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\string~\ Protected\ Methods}}
+\DoxyCodeLine{00119\ \ \ \ \ AActor*\ GetOwnerActor()\ const;}
+\DoxyCodeLine{00120\ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckAndBroadcastMetStateChange();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Protected\ Methods}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\string~\ Native\ Implementations\ (for\ BlueprintNativeEvents)}}
+\DoxyCodeLine{00129\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ BeginMonitoring\_Implementation(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ InOwningNode);}
+\DoxyCodeLine{00130\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ EndMonitoring\_Implementation();}
+\DoxyCodeLine{00131\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ IsConditionMet\_Implementation(const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningNode)\ const;}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ GetEditorDescription\_Implementation()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase_a3fbe170924aea83df5d20c7c0142c603}{IsConditionStillMetIfBenefitsAltered\_Implementation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningConditionNode,\ AActor*\ OwnerActorContext,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeWhoseBenefitsAreAltered,\ \textcolor{keywordtype}{bool}\ bBenefitsAreBeingLost)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Native\ Implementations}}
+\DoxyCodeLine{00137\ \};}
+
+\end{DoxyCode}

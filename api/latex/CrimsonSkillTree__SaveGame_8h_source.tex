@@ -1,0 +1,60 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Save\+Game.\+h}
+\hypertarget{CrimsonSkillTree__SaveGame_8h_source}{}\label{CrimsonSkillTree__SaveGame_8h_source}\index{Source/CrimsonSkillTree/SaveGame/CrimsonSkillTree\_SaveGame.h@{Source/CrimsonSkillTree/SaveGame/CrimsonSkillTree\_SaveGame.h}}
+\mbox{\hyperlink{CrimsonSkillTree__SaveGame_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ Crimson\ Sword\ Studio,\ 2024.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}GameFramework/SaveGame.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Nodes/CrimsonSkillTree\_Node.h"{}}\ \textcolor{comment}{//\ Use\ relative\ path\ for\ better\ portability}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_SaveGame.generated.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00015\ struct\ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameNodeState}{FCrimsonSkillTree\_SaveGameNodeState}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ UPROPERTY()\ FGuid\ NodeGUID;}
+\DoxyCodeLine{00020\ \ \ \ \ UPROPERTY()\ int32\ CurrentLevel\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ UPROPERTY()\ \mbox{\hyperlink{CrimsonSkillTree__Node_8h_ad4c508980bb3593a40e63d06f623815c}{ENodeState}}\ NodeState\ =\ \mbox{\hyperlink{CrimsonSkillTree__Node_8h_ad4c508980bb3593a40e63d06f623815c}{ENodeState}}::\mbox{\hyperlink{CrimsonSkillTree__Node_8h_ad4c508980bb3593a40e63d06f623815cafde84e9400b10058a7f1b2e3bf96af8d}{UnSet}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameNodeState}{FCrimsonSkillTree\_SaveGameNodeState}}()\ =\ default;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Constructor\ to\ easily\ create\ a\ save\ state\ from\ a\ node\ object.}}
+\DoxyCodeLine{00026\ \ \ \ \ explicit\ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameNodeState}{FCrimsonSkillTree\_SaveGameNodeState}}(const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ Node)}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Node)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ NodeGUID\ =\ Node-\/>NodeGuid;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ CurrentLevel\ =\ Node-\/>\mbox{\hyperlink{structFCrimsonSkillTree__SaveGameNodeState_ae9219dffdbaf18273b34b02533ce8e4c}{CurrentLevel}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ NodeState\ =\ Node-\/>NodeState;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ USTRUCT(BlueprintType)}
+\DoxyCodeLine{00042\ struct\ \mbox{\hyperlink{structFCrimsonSkillTree__SaveGameData}{FCrimsonSkillTree\_SaveGameData}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ UPROPERTY()\ FGuid\ SkillTreeGUID;}
+\DoxyCodeLine{00047\ \ \ \ \ UPROPERTY()\ int32\ SkillTreeVersion\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ UPROPERTY()\ TArray<\mbox{\hyperlink{structFCrimsonSkillTree__SaveGameNodeState}{FCrimsonSkillTree\_SaveGameNodeState}}>\ SavedNodeStates;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ UCLASS()}
+\DoxyCodeLine{00056\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__SaveGame}{UCrimsonSkillTree\_SaveGame}}\ :\ public\ USaveGame}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__SaveGame_a8637b028e238c11da4e6d45f8b428fe3}{UCrimsonSkillTree\_SaveGame}}();}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ UPROPERTY()\ FString\ SaveSlotName;}
+\DoxyCodeLine{00064\ \ \ \ \ UPROPERTY()\ uint32\ UserIndex\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ UPROPERTY()\ TArray<\mbox{\hyperlink{structFCrimsonSkillTree__SaveGameData}{FCrimsonSkillTree\_SaveGameData}}>\ SkillTreesData;}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

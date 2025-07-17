@@ -1,0 +1,82 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Factory.\+h}
+\hypertarget{CrimsonSkillTree__Factory_8h_source}{}\label{CrimsonSkillTree__Factory_8h_source}\index{Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree\_Factory.h@{Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree\_Factory.h}}
+\mbox{\hyperlink{CrimsonSkillTree__Factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}ClassViewerFilter.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree_8h}{CrimsonSkillTree/CrimsonSkillTree.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__NodeEventBase_8h}{CrimsonSkillTree/Events/CrimsonSkillTree\_NodeEventBase.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Factories/BlueprintFactory.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Kismet2/KismetEditorUtilities.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_Factory.generated.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase}{UCrimsonSkillTree\_ActivationConditionBase}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFAssetClassParentFilter}{FAssetClassParentFilter}}\ :\ \textcolor{keyword}{public}\ IClassViewerFilter}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classFAssetClassParentFilter_a1b713ce87751173938fca67fb5647d9f}{FAssetClassParentFilter}}()}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}{DisallowedClassFlags}}(CLASS\_None),\ \mbox{\hyperlink{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}{bDisallowBlueprintBase}}(false)}
+\DoxyCodeLine{00021\ \ \ \ \ \{\}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ TSet<\ const\ UClass*\ >\ \mbox{\hyperlink{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d}{AllowedChildrenOfClasses}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ EClassFlags\ \mbox{\hyperlink{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}{DisallowedClassFlags}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}{bDisallowBlueprintBase}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFAssetClassParentFilter_aabe9c87fa15f3204f5d17445637b3179}{IsClassAllowed}}(\textcolor{keyword}{const}\ FClassViewerInitializationOptions\&\ InInitOptions,\ \textcolor{keyword}{const}\ UClass*\ InClass,\ TSharedRef<\ FClassViewerFilterFuncs\ >\ InFilterFuncs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bAllowed=\ !InClass-\/>HasAnyClassFlags(\mbox{\hyperlink{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}{DisallowedClassFlags}})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ InFilterFuncs-\/>IfInChildOfClassesSet(\mbox{\hyperlink{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d}{AllowedChildrenOfClasses}},\ InClass)\ !=\ EFilterReturn::Failed;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bAllowed\ \&\&\ \mbox{\hyperlink{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}{bDisallowBlueprintBase}})}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (FKismetEditorUtilities::CanCreateBlueprintOfClass(InClass))}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bAllowed;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classFAssetClassParentFilter_a1cbf2601fcd34b0a011fcc0e545b35f7}{IsUnloadedClassAllowed}}(\textcolor{keyword}{const}\ FClassViewerInitializationOptions\&\ InInitOptions,\ \textcolor{keyword}{const}\ TSharedRef<\ const\ IUnloadedBlueprintData\ >\ InUnloadedClassData,\ TSharedRef<\ FClassViewerFilterFuncs\ >\ InFilterFuncs)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}{bDisallowBlueprintBase}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !InUnloadedClassData-\/>HasAnyClassFlags(\mbox{\hyperlink{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}{DisallowedClassFlags}})}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ InFilterFuncs-\/>IfInChildOfClassesSet(\mbox{\hyperlink{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d}{AllowedChildrenOfClasses}},\ InUnloadedClassData)\ !=\ EFilterReturn::Failed;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ UCLASS()}
+\DoxyCodeLine{00065\ class\ CRIMSONSKILLTREEEDITOR\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__Factory}{UCrimsonSkillTree\_Factory}}\ :\ public\ UFactory}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__Factory_ad8079b58e64181d2cdb7b176e5dfa058}{UCrimsonSkillTree\_Factory}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUCrimsonSkillTree__Factory_a033f4ddad59a0dda4789d78f50cdeb58}{\string~UCrimsonSkillTree\_Factory}}();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__Factory_ad24a3a8169a264345e5255a748ef1646}{ConfigureProperties}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ UObject*\ \mbox{\hyperlink{classUCrimsonSkillTree__Factory_a47eb081302a5faad2942d62a0f4e0a91}{FactoryCreateNew}}(UClass*\ Class,\ UObject*\ InParent,\ FName\ Name,\ EObjectFlags\ Flags,\ UObject*\ Context,\ FFeedbackContext*\ Warn)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ UPROPERTY(EditAnywhere,\ Category=DataAsset)}
+\DoxyCodeLine{00079\ \ \ \ \ TSubclassOf<\mbox{\hyperlink{classUCrimsonSkillTree}{UCrimsonSkillTree}}>\ CrimsonSkillTreeClass;}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}

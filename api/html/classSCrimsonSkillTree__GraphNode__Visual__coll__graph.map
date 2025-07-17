@@ -1,0 +1,9 @@
+<map id="SCrimsonSkillTree_GraphNode_Visual" name="SCrimsonSkillTree_GraphNode_Visual">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,224,223"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,87,145,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,125,113,182,108,183,96,126"/>
+<area shape="rect" id="Node000003" href="$classUCrimsonSkillTree__GraphNode__Visual.html" title="Editor graph node for a visual&#45;only element. It has no pins and cannot be connected...." alt="" coords="169,80,391,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,130,147,185,144,180,236,125"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="219,5,341,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="283,44,283,80,277,80,277,44"/>
+</map>

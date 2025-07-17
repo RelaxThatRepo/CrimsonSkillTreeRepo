@@ -1,0 +1,22 @@
+<map id="Source/CrimsonSkillTreeEditor/Nodes/Slate/SCrimsonSkillTree_GraphPin.h" name="Source/CrimsonSkillTreeEditor/Nodes/Slate/SCrimsonSkillTree_GraphPin.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="66,5,291,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,211,168,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,62,43,82,17,110,10,123,8,135,17,161,38,185,64,202,61,207,34,189,12,164,3,135,5,121,13,106,39,78,73,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="192,211,293,236"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,59,220,107,234,154,242,196,237,197,228,155,215,109,192,61"/>
+<area shape="rect" id="Node000004" href="$CrimsonSkillTree__GraphDragConnection_8h.html" title=" " alt="" coords="280,108,464,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="230,58,311,99,308,104,228,62"/>
+<area shape="rect" id="Node000009" href="$CrimsonSkillTree__GraphColors_8h.html" title=" " alt="" coords="27,108,205,163"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="165,62,142,98,137,95,160,59"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="293,165,158,209,157,204,291,160"/>
+<area shape="poly" id="edge9_Node000004_Node000003" title=" " alt="" coords="334,165,273,205,270,201,331,161"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="618,211,833,236"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="465,156,666,205,665,210,464,162"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="857,211,1015,236"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="465,148,848,206,847,211,464,153"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="317,211,424,236"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="374,163,374,197,369,197,369,163"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="449,211,594,236"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="419,160,491,201,488,206,416,165"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="117,163,114,197,109,197,111,163"/>
+</map>

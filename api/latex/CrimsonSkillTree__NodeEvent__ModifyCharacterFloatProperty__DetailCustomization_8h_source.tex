@@ -1,0 +1,54 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Node\+Event\+\_\+\+Modify\+Character\+Float\+Property\+\_\+\+Detail\+Customization.\+h}
+\hypertarget{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_8h_source}{}\label{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_8h_source}\index{Source/CrimsonSkillTreeEditor/DetailCustomization/CrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization.h@{Source/CrimsonSkillTreeEditor/DetailCustomization/CrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization.h}}
+\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Fill\ out\ your\ copyright\ notice\ in\ the\ Description\ page\ of\ Project\ Settings.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IDetailCustomization.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty_8h}{CrimsonSkillTree/Events/CrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Helper\ struct\ for\ SComboBox\ items}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFPropertyOption}{FPropertyOption}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ FName\ \mbox{\hyperlink{structFPropertyOption_a7bfb16b34b5e6608055eaaa25c200ed5}{PropertyName}};}
+\DoxyCodeLine{00014\ \ \ \ \ FText\ \mbox{\hyperlink{structFPropertyOption_a3f4388591aa09c1baa52ef91d5bdb368}{DisplayName}};\ \textcolor{comment}{//\ Could\ be\ PropertyName.ToString()\ or\ a\ more\ friendly\ name}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{structFPropertyOption_aa15cb276933c9e67a0119555dbfaac1e}{FPropertyOption}}(FName\ InName,\ FText\ InDisplay)\ :\ \mbox{\hyperlink{structFPropertyOption_a7bfb16b34b5e6608055eaaa25c200ed5}{PropertyName}}(InName),\ \mbox{\hyperlink{structFPropertyOption_a3f4388591aa09c1baa52ef91d5bdb368}{DisplayName}}(InDisplay)\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ For\ SComboBox\ comparison}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structFPropertyOption_a6c80fa77d23c3e9d2ba68ef59011e434}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structFPropertyOption}{FPropertyOption}}\&\ Other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structFPropertyOption_a7bfb16b34b5e6608055eaaa25c200ed5}{PropertyName}}\ ==\ Other.\mbox{\hyperlink{structFPropertyOption_a7bfb16b34b5e6608055eaaa25c200ed5}{PropertyName}};\ \}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization}{FCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty\_DetailCustomization}}\ :\ \textcolor{keyword}{public}\ IDetailCustomization}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ TSharedRef<IDetailCustomization>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a9e3040dd4ac8042a4997e468cfc2d38b}{MakeInstance}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ac8a49a3543847bad36cc0fc32aa6a97a}{CustomizeDetails}}(IDetailLayoutBuilder\&\ DetailBuilder)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a087761cea3e525b8f63d14e60678405e}{OnPropertyOwnerScopeChanged}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a03f716eaaa6aaa532857e942eb03d4b0}{PopulateFloatPropertyOptions}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ TSharedRef<SWidget>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_af110b35163d7ba5af283282fe58cdb3c}{OnGeneratePropertyOptionWidget}}(TSharedPtr<FPropertyOption>\ InOption);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aededcd2af3f886c341045e4dc5ae57d5}{OnPropertySelectionChanged}}(TSharedPtr<FPropertyOption>\ NewSelection,\ ESelectInfo::Type\ SelectInfo);}
+\DoxyCodeLine{00034\ \ \ \ \ FText\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1d48c072f378ea9b8cef225481fd046d}{GetCurrentPropertyNameText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ TArray<TWeakObjectPtr<UObject>>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a580948881cc7b4cb03391c5820438f23}{CustomizedObjects}};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty}{UCrimsonSkillTree\_NodeEvent\_ModifyCharacterFloatProperty}}*\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a1953b98ca8c918f6341be29b8612b8d4}{TargetEventInstance}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ The\ event\ instance\ being\ edited}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ TSharedPtr<IPropertyHandle>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_adb73aa4ba8193923171fed2af8440f92}{PropertyOwnerScopeHandle}};}
+\DoxyCodeLine{00041\ \ \ \ \ TSharedPtr<IPropertyHandle>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ae2f81512a2bd1a49ceb1586f408f99c6}{TargetPropertyNameHandle}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ TArray<TSharedPtr<FPropertyOption>>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a751eeb42b3bba4bbac0eeeaaf86c0cba}{FloatPropertyOptionsList}};}
+\DoxyCodeLine{00044\ \ \ \ \ TSharedPtr<FPropertyOption>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_a6f29762e5ba34d3025cda088eb435282}{CurrentSelectedPropertyOption}};}
+\DoxyCodeLine{00045\ \ \ \ \ TSharedPtr<SComboBox<TSharedPtr<FPropertyOption>>>\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_aa64bb6dc4cb53e9e0c2b8401173d80e9}{PropertyComboBox}};}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ IDetailLayoutBuilder*\ \mbox{\hyperlink{classFCrimsonSkillTree__NodeEvent__ModifyCharacterFloatProperty__DetailCustomization_ab5bf53084e75f5fbf646f6f45e579f7a}{CachedDetailBuilder}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

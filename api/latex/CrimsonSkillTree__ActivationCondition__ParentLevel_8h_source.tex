@@ -1,0 +1,57 @@
+\doxysection{Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Parent\+Level.\+h}
+\hypertarget{CrimsonSkillTree__ActivationCondition__ParentLevel_8h_source}{}\label{CrimsonSkillTree__ActivationCondition__ParentLevel_8h_source}\index{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationCondition\_ParentLevel.h@{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationCondition\_ParentLevel.h}}
+\mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__ParentLevel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Copyright\ Crimson\ Sword\ Studio,\ 2024.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CrimsonSkillTree__ActivationConditionBase_8h}{CrimsonSkillTree\_ActivationConditionBase.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}CrimsonSkillTree\_ActivationCondition\_ParentLevel.generated.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ UCLASS(Blueprintable,\ meta\ =\ (DisplayName\ =\ \textcolor{stringliteral}{"{}Parent\ Node\ Level\ Condition"{}}))}
+\DoxyCodeLine{00014\ class\ CRIMSONSKILLTREE\_API\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel}{UCrimsonSkillTree\_ActivationCondition\_ParentLevel}}\ :\ public\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationConditionBase}{UCrimsonSkillTree\_ActivationConditionBase}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ GENERATED\_BODY()}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_a786dea03d2f2b6f0d07daf65ea94d0b4}{UCrimsonSkillTree\_ActivationCondition\_ParentLevel}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\string~\ UCrimsonSkillTree\_ActivationConditionBase\ Interface}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_afa287fa158253dc38f088c72563af4c4}{IsConditionMet\_Implementation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningNode)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_a921931e858459aef9986f886f31c54ad}{IsConditionStillMetIfBenefitsAltered\_Implementation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningConditionNode,\ AActor*\ OwnerActorContext,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ NodeWhoseBenefitsAreAltered,\ \textcolor{keywordtype}{bool}\ bBenefitsAreBeingLost)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_a2c88f574eb758ab9db7e202fec0d1fec}{BeginMonitoring\_Implementation}}(\mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ InOwningNode)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_af49b5fc13ced303c9dfe59a0839b63a6}{EndMonitoring\_Implementation}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\string~\ End\ UCrimsonSkillTree\_ActivationConditionBase\ Interface}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\string~\ Editor-\/Only}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#if\ WITH\_EDITOR}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ GetEditorDescription\_Implementation()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PostEditChangeProperty(FPropertyChangedEvent\&\ PropertyChangedEvent)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Editor-\/Only}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ FText\ \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__ParentLevel_a326e3ffc0703dca0b29bf7ceac5790b4}{GetTooltipDescription\_Implementation}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\string~\ Properties}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ The\ GUID\ of\ the\ specific\ parent\ node\ this\ condition\ targets.\ This\ should\ be\ set\ in\ the\ editor.}}
+\DoxyCodeLine{00040\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadWrite,\ Category\ =\ \textcolor{stringliteral}{"{}Parent\ Level\ Condition"{}})}
+\DoxyCodeLine{00041\ \ \ \ \ FGuid\ TargetParentNodeGuid;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ The\ minimum\ level\ the\ target\ parent\ must\ be\ for\ this\ condition\ to\ be\ met.}}
+\DoxyCodeLine{00044\ \ \ \ \ UPROPERTY(EditAnywhere,\ BlueprintReadWrite,\ Category\ =\ "{}Parent\ Level\ Condition"{},\ meta\ =\ (ClampMin\ =\ "{}1"{},\ UIMin\ =\ "{}1"{}))}
+\DoxyCodeLine{00045\ \ \ \ \ int32\ RequiredLevel;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\string~\ End\ Properties}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ protected:}
+\DoxyCodeLine{00054\ \ \ \ \ const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ GetTargetParentNode(const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ OwningNode)\ const;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ BroadcastFailureMessage(const\ FText\&\ FailureReason,\ const\ \mbox{\hyperlink{classUCrimsonSkillTree__Node}{UCrimsonSkillTree\_Node}}*\ DependencyNode)\ const;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ UFUNCTION()}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ OnParentNodeStateChanged();}
+\DoxyCodeLine{00068\ \};}
+
+\end{DoxyCode}

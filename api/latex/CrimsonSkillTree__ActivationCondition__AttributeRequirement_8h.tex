@@ -1,0 +1,72 @@
+\doxysection{Source/\+Crimson\+Skill\+Tree/\+Conditions/\+Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Attribute\+Requirement.h File Reference}
+\hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h}{}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h}\index{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{Source/CrimsonSkillTree/Conditions/CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}
+{\ttfamily \#include "{}Core\+Minimal.\+h"{}}\newline
+{\ttfamily \#include "{}Ability\+System\+Component.\+h"{}}\newline
+{\ttfamily \#include "{}Attribute\+Set.\+h"{}}\newline
+{\ttfamily \#include "{}Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+Base.\+h"{}}\newline
+{\ttfamily \#include "{}Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Attribute\+Requirement.\+generated.\+h"{}}\newline
+Include dependency graph for Crimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Attribute\+Requirement.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classUCrimsonSkillTree__ActivationCondition__AttributeRequirement}{UCrimson\+Skill\+Tree\+\_\+\+Activation\+Condition\+\_\+\+Attribute\+Requirement}}
+\begin{DoxyCompactList}\small\item\em An activation condition that requires a specific Gameplay Attribute to meet a defined threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4d}{ECrimson\+Attribute\+Comparison\+Type}} \+: uint8 \{ \newline
+\mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4daf6d044fe1f01fb0c956b80099e2a3072}{Greater\+Than}}
+, \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4dac6d9d7bb9939f62f01c80f8b1251501c}{Less\+Than}}
+, \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0242c502bd906e05171e64bad31c7c21}{Equal\+To}}
+, \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0961129d84d9d8f6aa4138a3e5022a1d}{Not\+Equal\+To}}
+, \newline
+\mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da96b5d5dce523a30ceae47db080d8af48}{Greater\+Than\+Or\+Equal\+To}}
+, \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da67827f79b05c979b2378e9514bb7e741}{Less\+Than\+Or\+Equal\+To}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the type of comparison to perform for an attribute-\/based condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4d}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4d} 
+\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!ECrimsonAttributeComparisonType@{ECrimsonAttributeComparisonType}}
+\index{ECrimsonAttributeComparisonType@{ECrimsonAttributeComparisonType}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}
+\doxysubsubsection{\texorpdfstring{ECrimsonAttributeComparisonType}{ECrimsonAttributeComparisonType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4d}{ECrimson\+Attribute\+Comparison\+Type}} \+: uint8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the type of comparison to perform for an attribute-\/based condition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreaterThan@{GreaterThan}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!GreaterThan@{GreaterThan}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4daf6d044fe1f01fb0c956b80099e2a3072}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4daf6d044fe1f01fb0c956b80099e2a3072} 
+Greater\+Than&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LessThan@{LessThan}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!LessThan@{LessThan}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4dac6d9d7bb9939f62f01c80f8b1251501c}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4dac6d9d7bb9939f62f01c80f8b1251501c} 
+Less\+Than&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EqualTo@{EqualTo}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!EqualTo@{EqualTo}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0242c502bd906e05171e64bad31c7c21}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0242c502bd906e05171e64bad31c7c21} 
+Equal\+To&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotEqualTo@{NotEqualTo}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!NotEqualTo@{NotEqualTo}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0961129d84d9d8f6aa4138a3e5022a1d}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da0961129d84d9d8f6aa4138a3e5022a1d} 
+Not\+Equal\+To&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreaterThanOrEqualTo@{GreaterThanOrEqualTo}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!GreaterThanOrEqualTo@{GreaterThanOrEqualTo}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da96b5d5dce523a30ceae47db080d8af48}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da96b5d5dce523a30ceae47db080d8af48} 
+Greater\+Than\+Or\+Equal\+To&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LessThanOrEqualTo@{LessThanOrEqualTo}!CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}}\index{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h@{CrimsonSkillTree\_ActivationCondition\_AttributeRequirement.h}!LessThanOrEqualTo@{LessThanOrEqualTo}}}\Hypertarget{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da67827f79b05c979b2378e9514bb7e741}\label{CrimsonSkillTree__ActivationCondition__AttributeRequirement_8h_a3f299ec5bbcae2d289c8be8543ef0a4da67827f79b05c979b2378e9514bb7e741} 
+Less\+Than\+Or\+Equal\+To&\\
+\hline
+
+\end{DoxyEnumFields}

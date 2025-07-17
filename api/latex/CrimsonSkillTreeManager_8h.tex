@@ -1,0 +1,62 @@
+\doxysection{Source/\+Crimson\+Skill\+Tree/\+Crimson\+Skill\+Tree\+Manager.h File Reference}
+\hypertarget{CrimsonSkillTreeManager_8h}{}\label{CrimsonSkillTreeManager_8h}\index{Source/CrimsonSkillTree/CrimsonSkillTreeManager.h@{Source/CrimsonSkillTree/CrimsonSkillTreeManager.h}}
+{\ttfamily \#include "{}Core\+Minimal.\+h"{}}\newline
+{\ttfamily \#include "{}Crimson\+Skill\+Tree.\+h"{}}\newline
+{\ttfamily \#include "{}Gameplay\+Tag\+Container.\+h"{}}\newline
+{\ttfamily \#include "{}Components/\+Actor\+Component.\+h"{}}\newline
+{\ttfamily \#include "{}Nodes/\+Cost/\+Crimson\+Skill\+Tree\+\_\+\+Node\+Cost.\+h"{}}\newline
+{\ttfamily \#include "{}Nodes/\+ICrimson\+Skill\+Tree\+\_\+\+Node\+Action.\+h"{}}\newline
+{\ttfamily \#include "{}Crimson\+Skill\+Tree\+Manager.\+generated.\+h"{}}\newline
+Include dependency graph for Crimson\+Skill\+Tree\+Manager.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CrimsonSkillTreeManager_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structFCrimsonSkillTreeEntry}{FCrimson\+Skill\+Tree\+Entry}}
+\begin{DoxyCompactList}\small\item\em Defines a skill tree asset and its corresponding type tag for configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b}{ECrimson\+Skill\+Node\+Action\+Type}} \+: uint8 \{ \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baa13367a8e2a3f3bf4f3409079e3fdf87}{Activate}}
+, \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9ba109fec06829bd79d222cfc8af52aaaf1}{Deactivate}}
+, \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baec0de644c0a04db79d4e7affc05293e0}{Increment\+Level}}
+, \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baafce6ca5bc6cdda99abff05f3ec4f3c3}{Decrement\+Level}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the types of actions a user can request on a skill node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b}\label{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b} 
+\index{CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}!ECrimsonSkillNodeActionType@{ECrimsonSkillNodeActionType}}
+\index{ECrimsonSkillNodeActionType@{ECrimsonSkillNodeActionType}!CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}}
+\doxysubsubsection{\texorpdfstring{ECrimsonSkillNodeActionType}{ECrimsonSkillNodeActionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9b}{ECrimson\+Skill\+Node\+Action\+Type}} \+: uint8\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the types of actions a user can request on a skill node. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Activate@{Activate}!CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}}\index{CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}!Activate@{Activate}}}\Hypertarget{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baa13367a8e2a3f3bf4f3409079e3fdf87}\label{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baa13367a8e2a3f3bf4f3409079e3fdf87} 
+Activate&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Deactivate@{Deactivate}!CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}}\index{CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}!Deactivate@{Deactivate}}}\Hypertarget{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9ba109fec06829bd79d222cfc8af52aaaf1}\label{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9ba109fec06829bd79d222cfc8af52aaaf1} 
+Deactivate&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IncrementLevel@{IncrementLevel}!CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}}\index{CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}!IncrementLevel@{IncrementLevel}}}\Hypertarget{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baec0de644c0a04db79d4e7affc05293e0}\label{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baec0de644c0a04db79d4e7affc05293e0} 
+Increment\+Level&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DecrementLevel@{DecrementLevel}!CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}}\index{CrimsonSkillTreeManager.h@{CrimsonSkillTreeManager.h}!DecrementLevel@{DecrementLevel}}}\Hypertarget{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baafce6ca5bc6cdda99abff05f3ec4f3c3}\label{CrimsonSkillTreeManager_8h_ae069d0581ad322d1f3d79d8b6db2cf9baafce6ca5bc6cdda99abff05f3ec4f3c3} 
+Decrement\+Level&\\
+\hline
+
+\end{DoxyEnumFields}

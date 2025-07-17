@@ -1,0 +1,94 @@
+\doxysection{FAsset\+Class\+Parent\+Filter Class Reference}
+\hypertarget{classFAssetClassParentFilter}{}\label{classFAssetClassParentFilter}\index{FAssetClassParentFilter@{FAssetClassParentFilter}}
+
+
+{\ttfamily \#include $<$Crimson\+Skill\+Tree\+\_\+\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for FAsset\+Class\+Parent\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classFAssetClassParentFilter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FAsset\+Class\+Parent\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classFAssetClassParentFilter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFAssetClassParentFilter_a1b713ce87751173938fca67fb5647d9f}{FAsset\+Class\+Parent\+Filter}} ()
+\item 
+virtual bool \mbox{\hyperlink{classFAssetClassParentFilter_aabe9c87fa15f3204f5d17445637b3179}{Is\+Class\+Allowed}} (const FClass\+Viewer\+Initialization\+Options \&In\+Init\+Options, const UClass \texorpdfstring{$\ast$}{*}In\+Class, TShared\+Ref$<$ FClass\+Viewer\+Filter\+Funcs $>$ In\+Filter\+Funcs) override
+\item 
+virtual bool \mbox{\hyperlink{classFAssetClassParentFilter_a1cbf2601fcd34b0a011fcc0e545b35f7}{Is\+Unloaded\+Class\+Allowed}} (const FClass\+Viewer\+Initialization\+Options \&In\+Init\+Options, const TShared\+Ref$<$ const IUnloaded\+Blueprint\+Data $>$ In\+Unloaded\+Class\+Data, TShared\+Ref$<$ FClass\+Viewer\+Filter\+Funcs $>$ In\+Filter\+Funcs) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TSet$<$ const UClass \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d}{Allowed\+Children\+Of\+Classes}}
+\item 
+EClass\+Flags \mbox{\hyperlink{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}{Disallowed\+Class\+Flags}}
+\item 
+bool \mbox{\hyperlink{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}{b\+Disallow\+Blueprint\+Base}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFAssetClassParentFilter_a1b713ce87751173938fca67fb5647d9f}\label{classFAssetClassParentFilter_a1b713ce87751173938fca67fb5647d9f} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{FAssetClassParentFilter()}{FAssetClassParentFilter()}}
+{\footnotesize\ttfamily FAsset\+Class\+Parent\+Filter\+::\+FAsset\+Class\+Parent\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFAssetClassParentFilter_aabe9c87fa15f3204f5d17445637b3179}\label{classFAssetClassParentFilter_aabe9c87fa15f3204f5d17445637b3179} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!IsClassAllowed@{IsClassAllowed}}
+\index{IsClassAllowed@{IsClassAllowed}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{IsClassAllowed()}{IsClassAllowed()}}
+{\footnotesize\ttfamily virtual bool FAsset\+Class\+Parent\+Filter\+::\+Is\+Class\+Allowed (\begin{DoxyParamCaption}\item[{const FClass\+Viewer\+Initialization\+Options \&}]{In\+Init\+Options,  }\item[{const UClass \texorpdfstring{$\ast$}{*}}]{In\+Class,  }\item[{TShared\+Ref$<$ FClass\+Viewer\+Filter\+Funcs $>$}]{In\+Filter\+Funcs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\Hypertarget{classFAssetClassParentFilter_a1cbf2601fcd34b0a011fcc0e545b35f7}\label{classFAssetClassParentFilter_a1cbf2601fcd34b0a011fcc0e545b35f7} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!IsUnloadedClassAllowed@{IsUnloadedClassAllowed}}
+\index{IsUnloadedClassAllowed@{IsUnloadedClassAllowed}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{IsUnloadedClassAllowed()}{IsUnloadedClassAllowed()}}
+{\footnotesize\ttfamily virtual bool FAsset\+Class\+Parent\+Filter\+::\+Is\+Unloaded\+Class\+Allowed (\begin{DoxyParamCaption}\item[{const FClass\+Viewer\+Initialization\+Options \&}]{In\+Init\+Options,  }\item[{const TShared\+Ref$<$ const IUnloaded\+Blueprint\+Data $>$}]{In\+Unloaded\+Class\+Data,  }\item[{TShared\+Ref$<$ FClass\+Viewer\+Filter\+Funcs $>$}]{In\+Filter\+Funcs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d}\label{classFAssetClassParentFilter_a479525a39ef08c417934e0fa3585ce4d} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!AllowedChildrenOfClasses@{AllowedChildrenOfClasses}}
+\index{AllowedChildrenOfClasses@{AllowedChildrenOfClasses}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{AllowedChildrenOfClasses}{AllowedChildrenOfClasses}}
+{\footnotesize\ttfamily TSet$<$ const UClass\texorpdfstring{$\ast$}{*} $>$ FAsset\+Class\+Parent\+Filter\+::\+Allowed\+Children\+Of\+Classes}
+
+All children of these classes will be included unless filtered out by another setting. \Hypertarget{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf}\label{classFAssetClassParentFilter_a50537ec36611a27faca2614ea928bbcf} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!bDisallowBlueprintBase@{bDisallowBlueprintBase}}
+\index{bDisallowBlueprintBase@{bDisallowBlueprintBase}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{bDisallowBlueprintBase}{bDisallowBlueprintBase}}
+{\footnotesize\ttfamily bool FAsset\+Class\+Parent\+Filter\+::b\+Disallow\+Blueprint\+Base}
+
+Disallow blueprint base classes. \Hypertarget{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03}\label{classFAssetClassParentFilter_a9ccdf01a44e912bc488b07de9384ba03} 
+\index{FAssetClassParentFilter@{FAssetClassParentFilter}!DisallowedClassFlags@{DisallowedClassFlags}}
+\index{DisallowedClassFlags@{DisallowedClassFlags}!FAssetClassParentFilter@{FAssetClassParentFilter}}
+\doxysubsubsection{\texorpdfstring{DisallowedClassFlags}{DisallowedClassFlags}}
+{\footnotesize\ttfamily EClass\+Flags FAsset\+Class\+Parent\+Filter\+::\+Disallowed\+Class\+Flags}
+
+Disallowed class flags. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Crimson\+Skill\+Tree\+Editor/\+Factory/\mbox{\hyperlink{CrimsonSkillTree__Factory_8h}{Crimson\+Skill\+Tree\+\_\+\+Factory.\+h}}\end{DoxyCompactItemize}

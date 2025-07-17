@@ -1,0 +1,9 @@
+<map id="UCrimsonSkillTree_GraphNode" name="UCrimsonSkillTree_GraphNode">
+<area shape="rect" id="Node000001" title="Represents a node in the editor graph for a Crimson Skill Tree. This class is the UEdGraphNode counte..." alt="" coords="5,168,227,193"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="34,80,155,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,118,116,167,110,168,98,119"/>
+<area shape="rect" id="Node000003" href="$classSCrimsonSkillTree__GraphNode.html" title=" " alt="" coords="180,80,399,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="255,114,141,170,138,165,253,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="238,5,341,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,45,292,80,287,80,287,45"/>
+</map>
