@@ -1,0 +1,122 @@
+/* --- Doxygen Crimson Dark Theme --- */
+
+/* --- Base & Typography --- */
+body, .contents {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+a {
+    color: #20c2c2 !important; /* Complementary Cyan/Teal */
+}
+
+a:hover {
+    color: #50e0e0 !important;
+}
+
+h1.title {
+    color: #DC143C !important; /* Main Crimson Color */
+    text-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
+}
+
+/* --- Main Layout & Header --- */
+#top { /* The whole top section */
+    background: #1e1e1e !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+#titlearea {
+    background: transparent !important;
+    border: none !important;
+    padding: 10px 10px !important;
+}
+
+#projectname {
+    color: #DC143C !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
+}
+
+#projectbrief {
+    color: #b3b3b3 !important;
+}
+
+/* --- Navigation Tabs --- */
+.tabs, .tabs2, .tabs3 {
+    background-image: none !important;
+    background-color: #1e1e1e !important;
+    border-bottom: 1px solid #5e0a1b !important;
+}
+
+ul.tablist li {
+    background-color: #1e1e1e !important;
+}
+
+ul.tablist li a {
+    background-image: none !important;
+    color: #b3b3b3 !important;
+    text-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+ul.tablist li.current a, ul.tablist li a:hover {
+    background-color: #DC143C !important;
+    color: #fff !important;
+}
+
+/* --- Left Navigation Tree --- */
+#nav-tree {
+    background-color: #1e1e1e !important;
+}
+
+.navpath ul {
+    background-image: none !important;
+    background-color: #1e1e1e !important;
+}
+
+.navpath li.navelem a {
+    color: #b3b3b3 !important;
+}
+.navpath li.navelem a:hover {
+    color: #fff !important;
+}
+
+/* --- Main Content Area --- */
+.contents, .memitem, .memdoc {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+.heading, h2.groupheader {
+    background-color: #2a2a2a !important;
+    background-image: none !important;
+    color: #f5f5f5 !important;
+    border-bottom: 1px solid #5e0a1b !important;
+    border-top: 1px solid #5e0a1b !important;
+}
+
+table.memberdecls, table.directory {
+    border: 1px solid #333 !important;
+}
+
+.memitem, .memproto, .memname, .paramname, .paramtype {
+    background-image: none !important;
+    background: #2a2a2a !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.memdoc {
+    border-left: 1px solid #333 !important;
+    background-color: #1e1e1e !important;
+}
+
+/* --- Search Box --- */
+#MSearchBox {
+    background-image: none !important;
+    border: 1px solid #333 !important;
+}
+#MSearchField {
+    background-color: #333 !important;
+    color: #fff !important;
+}
