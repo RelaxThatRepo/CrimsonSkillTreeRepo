@@ -1,0 +1,26 @@
+name: Deploy Doxygen Documentation
+
+on:
+  push:
+    branches:
+      - main # Or 'master', whichever is your primary branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen and Graphviz
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
+      - name: Generate Doxygen Documentation
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html # Must match Doxygen's HTML output folder
+          # The default publish_branch is gh-pages, which is what we want.
