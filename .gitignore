@@ -1,0 +1,36 @@
+# Binaries
+Binaries/
+
+# Build files
+Build/
+
+# Intermediate files
+Intermediate/
+
+# Saved files (logs, configs, etc.)
+Saved/
+
+# Content from the editor (unless you have source assets you want to track)
+Content/
+
+# Resources folder
+Resources/
+
+# The plugin descriptor file (often generated or modified by the editor)
+*.uplugin
+
+# C++ Source files
+Source/**/*.cpp
+
+# Visual Studio files
+.vs/
+*.sln
+*.suo
+*.user
+*.userprefs
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Rider files
+.idea/
