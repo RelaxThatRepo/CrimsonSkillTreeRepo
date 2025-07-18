@@ -6,64 +6,49 @@
     <title>Crimson Skill Tree - Documentation</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- Base Styles & Crimson Theme --- */
         body {
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.7;
             padding: 2em;
             margin: 0 auto;
-            background-color: #121212; /* Very dark gray background */
-            color: #e0e0e0; /* Light gray text for readability */
+            background-color: #121212;
+            color: #e0e0e0;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #1e1e1e; /* Slightly lighter container background */
+            background-color: #1e1e1e;
             padding: 2em 3em;
             border-radius: 12px;
             border: 1px solid #333;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
-
-        /* --- Typography & Accents --- */
         h1 {
-            color: #DC143C; /* Main Crimson Color */
+            color: #DC143C;
             font-weight: 700;
             text-shadow: 0 0 10px rgba(220, 20, 60, 0.4);
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0.5em;
         }
-
         h2 {
-            color: #f5f5f5; /* Bright white for section headers */
+            color: #f5f5f5;
             font-weight: 400;
-            border-bottom: 1px solid #5e0a1b; /* Dark Crimson for the underline */
+            border-bottom: 1px solid #5e0a1b;
             padding-bottom: 0.5em;
             margin-top: 2em;
         }
-
-        p {
-            color: #b3b3b3; /* Softer gray for paragraph text */
-        }
-
+        p { color: #b3b3b3; }
         a {
-            color: #20c2c2; /* Complementary Cyan/Teal for links */
+            color: #20c2c2;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
-        a:hover {
-            color: #50e0e0; /* Brighter cyan on hover */
-            text-decoration: none;
-        }
-
-        /* --- Interactive Elements --- */
+        a:hover { color: #50e0e0; }
         .button {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #DC143C; /* Main Crimson Color */
+            background-color: #DC143C;
             color: white;
             border-radius: 8px;
             text-decoration: none;
@@ -72,28 +57,47 @@
             box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
             transition: all 0.3s ease;
         }
-
         .button:hover {
-            background-color: #E74C3C; /* Lighter Crimson on hover */
+            background-color: #E74C3C;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
         }
-
-        .video-list li {
-            margin-bottom: 1em;
-            list-style-type: none; /* Remove default bullet points */
-            padding-left: 0;
+        /* New styles for topic cards */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            padding: 0;
+            list-style: none;
         }
-        
-        /* Adding a crimson bullet effect */
-        .video-list li::before {
-            content: '▶';
+        .topic-card {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 1.5em;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+            border-color: #DC143C;
+        }
+        .topic-card h3 {
+            margin-top: 0;
+            color: #f5f5f5;
+        }
+        .topic-card p {
+            font-size: 0.9em;
+            color: #b3b3b3;
+        }
+        .topic-card a {
             color: #DC143C;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
+            font-weight: bold;
+            text-decoration: none;
         }
-
+        .topic-card a::after {
+            content: ' →';
+        }
     </style>
 </head>
 <body>
@@ -102,15 +106,37 @@
         <p>Welcome to the official documentation. Here you will find tutorials, guides, and a complete API reference to help you get the most out of the plugin.</p>
         
         <p>
-            <a href="./api/html/index.html" class="button">Full API Reference</a>
+            <a href="./api/index.html" class="button">Full API Reference</a>
         </p>
 
-        <h2>Tutorial Videos</h2>
-        <p>Watch these videos to get started with the plugin's core features.</p>
-        <ul class="video-list">
-            <li><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1" target="_blank">Tutorial 1: Installation & Setup</a></li>
-            <li><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2" target="_blank">Tutorial 2: Using the Awesome Feature</a></li>
-            <li><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3" target="_blank">Tutorial 3: Advanced Techniques</a></li>
+        <h2>Tutorial Topics</h2>
+        <p>Select a topic below to view detailed guides and videos.</p>
+        
+        <ul class="topic-grid">
+            <li>
+                <div class="topic-card">
+                    <h3>Installation</h3>
+                    <p>Learn how to add the plugin to your Unreal Engine project.</p>
+                    <a href="installation.html">View Guide</a>
+                </div>
+            </li>
+            <li>
+                <div class="topic-card">
+                    <h3>Getting Started</h3>
+                    <p>A beginner's guide to the core features and basic setup.</p>
+                    <a href="getting-started.html">View Guide</a>
+                </div>
+            </li>
+            <!-- Add more cards here for new topics -->
+            <!--
+            <li>
+                <div class="topic-card">
+                    <h3>Advanced Features</h3>
+                    <p>Dive deep into advanced customization and techniques.</p>
+                    <a href="advanced.html">View Guide</a>
+                </div>
+            </li>
+            -->
         </ul>
 
         <h2>Getting Help</h2>
