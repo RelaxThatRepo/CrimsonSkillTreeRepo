@@ -1,5 +1,3 @@
-// Copyright Crimson Sword Studio, 2024. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -35,50 +33,85 @@ class CRIMSONSKILLTREE_API UCrimsonSkillTree_ActivationCondition_AttributeRequir
 	GENERATED_BODY()
 
 public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
+
+	// ~Construction
+	// =============================================================================================================
 	UCrimsonSkillTree_ActivationCondition_AttributeRequirement();
 
-	//~ UCrimsonSkillTree_ActivationConditionBase Interface
+	// ~UCrimsonSkillTree_ActivationConditionBase Interface
+	// =============================================================================================================
+	/**
+	 * @brief Binds to the required attribute's change delegate to monitor for changes.
+	 * @param OwningNode The node that owns this condition instance.
+	 */
 	virtual void BeginMonitoring_Implementation(UCrimsonSkillTree_Node* OwningNode) override;
-	virtual void EndMonitoring_Implementation() override;
-	virtual bool IsConditionMet_Implementation(const UCrimsonSkillTree_Node* OwningNode) const override;
-	virtual bool IsConditionStillMetIfBenefitsAltered_Implementation(const UCrimsonSkillTree_Node* OwningConditionNode, AActor* OwnerActorContext, const UCrimsonSkillTree_Node* NodeWhoseBenefitsAreAltered, bool bBenefitsAreBeingLost) const override;
-	//~ End UCrimsonSkillTree_ActivationConditionBase Interface
 
-	//~ Editor-Only
+	/**
+	 * @brief Unbinds from the attribute's change delegate.
+	 */
+	virtual void EndMonitoring_Implementation() override;
+
+	/**
+	 * @brief Checks if the required attribute meets the specified value comparison.
+	 * @param OwningNode The node that this condition belongs to.
+	 * @return True if the attribute value satisfies the comparison.
+	 */
+	virtual bool IsConditionMet_Implementation(const UCrimsonSkillTree_Node* OwningNode) const override;
+
+	/**
+	 * @brief Simulates if this condition would remain met if another node's attribute modifications were altered.
+	 * @param OwningConditionNode The node that this condition belongs to.
+	 * @param OwnerActorContext The actor who owns the skill tree.
+	 * @param NodeWhoseBenefitsAreAltered The node whose attribute effects are being hypothetically changed.
+	 * @param bBenefitsAreBeingLost True if simulating the removal of an effect.
+	 * @return True if the condition would still be met after the simulated change.
+	 */
+	virtual bool IsConditionStillMetIfBenefitsAltered_Implementation(const UCrimsonSkillTree_Node* OwningConditionNode, AActor* OwnerActorContext, const UCrimsonSkillTree_Node* NodeWhoseBenefitsAreAltered, bool bBenefitsAreBeingLost) const override;
+
+	/**
+	 * @brief Gets the descriptive text for UI tooltips.
+	 * @return A formatted FText describing the condition.
+	 */
+	virtual FText GetTooltipDescription_Implementation() const override;
+
 #if WITH_EDITOR
+	// ~Editor-Only
+	// =============================================================================================================
+	/**
+	 * @brief Gets the descriptive text for the editor graph.
+	 * @return A formatted FText describing the condition for display in the editor.
+	 */
 	virtual FText GetEditorDescription_Implementation() const override;
 #endif
-	//~ End Editor-Only
 
-	virtual FText GetTooltipDescription_Implementation() const override;
-	
 public:
-	//~ Properties
-	// The Gameplay Attribute that this condition monitors.
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The Gameplay Attribute that this condition monitors. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Condition Properties")
 	FGameplayAttribute RequiredAttribute;
 
-	// The threshold value the attribute must meet.
+	/** @brief The threshold value the attribute must meet. */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Condition Properties", meta = (UIMin = "0.0"))
 	float RequiredValue;
 
-	// Defines how the attribute's current value is compared against RequiredValue.
+	/** @brief Defines how the attribute's current value is compared against RequiredValue. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Condition Properties")
 	ECrimsonAttributeComparisonType ComparisonType;
-	//~ End Properties
 
 protected:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 	/**
 	 * @brief Internal callback triggered when the monitored attribute's value changes.
 	 * @param Data Structure containing information about the attribute change.
 	 */
 	virtual void OnMonitoredAttributeChanged(const FOnAttributeChangeData& Data);
-
-	/**
-	 * @brief Centralized function to broadcast UI messages when the condition fails a direct check.
-	 * @param FailureReason The specific text explaining why the condition failed.
-	 */
-	void BroadcastFailureMessage(const FText& FailureReason) const;
 
 	/**
 	 * @brief Performs the actual comparison between two float values based on the ComparisonType.
@@ -87,16 +120,15 @@ protected:
 	 * @return True if the comparison is satisfied.
 	 */
 	bool PerformComparison(float ValueA, float ValueB) const;
-	
+
 private:
-	//~ Private Properties
-	// Cached pointer to the owner's AbilitySystemComponent for efficiency.
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief Cached pointer to the owner's AbilitySystemComponent for efficiency. */
 	UPROPERTY(Transient)
 	TWeakObjectPtr<UAbilitySystemComponent> CachedAbilitySystemComponent;
-	//~ End Private Properties
 
-	//~ Private Members
-	// Handle for the delegate bound to attribute value changes.
+	/** @brief Handle for the delegate bound to attribute value changes. */
 	FDelegateHandle AttributeChangeDelegateHandle;
-	//~ End Private Members
 };

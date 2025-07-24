@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a Skill Tree - Crimson Skill Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; line-height: 1.7; padding: 2em; margin: 0 auto; background-color: #121212; color: #e0e0e0; }
+        .container { max-width: 900px; margin: 0 auto; background-color: #1e1e1e; padding: 2em 3em; border-radius: 12px; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+        h1 { color: #DC143C; font-weight: 700; }
+        h2 { color: #f5f5f5; font-weight: 400; border-bottom: 1px solid #5e0a1b; padding-bottom: 0.5em; margin-top: 2em; }
+        h3 { color: #e0e0e0; font-weight: 400; margin-top: 1.5em; }
+        p { color: #b3b3b3; }
+        a { color: #20c2c2; text-decoration: none; }
+        a:hover { color: #50e0e0; }
+        .breadcrumb { margin-bottom: 2em; font-size: 0.9em; }
+        .breadcrumb a { color: #DC143C; font-weight: bold; }
+        code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        ul { padding-left: 20px; }
+        .image-placeholder { background-color: #333; border: 1px dashed #555; text-align: center; padding: 4em 2em; border-radius: 8px; margin: 1em 0; }
+        .image-placeholder p { margin: 0; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
+        <h1>Creating Your First Skill Tree</h1>
+        <p>This section guides you through the process of creating the skill tree data asset and designing its structure in the editor.</p>
+
+        <h2>Step 1: The Skill Tree Asset</h2>
+        <p>Everything starts with the Skill Tree asset itself.</p>
+        <ol>
+            <li>In the Content Browser, right-click and navigate to <code>Miscellaneous</code> > <code>Data Asset</code>.</li>
+            <li>In the dialog that appears, find and select <strong>CrimsonSkillTree</strong> from the list.</li>
+            <li>Name your new asset something descriptive, like <code>DA_Player_CoreSkills</code>.</li>
+        </ol>
+
+        <h2>Step 2: Using the Skill Tree Editor</h2>
+        <p>Double-click your new Skill Tree asset to open the custom graph editor.</p>
+        <ul>
+            <li><strong>Creating Nodes:</strong> Right-click anywhere on the graph to open a context menu. You can create a <strong>Skill Node</strong> (<code>CrimsonSkillTree_Node</code>) or a <strong>Visual Node</strong> (a decorative comment box).</li>
+            <li><strong>Connecting Nodes:</strong> Nodes have input and output pins. Drag from a parent node's output pin to a child node's input pin to create a connection. The system automatically sets the parent-child relationship.</li>
+            <li><strong>Root Node:</strong> The first node you create is automatically set as the <code>RootNode</code>. This is the starting point of the tree. It's always active and has no parents.</li>
+        </ul>
+        <div class="image-placeholder"><p>Image: Screenshot of the Skill Tree Editor showing nodes and connections.</p></div>
+
+        <h2>Step 3: Configuring a Node</h2>
+        <p>Click on a node in the graph to see its properties in the Details panel. Here are the key settings:</p>
+        <ul>
+            <li><strong>DisplayName:</strong> The name of the skill that players will see (e.g., "Fireball").</li>
+            <li><strong>MaxLevel:</strong> The maximum number of times a player can invest in this skill.</li>
+            <li><strong>Node Costs:</strong> An array where you define the cost (e.g., 1 Skill Point) for each level of the node.</li>
+            <li><strong>Activation Conditions:</strong> An array where you add the rules that must be met to unlock this node.</li>
+            <li><strong>On Level Changed Events:</strong> An array where you add the gameplay effects that happen when this node is activated or leveled up.</li>
+        </ul>
+    </div>
+</body>
+</html>

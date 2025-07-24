@@ -1,10 +1,8 @@
-// Copyright Crimson Sword Studio, 2024. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
-#include "../Nodes/CrimsonSkillTree_Node.h" // Use relative path for better portability
+#include "../Nodes/CrimsonSkillTree_Node.h"
 #include "CrimsonSkillTree_SaveGame.generated.h"
 
 /**
@@ -16,13 +14,12 @@ struct FCrimsonSkillTree_SaveGameNodeState
 {
 	GENERATED_BODY()
 
-	UPROPERTY() FGuid NodeGUID;
-	UPROPERTY() int32 CurrentLevel = 0;
-	UPROPERTY() ENodeState NodeState = ENodeState::UnSet;
-
 	FCrimsonSkillTree_SaveGameNodeState() = default;
 
-	// Constructor to easily create a save state from a node object.
+	/**
+	 * @brief Constructor to easily create a save state from a node object.
+	 * @param Node The node to create the save state from.
+	 */
 	explicit FCrimsonSkillTree_SaveGameNodeState(const UCrimsonSkillTree_Node* Node)
 	{
 		if (Node)
@@ -32,6 +29,18 @@ struct FCrimsonSkillTree_SaveGameNodeState
 			NodeState = Node->NodeState;
 		}
 	}
+
+	/** @brief The unique identifier of the node. */
+	UPROPERTY()
+	FGuid NodeGUID;
+
+	/** @brief The level of the node when saved. */
+	UPROPERTY()
+	int32 CurrentLevel = 0;
+
+	/** @brief The state of the node when saved. */
+	UPROPERTY()
+	ENodeState NodeState = ENodeState::UnSet;
 };
 
 /**
@@ -43,9 +52,17 @@ struct FCrimsonSkillTree_SaveGameData
 {
 	GENERATED_BODY()
 
-	UPROPERTY() FGuid SkillTreeGUID;
-	UPROPERTY() int32 SkillTreeVersion = 0;
-	UPROPERTY() TArray<FCrimsonSkillTree_SaveGameNodeState> SavedNodeStates;
+	/** @brief The unique identifier of the skill tree. */
+	UPROPERTY()
+	FGuid SkillTreeGUID;
+
+	/** @brief The version of the skill tree when saved. */
+	UPROPERTY()
+	int32 SkillTreeVersion = 0;
+
+	/** @brief An array of all node states within this skill tree. */
+	UPROPERTY()
+	TArray<FCrimsonSkillTree_SaveGameNodeState> SavedNodeStates;
 };
 
 /**
@@ -56,11 +73,26 @@ UCLASS()
 class CRIMSONSKILLTREE_API UCrimsonSkillTree_SaveGame : public USaveGame
 {
 	GENERATED_BODY()
+
 public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 	UCrimsonSkillTree_SaveGame();
-	
+
 public:
-	UPROPERTY() FString SaveSlotName;
-	UPROPERTY() uint32 UserIndex = 0;
-	UPROPERTY() TArray<FCrimsonSkillTree_SaveGameData> SkillTreesData;
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The name of the save slot. */
+	UPROPERTY()
+	FString SaveSlotName;
+
+	/** @brief The user index associated with this save. */
+	UPROPERTY()
+	uint32 UserIndex = 0;
+
+	/** @brief An array containing the save data for each skill tree. */
+	UPROPERTY()
+	TArray<FCrimsonSkillTree_SaveGameData> SkillTreesData;
 };

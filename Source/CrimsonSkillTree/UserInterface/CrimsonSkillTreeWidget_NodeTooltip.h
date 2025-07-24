@@ -1,5 +1,3 @@
-// Copyright Crimson Sword Studio, 2024. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -18,17 +16,23 @@ class CRIMSONSKILLTREE_API UCrimsonSkillTreeWidget_NodeTooltip : public UUserWid
 	GENERATED_BODY()
 
 public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 	/**
 	 * @brief Sets the skill node data for the tooltip to display.
-	 * This is a BlueprintImplementableEvent, allowing all UI population logic to be handled in Blueprint graphs.
+	 * @details This is a BlueprintImplementableEvent, allowing all UI population logic to be handled in Blueprint graphs.
 	 * @param InNodeData The node data to be displayed.
 	 */
 	UFUNCTION(BlueprintImplementableEvent, Category = "Skill Tree Tooltip")
 	void SetSkillNodeData(UCrimsonSkillTree_Node* InNodeData);
-	void SetSkillNodeData_Implementation(UCrimsonSkillTree_Node* InNodeData);
+	virtual void SetSkillNodeData_Implementation(UCrimsonSkillTree_Node* InNodeData);
 
 protected:
-	// The skill node this tooltip is currently representing.
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The skill node this tooltip is currently representing. */
 	UPROPERTY(BlueprintReadOnly, Category = "Skill Tree Tooltip", meta = (ExposeOnSpawn = "true"))
 	TObjectPtr<UCrimsonSkillTree_Node> NodeData;
 };

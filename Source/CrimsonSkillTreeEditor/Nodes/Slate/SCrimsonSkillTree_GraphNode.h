@@ -30,7 +30,6 @@ public:
 	virtual const FSlateBrush* GetNameIcon() const;
 
 	FSlateColor GetNodeOutlineColor() const;
-	FSlateColor GetPinBlockBackgroundColor() const;
 	const FSlateBrush* GetNodeTextureBrush() const;
 
 

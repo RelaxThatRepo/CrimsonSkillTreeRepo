@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Conditions - Crimson Skill Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; line-height: 1.7; padding: 2em; margin: 0 auto; background-color: #121212; color: #e0e0e0; }
+        .container { max-width: 900px; margin: 0 auto; background-color: #1e1e1e; padding: 2em 3em; border-radius: 12px; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+        h1 { color: #DC143C; font-weight: 700; }
+        h2 { color: #f5f5f5; font-weight: 400; border-bottom: 1px solid #5e0a1b; padding-bottom: 0.5em; margin-top: 2em; }
+        h3 { color: #e0e0e0; font-weight: 400; margin-top: 1.5em; }
+        p { color: #b3b3b3; }
+        a { color: #20c2c2; text-decoration: none; }
+        a:hover { color: #50e0e0; }
+        .breadcrumb { margin-bottom: 2em; font-size: 0.9em; }
+        .breadcrumb a { color: #DC143C; font-weight: bold; }
+        code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
+        <h1>Making Skills Do Things (Events & Conditions)</h1>
+        <p>A node is defined by its costs, conditions, and events. This section explains how to configure them.</p>
+
+        <h2>Defining Costs</h2>
+        <p>In a node's Details panel in the Skill Tree Editor, find the <code>Node Costs</code> array.</p>
+        <ol>
+            <li>Add a new element to the array by clicking the <code>+</code> icon.</li>
+            <li>Expand the new element and its <code>Cost Definition</code>.</li>
+            <li>
+                <strong>Cost Source:</strong> Choose how the cost is paid.
+                <ul>
+                    <li><code>ActorIntegerProperty</code>: Uses an integer variable on your character (e.g., a "SkillPoints" variable). You must provide the exact variable name in <code>Actor Resource Property Name</code>.</li>
+                    <li><code>GameplayAttributeValue</code>: Uses an attribute from the Gameplay Ability System (e.g., <code>Attributes.SkillPoints</code>). You must select the attribute.</li>
+                </ul>
+            </li>
+            <li><strong>Cost Curve:</strong> You can use a Curve asset to define how the cost changes per level. If you leave this empty, it will use the flat <code>CostAmount</code>.</li>
+        </ol>
+
+        <h2>Creating Events (What Skills Do)</h2>
+        <p>In a node's <code>On Level Changed Events</code> array, click <code>+</code> to add a new event. You can choose from several pre-made types:</p>
+        <ul>
+            <li><strong>Apply Gameplay Effect:</strong> The most common event. Applies a <code>GameplayEffect</code> to the character, perfect for passive stat boosts. You select the GE asset to apply.</li>
+            <li><strong>Grant Gameplay Ability:</strong> Grants a <code>GameplayAbility</code> to the character.</li>
+            <li><strong>Modify Character Float Property:</strong> Directly changes a simple float variable on the Character or its Movement Component (e.g., <code>MaxWalkSpeed</code>).</li>
+        </ul>
+
+        <h2>Creating Conditions (How to Unlock Skills)</h2>
+        <p>In a node's <code>Activation Conditions</code> array, click <code>+</code> to add a new rule.</p>
+        <ul>
+            <li><strong>Parent Level Condition:</strong> Requires a specific parent node to be at a certain level. This is how you create dependencies in the tree.</li>
+            <li><strong>Resource Points Spent Condition:</strong> Requires the player to have spent a certain number of points of a specific resource type across all their trees.</li>
+            <li><strong>Attribute Requirement:</strong> Requires a Gameplay Attribute to be greater than, less than, or equal to a certain value.</li>
+        </ul>
+    </div>
+</body>
+</html>

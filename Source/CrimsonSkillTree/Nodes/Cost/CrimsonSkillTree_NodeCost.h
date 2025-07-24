@@ -1,5 +1,3 @@
-// Copyright Crimson Sword Studio, 2024. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -16,53 +14,50 @@
 UENUM(BlueprintType)
 enum class ENodeCostSource : uint8
 {
-    NoCost,
-    ActorIntegerProperty,
-    GameplayAttributeValue
+	NoCost,
+	ActorIntegerProperty,
+	GameplayAttributeValue
 };
 
 /**
  * @struct FNodeCostDefinition
  * @brief Defines a specific type of resource cost (e.g., Skill Points, Gold).
- * This is a hashable struct, allowing it to be used as a key in TMaps.
+ * @details This is a hashable struct, allowing it to be used as a key in TMaps.
  */
 USTRUCT(BlueprintType)
 struct FNodeCostDefinition
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost Definition")
-    ENodeCostSource CostSource = ENodeCostSource::NoCost;
+public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 
-    // User-facing name for this resource (e.g., "Skill Points").
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost Definition")
-    FText ResourceUserFacingName;
+	/**
+	 * @brief Equality operator for TMap support.
+	 * @param Other The other definition to compare against.
+	 * @return True if the definitions are for the same resource.
+	 */
+	bool operator==(const FNodeCostDefinition& Other) const
+	{
+		if (CostSource != Other.CostSource) return false;
+		switch (CostSource)
+		{
+		case ENodeCostSource::ActorIntegerProperty:
+			return ActorResourcePropertyName == Other.ActorResourcePropertyName;
+		case ENodeCostSource::GameplayAttributeValue:
+			return ResourceGameplayAttribute == Other.ResourceGameplayAttribute;
+		case ENodeCostSource::NoCost:
+		default:
+			return true;
+		}
+	}
 
-    // The name of an integer property on the owner actor to use as the resource pool.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost Definition", meta = (EditCondition = "CostSource == ENodeCostSource::ActorIntegerProperty"))
-    FName ActorResourcePropertyName;
-
-    // The gameplay attribute to use as the resource pool.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost Definition", meta = (EditCondition = "CostSource == ENodeCostSource::GameplayAttributeValue"))
-    FGameplayAttribute ResourceGameplayAttribute;
-
-    // Equality operator for TMap support.
-    bool operator==(const FNodeCostDefinition& Other) const
-    {
-        if (CostSource != Other.CostSource) return false;
-        switch (CostSource)
-        {
-        case ENodeCostSource::ActorIntegerProperty:
-            return ActorResourcePropertyName == Other.ActorResourcePropertyName;
-        case ENodeCostSource::GameplayAttributeValue:
-            return ResourceGameplayAttribute == Other.ResourceGameplayAttribute;
-        case ENodeCostSource::NoCost:
-        default:
-            return true;
-        }
-    }
-
-	// Helper function to get a clean resource name, with fallbacks.
+	/**
+	 * @brief Helper function to get a clean resource name, with fallbacks.
+	 * @return The user-facing name of the resource.
+	 */
 	FText GetResourceName() const
 	{
 		if (!ResourceUserFacingName.IsEmpty())
@@ -79,21 +74,45 @@ struct FNodeCostDefinition
 		}
 		return LOCTEXT("UnknownResourceName", "Resource");
 	}
+
+public:
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The source from which the resource is derived (e.g., an actor property or a gameplay attribute). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Definition")
+	ENodeCostSource CostSource = ENodeCostSource::NoCost;
+
+	/** @brief User-facing name for this resource (e.g., "Skill Points"). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Definition")
+	FText ResourceUserFacingName;
+
+	/** @brief The name of an integer property on the owner actor to use as the resource pool. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Definition", meta = (EditCondition = "CostSource == ENodeCostSource::ActorIntegerProperty"))
+	FName ActorResourcePropertyName;
+
+	/** @brief The gameplay attribute to use as the resource pool. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Definition", meta = (EditCondition = "CostSource == ENodeCostSource::GameplayAttributeValue"))
+	FGameplayAttribute ResourceGameplayAttribute;
 };
 
-// Hash function for TMap support.
+/**
+ * @brief Hash function for FNodeCostDefinition to allow its use as a key in TMaps.
+ * @param Def The FNodeCostDefinition to hash.
+ * @return The calculated hash value.
+ */
 inline uint32 GetTypeHash(const FNodeCostDefinition& Def)
 {
-    uint32 Hash = GetTypeHash(static_cast<uint8>(Def.CostSource));
-    if (Def.CostSource == ENodeCostSource::ActorIntegerProperty)
-    {
-        Hash = HashCombine(Hash, GetTypeHash(Def.ActorResourcePropertyName));
-    }
-    else if (Def.CostSource == ENodeCostSource::GameplayAttributeValue)
-    {
-        Hash = HashCombine(Hash, GetTypeHash(Def.ResourceGameplayAttribute));
-    }
-    return Hash;
+	uint32 Hash = GetTypeHash(static_cast<uint8>(Def.CostSource));
+	if (Def.CostSource == ENodeCostSource::ActorIntegerProperty)
+	{
+		Hash = HashCombine(Hash, GetTypeHash(Def.ActorResourcePropertyName));
+	}
+	else if (Def.CostSource == ENodeCostSource::GameplayAttributeValue)
+	{
+		Hash = HashCombine(Hash, GetTypeHash(Def.ResourceGameplayAttribute));
+	}
+	return Hash;
 }
 
 /**
@@ -103,35 +122,42 @@ inline uint32 GetTypeHash(const FNodeCostDefinition& Def)
 USTRUCT(BlueprintType)
 struct FNodeResourceCost
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
-    // The type of resource this cost uses.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost")
-    FNodeCostDefinition CostDefinition;
+public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
+	/**
+	 * @brief Calculates the cost for a specific target level.
+	 * @param TargetLevel The level to calculate the cost for.
+	 * @param MaxLevel The maximum level of the node (for curve evaluation).
+	 * @return The calculated cost amount as an integer.
+	 */
+	int32 GetCostForTargetLevel(int32 TargetLevel, int32 MaxLevel) const
+	{
+		if (CostCurve)
+		{
+			return FMath::RoundToInt(CostCurve->GetFloatValue(static_cast<float>(TargetLevel)));
+		}
+		return CostAmount;
+	}
 
-    // A curve to define how the cost scales with the node's level.
-    // X-axis: Node Level, Y-axis: Cost Amount.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost")
-    TObjectPtr<UCurveFloat> CostCurve;
+public:
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The type of resource this cost uses. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost")
+	FNodeCostDefinition CostDefinition;
 
-    // A flat amount of cost, used if CostCurve is not provided.
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost", meta = (EditCondition = "CostCurve == nullptr"))
-    int32 CostAmount = 1;
+	/** @brief A curve to define how the cost scales with the node's level (X-axis: Level, Y-axis: Cost). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost|Definition")
+	TObjectPtr<UCurveFloat> CostCurve;
 
-    /**
-     * @brief Calculates the cost for a specific target level.
-     * @param TargetLevel The level to calculate the cost for.
-     * @param MaxLevel The maximum level of the node (for curve evaluation).
-     * @return The calculated cost amount as an integer.
-     */
-    int32 GetCostForTargetLevel(int32 TargetLevel, int32 MaxLevel) const
-    {
-        if (CostCurve)
-        {
-            return FMath::RoundToInt(CostCurve->GetFloatValue(static_cast<float>(TargetLevel)));
-        }
-        return CostAmount;
-    }
+	/** @brief A flat amount of cost, used if CostCurve is not provided. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost|Definition", meta = (EditCondition = "CostCurve == nullptr"))
+	int32 CostAmount = 1;
 };
 
 /**
@@ -141,17 +167,27 @@ struct FNodeResourceCost
 USTRUCT(BlueprintType)
 struct FResolvedNodeCost
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
-    UPROPERTY(BlueprintReadOnly, Category = "Resolved Cost")
-    FNodeCostDefinition CostDefinition;
+public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
+	FResolvedNodeCost() = default;
+	FResolvedNodeCost(const FNodeCostDefinition& InDef, int32 InAmount)
+		: CostDefinition(InDef), ResolvedAmount(InAmount) {}
 
-    UPROPERTY(BlueprintReadOnly, Category = "Resolved Cost")
-    int32 ResolvedAmount = 0;
+public:
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The definition of the resource cost. */
+	UPROPERTY(BlueprintReadOnly, Category = "Resolved Cost")
+	FNodeCostDefinition CostDefinition;
 
-    FResolvedNodeCost() = default;
-    FResolvedNodeCost(const FNodeCostDefinition& InDef, int32 InAmount)
-        : CostDefinition(InDef), ResolvedAmount(InAmount) {}
+	/** @brief The calculated amount of the cost. */
+	UPROPERTY(BlueprintReadOnly, Category = "Resolved Cost")
+	int32 ResolvedAmount = 0;
 };
 
 #undef LOCTEXT_NAMESPACE

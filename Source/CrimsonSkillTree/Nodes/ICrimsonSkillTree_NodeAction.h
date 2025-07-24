@@ -1,5 +1,3 @@
-// Copyright Crimson Sword Studio, 2024. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -23,6 +21,9 @@ class CRIMSONSKILLTREE_API ICrimsonSkillTree_NodeAction
 	GENERATED_BODY()
 
 public:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 	/**
 	 * @brief Executes an action on the given skill tree node.
 	 * @param Node The node to perform the action on.

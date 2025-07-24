@@ -12,7 +12,9 @@ public class CrimsonSkillTree : ModuleRules
             [
                 "Core",
                 "GameplayAbilities", 
-                "GameplayTags",      
+                "GameplayTags", 
+                "GameFeatures",
+                "ModularGameplay",
                 "ModelViewViewModel",
                 "UMG"
             ]
@@ -34,6 +36,7 @@ public class CrimsonSkillTree : ModuleRules
                 "CommonUI",
                 "Slate",
                 "SlateCore",
+                "NetCore"
                 
             ]
         );

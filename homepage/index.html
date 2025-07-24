@@ -45,28 +45,10 @@
             transition: color 0.3s ease;
         }
         a:hover { color: #50e0e0; }
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #DC143C;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background-color: #E74C3C;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
-        }
-        /* New styles for topic cards */
         .topic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5em;
+            gap: 5em 1.5em;
             padding: 0;
             list-style: none;
         }
@@ -76,6 +58,9 @@
             padding: 1.5em;
             border: 1px solid #333;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .topic-card:hover {
             transform: translateY(-5px);
@@ -89,11 +74,13 @@
         .topic-card p {
             font-size: 0.9em;
             color: #b3b3b3;
+            flex-grow: 1;
         }
         .topic-card a {
             color: #DC143C;
             font-weight: bold;
             text-decoration: none;
+            margin-top: auto;
         }
         .topic-card a::after {
             content: ' →';
@@ -103,40 +90,54 @@
 <body>
     <div class="container">
         <h1>Crimson Skill Tree</h1>
-        <p>Welcome to the official documentation. Here you will find tutorials, guides, and a complete API reference to help you get the most out of the plugin.</p>
-        
-        <p>
-            <a href="./api/index.html" class="button">Full API Reference</a>
-        </p>
+        <p>Welcome to the official documentation. Here you will find tutorials and guides to help you get the most out of the plugin.</p>
 
-        <h2>Tutorial Topics</h2>
-        <p>Select a topic below to view detailed guides and videos.</p>
+        <h2>Documentation Topics</h2>
+        <p>Select a topic below to view detailed guides.</p>
         
         <ul class="topic-grid">
             <li>
                 <div class="topic-card">
-                    <h3>Installation</h3>
-                    <p>Learn how to add the plugin to your Unreal Engine project.</p>
-                    <a href="installation.html">View Guide</a>
-                </div>
-            </li>
-            <li>
-                <div class="topic-card">
                     <h3>Getting Started</h3>
-                    <p>A beginner's guide to the core features and basic setup.</p>
+                    <p>An introduction to the plugin, including installation and core concepts.</p>
                     <a href="getting-started.html">View Guide</a>
                 </div>
             </li>
-            <!-- Add more cards here for new topics -->
-            <!--
             <li>
                 <div class="topic-card">
-                    <h3>Advanced Features</h3>
-                    <p>Dive deep into advanced customization and techniques.</p>
-                    <a href="advanced.html">View Guide</a>
+                    <h3>Creating a Skill Tree</h3>
+                    <p>Learn how to use the Skill Tree Editor to design your skill layouts and configure nodes.</p>
+                    <a href="creating-a-skill-tree.html">View Guide</a>
                 </div>
             </li>
-            -->
+             <li>
+                <div class="topic-card">
+                    <h3>Character Setup</h3>
+                    <p>A guide to adding and configuring the Skill Tree Manager on your characters.</p>
+                    <a href="character-setup.html">View Guide</a>
+                </div>
+            </li>
+            <li>
+                <div class="topic-card">
+                    <h3>Events & Conditions</h3>
+                    <p>Define what your skills do and the rules for unlocking them.</p>
+                    <a href="events-and-conditions.html">View Guide</a>
+                </div>
+            </li>
+            <li>
+                <div class="topic-card">
+                    <h3>UI Setup</h3>
+                    <p>Step-by-step instructions for creating the user interface to display your skill trees.</p>
+                    <a href="ui-setup.html">View Guide</a>
+                </div>
+            </li>
+            <li>
+                <div class="topic-card">
+                    <h3>Advanced Topics</h3>
+                    <p>Dive into multiplayer support, the save/load system, and C++ extensibility.</p>
+                    <a href="advanced-topics.html">View Guide</a>
+                </div>
+            </li>
         </ul>
 
         <h2>Getting Help</h2>

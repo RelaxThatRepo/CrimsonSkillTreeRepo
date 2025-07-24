@@ -1,97 +1,124 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "CrimsonSkillTree_NodeEventBase.h"
-
 #include "CrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty.generated.h"
 
 class ACharacter;
+class UCurveFloat;
 
 /**
- *@brief Enum to represent which classes to display in the drop down section.
- * After adding here, you must add logic in "FCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty_DetailCustomization::PopulateFloatPropertyOptions()"
- * and in "void UCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty::ApplyModification(float DeltaTotalValue) const".
- * Follow the examples as already shown.
+ * @enum EPropertyOwnerScope
+ * @brief Defines the scope on an ACharacter from which to find a property to modify.
  */
-// Enum to represent common target scopes
 UENUM(BlueprintType)
 enum class EPropertyOwnerScope : uint8
 {
-    SelfActor                   UMETA(DisplayName = "Owner Actor (Character)"),
-    CharacterMovementComponent  UMETA(DisplayName = "Character Movement Component"),
-    PlayerState                 UMETA(DisplayName = "Player State"),
-    Controller                  UMETA(DisplayName = "Controller"),
-    // Add more if needed, e.g.: specific attached components by class
+	SelfActor UMETA(DisplayName = "Owner Actor (Character)"),
+	CharacterMovementComponent UMETA(DisplayName = "Character Movement Component"),
+	PlayerState UMETA(DisplayName = "Player State"),
+	Controller UMETA(DisplayName = "Controller"),
 };
 
 /**
  * @class UCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty
- * @brief A base skill node event designed to modify a specified float UPROPERTY on the owning ACharacter or its UCharacterMovementComponent.
- *
- * This event applies an additive change per skill level. When a skill node's level increases,
- * the configured value per level is added to the target property. When it decreases or the node
- * is reset, the corresponding value is subtracted.
- *
- * The target property is identified by its FName. This class uses reflection to find and modify
- * the property, so ensure the property name is correct and the property is a float.
- *
- * @note This event should typically be executed on the server if the modified property affects
- * gameplay mechanics and needs to be authoritative.
+ * @brief A skill node event that modifies a specified float UPROPERTY on the owning ACharacter or one of its standard components.
+ * @details This event applies an additive change based on a curve. When a skill node's level changes,
+ * the delta between the curve value at the old and new level is applied to the target property.
  */
-UCLASS(Blueprintable, meta = (DisplayName = "Modify Character Float Property Base Event")) // Abstract because it needs TargetPropertyName set
+UCLASS(Blueprintable, meta = (DisplayName = "Modify Character Float Property Event"))
 class CRIMSONSKILLTREE_API UCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty : public UCrimsonSkillTree_NodeEventBase
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
 public:
-    /**
-     * @brief Default constructor.
-     * Initializes default values for properties.
-     */
-    UCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty();
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 
-    /**
-     * @brief User selects the scope from which to pick the property
-     */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification", meta = (Tooltip = "Where to look for the property to modify."))
-    EPropertyOwnerScope PropertyOwnerScope;
-
-    /**
-     * @brief The name of the float UPROPERTY to modify on the Character or its CharacterMovementComponent.
-     * This name must exactly match the UPROPERTY name in the target class.
-     */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification", meta = (Tooltip = "Name of the float UPROPERTY to modify (e.g., MaxWalkSpeed, Health)."))
-    FName TargetPropertyName;
-
-    /**
-     * @brief The amount to add to the target property for EACH level of the skill node.
-     * For example, if this is 10.0 and the skill node gains 2 levels, a total of 20.0 will be added.
-     * When leveling down or resetting, this amount per level will be subtracted.
-     */
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification", meta = (Tooltip = "Value to add per skill level. Can be negative for decreases."))
-    float AdditiveValuePerLevel;
-    
-    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Property Modification")
-    FText PropertyUserFacingName;
+	// ~Construction
+	// =============================================================================================================
+	UCrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty();
 
 protected:
-    //~ Begin UCrimsonSkillNodeEventBase Interface
-    virtual void OnLevelUp_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 NewLevel, int32 OldLevel) override;
-    virtual void OnLevelDown_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 NewLevel, int32 OldLevel) override;
-    virtual void OnNodeReset_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 PreviousLevel) override;
-    //~ End UCrimsonSkillNodeEventBase Interface
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
 
-    /**
-     * @brief Helper function to find and apply the float property modification.
-     * @param DeltaTotalValue The total change to apply to the property (can be positive or negative).
-     * @note This function should only execute on the server if the property is gameplay-critical.
-     * The authority check is expected within this function's implementation.
-     */
-    void ApplyModification(float DeltaTotalValue) const;
-    
-    virtual FText GetTooltipDescription_Implementation(const UCrimsonSkillTree_Node* PotentialEmitterNode) const override;
+	// ~UCrimsonSkillTree_NodeEventBase Interface
+	// =============================================================================================================
+	/**
+	 * @brief Applies the value change when the node's level increases.
+	 * @param EmitterNode The node whose level changed.
+	 * @param NewLevel The new level.
+	 * @param OldLevel The previous level.
+	 */
+	virtual void OnLevelUp_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 NewLevel, int32 OldLevel) override;
+
+	/**
+	 * @brief Applies the value change (reversal) when the node's level decreases.
+	 * @param EmitterNode The node whose level changed.
+	 * @param NewLevel The new level.
+	 * @param OldLevel The previous level.
+	 */
+	virtual void OnLevelDown_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 NewLevel, int32 OldLevel) override;
+
+	/**
+	 * @brief Completely reverses the total value applied by the node when it is reset.
+	 * @param EmitterNode The node being reset.
+	 * @param PreviousLevel The level of the node before it was reset.
+	 */
+	virtual void OnNodeReset_Implementation(UCrimsonSkillTree_Node* EmitterNode, int32 PreviousLevel) override;
+
+	/**
+	 * @brief Gets the descriptive text for UI tooltips.
+	 * @param PotentialEmitterNode The node that would emit this event.
+	 * @return A formatted FText describing the event's effect.
+	 */
+	virtual FText GetTooltipDescription_Implementation(const UCrimsonSkillTree_Node* PotentialEmitterNode) const override;
+
+	// ~Protected Helpers
+	// =============================================================================================================
+	/**
+	 * @brief Helper function to find and apply the float property modification.
+	 * @param DeltaTotalValue The total change to apply to the property (can be positive or negative).
+	 */
+	void ApplyModification(float DeltaTotalValue) const;
+
+private:
+	/****************************************************************************************************************
+	* Functions                                                            *
+	****************************************************************************************************************/
+	/**
+	 * @brief Evaluates the ValueCurve at a given level to find the total value.
+	 * @param Level The level to evaluate the curve at.
+	 * @return The float value from the curve at the specified level, or 0.0 if the curve is invalid.
+	 */
+	float GetTotalValueForLevel(int32 Level) const;
+
+	/**
+	 * @brief Helper function to get the target object based on the PropertyOwnerScope.
+	 * @return The UObject to modify, or nullptr if not found.
+	 */
+	UObject* GetTargetObject() const;
+
+public:
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	/** @brief The scope on the owning actor where the target property resides. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
+	EPropertyOwnerScope PropertyOwnerScope;
+
+	/** @brief The name of the float UPROPERTY to modify. Must match the property name in the target class exactly. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
+	FName TargetPropertyName;
+
+	/** @brief A curve that dictates the total value to be applied at each level (X-axis: Level, Y-axis: Total Value). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
+	TObjectPtr<UCurveFloat> ValueCurve;
+
+	/** @brief The user-friendly name of the property being modified, for use in descriptions. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Property Modification")
+	FText PropertyUserFacingName;
 };
-
-
