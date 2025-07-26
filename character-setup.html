@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Setup - Crimson Skill Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; line-height: 1.7; padding: 2em; margin: 0 auto; background-color: #121212; color: #e0e0e0; }
+        .container { max-width: 900px; margin: 0 auto; background-color: #1e1e1e; padding: 2em 3em; border-radius: 12px; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+        h1 { color: #DC143C; font-weight: 700; }
+        h2 { color: #f5f5f5; font-weight: 400; border-bottom: 1px solid #5e0a1b; padding-bottom: 0.5em; margin-top: 2em; }
+        h3 { color: #e0e0e0; font-weight: 400; margin-top: 1.5em; }
+        p { color: #b3b3b3; }
+        a { color: #20c2c2; text-decoration: none; }
+        a:hover { color: #50e0e0; }
+        .breadcrumb { margin-bottom: 2em; font-size: 0.9em; }
+        .breadcrumb a { color: #DC143C; font-weight: bold; }
+        code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .image-placeholder { background-color: #333; border: 1px dashed #555; text-align: center; padding: 4em 2em; border-radius: 8px; margin: 1em 0; }
+        .image-placeholder p { margin: 0; color: #888; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
+        <h1>Setting Up a Character</h1>
+        <p>This guide explains how to add the Skill Tree Manager to an actor and configure it to use your skill trees.</p>
+
+        <h2>Step 1: Adding the Skill Tree Manager</h2>
+        <p>The <code>CrimsonSkillTreeManager</code> is an Actor Component. You should add it to the actor that will own the skills. </p>
+        <div class="note">
+            <p><strong>Multiplayer Note:</strong> For multiplayer games, it is highly recommended to add the manager to the <strong>PlayerState</strong>, as it persists across pawn deaths and respawns.</p>
+        </div>
+        <ol>
+            <li>Open your character Blueprint (e.g., <code>BP_MyPlayerCharacter</code>) or your Player State Blueprint.</li>
+            <li>In the Components tab, click <code>+ Add</code> and search for <code>CrimsonSkillTreeManager</code>. Select it to add it to the component list.</li>
+        </ol>
+
+        <h2>Step 2: Configuring the Manager</h2>
+        <p>With the <code>CrimsonSkillTreeManager</code> selected, look at its Details panel.</p>
+        <ol>
+            <li>
+                <strong>Configured Skill Trees:</strong> This is the most important setting.
+                <ul>
+                    <li>Click the <code>+</code> to add a new element to the array.</li>
+                    <li><strong>Skill Tree Asset:</strong> Assign the <code>DA_Player_CoreSkills</code> asset you created earlier.</li>
+                    <li>
+                        <strong>Skill Tree Type Tag:</strong> This is a unique identifier. You need to create a <strong>Gameplay Tag</strong> for it.
+                        <ol>
+                            <li>Go to <code>Edit</code> > <code>Project Settings</code> > <code>Project</code> > <code>Gameplay Tags</code>.</li>
+                            <li>Add a new tag, for example, <code>SkillTree.Player.Core</code>.</li>
+                            <li>Back in your character Blueprint, set this tag on the manager.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Save Game Settings:</strong> Configure the <code>Save Slot Name</code> and <code>User Index</code> if you want the system to automatically save and load player progress.</li>
+        </ol>
+
+        <h2>Step 3: Initializing the Skill Trees</h2>
+        <p>The manager needs to be told when to create the runtime instances of your skill trees. A great place to do this is in the <code>BeginPlay</code> event of the actor that has the manager.</p>
+        <ol>
+            <li>In the Event Graph of your character or Player State, find the <code>Event BeginPlay</code> node.</li>
+            <li>Drag a reference to your <code>CrimsonSkillTreeManager</code> component into the graph.</li>
+            <li>Drag off the manager reference and call the <strong>Initialize Skill Trees</strong> function.</li>
+        </ol>
+        <div class="image-placeholder"><p>Image: A Blueprint graph showing BeginPlay -> GetSkillTreeManager -> InitializeSkillTrees</p></div>
+    </div>
+</body>
+</html>

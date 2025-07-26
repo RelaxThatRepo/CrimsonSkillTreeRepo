@@ -1,5 +1,0 @@
-<map id="UCrimsonSkillTreeWidget_Node" name="UCrimsonSkillTreeWidget_Node">
-<area shape="rect" id="Node000001" title="The UMG widget representing a single node in the skill tree graph. This widget is reactive to its und..." alt="" coords="5,79,233,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="36,5,203,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,44,122,79,117,79,117,44"/>
-</map>

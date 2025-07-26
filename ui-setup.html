@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Setup - Crimson Skill Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; line-height: 1.7; padding: 2em; margin: 0 auto; background-color: #121212; color: #e0e0e0; }
+        .container { max-width: 900px; margin: 0 auto; background-color: #1e1e1e; padding: 2em 3em; border-radius: 12px; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+        h1 { color: #DC143C; font-weight: 700; }
+        h2 { color: #f5f5f5; font-weight: 400; border-bottom: 1px solid #5e0a1b; padding-bottom: 0.5em; margin-top: 2em; }
+        h3 { color: #e0e0e0; font-weight: 400; margin-top: 1.5em; }
+        p { color: #b3b3b3; }
+        a { color: #20c2c2; text-decoration: none; }
+        a:hover { color: #50e0e0; }
+        .breadcrumb { margin-bottom: 2em; font-size: 0.9em; }
+        .breadcrumb a { color: #DC143C; font-weight: bold; }
+        code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 0.5em; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #20c2c2; padding: 1em; margin: 1em 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
+        <h1>Displaying the Skill Tree (UI Setup)</h1>
+        <p>The UI is highly customizable. You will create your own widgets that inherit from the plugin's base classes to control the look and feel.</p>
+
+        <h2>Required Widget Blueprints</h2>
+        <p>You need to create four Blueprint Widgets:</p>
+        <ol>
+            <li><strong>Main Display Widget:</strong> Right-click in the Content Browser, create a Widget Blueprint, and in the parent class picker, search for and select <code>CrimsonSkillTreeWidget_Display</code>. Name it something like <code>WBP_SkillTree_Display</code>.</li>
+            <li><strong>Graph Widget:</strong> Create another Widget Blueprint, this time inheriting from <code>CrimsonSkillTreeWidget_Graph</code>. Name it <code>WBP_SkillTree_Graph</code>.</li>
+            <li><strong>Node Widget:</strong> Create a Widget Blueprint inheriting from <code>CrimsonSkillTreeWidget_Node</code>. Name it <code>WBP_SkillTree_Node</code>.</li>
+            <li><strong>Tooltip Widget:</strong> Create a Widget Blueprint inheriting from <code>CrimsonSkillTreeWidget_NodeTooltip</code>. Name it <code>WBP_SkillTree_Tooltip</code>.</li>
+        </ol>
+
+        <h2>Setting Up the Display Widget (<code>WBP_SkillTree_Display</code>)</h2>
+        <ol>
+            <li>Open <code>WBP_SkillTree_Display</code>. In the Designer tab, drag your <code>WBP_SkillTree_Graph</code> widget onto the canvas.</li>
+            <li>Select the <code>WBP_SkillTree_Graph</code> you just added. In its Details panel, under <code>Is Variable</code>, check the box and name it <strong>SkillTreeGraph</strong>. This binds it to the C++ property.</li>
+            <li>In the Class Defaults for <code>WBP_SkillTree_Display</code>, configure your <strong>Input Actions</strong> (<code>PanToggleAction</code>, <code>ZoomAction</code>, etc.). You will need to create these Input Action and Input Mapping Context assets in your project first.</li>
+        </ol>
+
+        <h2>Setting Up the Graph Widget (<code>WBP_SkillTree_Graph</code>)</h2>
+        <ol>
+            <li>Open <code>WBP_SkillTree_Graph</code>. In the Class Defaults, you can configure zoom speed and limits.</li>
+            <li><strong>Node Type To Widget Class Map:</strong> This is very important. It tells the graph which widget to create for which type of node.
+                <ul>
+                    <li>Add a new element to the map.</li>
+                    <li>For the <strong>Key</strong>, select the Gameplay Tag you want to associate with a visual style (e.g., <code>Skill.NodeType.Attack</code>).</li>
+                    <li>For the <strong>Value</strong>, select the <code>WBP_SkillTree_Node</code> class (or a child of it if you have multiple styles).</li>
+                </ul>
+            </li>
+            <li><strong>Line Drawing Policy:</strong> Choose how the connecting lines are drawn. <code>ElbowLine</code> and <code>StraightLine</code> are provided.</li>
+        </ol>
+
+        <h2>Designing the Node Widget (<code>WBP_SkillTree_Node</code>)</h2>
+        <p>This is where you design the look of each skill icon.</p>
+        <ol>
+            <li>Open <code>WBP_SkillTree_Node</code>. Design it however you like (e.g., with a Border, an Image for the icon, a TextBlock for the level).</li>
+            <li>In the Event Graph, you will find the event <strong>On Update Node Appearance</strong>. This event fires whenever the node's state changes (e.g., it's unlocked, or its level increases).</li>
+            <li>Use the data from this event (<code>CurrentNodeState</code>, <code>CurrentLevel</code>, etc.) to change the widget's appearance. For example, you could change the border color from grey to gold when the node becomes active.</li>
+        </ol>
+
+        <h2>Bringing It All Together</h2>
+        <ol>
+            <li>In your player's code (e.g., in the Player Controller or Character Blueprint), when you want to show the UI, create your <code>WBP_SkillTree_Display</code> widget and add it to the viewport.</li>
+            <li>Get a reference to the created widget and call the function <strong>Display Skill Tree By Type</strong>.</li>
+            <li>Pass in the <strong>SkillTreeTypeTag</strong> that you configured on the <code>CrimsonSkillTreeManager</code> (e.g., <code>SkillTree.Player.Core</code>).</li>
+        </ol>
+        <div class="note">
+            <p>The display widget will then find the correct skill tree from the manager and tell the graph widget to populate itself automatically.</p>
+        </div>
+    </div>
+</body>
+</html>

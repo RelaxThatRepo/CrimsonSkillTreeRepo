@@ -1,7 +1,0 @@
-<map id="Source/CrimsonSkillTreeEditor/Nodes/Slate/CrimsonSkillTree_ConnectionDrawingPolicy.h" name="Source/CrimsonSkillTreeEditor/Nodes/Slate/CrimsonSkillTree_ConnectionDrawingPolicy.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="46,5,263,60"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,123,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,62,88,100,84,96,125,58"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="146,108,345,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,58,225,96,221,100,181,62"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="UCrimsonSkillTreeWidget_Display" name="UCrimsonSkillTreeWidget_Display">
-<area shape="rect" id="Node000001" title="The main container widget for the skill tree UI. This widget manages input, holds the graph display,..." alt="" coords="17,79,204,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,216,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,44,113,79,108,79,108,44"/>
-</map>

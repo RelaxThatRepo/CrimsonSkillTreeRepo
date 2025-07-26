@@ -1,7 +1,0 @@
-<map id="Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree_AutoLayoutStrategy.h" name="Source/CrimsonSkillTreeEditor/Layout/CrimsonSkillTree_AutoLayoutStrategy.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="133,5,351,60"/>
-<area shape="rect" id="Node000002" href="$CrimsonSkillTree__ForceDirectedLayoutStrategy_8h.html" title=" " alt="" coords="5,108,233,163"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,71,153,110,150,106,198,67"/>
-<area shape="rect" id="Node000003" href="$CrimsonSkillTree__TreeLayoutStrategy_8h.html" title=" " alt="" coords="257,108,475,163"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="287,67,335,106,332,110,284,71"/>
-</map>

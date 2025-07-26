@@ -1,7 +1,0 @@
-<map id="Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree_NodeFactory.h" name="Source/CrimsonSkillTreeEditor/Factory/CrimsonSkillTree_NodeFactory.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="59,5,276,60"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,145,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,62,100,100,96,96,137,58"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="169,108,352,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,58,240,96,236,100,194,62"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="UCrimsonSkillTree_AutoLayoutStrategy" name="UCrimsonSkillTree_AutoLayoutStrategy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="128,37,351,77"/>
-<area shape="rect" id="Node000003" href="$classUCrimsonSkillTree__ForceDirectedLayoutStrategy.html" title=" " alt="" coords="399,5,637,45"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="364,40,398,36,399,42,365,46"/>
-<area shape="rect" id="Node000004" href="$classUCrimsonSkillTree__TreeLayoutStrategy.html" title=" " alt="" coords="409,69,627,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="365,69,409,74,408,79,364,74"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,45,80,70"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,55,128,55,128,60,93,60"/>
-</map>

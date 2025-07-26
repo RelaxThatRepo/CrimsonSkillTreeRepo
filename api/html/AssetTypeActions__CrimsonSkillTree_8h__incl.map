@@ -1,7 +1,0 @@
-<map id="Source/CrimsonSkillTreeEditor/Actions/AssetTypeActions_CrimsonSkillTree.h" name="Source/CrimsonSkillTreeEditor/Actions/AssetTypeActions_CrimsonSkillTree.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,261,60"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,123,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,62,87,100,84,96,123,58"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="147,108,333,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,58,220,96,217,100,177,62"/>
-</map>

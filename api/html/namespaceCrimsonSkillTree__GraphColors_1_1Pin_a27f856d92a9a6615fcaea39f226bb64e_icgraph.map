@@ -1,7 +1,0 @@
-<map id="CrimsonSkillTree_GraphColors::Pin::Default" name="CrimsonSkillTree_GraphColors::Pin::Default">
-<area shape="rect" id="Node000001" title=" " alt="" coords="512,5,731,45"/>
-<area shape="rect" id="Node000002" href="$classSCrimsonSkillTree__GraphPin.html#a15ea02d27ce2c8656f7f0aac4e2611cb" title=" " alt="" coords="259,5,464,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,28,464,28,464,23,499,23"/>
-<area shape="rect" id="Node000003" href="$classSCrimsonSkillTree__GraphPin.html#a31e50c19b838aa822bf81ad54de9f014" title=" " alt="" coords="5,5,211,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
-</map>

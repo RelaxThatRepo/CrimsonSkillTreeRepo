@@ -1,9 +1,0 @@
-<map id="FCrimsonSkillTree_AssetEditor" name="FCrimsonSkillTree_AssetEditor">
-<area shape="rect" id="Node000001" title=" " alt="" coords="116,79,336,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,151,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,34,203,76,201,81,113,39"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="175,5,277,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,44,229,79,223,79,223,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="302,5,393,31"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="317,40,247,81,245,76,314,35"/>
-</map>

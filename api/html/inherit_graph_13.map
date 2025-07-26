@@ -1,9 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,77,184,102"/>
-<area shape="rect" id="Node000001" href="$structFAssetSchemaAction__CrimsonSkillTree__NewEdge.html" title="Represents an action in the graph editor context menu for creating a new skill tree edge...." alt="" coords="253,5,459,45"/>
-<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="160,71,273,43,274,48,162,76"/>
-<area shape="rect" id="Node000002" href="$structFAssetSchemaAction__CrimsonSkillTree__NewNode.html" title="Represents an action in the graph editor context menu for creating a new skill tree node...." alt="" coords="252,69,460,109"/>
-<area shape="poly" id="edge7_Node000000_Node000002" title=" " alt="" coords="198,87,252,87,252,92,198,92"/>
-<area shape="rect" id="Node000003" href="$structFAssetSchemaAction__CrimsonSkillTree__NewVisualNode.html" title=" " alt="" coords="232,133,480,173"/>
-<area shape="poly" id="edge8_Node000000_Node000003" title=" " alt="" coords="162,103,274,131,273,136,160,108"/>
-</map>

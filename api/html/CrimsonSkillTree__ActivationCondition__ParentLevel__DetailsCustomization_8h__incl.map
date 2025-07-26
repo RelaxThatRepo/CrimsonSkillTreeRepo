@@ -1,9 +1,0 @@
-<map id="Source/CrimsonSkillTreeEditor/Editor/CrimsonSkillTree_ActivationCondition_ParentLevel_DetailsCustomization.h" name="Source/CrimsonSkillTreeEditor/Editor/CrimsonSkillTree_ActivationCondition_ParentLevel_DetailsCustomization.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="112,5,352,75"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,123,123,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,77,98,118,96,113,170,72"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="147,123,317,148"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,75,235,109,229,109,229,75"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="342,123,474,148"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="297,72,375,114,373,118,294,77"/>
-</map>
