@@ -20,16 +20,44 @@
         ol { padding-left: 20px; }
         li { margin-bottom: 0.5em; }
         ul { padding-left: 20px; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            border-top: 1px solid #333;
+            padding-top: 1.5em;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #DC143C;
+            border-color: #DC143C;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
-        <h1>Making Skills Do Things (Events & Conditions)</h1>
+        <h1>Making Skills Do Things (Costs | Events | Conditions)</h1>
         <p>A node is defined by its costs, conditions, and events. This section explains how to configure them.</p>
 
-        <h2>Defining Costs</h2>
-        <p>In a node's Details panel in the Skill Tree Editor, find the <code>Node Costs</code> array.</p>
+        <div class="note">
+            <p><strong>A Note on Flexibility:</strong> While the plug-in comes with some built in options, you can create your own Events, Conditions and even Costs. We will go over these topics in the advanced sections.</p>
+        </div>
+
+        <h2>Defining Costs (What Unlocking a Skill Node Costs)</h2>
+        <p>In a node's Details panel in the Skill Tree Editor, find the <code>Cost | Node Costs</code> array.</p>
         <ol>
             <li>Add a new element to the array by clicking the <code>+</code> icon.</li>
             <li>Expand the new element and its <code>Cost Definition</code>.</li>
@@ -40,24 +68,36 @@
                     <li><code>GameplayAttributeValue</code>: Uses an attribute from the Gameplay Ability System (e.g., <code>Attributes.SkillPoints</code>). You must select the attribute.</li>
                 </ul>
             </li>
-            <li><strong>Cost Curve:</strong> You can use a Curve asset to define how the cost changes per level. If you leave this empty, it will use the flat <code>CostAmount</code>.</li>
+            <li><strong>Cost Curve:</strong> You can use a CurveTable asset to define how the cost changes per level. If you leave this empty, it will use the flat <code>CostAmount</code>.</li>
+        <img src="assets/node-cost.png" alt="Node Cost" style="width: 50%;">
         </ol>
 
-        <h2>Creating Events (What Skills Do)</h2>
+        <h2>Creating Events (What Skill Nodes Do)</h2>
         <p>In a node's <code>On Level Changed Events</code> array, click <code>+</code> to add a new event. You can choose from several pre-made types:</p>
         <ul>
             <li><strong>Apply Gameplay Effect:</strong> The most common event. Applies a <code>GameplayEffect</code> to the character, perfect for passive stat boosts. You select the GE asset to apply.</li>
             <li><strong>Grant Gameplay Ability:</strong> Grants a <code>GameplayAbility</code> to the character.</li>
-            <li><strong>Modify Character Float Property:</strong> Directly changes a simple float variable on the Character or its Movement Component (e.g., <code>MaxWalkSpeed</code>).</li>
+            <li><strong>Modify Character Float Property:</strong> Directly changes a simple float variable on the PlayerState, Character or its Movement Component (e.g., <code>MaxWalkSpeed</code>).</li>
+            <img src="assets/node-events.png" alt="Node Events" style="width: 50%;">
         </ul>
 
-        <h2>Creating Conditions (How to Unlock Skills)</h2>
+        <h2>Creating Conditions (How to Unlock Skill Nodes)</h2>
         <p>In a node's <code>Activation Conditions</code> array, click <code>+</code> to add a new rule.</p>
         <ul>
-            <li><strong>Parent Level Condition:</strong> Requires a specific parent node to be at a certain level. This is how you create dependencies in the tree.</li>
-            <li><strong>Resource Points Spent Condition:</strong> Requires the player to have spent a certain number of points of a specific resource type across all their trees.</li>
+            <li><strong>Parent Level Condition:</strong> Requires a specific parent node to be at a certain level. This is how you create dependencies in the tree. The parent <strong>MUST</strong> be at a higher "level" in the tree structure.</li>
+            <li><strong>Resource Points Spent Condition:</strong> Requires the player to have spent a certain number of points of a specific resource type across all their trees. This variable is handle per <code>UCrimsonSkillTreeManager</code>.</li>
             <li><strong>Attribute Requirement:</strong> Requires a Gameplay Attribute to be greater than, less than, or equal to a certain value.</li>
+            <img src="assets/node-conditions.png" alt="Node Events" style="width: 75%;">
+            
+            <div class="note">
+                <p>You can make some robust conditions using the built in AND/OR condition types which allow you to require multiple conditions to be true, or just one.</p>
+            </div>
         </ul>
+
+        <div class="navigation-buttons">
+            <a href="character-setup.html" class="nav-button">← Character Setup</a>
+            <a href="ui-setup.html" class="nav-button">UI Setup →</a>
+        </div>
     </div>
 </body>
 </html>

@@ -22,32 +22,136 @@
         .image-placeholder { background-color: #333; border: 1px dashed #555; text-align: center; padding: 4em 2em; border-radius: 8px; margin: 1em 0; }
         .image-placeholder p { margin: 0; color: #888; }
         .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            border-top: 1px solid #333;
+            padding-top: 1.5em;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #DC143C;
+            border-color: #DC143C;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
         <h1>Setting Up a Character</h1>
-        <p>This guide explains how to add the Skill Tree Manager to an actor and configure it to use your skill trees.</p>
-
-        <h2>Step 1: Adding the Skill Tree Manager</h2>
-        <p>The <code>CrimsonSkillTreeManager</code> is an Actor Component. You should add it to the actor that will own the skills. </p>
+        <p>This guide explains how to add the Skill Tree Manager to an actor and configure it to use your skill trees. The <code>CrimsonSkillTreeManager</code> is an Actor Component that should be added to the actor that will own the skills.</p>
         <div class="note">
             <p><strong>Multiplayer Note:</strong> For multiplayer games, it is highly recommended to add the manager to the <strong>PlayerState</strong>, as it persists across pawn deaths and respawns.</p>
         </div>
+        <div class="note">
+            <p><strong>A Note on Flexibility:</strong> While these examples focus on the Player State and Character, the <code>CrimsonSkillTreeManager</code> can be added to <strong>any</strong> actor. This allows you to implement progression systems for AI enemies, upgradable turrets, or any other object in your world.</p>
+        </div>
+
+        <h2>Step 1: Adding the Skill Tree Manager</h2>
+        <p>You can add the component in several ways depending on your project's structure.</p>
+
+        <h3>Method 1: Using the Blueprint Editor</h3>
         <ol>
             <li>Open your character Blueprint (e.g., <code>BP_MyPlayerCharacter</code>) or your Player State Blueprint.</li>
             <li>In the Components tab, click <code>+ Add</code> and search for <code>CrimsonSkillTreeManager</code>. Select it to add it to the component list.</li>
         </ol>
 
-        <h2>Step 2: Configuring the Manager</h2>
-        <p>With the <code>CrimsonSkillTreeManager</code> selected, look at its Details panel.</p>
+        <h3>Method 2: Using C++</h3>
+        <p>For C++ projects, you can add the component directly in your actor's header and source files.</p>
+        <ol>
+            <li><strong>In your Actor's header file (.h):</strong> Forward declare the component and declare it.
+                <pre><code>class UCrimsonSkillTreeManager;
+
+// ... inside your class definition ...
+UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Skill Tree")
+TObjectPtr&lt;UCrimsonSkillTreeManager&gt; SkillTreeManager;</code></pre>
+            </li>
+            <li><strong>In your Actor's source file (.cpp):</strong> Create the component in the constructor.
+                <pre><code>#include "MyCharacterClass.h"
+#include "CrimsonSkillTree/Public/CrimsonSkillTreeManager.h"
+
+AMyCharacterClass::AMyCharacterClass()
+{
+    // ... other code ...
+    SkillTreeManager = CreateDefaultSubobject<UCrimsonSkillTreeManager>(TEXT("SkillTreeManager"));
+}</code></pre>
+            </li>
+        </ol>
+        
+        <h3>Method 3: Using a Game Feature Action</h3>
+        <div class="note">
+            <p>This method will be different depending on how your project has Game Features set up. We will use the Lyra Starter Game as the template for these instructions.</p>
+        </div>
+        <p>This is an advanced method ideal for modular, encapsulated content using the Game Features framework.</p>
+        <ol>
+            <li>In your Experience Definition, got to Actions, add a new array element and select <strong>Add Crimson Skill Tree</strong>.</li>
+            <li>Select the actor class of type <strong>ACharacter or APlayerState</strong>.</li>
+            <li>Set the component as <strong>Client and Server</strong>.</li>
+            <img src="assets/experience-definition-add.png" alt="Enable Plug-in" style="width: 100%;">
+            <li>In your Experience Actions Set, got to Actions, add a new array element and select <strong>Add Crimson Skill Tree</strong>.</li>
+            <li>Under <strong>Skill Tree List</strong>, add an new element.</li>
+            <li><strong>The ActorClass MUST match the one you used in your Experience Definition</strong>.</li>
+            <img src="assets/experience-action-set-add.png" alt="Enable Plug-in" style="width: 100%;">
+        </ol>
+
+        <h2>Step 2: Implementing the Interface</h2>
+        <p>To provide a standardized way of accessing the skill tree system, you should implement the <code>ICrimsonSkillTreeInterface</code> on the same actor that has the manager component (the Character or Player State). This allows other parts of your game to easily get the correct references without casting.</p>
+
+        <h3>Method 1: Using the Blueprint Editor</h3>
+        <ol>
+            <li>Open the Blueprint that contains your Skill Tree Manager component.</li>
+            <li>At the top of the editor, click on <strong>Class Settings</strong>.</li>
+            <li>In the Details panel on the right, find the "Interfaces" section. Click the "Add" button.</li>
+            <li>Search for and select <strong>CrimsonSkillTreeInterface</strong> from the list.</li>
+            <li>After adding it, the interface's functions (e.g., `GetSkillTreeManager`) will appear in the "My Blueprint" panel. Double-click on a function to implement it. For `GetSkillTreeManager`, simply drag in your manager component and connect it to the return node.</li>
+        </ol>
+
+        <h3>Method 2: Using C++</h3>
+        <ol>
+             <li><strong>In your Actor's header file (.h):</strong> Include the interface header and add it to your class's inheritance list.
+                <pre><code>#include "CrimsonSkillTree/Public/ICrimsonSkillTreeInterface.h"
+
+class YOURPROJECT_API AMyCharacterClass : public ACharacter, public ICrimsonSkillTreeInterface
+{
+    // ...
+};</code></pre>
+            </li>
+            <li>You must then provide public overrides for the interface functions.
+                <pre><code>// In the public section of your header file (.h)
+virtual class UCrimsonSkillTreeManager* GetSkillTreeManagerComponent_Implementation() const override;
+virtual class AActor* GetSkillTreeOwner_Implementation() const override;
+virtual class ACharacter* GetSkillTreeOwnerCharacter_Implementation() const override;
+</code></pre>
+            </li>
+        </ol>
+
+        <div class="note">
+            <p><strong>A Note on Flexibility:</strong> The interface provides a powerful separation between where skill tree data is managed and which actor receives the skill effects. For instance, you can place the <code>UCrimsonSkillTreeManager</code> on the Player State for persistence, while the interface directs effects like stat boosts to the currently possessed Character.</p>
+            <p>This extensibility also allows skills to affect other objects. By creating a custom <code>NodeEvent</code>, you could use the interface to find the character's equipped weapon and apply a stat modification directly to it. This would allow a passive skill to grant a "+10% Fire Damage" bonus to a sword actor whenever it's equipped.</p>
+            <p>As always, you are encouraged to add more interface functions for your specific game needs!</p>
+        
+        </div>
+
+        <h2>Step 3: Configuring the Manager</h2>
+        <p>With the <code>CrimsonSkillTreeManager</code> added, select it in the Components tab (or open its defaults in the GFA) to see its Details panel.</p>
         <ol>
             <li>
                 <strong>Configured Skill Trees:</strong> This is the most important setting.
                 <ul>
                     <li>Click the <code>+</code> to add a new element to the array.</li>
-                    <li><strong>Skill Tree Asset:</strong> Assign the <code>DA_Player_CoreSkills</code> asset you created earlier.</li>
+                    <li><strong>Skill Tree Asset:</strong> Assign the <code>CST_Player_CoreSkills</code> asset you created earlier.</li>
                     <li>
                         <strong>Skill Tree Type Tag:</strong> This is a unique identifier. You need to create a <strong>Gameplay Tag</strong> for it.
                         <ol>
@@ -58,17 +162,20 @@
                     </li>
                 </ul>
             </li>
+            <div class="note">
+                <p><strong>Important:</strong> Each <code>Skill Tree Type Tag</code> must be unique on a single Skill Tree Manager. The manager will only initialize one tree per tag, so you cannot have duplicate tags on the same component.</p>
+            </div>
             <li><strong>Save Game Settings:</strong> Configure the <code>Save Slot Name</code> and <code>User Index</code> if you want the system to automatically save and load player progress.</li>
         </ol>
+        
+        <div class="note">
+        <p>The manager handles initialization in <code>void UCrimsonSkillTreeManager::BeginPlay()</code></p>
+        </div>
 
-        <h2>Step 3: Initializing the Skill Trees</h2>
-        <p>The manager needs to be told when to create the runtime instances of your skill trees. A great place to do this is in the <code>BeginPlay</code> event of the actor that has the manager.</p>
-        <ol>
-            <li>In the Event Graph of your character or Player State, find the <code>Event BeginPlay</code> node.</li>
-            <li>Drag a reference to your <code>CrimsonSkillTreeManager</code> component into the graph.</li>
-            <li>Drag off the manager reference and call the <strong>Initialize Skill Trees</strong> function.</li>
-        </ol>
-        <div class="image-placeholder"><p>Image: A Blueprint graph showing BeginPlay -> GetSkillTreeManager -> InitializeSkillTrees</p></div>
+        <div class="navigation-buttons">
+            <a href="creating-a-skill-tree.html" class="nav-button">← Creating a Skill Tree</a>
+            <a href="events-and-conditions.html" class="nav-button">Costs, Events & Conditons →</a>
+        </div>
     </div>
 </body>
 </html>
