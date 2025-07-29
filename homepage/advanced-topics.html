@@ -18,6 +18,30 @@
         code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
         ul { padding-left: 20px; }
         li { margin-bottom: 0.5em; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            border-top: 1px solid #333;
+            padding-top: 1.5em;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #DC143C;
+            border-color: #DC143C;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -27,23 +51,54 @@
         <p>This section covers more complex features of the plugin, including persistence, networking, and custom C++ extensions.</p>
 
         <h2>Save & Load</h2>
-        <p>The system includes built-in support for saving and loading. On the <code>CrimsonSkillTreeManager</code> component, ensure <code>bLoadAllSkillTreesPostInitialize</code> is checked. The manager will then automatically handle loading data from the specified <code>SaveSlotName</code> after initialization and will save data whenever a node's state changes.</p>
+        <p>The system includes built-in support for saving and loading. On the <code>CrimsonSkillTreeManager</code> component, ensure <code>bSaveSkillTreeAfterEveryChange</code> and <code>bLoadAllSkillTreesPostInitialize</code> are checked. The manager will then automatically handle loading data from the specified <code>SaveSlotName</code> after initialization and will save data whenever a node's state changes.</p>
+        <img src="assets/save-load.png" alt="Add Skill Tree Display" style="width: 50%;">
 
         <h2>Multiplayer Support</h2>
         <p>The plugin is designed for multiplayer from the ground up.</p>
         <ul>
-            <li>All state changes (activating nodes, leveling up) are handled authoritatively on the server by the <code>CrimsonSkillTreeManager</code>.</li>
-            <li>The state of unlocked nodes is replicated to clients, so everyone has the correct view of a player's skills.</li>
-            <li>UI actions, like clicking a button to unlock a skill, use RPCs (<code>Server_RequestSkillNodeAction</code>) to securely ask the server to perform the action. The server then validates the request (e.g., checks if the player has enough points) before applying the change and replicating it back to all clients.</li>
+            <li>All state changes are handled authoritatively on the server by the <code>CrimsonSkillTreeManager</code>.</li>
+            <li>The state of unlocked nodes is replicated to clients.</li>
+            <li>UI actions use RPCs (<code>Server_RequestSkillNodeAction</code>) to securely ask the server to perform the action. The server validates the request before applying the change and replicating it.</li>
         </ul>
 
+        <h2>Extending with Blueprint</h2>
+        <p>Many base classes in the plugin are marked as <strong>Blueprintable</strong>, meaning you can easily create a Blueprint-based child class to add your own logic without writing any C++.</p>
+        
+        <h3>Example: Custom Tooltip Description</h3>
+        <p>Imagine you have a complex condition and want to provide a more descriptive, dynamically generated tooltip for it in the UI. You can do this by overriding a function in a Blueprint child class.</p>
+        <ol>
+            <li>In the Content Browser, create a new <strong>Blueprint Class</strong>.</li>
+            <li>In the "Pick Parent Class" dialog, search for and select <code>CrimsonSkillTree_ActivationCondition_AttributeRequirement</code>. Name your new Blueprint something like <code>BP_MyCustomAttributeRequirementCondition</code>.</li>
+            <li>Open the new Blueprint. In the "My Blueprint" panel on the left, hover over the "Functions" category and click the "Override" dropdown.</li>
+            <li>Select <strong>GetTooltipDescription</strong> from the list.</li>
+            <li>A new function graph will open. Here, you can add any logic you need and connect the final `FText` to the `Return Node`.</li>
+            <li>Now, when you add this condition (`BP_MyCustomCondition`) to a skill node, the UI will automatically call your new overridden function to get the tooltip text.</li>
+        </ol>
+        <div class="note">
+            <p><strong>You can also just modify the C++ code itself!</p>
+            <p><strong>The default implementations are generic due to project specific requirements.</p>
+        </div>
+        
+
         <h2>Extending with C++</h2>
-        <p>For advanced users, the entire system is extensible through C++. You can create new child classes in C++ from:</p>
+        <p>For advanced users, the entire system is extensible through C++. You can create new child classes in C++ from pretty much everything!</p>
+        <p>For example:</p>
+
         <ul>
             <li><code>UCrimsonSkillTree_NodeEventBase</code> to create entirely new types of skill effects.</li>
             <li><code>UCrimsonSkillTree_ActivationConditionBase</code> to create new kinds of unlocking rules.</li>
             <li><code>UCrimsonSkillTreeWidget_LineDrawingPolicyBase</code> to create new visual styles for the connection lines.</li>
         </ul>
+        
+        <div class="note">
+            <p>You can even override the base <code>UCrimsonSkillTreeManager</code> if you need to change any logic depending on your project!</p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="ui-setup.html" class="nav-button">← UI Setup</a>
+            <a href="index.html" class="nav-button">Back to Main Menu →</a>
+        </div>
     </div>
 </body>
 </html>

@@ -19,60 +19,82 @@
         code { background-color: #2c2c2c; padding: 0.2em 0.4em; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
         ol { padding-left: 20px; }
         li { margin-bottom: 0.5em; }
-        .note { background-color: #2c2c2c; border-left: 4px solid #20c2c2; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            border-top: 1px solid #333;
+            padding-top: 1.5em;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #DC143C;
+            border-color: #DC143C;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <p class="breadcrumb"><a href="index.html">← Back to Home</a></p>
         <h1>Displaying the Skill Tree (UI Setup)</h1>
-        <p>The UI is highly customizable. You will create your own widgets that inherit from the plugin's base classes to control the look and feel.</p>
+        <p>The plugin comes with a complete, pre-made UI that is ready to use. No complex setup is necessary to get it working; you just need to display it on screen.</p>
 
-        <h2>Required Widget Blueprints</h2>
-        <p>You need to create four Blueprint Widgets:</p>
+        <h2>Displaying the Default Skill Tree UI</h2>
+        <p>Follow these steps to show the skill tree in your game.</p>
         <ol>
-            <li><strong>Main Display Widget:</strong> Right-click in the Content Browser, create a Widget Blueprint, and in the parent class picker, search for and select <code>CrimsonSkillTreeWidget_Display</code>. Name it something like <code>WBP_SkillTree_Display</code>.</li>
-            <li><strong>Graph Widget:</strong> Create another Widget Blueprint, this time inheriting from <code>CrimsonSkillTreeWidget_Graph</code>. Name it <code>WBP_SkillTree_Graph</code>.</li>
-            <li><strong>Node Widget:</strong> Create a Widget Blueprint inheriting from <code>CrimsonSkillTreeWidget_Node</code>. Name it <code>WBP_SkillTree_Node</code>.</li>
-            <li><strong>Tooltip Widget:</strong> Create a Widget Blueprint inheriting from <code>CrimsonSkillTreeWidget_NodeTooltip</code>. Name it <code>WBP_SkillTree_Tooltip</code>.</li>
-        </ol>
-
-        <h2>Setting Up the Display Widget (<code>WBP_SkillTree_Display</code>)</h2>
-        <ol>
-            <li>Open <code>WBP_SkillTree_Display</code>. In the Designer tab, drag your <code>WBP_SkillTree_Graph</code> widget onto the canvas.</li>
-            <li>Select the <code>WBP_SkillTree_Graph</code> you just added. In its Details panel, under <code>Is Variable</code>, check the box and name it <strong>SkillTreeGraph</strong>. This binds it to the C++ property.</li>
-            <li>In the Class Defaults for <code>WBP_SkillTree_Display</code>, configure your <strong>Input Actions</strong> (<code>PanToggleAction</code>, <code>ZoomAction</code>, etc.). You will need to create these Input Action and Input Mapping Context assets in your project first.</li>
-        </ol>
-
-        <h2>Setting Up the Graph Widget (<code>WBP_SkillTree_Graph</code>)</h2>
-        <ol>
-            <li>Open <code>WBP_SkillTree_Graph</code>. In the Class Defaults, you can configure zoom speed and limits.</li>
-            <li><strong>Node Type To Widget Class Map:</strong> This is very important. It tells the graph which widget to create for which type of node.
-                <ul>
-                    <li>Add a new element to the map.</li>
-                    <li>For the <strong>Key</strong>, select the Gameplay Tag you want to associate with a visual style (e.g., <code>Skill.NodeType.Attack</code>).</li>
-                    <li>For the <strong>Value</strong>, select the <code>WBP_SkillTree_Node</code> class (or a child of it if you have multiple styles).</li>
-                </ul>
-            </li>
-            <li><strong>Line Drawing Policy:</strong> Choose how the connecting lines are drawn. <code>ElbowLine</code> and <code>StraightLine</code> are provided.</li>
-        </ol>
-
-        <h2>Designing the Node Widget (<code>WBP_SkillTree_Node</code>)</h2>
-        <p>This is where you design the look of each skill icon.</p>
-        <ol>
-            <li>Open <code>WBP_SkillTree_Node</code>. Design it however you like (e.g., with a Border, an Image for the icon, a TextBlock for the level).</li>
-            <li>In the Event Graph, you will find the event <strong>On Update Node Appearance</strong>. This event fires whenever the node's state changes (e.g., it's unlocked, or its level increases).</li>
-            <li>Use the data from this event (<code>CurrentNodeState</code>, <code>CurrentLevel</code>, etc.) to change the widget's appearance. For example, you could change the border color from grey to gold when the node becomes active.</li>
-        </ol>
-
-        <h2>Bringing It All Together</h2>
-        <ol>
-            <li>In your player's code (e.g., in the Player Controller or Character Blueprint), when you want to show the UI, create your <code>WBP_SkillTree_Display</code> widget and add it to the viewport.</li>
-            <li>Get a reference to the created widget and call the function <strong>Display Skill Tree By Type</strong>.</li>
-            <li>Pass in the <strong>SkillTreeTypeTag</strong> that you configured on the <code>CrimsonSkillTreeManager</code> (e.g., <code>SkillTree.Player.Core</code>).</li>
+            <li>In your player's code (e.g., in the Player Controller or Character Blueprint), find an appropriate event to open the UI, such as an input press event.</li>
+            <li>From that event, use the <strong>Create Widget</strong> node to create the main display widget. The class to select is <code>W_SkillTree_Display</code>, which is included with the plugin.</li>
+            <li>Take the return value from Create Widget and call <strong>Set Skill Tree Type Tag</strong> and pass it the tag of the skill tree that you want to show. For the <strong>Skill Tree Type Tag</strong> input, pass in the tag you configured on the <code>CrimsonSkillTreeManager</code> (e.g., <code>SkillTree.Player.Core</code>).</li>
+            <div class="note">
+                <p>Here you can see an example of how its added in the Lyra Starter Sample project.</p>
+                <img src="assets/add-skilltree-display.png" alt="Add Skill Tree Display" style="width: 75%;">
+                <p><strong>Make sure you set the skill tree type tag before the widget is pushed onto the screen. This must be set before <code>OnActivated</code> is called on the <code>CommonActivatableWidget</code></strong></p>
+            </div>
+            <li>Take the return value from Create Widget and call <strong>Add to Viewport</strong>.</li>
         </ol>
         <div class="note">
-            <p>The display widget will then find the correct skill tree from the manager and tell the graph widget to populate itself automatically.</p>
+            <p>That's it! The display widget will automatically find the correct skill tree from the manager and populate itself with the nodes, connections, and data you've created.</p>
+        </div>
+
+        <h2>Customizing the UI (Optional)</h2>
+        <p>If you wish to change the appearance or behavior of the UI, you can create child classes of the provided widgets and override their logic. <strong>You should not modify the plugin's widgets directly.</strong></p>
+
+        <div class="note">
+            <p><strong>You should see the provided <code>W_SkillTree_Node</code>,<code>W_SkillTree_Display</code>, <code>W_SkillTree_Graph</code> and other blueprints for an example of how they should be set up!</strong></p>
+        </div>
+
+        <h3>Example: Creating a Custom Node Appearance</h3>
+        <p>The most common customization is changing how a skill node looks. Here’s how you would do that:</p>
+        <ol>
+            <li>Right-click in the Content Browser and create a new <strong>Widget Blueprint</strong>.</li>
+            <li>In the "Pick Parent Class" dialog, search for and select <code>UCrimsonSkillTreeWidget_Node</code>. This will be the parent of your new custom node. Name it something like <code>WBP_MyNode</code>.</li>
+            <li>Open your <code>WBP_MyNode</code> and design it however you like (e.g., add new borders, images, or text blocks).</li>
+            <li>In the Event Graph, you can override the <strong>On Update Node Appearance</strong> event. This event fires when the node's state changes. You can use the data from this event to change your widget's appearance (e.g., changing a border color from grey to gold when the node becomes active).</li>
+            <li>
+                <strong>Telling the graph to use your new node:</strong>
+                <ul>
+                    <li>Open the main skill tree asset (e.g. <code>CST_Player_CoreSkills</code>).</li>
+                    <li>In its Details panel, find the <strong>Graph Config -> Node Type to Widget Class Map</strong> setting.</li>
+                    <li>Here, you can map a Gameplay Tag to your new <code>WBP_MyNode</code> widget. When the graph is built, any node with that tag will use your custom widget instead of the default.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="navigation-buttons">
+            <a href="events-and-conditions.html" class="nav-button">← Costs, Events & Conditions</a>
+            <a href="advanced-topics.html" class="nav-button">Advanced Topics →</a>
         </div>
     </div>
 </body>

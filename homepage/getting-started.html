@@ -19,6 +19,30 @@
         ol { padding-left: 20px; }
         li { margin-bottom: 0.5em; }
         ul { padding-left: 20px; }
+        .note { background-color: #2c2c2c; border-left: 4px solid #DC143C; padding: 1em; margin: 1em 0; border-radius: 4px; }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3em;
+            border-top: 1px solid #333;
+            padding-top: 1.5em;
+        }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: #DC143C;
+            border-color: #DC143C;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -28,24 +52,41 @@
         <p>This guide covers the initial setup of the plugin and the fundamental concepts you'll need to understand before you start building your skill trees.</p>
 
         <h2>Plugin Installation</h2>
+        <p>There are two ways to install the plugin into your project. Using the Epic Games Launcher is the recommended method.</p>
+
+        <h3>Method 1: From the Epic Games Launcher (Recommended)</h3>
+        <ol>
+            <li><strong>Acquire the Plugin:</strong> Purchase or download the plugin from the Unreal Engine Marketplace.</li>
+            <li><strong>Install to Project:</strong> Open the Epic Games Launcher. Navigate to your Library and find the plugin in your "Vault". Click the "Install to Project" button and select the project you want to add it to.</li>
+            <li><strong>Enable the Plugin:</strong> Open your Unreal Engine project. In the editor, go to <code>Edit</code> > <code>Plugins</code>. Search for "Crimson Skill Tree", make sure the "Enabled" box is checked, and restart the editor if prompted.</li>
+            <img src="assets/enable-plug-in.png" alt="Enable Plug-in" style="width: 100%;">
+        </ol>
+
+        <h3>Method 2: Manual Installation (From a .zip file)</h3>
+        <p>Use this method if you have the plugin as a standalone folder (e.g., from GitHub or a direct download).</p>
         <ol>
             <li><strong>Locate Your Project:</strong> Find your Unreal Engine project folder in your computer's file explorer.</li>
             <li><strong>Create a <code>Plugins</code> Folder:</strong> If it doesn't already exist, create a new folder named <code>Plugins</code> inside your main project folder.</li>
             <li><strong>Copy the Plugin:</strong> Copy the entire <code>CrimsonSkillTree</code> plugin folder into this new <code>Plugins</code> folder.</li>
             <li><strong>Launch the Editor:</strong> Open your Unreal Engine project. The editor may ask if you want to build the new plugin module. Click "Yes".</li>
-            <li><strong>Enable the Plugin:</strong> In the editor, go to <code>Edit</code> > <code>Plugins</code>. Search for "Crimson Skill Tree", make sure the "Enabled" box is checked, and restart the editor if prompted.</li>
+            <li><strong>Verify Installation:</strong> In the editor, go to <code>Edit</code> > <code>Plugins</code>. Search for "Crimson Skill Tree", make sure the "Enabled" box is checked, and restart the editor if prompted.</li>
         </ol>
 
         <h2>Core Concepts</h2>
         <p>It's helpful to understand the main pieces of the system:</p>
         <ul>
             <li><strong>Skill Tree Asset:</strong> This is the blueprint of your skill tree. It's a data asset where you'll design the layout of your nodes and their connections.</li>
-            <li><strong>Skill Tree Manager:</strong> This is the "brain". It's a component you add to your character (or Player State) that manages all their skill trees, keeps track of which nodes are unlocked, and handles spending points.</li>
+            <li><strong>Skill Tree Manager:</strong> This is the "brain". It's a component you add to your character (or Player State) or ANY Actor that manages all their skill trees, keeps track of which nodes are unlocked, and handles spending points.</li>
             <li><strong>Nodes:</strong> These are the individual skills or perks in your tree. Each node has a level, costs, conditions to unlock, and events that happen when you level it up.</li>
             <li><strong>Conditions:</strong> These are the rules for unlocking a node. For example, "Requires parent node to be level 1" or "Requires 5 total skill points to be spent".</li>
             <li><strong>Events:</strong> These are the actions that happen when a node is activated or its level changes. Examples include granting an ability, applying a passive stat boost, or modifying a character property.</li>
             <li><strong>Widgets:</strong> These are the visual elements (UI) that the player interacts with. The system is designed to be highly customizable, so you'll create your own widgets that inherit from the plugin's base classes.</li>
         </ul>
+
+        <div class="navigation-buttons">
+            <a href="index.html" class="nav-button">← Main Menu</a>
+            <a href="creating-a-skill-tree.html" class="nav-button">Creating a Skill Tree →</a>
+        </div>
     </div>
 </body>
 </html>
