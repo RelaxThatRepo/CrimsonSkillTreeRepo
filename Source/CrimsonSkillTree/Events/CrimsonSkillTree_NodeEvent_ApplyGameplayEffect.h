@@ -126,7 +126,7 @@ public:
 	float SetByCallerMagnitude;
 
 	/** @brief The primary gameplay attribute this effect modifies, used for generating a dynamic tooltip description. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Gameplay Effect|Description", meta = (Tooltip = "The primary attribute this effect modifies, for tooltip generation."))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Gameplay Effect", meta = (Tooltip = "The primary attribute this effect modifies, for tooltip generation."))
 	FGameplayAttribute TargetAttributeForDescription;
 
 protected:

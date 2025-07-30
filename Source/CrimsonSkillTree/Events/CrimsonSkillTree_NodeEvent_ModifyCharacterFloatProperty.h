@@ -5,7 +5,6 @@
 #include "CrimsonSkillTree_NodeEvent_ModifyCharacterFloatProperty.generated.h"
 
 class ACharacter;
-class UCurveFloat;
 
 /**
  * @enum EPropertyOwnerScope
@@ -102,6 +101,10 @@ private:
 	 */
 	UObject* GetTargetObject() const;
 
+	/** Function to provide the dropdown list for ValueRowName */
+	UFUNCTION()
+	TArray<FString> GetAvailableRowNames() const;
+	
 public:
 	/****************************************************************************************************************
 	* Properties                                                           *
@@ -113,12 +116,19 @@ public:
 	/** @brief The name of the float UPROPERTY to modify. Must match the property name in the target class exactly. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
 	FName TargetPropertyName;
-
-	/** @brief A curve that dictates the total value to be applied at each level (X-axis: Level, Y-axis: Total Value). */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
-	TObjectPtr<UCurveFloat> ValueCurve;
-
+	
 	/** @brief The user-friendly name of the property being modified, for use in descriptions. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Property Modification")
 	FText PropertyUserFacingName;
+
+	/** @brief The Curve Table that holds the cost curve data. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification")
+	TObjectPtr<UCurveTable> ValueTable;
+
+	/** @brief The name of the curve (row) within the CostTable to use. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Property Modification", meta = (
+		EditCondition = "ValueTable != nullptr", 
+		GetOptions = "GetAvailableRowNames" // Tells the editor to call this function for dropdown options
+	))
+	FName ValueRowName;
 };

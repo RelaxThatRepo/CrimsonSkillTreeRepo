@@ -203,6 +203,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Node|State Changes")
 	virtual bool DeactivateNode(bool bIsForceDeactivation = false);
 	UFUNCTION(BlueprintCallable, Category = "Node|State Changes")
+	virtual void ShutdownNode();
+	UFUNCTION(BlueprintCallable, Category = "Node|State Changes")
 	virtual bool IncrementLevel();
 	UFUNCTION(BlueprintCallable, Category = "Node|State Changes")
 	virtual bool DecrementLevel();

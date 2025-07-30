@@ -2,10 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "CommonUserWidget.h"
+#include "InputMappingContext.h"
 #include "CrimsonSkillTree/Nodes/CrimsonSkillTree_Node.h"
 #include "CrimsonSkillTree/CrimsonSkillTreeManager.h"
 #include "CrimsonSkillTreeWidget_Node.generated.h"
 
+class UEnhancedInputLocalPlayerSubsystem;
 class UCrimsonSkillTreeWidget_Display;
 class UCrimsonSkillTreeWidget_Graph;
 class UCrimsonSkillTreeWidget_NodeTooltip;
@@ -96,6 +98,8 @@ protected:
 	 */
 	virtual void NativeOnMouseLeave(const FPointerEvent& InMouseEvent) override;
 
+	virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
+	virtual FReply NativeOnPreviewKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent) override;
 	/**
 	 * @brief Called when the widget is being destroyed.
 	 */
@@ -114,11 +118,21 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Skill Tree Node Widget", meta = (DisplayName = "On Update Node Appearance"))
 	void UpdateNodeAppearance(ENodeState CurrentNodeState, ENodeState PreviousNodeState, int32 InCurrentLevel, int32 InMaxLevel, bool bInIsRootNode);
 
+private:
+	bool IsKeyMappedToAction(const FKey& Key, const UInputAction* Action,
+	                         const UInputMappingContext* MappingContext) const;
+
 protected:
 	/****************************************************************************************************************
 	* Properties                                                           *
 	****************************************************************************************************************/
 
+	// ~Input Properties
+	// =============================================================================================================
+	/** @brief Reference to the parent display widget for accessing input actions. */
+	UPROPERTY(Transient)
+	TWeakObjectPtr<UCrimsonSkillTreeWidget_Display> ParentDisplayWidget;
+	
 	// ~UMG Widget Bindings
 	// =============================================================================================================
 	/** @brief Optional binding for an image widget representing the node's icon. */

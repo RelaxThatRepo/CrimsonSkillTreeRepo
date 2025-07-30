@@ -21,7 +21,7 @@ public:
 	virtual void CreatePinWidgets() override;
 	virtual void AddPin(const TSharedRef<SGraphPin>& PinToAdd) override;
 	virtual bool IsNameReadOnly() const override;
-	virtual void MoveTo(const FVector2D& NewPosition, FNodeSet& NodeFilter, bool bMarkDirty = true) override;
+	virtual void MoveTo(const FVector2f& NewPosition, FNodeSet& NodeFilter, bool bMarkDirty = true) override;
 	void OnNameTextCommited(const FText& InText, ETextCommit::Type CommitInfo);
 
 	virtual FSlateColor GetBorderBackgroundColor() const;

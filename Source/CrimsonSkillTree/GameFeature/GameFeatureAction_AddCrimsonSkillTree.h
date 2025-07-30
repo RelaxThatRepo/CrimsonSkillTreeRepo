@@ -31,9 +31,12 @@ struct FGameFeatureCrimsonSkillTreeEntry
 
 	//~ Save Game Settings
 	// =============================================================================================================
+	UPROPERTY(EditAnywhere, Category = "Save Game")
+	bool bSaveSkillTreeAfterEveryChange = false;
+
 	/** @brief If true, automatically call LoadAllSkillTreeStates() after skill trees are initialized. */
 	UPROPERTY(EditAnywhere, Category = "Save Game")
-	bool bLoadAllSkillTreesPostInitialize = true;
+	bool bLoadAllSkillTreesPostInitialize = false;
 
 	/** @brief The name of the save game slot to use for skill tree data. */
 	UPROPERTY(EditAnywhere, Category = "Save Game")

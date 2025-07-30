@@ -4,6 +4,7 @@
 #include "Components/ActorComponent.h"
 #include "CrimsonSkillTree.h"
 #include "GameplayTagContainer.h"
+#include "ICrimsonSkillTreeInterface.h"
 #include "Nodes/Cost/CrimsonSkillTree_NodeCost.h"
 #include "Nodes/CrimsonSkillTree_Node.h"
 #include "Nodes/ICrimsonSkillTree_NodeAction.h"
@@ -87,7 +88,7 @@ struct FCrimsonSkillTreeEntry
  * @brief Manages all skill tree instances for an actor, handling state, resources, and save/load operations.
  */
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class CRIMSONSKILLTREE_API UCrimsonSkillTreeManager : public UActorComponent
+class CRIMSONSKILLTREE_API UCrimsonSkillTreeManager : public UActorComponent, public ICrimsonSkillTreeInterface
 {
 	GENERATED_BODY()
 
@@ -106,6 +107,10 @@ public:
 	 * @brief Called when the game starts for this component.
 	 */
 	virtual void BeginPlay() override;
+	/**
+	 * @brief Called when the component is destroyed.
+	 */
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	/**
 	 * @brief Defines the properties that should be replicated.
@@ -119,6 +124,14 @@ public:
 	 */
 	virtual bool GetComponentClassCanReplicate() const override { return true; };
 
+
+	// ~ICrimsonSkillTreeInterface
+	// =============================================================================================================
+
+	virtual UCrimsonSkillTreeManager* GetSkillTreeManagerComponent_Implementation() const override { return const_cast<UCrimsonSkillTreeManager*>(this); }
+	virtual AActor* GetSkillTreeOwner_Implementation() const override;
+	virtual ACharacter* GetSkillTreeOwnerCharacter_Implementation() const override;
+	
 	// ~Skill Tree Management
 	// =============================================================================================================
 	/**
@@ -126,6 +139,22 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Management")
 	void InitializeSkillTrees();
+
+	/**
+ 	* @brief Checks if all dependencies are valid and, if so, calls InitializeSkillTrees.
+ 	* @details This is the main gatekeeper for initialization.
+ 	*/
+	bool TryInitialize();
+
+	void ShutDownSkillTree();
+	
+	// =============================================================================================================
+	/**
+	 * @brief Clears all runtime data from the skill tree, resetting it to a clean state.
+	 * @details This is called automatically in EndPlay and should be called before re-initialization if needed.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Management")
+	void ClearSkillTreeState();
 
 	/**
 	 * @brief Retrieves a skill tree instance by its type tag.
@@ -151,7 +180,7 @@ public:
 	 * @return True if the node can be assigned, false otherwise.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Actions")
-	bool CanAssignNode(UCrimsonSkillTree_Node* NodeToAssign);
+	virtual bool CanAssignNode(UCrimsonSkillTree_Node* NodeToAssign);
 
 	/**
 	 * @brief Assigns (activates) a skill node.
@@ -159,7 +188,7 @@ public:
 	 * @return True if the assignment was successful, false otherwise.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Actions")
-	bool AssignNode(UCrimsonSkillTree_Node* NodeToAssign);
+	virtual bool AssignNode(UCrimsonSkillTree_Node* NodeToAssign);
 
 	/**
 	 * @brief Unassigns (deactivates) a skill node.
@@ -167,7 +196,7 @@ public:
 	 * @return True if the unassignment was successful, false otherwise.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Actions")
-	bool UnassignNode(UCrimsonSkillTree_Node* NodeToUnassign);
+	virtual bool UnassignNode(UCrimsonSkillTree_Node* NodeToUnassign);
 
 	/**
 	 * @brief Checks if a node's level can be safely decremented without invalidating other nodes.
@@ -176,7 +205,7 @@ public:
 	 * @return True if the decrement is safe, false otherwise.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Actions")
-	bool CanSafelyDecrementNodeLevel(UCrimsonSkillTree_Node* NodeToDecrement, TArray<UCrimsonSkillTree_Node*>& OutInvalidatedNodes);
+	virtual bool CanSafelyDecrementNodeLevel(UCrimsonSkillTree_Node* NodeToDecrement, TArray<UCrimsonSkillTree_Node*>& OutInvalidatedNodes);
 
 	// ~Resource Management
 	// =============================================================================================================
@@ -186,7 +215,7 @@ public:
 	 * @param OutTotalBudget The total available amount of the resource.
 	 * @return True if the budget was successfully retrieved, false otherwise.
 	 */
-	bool GetTotalBudgetForResource(const FNodeCostDefinition& InCostDefinition, int32& OutTotalBudget);
+	virtual bool GetTotalBudgetForResource(const FNodeCostDefinition& InCostDefinition, int32& OutTotalBudget);
 
 	/**
 	 * @brief Gets the total amount of a resource that has been allocated (spent).
@@ -229,30 +258,20 @@ public:
 	 * @param SkillTreeToSave The skill tree instance to save.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|SaveGame")
-	void SaveSkillTreeState(UCrimsonSkillTree* SkillTreeToSave);
+	virtual void SaveSkillTreeState(UCrimsonSkillTree* SkillTreeToSave);
 
 	/**
 	 * @brief Loads the state of a single skill tree from the save game slot.
 	 * @param SkillTreeToLoad The skill tree instance to load state into.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|SaveGame")
-	void LoadSkillTreeState(UCrimsonSkillTree* SkillTreeToLoad);
+	virtual void LoadSkillTreeState(UCrimsonSkillTree* SkillTreeToLoad);
 
 	/**
 	 * @brief Loads the state for all configured skill trees from the save game slot.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree|SaveGame")
-	void LoadAllSkillTreeStates();
-
-	// ~Owner & Context
-	// =============================================================================================================
-	/**
-	 * @brief Gets the owning actor of this skill tree manager.
-	 * @return The owning actor.
-	 */
-	UFUNCTION(BlueprintNativeEvent, Category = "Skill Tree|Context")
-	AActor* GetSkillTreeOwner();
-	virtual AActor* GetSkillTreeOwner_Implementation();
+	virtual void LoadAllSkillTreeStates();
 
 	// ~Utility
 	// =============================================================================================================
@@ -273,7 +292,9 @@ public:
 	 */
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RequestSkillNodeAction(const FGuid& TargetNodeGuid, ECrimsonSkillNodeActionType ActionType);
-
+	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Utility")
+	void Client_RequestSkillNodeAction(const FGuid& TargetNodeGuid, ECrimsonSkillNodeActionType ActionType);
+	
 	/**
 	 * @brief [Server] Forces all nodes in a specific skill tree to be unassigned (a "respec").
 	 * @param SkillTreeTypeTag The tag identifying the skill tree to respec.
@@ -315,13 +336,13 @@ public:
 	 * @brief [Server] Adds or updates the replicated state for a given node.
 	 * @param Node The node whose state needs to be updated.
 	 */
-	void Server_UpdateReplicatedNodeState(UCrimsonSkillTree_Node* Node);
+	void Server_UpdateReplicatedNodeState(const UCrimsonSkillTree_Node* Node);
 
 	/**
 	 * @brief [Server] Removes the replicated state for a given node.
 	 * @param Node The node whose state needs to be removed.
 	 */
-	void Server_RemoveReplicatedNodeState(UCrimsonSkillTree_Node* Node);
+	void Server_RemoveReplicatedNodeState(const UCrimsonSkillTree_Node* Node);
 
 	/**
 	 * @brief Relays a node failure message from the server to the owning client via an RPC.
@@ -362,13 +383,21 @@ public:
 	/**
 	 * @brief The list of skill tree assets to be managed by this component.
 	 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Trees|Configuration")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, ReplicatedUsing = OnRep_ConfiguredSkillTrees, Category = "Skill Trees|Configuration")
 	TArray<FCrimsonSkillTreeEntry> ConfiguredSkillTrees;
 
 	// ~Save Game
 	// =============================================================================================================
 	/**
+	 * @brief If true, automatically save the skill tree after any change.
+	 * You can call SaveSkillTreeState in blueprint if you wish to save it somewhere else.
+	 */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Trees|Save Game")
+	bool bSaveSkillTreeAfterChange = false;
+
+	/**
 	 * @brief If true, automatically loads all skill tree states after initialization.
+	 * You can call LoadSkillTreeState or LoadAllSkillTreeStates in blueprint if you wish to handle how to load.
 	 */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Trees|Save Game")
 	bool bLoadAllSkillTreesPostInitialize = true;
@@ -416,8 +445,20 @@ protected:
 	 * @param InSkillTree The skill tree asset to instance.
 	 * @return A new runtime instance of the skill tree.
 	 */
-	UCrimsonSkillTree* CreateSkillTreeRuntimeInstance(const UCrimsonSkillTree* InSkillTree);
+	virtual UCrimsonSkillTree* CreateSkillTreeRuntimeInstance(const UCrimsonSkillTree* InSkillTree);
 
+
+	/**
+ 	* @brief Binds to controller/pawn delegates to know when to attempt initialization. Retries on a timer if the controller isn't ready.
+ 	*/
+	void BindToPawnInitialization();
+	
+	/**
+	 * @brief Delegate handler called when the owning player controller possesses a new pawn.
+	 */
+	UFUNCTION()
+	void OnPawnRestarted(APawn* Pawn);
+	
 	// ~Replication
 	// =============================================================================================================
 	/**
@@ -427,11 +468,18 @@ protected:
 	void OnRep_ReplicatedNodeStates();
 
 	/**
+ 	* @brief [Client] Called when the ConfiguredSkillTrees array is replicated. Triggers client-side initialization.
+ 	*/
+	UFUNCTION()
+	void OnRep_ConfiguredSkillTrees();
+	
+	/**
 	 * @brief Called when the ReplicatedAllocatedResources array is updated.
 	 */
 	UFUNCTION()
 	void OnRep_AllocatedResourcesChanged();
 
+	
 	// ~Messaging
 	// =============================================================================================================
 	/**
@@ -448,7 +496,7 @@ protected:
 	 * @param InGuid The GUID of the skill tree to find.
 	 * @return The found skill tree instance, or nullptr.
 	 */
-	UCrimsonSkillTree* GetSkillTreeByGUID(FGuid InGuid) const;
+	virtual const UCrimsonSkillTree* GetSkillTreeByGUID(FGuid InGuid) const;
 
 	/**
 	 * @brief Finds a node within any managed skill tree by its unique GUID.
@@ -483,13 +531,13 @@ protected:
 	 * @param SkillTree The new skill tree asset.
 	 * @param InvalidatedSaveData The save data from the old version.
 	 */
-	void RefundPointsFromInvalidatedSave(UCrimsonSkillTree* SkillTree, const FCrimsonSkillTree_SaveGameData& InvalidatedSaveData);
+	virtual void RefundPointsFromInvalidatedSave(const UCrimsonSkillTree* SkillTree, const FCrimsonSkillTree_SaveGameData& InvalidatedSaveData);
 
 	/**
 	 * @brief Gets the existing save game object or creates a new one if it doesn't exist.
 	 * @return The save game object instance.
 	 */
-	UCrimsonSkillTree_SaveGame* GetOrCreateSaveGameObject() const;
+	virtual UCrimsonSkillTree_SaveGame* GetOrCreateSaveGameObject() const;
 
 	/**
 	 * @brief Finds the save data for a specific skill tree within a save game object.
@@ -497,20 +545,23 @@ protected:
 	 * @param TreeGuid The GUID of the skill tree to find data for.
 	 * @return A pointer to the found save data, or nullptr.
 	 */
-	const FCrimsonSkillTree_SaveGameData* FindTreeSaveData(const UCrimsonSkillTree_SaveGame* SaveGameInstance, FGuid TreeGuid) const;
+	virtual const FCrimsonSkillTree_SaveGameData* FindTreeSaveData(const UCrimsonSkillTree_SaveGame* SaveGameInstance, FGuid TreeGuid) const;
 
 protected:
 	/****************************************************************************************************************
 	* Properties                                                           *
 	****************************************************************************************************************/
 
+	/** @brief Timer handle used to retry binding to the PlayerController if it's not immediately available. */
+	FTimerHandle BindToPawnInitTimerHandle;
+	
 	// ~State
 	// =============================================================================================================
 	/**
 	 * @brief Non-replicated array of active skill tree instances, created locally on both server and client.
 	 */
 	UPROPERTY(Transient)
-	TArray<UCrimsonSkillTree*> ActiveSkillTreeInstances;
+	TArray<TObjectPtr<UCrimsonSkillTree>> ActiveSkillTreeInstances;
 
 	// ~Replicated State
 	// =============================================================================================================

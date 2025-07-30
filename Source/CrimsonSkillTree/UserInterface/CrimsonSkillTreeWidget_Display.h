@@ -12,6 +12,15 @@ class UCrimsonSkillTreeWidget_Node;
 class UInputMappingContext;
 class UInputAction;
 
+UENUM(BlueprintType)
+enum class ECrimsonWidgetInputMode : uint8
+{
+	Default,
+	GameAndMenu,
+	Game,
+	Menu
+};
+
 /**
  * @class UCrimsonSkillTreeWidget_Display
  * @brief The main container widget for the skill tree UI.
@@ -63,6 +72,9 @@ public:
 	 */
 	void ClearHoveredNodeWidget(const UCrimsonSkillTreeWidget_Node* NodeWidget);
 
+	UFUNCTION(BlueprintCallable, Category = "Skill Tree Display")
+	void SetSkillTreeTypeTag(const FGameplayTag NewTypeTag);
+	
 protected:
 	/****************************************************************************************************************
 	* Functions                                                            *
@@ -70,11 +82,8 @@ protected:
 
 	// ~UCommonActivatableWidget Overrides
 	// =============================================================================================================
-	/**
-	 * @brief Called after the widget has been constructed.
-	 */
-	virtual void NativeOnInitialized() override;
-
+	virtual void NativeConstruct() override;
+	virtual void NativeDestruct() override;
 	/**
 	 * @brief Called when the widget is activated.
 	 */
@@ -84,7 +93,16 @@ protected:
 	 * @brief Called when the widget is deactivated.
 	 */
 	virtual void NativeOnDeactivated() override;
-
+	
+	/**
+ 	* @brief Called by a delegate when the player controller possesses a new pawn.
+ 	* @details This is the key to re-initializing the UI after a respawn.
+ 	* @param OldPawn The pawn that was previously possessed.
+ 	* @param NewPawn The pawn that is now possessed.
+ 	*/
+	UFUNCTION()
+	void HandlePossessedPawnChanged(APawn* OldPawn, APawn* NewPawn);
+	
 	/**
 	 * @brief Specifies the desired input configuration for this widget when it is active.
 	 * @return The desired UI input configuration.
@@ -147,6 +165,9 @@ protected:
 	UFUNCTION()
 	void OnManagerDataUpdated();
 
+	UFUNCTION(BlueprintCallable, Category = "Skill Tree|Display")
+	void ResetSkillTree() const;
+	
 	/**
 	 * @brief A robust way to get the player's skill tree manager component.
 	 * @return A pointer to the UCrimsonSkillTreeManager, or nullptr if not found.
@@ -161,50 +182,66 @@ protected:
 	// ~UMG Widget Bindings
 	// =============================================================================================================
 	/** @brief Reference to the graph widget within this display. Must be bound in the UMG editor. */
-	UPROPERTY(BlueprintReadOnly, Category = "Skill Tree Display|Visuals", meta = (BindWidget))
+	UPROPERTY(BlueprintReadOnly, Category = "Skill Tree|Visuals", meta = (BindWidget))
 	TObjectPtr<UCrimsonSkillTreeWidget_Graph> SkillTreeGraph;
 
 	/** @brief The skill tree instance currently being displayed. */
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Skill Tree Display")
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Skill Tree")
 	TObjectPtr<UCrimsonSkillTree> CurrentSkillTree;
+
+	/** The desired input mode to use while this UI is activated, for example do you want key presses to still reach the game/player controller? */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input")
+	ECrimsonWidgetInputMode InputConfig = ECrimsonWidgetInputMode::Default;
+
+	/** The desired mouse behavior when the game gets input. */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input")
+	EMouseCaptureMode GameMouseCaptureMode = EMouseCaptureMode::CapturePermanently;
 	
-	// ~Configuration Properties
-	// =============================================================================================================
-	/** @brief The Input Mapping Context for all skill tree interactions. */
-	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	TObjectPtr<UInputMappingContext> SkillTreeInputMappingContext;
-
-	/** @brief Toggles panning mode (e.g., bound to Right Mouse Button). */
-	UPROPERTY(EditDefaultsOnly, Category = "Input|Actions")
-	TObjectPtr<UInputAction> PanToggleAction;
-
-	/** @brief Handles zooming in and out (e.g., bound to Mouse Wheel). */
-	UPROPERTY(EditDefaultsOnly, Category = "Input|Actions")
-	TObjectPtr<UInputAction> ZoomAction;
-
-	/** @brief Handles the primary action on a node (Activate/Increment Level, e.g., Left Mouse Button). */
-	UPROPERTY(EditDefaultsOnly, Category = "Input|Actions")
-	TObjectPtr<UInputAction> NodePrimaryAction;
-
-	/** @brief Handles the secondary action on a node (Deactivate/Decrement Level, e.g., Right Mouse Button). */
-	UPROPERTY(EditDefaultsOnly, Category = "Input|Actions")
-	TObjectPtr<UInputAction> NodeSecondaryAction;
-
+	/** @brief Sets the input priority of the IMC*/
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input")
+	int32 InputPriority = 0;
+	
 	/** @brief The update frequency for panning, in seconds. (e.g., 1.0 / 60.0 for 60 FPS). */
-	UPROPERTY(EditDefaultsOnly, Category = "Panning", meta = (ClampMin = "0.01"))
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input|Panning", meta = (ClampMin = "0.01"))
 	float PanUpdateInterval;
 
-private:
-	/****************************************************************************************************************
-	* Properties                                                           *
-	****************************************************************************************************************/
-
+public:
 	// ~Runtime State
 	// =============================================================================================================
 
 	/** @brief Stores the tag of the skill tree we were asked to display, so we can retry if data isn't ready. */
 	UPROPERTY(Transient)
 	FGameplayTag RequestedSkillTreeTypeTag;
+	
+	// ~Configuration Properties
+	// =============================================================================================================
+	/** @brief The Input Mapping Context for all skill tree interactions. */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input")
+	TObjectPtr<UInputMappingContext> SkillTreeInputMappingContext;
+	
+	/** @brief Toggles panning mode (e.g., bound to Right Mouse Button). */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input|Actions")
+	TObjectPtr<UInputAction> PanToggleAction;
+
+	/** @brief Handles zooming in and out (e.g., bound to Mouse Wheel). */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input|Actions")
+	TObjectPtr<UInputAction> ZoomAction;
+
+	/** @brief Handles the primary action on a node (Activate/Increment Level, e.g., Left Mouse Button). */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input|Actions")
+	TObjectPtr<UInputAction> NodePrimaryAction;
+
+	/** @brief Handles the secondary action on a node (Deactivate/Decrement Level, e.g., Right Mouse Button). */
+	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree|Input|Actions")
+	TObjectPtr<UInputAction> NodeSecondaryAction;
+
+private:
+	/****************************************************************************************************************
+	* Properties                                                           *
+	****************************************************************************************************************/
+	
+	// ~Runtime State
+	// =============================================================================================================
 
 	/** @brief A weak pointer to the node widget currently under the mouse cursor. */
 	UPROPERTY(Transient)
@@ -221,4 +258,5 @@ private:
 
 	/** @brief The initial translation of the canvas when panning started. */
 	FVector2D InitialCanvasTranslationForPan;
+	
 };

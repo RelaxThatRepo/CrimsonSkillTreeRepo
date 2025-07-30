@@ -4,11 +4,54 @@
 #include "GameplayTagContainer.h"
 #include "CrimsonSkillTree.generated.h"
 
+class UCrimsonSkillTreeWidget_LineDrawingPolicyBase;
+class UCrimsonSkillTreeWidget_Node;
 class UCrimsonSkillTree_Edge;
 class UCrimsonSkillTree_Node;
 class UCrimsonSkillTree_VisualNode;
 class UCrimsonSkillTreeManager;
 
+USTRUCT(BlueprintType)
+struct FCrimsonSkillTree_GraphConfig
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UCrimsonSkillTreeWidget_Node> DefaultNodeWidgetClass;
+
+	/** @brief Maps a node's Gameplay Tag to a specific widget class, allowing for different visual styles for different node types. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<FGameplayTag, TSubclassOf<UCrimsonSkillTreeWidget_Node>> NodeTypeToWidgetClassMap;
+
+	/** @brief This scales the location of the node, allowing the UEdGraph position to be "scaled" up or down. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Node")
+	float NodePositionScalar = 1.f;
+
+	/** @brief The line drawing policy object that defines the appearance and logic for drawing connection lines. */
+	UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite)
+	TObjectPtr<UCrimsonSkillTreeWidget_LineDrawingPolicyBase> LineDrawingPolicy;
+
+	/** @brief The starting "Zoom" distance for the skill tree. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Zoom")
+	FVector2D StartingRenderScale = FVector2D(1.5f, 1.5f);
+
+	/** @brief How fast you can zoom in/out. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Zoom")
+	float ZoomSpeedFactor = 0.07f;
+
+	/** @brief The minimum allowed zoom level. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Zoom")
+	float MinZoomDistance = 0.75f;
+
+	/** @brief The maximum allowed zoom level. */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Zoom")
+	float MaxZoomDistance = 1.75f;
+
+	/** @brief Scalar offset along the X/Y-axis (0.0f to 2.0f, where 1.f is center, 0.f is the top, 2.f is the bottom.). */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "View", meta = (ClampMin = "0.0", ClampMax = "2.0", UIMin = "0.0", UIMax = "2.0"))
+	FVector2D ManualCenterOffset = FVector2D(1.f, 1.f);
+	
+};
 /**
  * @class UCrimsonSkillTree
  * @brief A data asset representing the structure of a skill tree, containing nodes and their relationships.
@@ -61,7 +104,7 @@ public:
 	 * @brief Gets a mutable reference to the flat list of all nodes contained within this skill tree.
 	 * @return A TArray reference of all nodes.
 	 */
-	TArray<UCrimsonSkillTree_Node*>& GetAllNodes() { return AllNodes; }
+	TArray<TObjectPtr<UCrimsonSkillTree_Node>>& GetAllNodes() { return AllNodes; }
 
 	// ~Context
 	// =============================================================================================================
@@ -106,7 +149,7 @@ public:
 	// ~Configuration
 	// =============================================================================================================
 	/** @brief A unique identifier for this skill tree asset. Essential for saving and loading. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Skill Tree|Config")
+	UPROPERTY(BlueprintReadOnly, Category = "Skill Tree|Config")
 	FGuid SkillTreeGUID;
 
 	/** @brief The version of this skill tree. Increment this when making changes that should invalidate old save data. */
@@ -143,21 +186,23 @@ public:
 
 	/** @brief The display name of the node to use as the starting focus point when the real root node is hidden. */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Skill Tree|Display", meta = (EditCondition = "!bDisplayRootNodeInWidget"))
-	FText UserFacingRootNodeName;
+	FString UserFacingRootNodeName;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Skill Tree|Display")
+	FCrimsonSkillTree_GraphConfig GraphConfig;
 	// ~State
 	// =============================================================================================================
 	/** @brief The designated root node of the skill tree. All traversal typically starts from here. */
 	UPROPERTY(Instanced, BlueprintReadOnly, Category = "Skill Tree|State")
-	UCrimsonSkillTree_Node* RootNode;
+	TObjectPtr<UCrimsonSkillTree_Node> RootNode;
 
 	/** @brief A flat list of all nodes contained within this skill tree. */
 	UPROPERTY(Instanced, BlueprintReadOnly, Category = "Skill Tree|State")
-	TArray<UCrimsonSkillTree_Node*> AllNodes;
+	TArray<TObjectPtr<UCrimsonSkillTree_Node>> AllNodes;
 
 	/** @brief Array of all visual nodes used for annotation in this skill tree. */
 	UPROPERTY(Instanced, BlueprintReadOnly, Category = "Skill Tree|State")
-	TArray<UCrimsonSkillTree_VisualNode*> VisualNodes;
+	TArray<TObjectPtr<UCrimsonSkillTree_VisualNode>> VisualNodes;
 
 #if WITH_EDITORONLY_DATA
 	/** @brief The graph representation of this skill tree used in the editor. */

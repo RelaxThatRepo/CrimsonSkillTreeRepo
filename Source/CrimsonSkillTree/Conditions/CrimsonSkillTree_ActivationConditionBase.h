@@ -93,7 +93,7 @@ public:
 	 * @brief Sets the cached owning node for this condition. Called by the node itself during initialization.
 	 * @param InOwningNode The skill tree node that owns this condition.
 	 */
-	void SetCachedOwningNode(UCrimsonSkillTree_Node* InOwningNode);
+	virtual void SetCachedOwningNode(UCrimsonSkillTree_Node* InOwningNode);
 
 #if WITH_EDITOR
 	/**

@@ -3,8 +3,12 @@
 #include "CoreMinimal.h"
 #include "CommonUserWidget.h"
 #include "GameplayTagContainer.h"
+#include "Components/CanvasPanel.h"
+#include "CrimsonSkillTree/CrimsonSkillTree.h"
 #include "CrimsonSkillTreeWidget_Graph.generated.h"
 
+class UInputMappingContext;
+class UInputAction;
 class UCrimsonSkillTree_VisualNode;
 class UCrimsonSkillTreeWidget_VisualNode;
 class UCrimsonSkillTree;
@@ -51,12 +55,16 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree Graph")
 	virtual void ClearGraph();
 
+	UFUNCTION(BlueprintCallable, Category = "Skill Tree Graph")
+	virtual void SetGraphVisualValues();
 	/**
 	 * @brief Redraws all connection lines between nodes. Should be called when a node's state or position changes.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Skill Tree Graph")
 	void RefreshConnections();
 
+	void SetStartingRenderScale() const { NodeCanvasPanel->SetRenderScale(GraphConfig.StartingRenderScale); };
+	
 	// ~View Control
 	// =============================================================================================================
 	/**
@@ -145,6 +153,11 @@ protected:
 	 */
 	virtual void NativeOnInitialized() override;
 
+	virtual FReply NativeOnMouseButtonDown(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
+	virtual FReply NativeOnMouseButtonUp(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
+	virtual FReply NativeOnPreviewKeyDown(const FGeometry& InGeometry, const FKeyEvent& InKeyEvent) override;
+	virtual FReply NativeOnMouseWheel(const FGeometry& InGeometry, const FPointerEvent& InMouseEvent) override;
+	
 #if WITH_EDITOR
 	/**
 	 * @brief Called in the editor when a property is changed to allow for immediate visual updates.
@@ -197,7 +210,10 @@ protected:
 	 */
 	UFUNCTION()
 	void HandleSkillTreeStateUpdated();
-
+	
+private:
+	static bool IsKeyMappedToAction(const FKey& Key, const UInputAction* Action,
+	                                const UInputMappingContext* MappingContext);
 protected:
 	/****************************************************************************************************************
 	* Properties                                                           *
@@ -209,35 +225,12 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Skill Tree Graph|Visuals", meta = (BindWidget))
 	TObjectPtr<UCanvasPanel> NodeCanvasPanel;
 
+		
 	// ~Configuration Properties
 	// =============================================================================================================
-	/** @brief The default widget class to use for nodes if no specific class is found in the NodeTypeToWidgetClassMap. */
-	UPROPERTY(EditDefaultsOnly, Category = "Skill Tree Graph|Configuration")
-	TSubclassOf<UCrimsonSkillTreeWidget_Node> DefaultNodeWidgetClass;
 
-	/** @brief Maps a node's Gameplay Tag to a specific widget class, allowing for different visual styles for different node types. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration")
-	TMap<FGameplayTag, TSubclassOf<UCrimsonSkillTreeWidget_Node>> NodeTypeToWidgetClassMap;
-
-	/** @brief The line drawing policy object that defines the appearance and logic for drawing connection lines. */
-	UPROPERTY(EditAnywhere, Instanced, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration")
-	TObjectPtr<UCrimsonSkillTreeWidget_LineDrawingPolicyBase> LineDrawingPolicy;
-
-	/** @brief The starting "Zoom" distance for the skill tree. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration|Zoom")
-	FVector2D StartingRenderScale = FVector2D(1.5f, 1.5f);
-
-	/** @brief How fast you can zoom in/out. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration|Zoom")
-	float ZoomSpeedFactor = 0.07f;
-
-	/** @brief The minimum allowed zoom level. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration|Zoom")
-	float MinZoomDistance = 0.75f;
-
-	/** @brief The maximum allowed zoom level. */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Skill Tree Graph|Configuration|Zoom")
-	float MaxZoomDistance = 1.75f;
+	UPROPERTY()
+	FCrimsonSkillTree_GraphConfig GraphConfig;
 
 private:
 	/****************************************************************************************************************
@@ -252,15 +245,15 @@ private:
 
 	/** @brief A map to quickly access a node's UMG widget from its data object. */
 	UPROPERTY(Transient)
-	TMap<UCrimsonSkillTree_Node*, UCrimsonSkillTreeWidget_Node*> NodeWidgetMap;
+	TMap<TObjectPtr<UCrimsonSkillTree_Node>, TObjectPtr<UCrimsonSkillTreeWidget_Node>> NodeWidgetMap;
 
 	/** @brief A map to quickly access a visual node's UMG widget from its data object. */
 	UPROPERTY(Transient)
-	TMap<UCrimsonSkillTree_VisualNode*, UCrimsonSkillTreeWidget_VisualNode*> VisualNodeWidgetMap;
+	TMap<TObjectPtr<UCrimsonSkillTree_VisualNode>, TObjectPtr<UCrimsonSkillTreeWidget_VisualNode>> VisualNodeWidgetMap;
 
 	/** @brief An array holding all the UImage widgets used to draw connection lines. */
 	UPROPERTY(Transient)
-	TArray<UImage*> DrawnLineWidgets;
+	TArray<TObjectPtr<UImage>> DrawnLineWidgets;
 
 	/** @brief Weak pointer to the owning display widget to avoid circular dependencies. */
 	UPROPERTY(Transient)

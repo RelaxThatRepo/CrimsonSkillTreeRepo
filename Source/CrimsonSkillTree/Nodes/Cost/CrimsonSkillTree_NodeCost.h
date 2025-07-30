@@ -136,12 +136,14 @@ public:
 	 */
 	int32 GetCostForTargetLevel(int32 TargetLevel, int32 MaxLevel) const
 	{
-		if (CostCurve)
+		float FoundValue = 0.f;
+		if (CostCurveHandle.Eval(static_cast<float>(TargetLevel), &FoundValue, FString("GetCostForTargetLevel")))
 		{
-			return FMath::RoundToInt(CostCurve->GetFloatValue(static_cast<float>(TargetLevel)));
+			return FMath::RoundToInt(FoundValue);
 		}
 		return CostAmount;
 	}
+
 
 public:
 	/****************************************************************************************************************
@@ -151,12 +153,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost")
 	FNodeCostDefinition CostDefinition;
 
-	/** @brief A curve to define how the cost scales with the node's level (X-axis: Level, Y-axis: Cost). */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost|Definition")
-	TObjectPtr<UCurveFloat> CostCurve;
+	/** @brief Should this cost be determined by a curve instead of a flat value? */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost")
+	bool bUseCurveCost = false;
 
-	/** @brief A flat amount of cost, used if CostCurve is not provided. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost|Definition", meta = (EditCondition = "CostCurve == nullptr"))
+	/** @brief Handle to a curve in a Curve Table. This is only used if bUseCurveCost is true. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost", meta = (EditCondition = "bUseCurveCost"))
+	FCurveTableRowHandle CostCurveHandle;
+
+	/** @brief A flat amount of cost. This is only used if bUseCurveCost is false. */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cost", meta = (EditCondition = "!bUseCurveCost"))
 	int32 CostAmount = 1;
 };
 
