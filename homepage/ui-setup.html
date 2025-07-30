@@ -51,12 +51,16 @@
         <h1>Displaying the Skill Tree (UI Setup)</h1>
         <p>The plugin comes with a complete, pre-made UI that is ready to use. No complex setup is necessary to get it working; you just need to display it on screen.</p>
 
+        <div class="note">
+            <p><strong>You can check the Quick Start Video for a quick way to add the UI to screen on an empty project!</strong></p>
+        </div>
+
         <h2>Displaying the Default Skill Tree UI</h2>
         <p>Follow these steps to show the skill tree in your game.</p>
         <ol>
             <li>In your player's code (e.g., in the Player Controller or Character Blueprint), find an appropriate event to open the UI, such as an input press event.</li>
-            <li>From that event, use the <strong>Create Widget</strong> node to create the main display widget. The class to select is <code>W_SkillTree_Display</code>, which is included with the plugin.</li>
-            <li>Take the return value from Create Widget and call <strong>Set Skill Tree Type Tag</strong> and pass it the tag of the skill tree that you want to show. For the <strong>Skill Tree Type Tag</strong> input, pass in the tag you configured on the <code>CrimsonSkillTreeManager</code> (e.g., <code>SkillTree.Player.Core</code>).</li>
+            <li>From that event, use the <strong>Create Widget or Push Widget To Layer Stack</strong> node to create the main display widget. The class to select is <code>W_SkillTree_Display</code>, which is included with the plugin.</li>
+            <li>Take the return value from Create Widget or Push Widget To Layer Stack and call <strong>Set Skill Tree Type Tag</strong> and pass it the tag of the skill tree that you want to show. For the <strong>Skill Tree Type Tag</strong> input, pass in the tag you configured on the <code>CrimsonSkillTreeManager</code> (e.g., <code>SkillTree.Player.Core</code>).</li>
             <div class="note">
                 <p>Here you can see an example of how its added in the Lyra Starter Sample project.</p>
                 <img src="assets/add-skilltree-display.png" alt="Add Skill Tree Display" style="width: 75%;">
