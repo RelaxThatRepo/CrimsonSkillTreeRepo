@@ -57,7 +57,7 @@
                 width="560" 
                 height="315"
                 frameborder="0"
-                src="https://www.youtube.com/embed/7rJ7k9UdWOA" 
+                src="https://www.youtube.com/embed/ik-2cBiMSeM" 
                 title="YouTube video player" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -70,7 +70,11 @@
         <h3>Method 1: From the Epic Games Launcher (Recommended)</h3>
         <ol>
             <li><strong>Acquire the Plugin:</strong> Purchase or download the plugin from the Unreal Engine Marketplace.</li>
-            <li><strong>Install to Project:</strong> Open the Epic Games Launcher. Navigate to your Library and find the plugin in your "Vault". Click the "Install to Project" button and select the project you want to add it to.</li>
+            <li><strong>Install to Engine:</strong> Open the Epic Games Launcher. Navigate to your Library and find the plugin in your "Vault". Click the "Install to Engine" button and select the version you want to add it to.</li>
+            <div class="note">
+                <p><strong>Installing to Project:</strong> If you didn't build the engine from source and want to change the source code for the plugin, it is recommended to move it to your projects Plugin folder. The quickstart video goes over how to do this.
+                If you just want to override or create your own classes, no change is necessary.</p>
+            </div>
             <li><strong>Enable the Plugin:</strong> Open your Unreal Engine project. In the editor, go to <code>Edit</code> > <code>Plugins</code>. Search for "Crimson Skill Tree", make sure the "Enabled" box is checked, and restart the editor if prompted.</li>
             <img src="assets/enable-plug-in.png" alt="Enable Plug-in" style="width: 100%;">
         </ol>
